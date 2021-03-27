@@ -1,7 +1,32 @@
 ---
-title: "The ALARM Project"
-subtitle: Algorithm-Assisted Redistricting Methods
+title: Posts
 site: distill::distill_website
 listing: posts
 ---
+
+<div class="home-cover l-screen">
+<div class="fg">
+<h1>Developing methodology and tools to analyze legislative redistricting.</h1>
+</div>
+</div>
+
+The ALARM project ...
+
+<div class="package-box">
+<a href="https://corymccartan.github.io/redist/">
+<h2><code>redist</code>: Simulation Methods for Legislative Redistricting</h2>
+</a>
+<p>
+Enables researchers to sample redistricting plans from a pre-specified target
+distribution using state-of-the-art algorithms. Implements a wide variety
+constraints in the redistricting process, such as geographic compactness and
+population parity requirements. Tools for analysis such as computation of
+various summary statistics and plotting functionality are also included.
+</p>
+<p>
+<a href="https://corymccartan.github.io/redist/">
+Go to package home page &raquo;
+</a>
+</p>
+</div>
 

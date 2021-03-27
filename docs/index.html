@@ -86,28 +86,28 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>ALARM Project: The ALARM Project</title>
+  <title>ALARM Project: Posts</title>
 
 
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ALARM Project: The ALARM Project"/>
+  <meta property="og:title" content="ALARM Project: Posts"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="ALARM Project"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ALARM Project: The ALARM Project"/>
+  <meta property="twitter:title" content="ALARM Project: Posts"/>
   <meta property="twitter:site" content="@alarm_redist"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","subtitle","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["The ALARM Project"]},{"type":"character","attributes":{},"value":["Algorithm-Assisted Redistricting Methods"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Posts"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2192,6 +2192,46 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
       background: #eaeaea;
   }
 
+  .home-cover {
+      position: relative;
+      width: 100vw;
+      height: 400px;
+      background: url(assets/cover.png);
+      margin-bottom: 1em;
+  }
+  .home-cover .fg {
+      backdrop-filter: blur(7px) brightness(50%);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  .home-cover h1 {
+      margin: 0;
+      padding: 4rem max(1rem, 15vw);
+      text-align: center;
+      color: #ffffffdd;
+      line-height: min(calc(3vh + 3vw), 48pt);
+      font-size: min(calc(3vh + 3vw), 48pt);
+  }
+
+  .package-box {
+      display: block;
+      background: #d4dce2;
+      padding: 1rem;
+      border-radius: 4px;
+      margin: 1rem 0;
+  }
+  .package-box h2 {
+      margin: 0;
+      border: none;
+  }
+
+
+  .layout-listing d-article > .posts-container {
+      grid-column: text;
+  }
+
   a.title {
       font-weight: bold;
   }
@@ -2380,7 +2420,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"The ALARM Project","authors":[]}
+{"title":"Posts","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2545,7 +2585,7 @@ function init_posts_list() {
 
 <div class="posts-container posts-apply-limit l-page">
 <div class="posts-list">
-<h1 class="posts-list-caption" data-caption="The ALARM Project">The ALARM Project</h1>
+<h1 class="posts-list-caption" data-caption="Posts">Posts</h1>
 </div>
 <div class="posts-more">
 <a href="#">More articles &raquo;</a>
@@ -2554,7 +2594,7 @@ function init_posts_list() {
 <!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>The ALARM Project</h1>
+<h1>Posts</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2562,6 +2602,27 @@ function init_posts_list() {
 
 
 <div class="d-article">
+<div class="home-cover l-screen">
+<div class="fg">
+<h1>
+Developing methodology and tools to analyze legislative redistricting.
+</h1>
+</div>
+</div>
+<p>The ALARM project …</p>
+<div class="package-box">
+<a href="https://corymccartan.github.io/redist/">
+<h2>
+<code>redist</code>: Simulation Methods for Legislative Redistricting
+</h2>
+</a>
+<p>
+Enables researchers to sample redistricting plans from a pre-specified target distribution using state-of-the-art algorithms. Implements a wide variety constraints in the redistricting process, such as geographic compactness and population parity requirements. Tools for analysis such as computation of various summary statistics and plotting functionality are also included.
+</p>
+<p>
+<a href="https://corymccartan.github.io/redist/"> Go to package home page » </a>
+</p>
+</div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
