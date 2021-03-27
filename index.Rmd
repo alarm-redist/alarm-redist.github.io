@@ -1,0 +1,7 @@
+---
+title: "The ALARM Project"
+subtitle: Algorithm-Assisted Redistricting Methods
+site: distill::distill_website
+listing: posts
+---
+

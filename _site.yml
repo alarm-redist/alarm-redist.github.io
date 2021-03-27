@@ -1,0 +1,26 @@
+name: alarm
+title: ALARM Project
+description: Algorithm-Assisted Redistricting Methods
+base_url: https://alarm-redist.github.io/
+output_dir: "docs"
+theme: alarm.css
+favicon: assets/favicon.png
+navbar:
+    logo:
+        image: assets/alarm_256_tr.png
+        href: index.html
+    search: true
+    right:
+        - text: Home
+          href: index.html
+        - text: About
+          href: about.html
+        - text: redist
+          href: https://corymccartan.github.io/redist/
+        - icon: fab fa-github
+          href: https://github.com/alarm-redist
+        - icon: fab fa-twitter
+          href: https://twitter.com/alarm_redist
+twitter:
+    site: "@alarm_redist"
+output: distill::distill_article

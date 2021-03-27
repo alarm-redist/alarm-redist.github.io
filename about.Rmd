@@ -1,0 +1,13 @@
+---
+title: "The Algorithm-Assisted Redistricting Methods (ALARM) Project"
+description: |
+  Developing methodology and tools to analyze legislative redistricting.
+---
+
+# The Project
+
+![assets/alarm_256_tr.png]
+
+# People
+
+# Publications

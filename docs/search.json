@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "The Algorithm-Assisted Redistricting Methods (ALARM) Project",
+      "description": "Developing methodology and tools to analyze legislative redistricting.",
+      "author": [],
+      "contents": "\nThe Project\n[assets/alarm_256_tr.png]\nPeople\nPublications\n\n\n\n",
+      "last_modified": "2021-03-26T20:57:11-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "The ALARM Project",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2021-03-26T20:57:12-04:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

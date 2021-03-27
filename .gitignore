@@ -1,0 +1,7 @@
+.DS_Store
+.Rhistory
+.Rproj.user
+*.swp
+*.tmp
+*.bak
+content/**/*_cache/*
