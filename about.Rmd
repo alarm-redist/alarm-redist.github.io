@@ -6,7 +6,7 @@ description: |
 
 # The Project
 
-![](assets/alarm_256_tr.png)
+![](assets/alarm_1200_tr.png)
 
 # People
 
