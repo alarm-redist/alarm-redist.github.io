@@ -16,7 +16,7 @@ navbar:
         - text: About
           href: about.html
         - text: redist
-          href: https://corymccartan.github.io/redist/
+          href: https://alarm-redist.github.io/redist/
         - icon: fab fa-github
           href: https://github.com/alarm-redist
         - icon: fab fa-twitter

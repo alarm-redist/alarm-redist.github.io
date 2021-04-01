@@ -13,7 +13,7 @@ listing: posts
 The ALARM project ...
 
 <div class="package-box">
-<a href="https://corymccartan.github.io/redist/">
+<a href="https://alarm-redist.github.io/redist/">
 <h2><code>redist</code>: Simulation Methods for Legislative Redistricting</h2>
 </a>
 <p>
@@ -24,7 +24,7 @@ population parity requirements. Tools for analysis such as computation of
 various summary statistics and plotting functionality are also included.
 </p>
 <p>
-<a href="https://corymccartan.github.io/redist/">
+<a href="https://alarm-redist.github.io/redist/">
 Go to package home page &raquo;
 </a>
 </p>
