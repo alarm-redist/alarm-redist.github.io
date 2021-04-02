@@ -1,6 +1,6 @@
 name: alarm
 title: ALARM Project
-description: Algorithm-Assisted Redistricting Methods
+description: The Algorithm-Assisted Redistricting Methodology Project
 base_url: https://alarm-redist.github.io/
 output_dir: "docs"
 theme: alarm.css
