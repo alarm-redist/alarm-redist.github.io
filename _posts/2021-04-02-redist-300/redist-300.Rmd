@@ -164,116 +164,16 @@ redist.plot.distr_qtys(plans_sub, dem_share, size=0.3)
 ## Old workflow
 
 In comparison, the old workflow required significantly more steps and manual
-processing. 
+processing. We start
 
-```{r, eval = FALSE}
-library(tidyverse)
-library(redist)
-
-download.file("https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds",
-              data_path <- tempfile())
-nc_shp <- readRDS(data_path) %>%
-    select(vtd:vap, el14g_uss_r:geometry)
-```
-
-Once we've downloaded the data, we can start by building the adjacency graph.
 ```{r}
-adj <- redist.adjacency(nc_shp)
+library(sf)
+
+adj = redist.adjacency(nc_shp)
 ```
 
-Time to first simulation was never really the issue, however each simulation required many inputs. `redist_map` objects keep track of the `adj`, `total_pop`, `ndists`, and `pop_tol` arguments, but in the older version, you had to specify each of these for every simulation. One of the quirky aspects of the older version was that `counties` needed to be a vector with values `1:n_counties`, meaning that you had to manually transform it to use it and that only worked if the counties were contiguous. 
-```{r}
-sims <- redist.smc(adj = adj, total_pop = nc_shp$pop, ndists = 13, pop_tol = 0.01,
-                   counties = match(nc_shp$county, unique(nc_shp$county)), nsims = 1000, 
-                   silent = TRUE)
-```
+To begin, we'll load the package and data. and create an adjacency graph
 
-Once you finished simulating, setting up plots was always a hassle, as you needed to plot both the distribution of simulations and then compute the same metric separately for the reference plan, in this case that's the 2017 congressional districts.
-```{r}
-metrics <- redist.metrics(plans = sims$plans, measure = 'DVS', rvote = nc_shp$el14g_uss_r, nc_shp$el14g_uss_d)
-
-sorted <- metrics %>% 
-  group_by(draw) %>% 
-  arrange(DVS,.by_group = TRUE) %>% 
-  mutate(district = 1:13) %>% 
-  ungroup()
-
-reference_metrics <- redist.metrics(plans = nc_shp$cd_17, measure = 'DVS', rvote = nc_shp$el14g_uss_r, dvote = nc_shp$el14g_uss_d)
-
-sorted_reference <- reference_metrics %>% arrange(DVS) %>% mutate(district = 1:13)
-```
-
-And then to plot the standard stacked boxplots, you would need to add the reference plan manually to the rest.
-```{r}
-sorted %>% ggplot(aes(x = district, y = DVS, group = district)) + 
-  geom_boxplot() + 
-  theme_minimal() + 
-  labs(x = 'District, sorted by DVS') + 
-  geom_segment(data = sorted_reference, size = 1,
-               aes(x = district - 0.35, xend = district + 0.35, yend = DVS, color = 'red')) + 
-  scale_color_manual(name = '', values = c('red' = 'red'),
-  labels = c('ref'), guide = 'legend')
-```
-
-
-### Studying districts 1, 2, and 4
-The steps between loading in data to your first simulation wasn't terrible in the old version when you were working with the full map. However, when trying to work with subsets, it became messy.
-
-First you needed to subset the shape and then rebuild a new adjacency graph that only had the remaining precincts.
-```{r}
-sub <- nc_shp %>% filter(cd_17 %in% c(1, 2, 4))
-sub_adj <- redist.adjacency(sub)
-```
-
-Then, if your target on the full map was 1\%, you had to compute the equivalent on the subset map, as a 1\% population deviation on a subset is often larger once recombined with the full map.
-```{r}
-pop_tol <- 0.01
-subparpop <- sum(sub$pop)/3
-parpop <- sum(nc_shp$pop)/13
-
-sub_pop_tol <-  min(abs(subparpop - parpop * (1 - pop_tol)),
-                abs(subparpop - parpop * (1 + pop_tol))) / subparpop
-sub_pop_tol
-```
-
-
-Now we can simulate again, but on the smaller map.
-```{r}
-sims_sub <- redist.smc(adj = sub_adj, total_pop = sub$pop,
-                      nsims = 1000,  ndists = 3, counties = match(sub$county, unique(sub$county)),
-                      pop_tol = sub_pop_tol, silent = TRUE)
-```
-
-
-As before, we have to compute metrics for both the reference plan and the simulated plans.
-```{r}
-sub_metrics <- redist.metrics(plans = sims_sub$plans, measure = 'DVS', 
-                          rvote = sub$el14g_uss_r, sub$el14g_uss_d)
-
-sub_sorted <- sub_metrics %>% 
-  group_by(draw) %>% 
-  arrange(DVS,.by_group = TRUE) %>% 
-  mutate(district = 1:3) %>% 
-  ungroup()
-
-sub_reference_metrics <- redist.metrics(plans = match(sub$cd_17, unique(sub$cd_17)), 
-                                    measure = 'DVS', 
-                                    rvote = sub$el14g_uss_r, dvote = sub$el14g_uss_d)
-
-sub_sorted_reference <- sub_reference_metrics %>% arrange(DVS) %>% mutate(district = 1:3)
-```
-
-And finally, we can plot the metrics and manually add the reference points.
-```{r}
-sub_sorted %>% ggplot(aes(x = district, y = DVS, group = district)) + 
-  geom_boxplot() + 
-  theme_minimal() + 
-  labs(x = 'District, sorted by DVS') + 
-  geom_segment(data = sub_sorted_reference, size = 1,
-               aes(x = district - 0.35, xend = district + 0.35, yend = DVS, color = 'red')) + 
-  scale_color_manual(name = '', values = c('red' = 'red'),
-  labels = c('ref'), guide = 'legend')
-```
 
 
 
