@@ -1,0 +1,179 @@
+---
+title: "redist 3.0.0"
+description: |
+  A major release brings new algorithms, new workflows, and significant 
+  usability improvements.
+author:
+  - name: Cory McCartan
+    affiliation: Department of Statistics, Harvard University
+    url: https://corymccartan.github.io/
+  - name: Christopher Kenny
+    affiliation: Department of Government, Harvard University 
+    url: https://www.christophertkenny.com/
+date: April 2, 2021
+output:
+  distill::distill_article:
+    self_contained: false
+citation: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The ALARM Project is excited to announce the release of 
+[**redist** 3.0.0](https://alarm-redist.github.io/redist/). This release brings
+with it new algorithms and major new workflow improvements, making redistricting
+analysis broadly accessible to data scientists everywhere.
+
+![](https://corymccartan.github.io/redist/reference/figures/map_photo.jpg)
+
+# New Features
+This release includes far too many changes to list comprehensively.  Key
+improvements and new features include:
+
+- New tidy interface, including new
+[`redist_map`](/redist/reference/redist_map.html) and
+[`redist_plans`](/redist/reference/redist_plans.html) objects 
+- Merge-split MCMC now available in [`redist_mergesplit()`](/redist/reference/redist_mergesplit.html)
+- Short burst MCMC optimization now available in 
+[`redist_shortburst()`](/redist/reference/redist_shortburst.html) 
+along with [scoring functions](/redist/reference/scorers.html)
+- Improved [Flip MCMC interface](/redist/reference/redist_flip.html)
+  and performance improvements
+- New support for larger simulation size limits
+- Functions to [freeze parts of a map](/redist/reference/redist.freeze.html)
+  and extract [district cores](/redist/reference/redist.identify.cores.html)
+- New [VRA constraint](/redist/reference/redist_smc.html#details)
+- Many new [plotting functions](/redist/reference/index.html#section-plotting-tools)
+- Consistent function and argument [names](/redist/articles/glossary.html)
+- New [partisanship](/redist/reference/redist.metrics.html)
+  and [compactnes](/redist/reference/redist.compactness.html) metrics
+- Performance improvements to compactness calculations
+- Plan comparison and classification in 
+  [`compare_plans()`](/redist/reference/compare_plans.html) and 
+  [`classify_plans()`](/redist/reference/classify_plans.html)
+- New p`iowa`](/redist/reference/iowa.html) dataset and cleaned-up package data
+
+To begin exploring the new features, check out the new 
+[Get Started](/redist/articles/redist.html) vignette.
+
+# Workflow Example: North Carolina
+
+To demonstrate the new `redist` workflow, we'll run through a basic analysis
+of the 2017 congressional districts of the state of North Carolina, which
+were [struck down as an unconstitutional partisan gerrymander](https://www.nbcnews.com/politics/politics-news/north-carolina-judges-toss-maps-slam-gerrymandering-stinging-ruling-n1049411) 
+in 2019.
+
+## New workflow
+```{r message=F}
+library(tidyverse)
+library(redist)
+
+download.file("https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds",
+              data_path <- tempfile())
+nc_shp <- readRDS(data_path) %>%
+    select(vtd:vap, el14g_uss_r:geometry)
+```
+
+Under the new workflow, a redistricting analysis begins with a `redist_map`
+object, which defines the basic parameters of the redistricting problem. 
+The `redist_map()` constructor builds the precinct adjacency graph which is
+required for redistricting simulation, and stores relevant metadata, such as
+the desired population parity tolerance and a reference to the existing 
+districts. It also comes with helpful plotting functions.
+
+```{r message=F}
+nc = redist_map(nc_shp, existing_plan=cd_17, pop_tol=0.01)
+print(nc)
+plot(nc, el14g_uss_d/(el14g_uss_d+el14g_uss_r)) +
+    scale_fill_gradient2(midpoint=0.5)
+```
+
+Once we've created a `redist_map` object, we can simulate redistricting plans.
+
+```{r cache=T}
+plans = redist_smc(nc, 1000, counties=county, silent=TRUE) # 1000 plans
+print(plans)
+```
+
+The `plans` variable is a `redist_plans` object---a special container designed
+to make handling sets of redistricting plans painless. As the output above
+shows, `plans` contains the 1,000 samppled plans, plus the 2017 congressional
+districts.  We can plot a few of these plans.
+
+```{r nc-plans, layout="l-body-outset", fig.width=8}
+redist.plot.plans(plans, draws=c("cd_17", "1", "2", "3"), geom=nc)
+```
+
+A `redist_plans` object makes it easy to compute plan and district summary
+statistics.
+
+```{r}
+plans = plans %>%
+    mutate(comp = distr_compactness(nc),
+           dem_share = group_frac(nc, el14g_uss_d, el14g_uss_d + el14g_uss_r))
+print(plans)
+```
+
+From there, we can quickly generate informative plots. First we check the
+compactness of the generated plans, and see that they are significantly more 
+compact than the adopted 2017 plan.
+
+```{r nc-comp}
+hist(plans, comp) +
+    labs(x="Compactness score (higher is more compact)")
+```
+
+Next, we look at the partisan implications of the 2017 plan. We plot the
+two-party Democratic vote share in each district, with districts sorted by
+this quantity. Each dot on the plot below is a district from one simulated plan,
+and the red lines show the values for the 2017 plan.
+
+```{r nc-dem, layout="l-body-outset", fig.width=8}
+redist.plot.distr_qtys(plans, dem_share, size=0.1)
+```
+
+We see immediately that the 2017 plan packs Democratic voters into the three
+most Democratic districts, and cracks them in the remaining 10 districts,
+leading to a durable 10--3 Republican-Democratic seat split (in an election
+which Democrats captured 
+`r scales::percent(sum(nc$el14g_uss_d)/sum(nc$el14g_uss_d+nc$el14g_uss_r))`
+of the statewide two-party vote). A clear partisan gerrymander.
+
+### Studying districts 1, 2, and 4
+If we want to study a specific set of districts, we can quickly `filter()` to
+the relevant map area and re-run the analysis. The `redist_map()` object will
+handle all appropriate adjustments to the adjacency graph, number of districts,
+and population tolerance (as is visible below).
+
+```{r}
+nc_sub = filter(nc, cd_17 %in% c(1, 2, 4))
+print(nc_sub)
+plot(nc_sub)
+```
+
+On this subset, too, the adopted 2017 plan is a significant outlier.
+
+```{r nc-sub}
+plans_sub = redist_smc(nc_sub, 1000, counties=county, silent=T) %>%
+    mutate(dem_share = group_frac(nc_sub, el14g_uss_d, el14g_uss_d + el14g_uss_r))
+redist.plot.distr_qtys(plans_sub, dem_share, size=0.3)
+```
+
+## Old workflow
+
+In comparison, the old workflow required significantly more steps and manual
+processing. We start
+
+```{r}
+library(sf)
+
+adj = redist.adjacency(nc_shp)
+```
+
+To begin, we'll load the package and data. and create an adjacency graph
+
+
+
+

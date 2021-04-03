@@ -6,8 +6,40 @@ description: |
 
 # The Project
 
-![](assets/alarm_1200_tr.png)
+<img src="assets/alarm_1200_tr.png" alt="ALARM logo" 
+  style="width: 256px; float: right; margin: 8px;" />
+The ALARM Project is a research team at Harvard University led by 
+[Kosuke Imai](https://imai.fas.harvard.edu/).  It conducts research into
+redistricting sampling algorithms, best practices and workflows for
+redistricting analysis, and tools to visualize, explore, and understand
+redistricting plans.
+ALARM Project researchers develop [**redist**](https://alarm-redist.github.io/redist/), 
+an open-source R package for redistricting simulation and analysis which
+implements state-of-the-art MCMC and SMC redistricting sampling algorithms.  The
+package allows for the implementation of various constraints in the
+redistricting process such as geographic compactness and population parity
+requirements, and includes tools to compute various summary statistics and 
+create useful plots.
 
 # People
+* **Tahmid Ahmed**, Harvard College
+* **Ben Fifield**, American Civil Liberties Union
+* **Avi Gulati**, Harvard College
+* **Kosuke Imai**, Departments of Government and Statistics, Harvard University
+* **Christopher Kenny**, Department of Government, Harvard University
+* **Shiro Kuriwaki**, Department of Government, Harvard University
+* **Cory McCartan**, Department of Statistics, Harvard University
+* **Evan Rosenman**, Harvard Data Science Initiative
+* **Tyler Simko**, Department of Government, Harvard University
+* **Kevin Wang**, Harvard College
+* **Rei Yatsuhashi**
 
 # Publications
+
+- [Automated Redistricting Simulation Using Markov Chain Monte
+Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics*
+- [The Essential Role of Empirical Validation in Legislative Redistricting
+Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy*  Vol. 7, No. 1, pp. 52-68.
+- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting
+Plans](https://arxiv.org/pdf/2008.06131.pdf)
+

@@ -10,7 +10,11 @@ listing: posts
 </div>
 </div>
 
-The ALARM project ...
+The ALARM Project is a research team at Harvard University led by 
+[Kosuke Imai](https://imai.fas.harvard.edu/).  It conducts research into
+redistricting sampling algorithms, best practices and workflows for
+redistricting analysis, and tools to visualize, explore, and understand
+redistricting plans.
 
 <div class="package-box">
 <a href="https://alarm-redist.github.io/redist/">

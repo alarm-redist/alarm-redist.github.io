@@ -12,5 +12,16 @@
     </image>
     <generator>Distill</generator>
     <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>redist 3.0.0</title>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Christopher Kenny</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-04-02-redist-300</link>
+      <description>A major release brings new algorithms, new workflows, and significant 
+usability improvements.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-04-02-redist-300</guid>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-04-02-redist-300/redist-300_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
   </channel>
 </rss>
