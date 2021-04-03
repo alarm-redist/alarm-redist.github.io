@@ -4,4 +4,4 @@
 *.swp
 *.tmp
 *.bak
-content/**/*_cache/*
+_posts/**/*_cache/*
