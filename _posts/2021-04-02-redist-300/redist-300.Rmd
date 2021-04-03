@@ -53,7 +53,7 @@ along with [scoring functions](/redist/reference/scorers.html)
 - Plan comparison and classification in 
   [`compare_plans()`](/redist/reference/compare_plans.html) and 
   [`classify_plans()`](/redist/reference/classify_plans.html)
-- New p`iowa`](/redist/reference/iowa.html) dataset and cleaned-up package data
+- New [`iowa`](/redist/reference/iowa.html) dataset and cleaned-up package data
 
 To begin exploring the new features, check out the new 
 [Get Started](/redist/articles/redist.html) vignette.
