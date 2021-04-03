@@ -23,7 +23,6 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -129,7 +128,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["redist-300_files/anchor-4.2.2/anchor.min.js","redist-300_files/bowser-1.9.3/bowser.min.js","redist-300_files/distill-2.2.21/template.v2.js","redist-300_files/figure-html5/nc-comp-1.png","redist-300_files/figure-html5/nc-dem-1.png","redist-300_files/figure-html5/nc-plans-1.png","redist-300_files/figure-html5/nc-sub-1.png","redist-300_files/figure-html5/unnamed-chunk-10-1.png","redist-300_files/figure-html5/unnamed-chunk-15-1.png","redist-300_files/figure-html5/unnamed-chunk-2-1.png","redist-300_files/figure-html5/unnamed-chunk-5-1.png","redist-300_files/header-attrs-2.7/header-attrs.js","redist-300_files/jquery-1.11.3/jquery.min.js","redist-300_files/popper-2.6.0/popper.min.js","redist-300_files/tippy-6.2.7/tippy-bundle.umd.min.js","redist-300_files/tippy-6.2.7/tippy-light-border.css","redist-300_files/tippy-6.2.7/tippy.css","redist-300_files/tippy-6.2.7/tippy.umd.min.js","redist-300_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["redist-300_files/anchor-4.2.2/anchor.min.js","redist-300_files/bowser-1.9.3/bowser.min.js","redist-300_files/distill-2.2.21/template.v2.js","redist-300_files/figure-html5/nc-comp-1.png","redist-300_files/figure-html5/nc-dem-1.png","redist-300_files/figure-html5/nc-plans-1.png","redist-300_files/figure-html5/nc-sub-1.png","redist-300_files/figure-html5/unnamed-chunk-10-1.png","redist-300_files/figure-html5/unnamed-chunk-11-1.png","redist-300_files/figure-html5/unnamed-chunk-15-1.png","redist-300_files/figure-html5/unnamed-chunk-17-1.png","redist-300_files/figure-html5/unnamed-chunk-2-1.png","redist-300_files/figure-html5/unnamed-chunk-5-1.png","redist-300_files/header-attrs-2.7/header-attrs.js","redist-300_files/jquery-1.11.3/jquery.min.js","redist-300_files/popper-2.6.0/popper.min.js","redist-300_files/tippy-6.2.7/tippy-bundle.umd.min.js","redist-300_files/tippy-6.2.7/tippy-light-border.css","redist-300_files/tippy-6.2.7/tippy.css","redist-300_files/tippy-6.2.7/tippy.umd.min.js","redist-300_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2443,7 +2442,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"redist 3.0.0","description":"A major release brings new algorithms, new workflows, and significant \nusability improvements.","authors":[{"author":"Cory McCartan","authorURL":"https://corymccartan.github.io/","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Christopher Kenny","authorURL":"https://www.christophertkenny.com/","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-02T00:00:00.000-04:00","citationText":"McCartan & Kenny, 2021"}
+{"title":"redist 3.0.0","description":"A major release brings new algorithms, new workflows, and significant \nusability improvements.","authors":[{"author":"Cory McCartan","authorURL":"https://corymccartan.github.io/","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Christopher Kenny","authorURL":"https://www.christophertkenny.com/","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-02T00:00:00.000+00:00","citationText":"McCartan & Kenny, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2534,9 +2533,9 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 <pre><code>A redist_map object with 2692 units and 15 fields
-To be partitioned into 13 districts with population between 733,498.7 - 1.0% and 733,498.7 + 1.0%
+To be partitioned into 13 districts with population between 733,499 - 1.0% and 733,499 + 1.0%
 With geometry:
-    bbox:           xmin: 406819.6 ymin: 2696.2 xmax: 3070217 ymax: 1043629
+    bbox:           xmin: 406800 ymin: 2696 xmax: 3070000 ymax: 1044000
     projected CRS:  NAD83(HARN) / North Carolina (ftUS)
 # A tibble: 2,692 x 15
    vtd       county   pop   vap el14g_uss_r el14g_uss_d el14g_uss_l
@@ -2551,7 +2550,7 @@ With geometry:
  8 3700103N  37001   5712  4955        1063         853          53
  9 3700102   37001   4491  3483        1246         313          62
 10 3700106E  37001   3113  2371         423         432          42
-# ... with 2,682 more rows, and 8 more variables: el14g_uss_wi &lt;int&gt;,
+# … with 2,682 more rows, and 8 more variables: el14g_uss_wi &lt;int&gt;,
 #   el14g_uss_tot &lt;int&gt;, cd_13 &lt;int&gt;, cd_17 &lt;int&gt;, aland10 &lt;dbl&gt;,
 #   awater10 &lt;dbl&gt;, geometry &lt;MULTIPOLYGON [US_survey_foot]&gt;,
 #   adj &lt;list&gt;</code></pre>
@@ -2586,7 +2585,7 @@ Plans matrix: num [1:2692, 1:1001] 6 6 6 6 6 6 6 6 6 6 ...
  8 cd_17        8    734777
  9 cd_17        9    731507
 10 cd_17       10    736057
-# ... with 13,003 more rows</code></pre>
+# … with 13,003 more rows</code></pre>
 </div>
 <p>The <code>plans</code> variable is a <code>redist_plans</code> object—a special container designed to make handling sets of redistricting plans painless. As the output above shows, <code>plans</code> contains the 1,000 samppled plans, plus the 2017 congressional districts. We can plot a few of these plans.</p>
 <div class="layout-chunk" data-layout="l-body-outset">
@@ -2622,7 +2621,7 @@ Plans matrix: num [1:2692, 1:1001] 6 6 6 6 6 6 6 6 6 6 ...
  8 cd_17        8    734777 0.803     0.439
  9 cd_17        9    731507 0.803     0.440
 10 cd_17       10    736057 0.803     0.419
-# ... with 13,003 more rows</code></pre>
+# … with 13,003 more rows</code></pre>
 </div>
 <p>From there, we can quickly generate informative plots. First we check the compactness of the generated plans, and see that they are significantly more compact than the adopted 2017 plan.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2651,9 +2650,9 @@ Plans matrix: num [1:2692, 1:1001] 6 6 6 6 6 6 6 6 6 6 ...
 </code></pre>
 </div>
 <pre><code>A redist_map object with 571 units and 15 fields
-To be partitioned into 3 districts with population between 733,760.3 - 1.035301% and 733,760.3 + 0.9639859%
+To be partitioned into 3 districts with population between 733,760 - 1.035% and 733,760 + 0.964%
 With geometry:
-    bbox:           xmin: 1921644 ymin: 524882.4 xmax: 2784102 ymax: 1028248
+    bbox:           xmin: 1922000 ymin: 524900 xmax: 2784000 ymax: 1028000
     projected CRS:  NAD83(HARN) / North Carolina (ftUS)
 # A tibble: 571 x 15
    vtd     county   pop   vap el14g_uss_r el14g_uss_d el14g_uss_l
@@ -2668,7 +2667,7 @@ With geometry:
  8 37015SN 37015   1410  1025          63         327          11
  9 37015WH 37015   1554  1274         292         262          12
 10 37015WD 37015   1409  1050          35         319           5
-# ... with 561 more rows, and 8 more variables: el14g_uss_wi &lt;int&gt;,
+# … with 561 more rows, and 8 more variables: el14g_uss_wi &lt;int&gt;,
 #   el14g_uss_tot &lt;int&gt;, cd_13 &lt;int&gt;, cd_17 &lt;int&gt;, aland10 &lt;dbl&gt;,
 #   awater10 &lt;dbl&gt;, geometry &lt;MULTIPOLYGON [US_survey_foot]&gt;,
 #   adj &lt;list&gt;</code></pre>
@@ -2702,26 +2701,28 @@ With geometry:
 </code></pre>
 </div>
 </div>
-Once we’ve downloaded the data, we can start by building the adjacency graph.
+<p>Once we’ve downloaded the data, we can start by building the adjacency graph.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>adj</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.adjacency.html'>redist.adjacency</a></span><span class='op'>(</span><span class='va'>nc_shp</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-Time to first simulation was never really the issue, however each simulation required many inputs. <code>redist_map</code> objects keep track of the <code>adj</code>, <code>total_pop</code>, <code>ndists</code>, and <code>pop_tol</code> arguments, but in the older version, you had to specify each of these for every simulation. One of the quirky aspects of the older version was that <code>counties</code> needed to be a vector with values <code>1:n_counties</code>, meaning that you had to manually transform it to use it and that only worked if the counties were contiguous.
+<p>Time to first simulation was never really the issue, however each simulation required many inputs. <code>redist_map</code> objects keep track of the <code>adj</code>, <code>total_pop</code>, <code>ndists</code>, and <code>pop_tol</code> arguments, but in the older version, you had to specify each of these for every simulation. One of the quirky aspects of the older version was that <code>counties</code> needed to be a vector with values <code>1:n_counties</code>, meaning that you had to manually transform it to use it and that only worked if the counties were contiguous.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sims</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist_smc.html'>redist.smc</a></span><span class='op'>(</span>adj <span class='op'>=</span> <span class='va'>adj</span>, total_pop <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>pop</span>, ndists <span class='op'>=</span> <span class='fl'>13</span>, pop_tol <span class='op'>=</span> <span class='fl'>0.01</span>,
-                   counties <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>county</span>, <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>county</span><span class='op'>)</span><span class='op'>)</span>, nsims <span class='op'>=</span> <span class='fl'>1000</span>, 
-                   silent <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sims</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist_smc.html'>redist.smc</a></span><span class='op'>(</span>adj <span class='op'>=</span> <span class='va'>adj</span>, total_pop <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>pop</span>, ndists <span class='op'>=</span> <span class='fl'>13</span>, 
+                   pop_tol <span class='op'>=</span> <span class='fl'>0.01</span>, 
+                   counties <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>county</span>, <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>county</span><span class='op'>)</span><span class='op'>)</span>, 
+                   nsims <span class='op'>=</span> <span class='fl'>1000</span>, silent <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-Once you finished simulating, setting up plots was always a hassle, as you needed to plot both the distribution of simulations and then compute the same metric separately for the reference plan, in this case that’s the 2017 congressional districts.
+<p>Once you finished simulating, setting up plots was always a hassle, as you needed to plot both the distribution of simulations and then compute the same metric separately for the reference plan, in this case that’s the 2017 congressional districts.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='va'>sims</span><span class='op'>$</span><span class='va'>plans</span>, measure <span class='op'>=</span> <span class='st'>'DVS'</span>, rvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='va'>sims</span><span class='op'>$</span><span class='va'>plans</span>, measure <span class='op'>=</span> <span class='st'>'DVS'</span>,
+                          rvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
 
 <span class='va'>sorted</span> <span class='op'>&lt;-</span> <span class='va'>metrics</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>draw</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
@@ -2729,13 +2730,18 @@ Once you finished simulating, setting up plots was always a hassle, as you neede
   <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>13</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='va'>reference_metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>cd_17</span>, measure <span class='op'>=</span> <span class='st'>'DVS'</span>, rvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, dvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
+<span class='va'>reference_metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>cd_17</span>, 
+                                    measure <span class='op'>=</span> <span class='st'>'DVS'</span>, 
+                                    rvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, 
+                                    dvote <span class='op'>=</span> <span class='va'>nc_shp</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
 
-<span class='va'>sorted_reference</span> <span class='op'>&lt;-</span> <span class='va'>reference_metrics</span> <span class='op'>%&gt;%</span> <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>DVS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>13</span><span class='op'>)</span>
+<span class='va'>sorted_reference</span> <span class='op'>&lt;-</span> <span class='va'>reference_metrics</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>DVS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>13</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-And then to plot the standard stacked boxplots, you would need to add the reference plan manually to the rest.
+<p>And then to plot the standard stacked boxplots, you would need to add the reference plan manually to the rest.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sorted</span> <span class='op'>%&gt;%</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span>, y <span class='op'>=</span> <span class='va'>DVS</span>, group <span class='op'>=</span> <span class='va'>district</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
@@ -2743,16 +2749,17 @@ And then to plot the standard stacked boxplots, you would need to add the refere
   <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>'District, sorted by DVS'</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>geom_segment</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sorted_reference</span>, size <span class='op'>=</span> <span class='fl'>1</span>,
-               <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span> <span class='op'>-</span> <span class='fl'>0.35</span>, xend <span class='op'>=</span> <span class='va'>district</span> <span class='op'>+</span> <span class='fl'>0.35</span>, yend <span class='op'>=</span> <span class='va'>DVS</span>, color <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+               <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span> <span class='op'>-</span> <span class='fl'>0.35</span>, xend <span class='op'>=</span> <span class='va'>district</span> <span class='op'>+</span> <span class='fl'>0.35</span>, 
+                   yend <span class='op'>=</span> <span class='va'>DVS</span>, color <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>scale_color_manual</span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>''</span>, values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'red'</span> <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span>,
   labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'ref'</span><span class='op'>)</span>, guide <span class='op'>=</span> <span class='st'>'legend'</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="redist-300_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
+<p><img src="redist-300_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
 </div>
 <h3 id="studying-districts-1-2-and-4-1">Studying districts 1, 2, and 4</h3>
 <p>The steps between loading in data to your first simulation wasn’t terrible in the old version when you were working with the full map. However, when trying to work with subsets, it became messy.</p>
-First you needed to subset the shape and then rebuild a new adjacency graph that only had the remaining precincts.
+<p>First you needed to subset the shape and then rebuild a new adjacency graph that only had the remaining precincts.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sub</span> <span class='op'>&lt;-</span> <span class='va'>nc_shp</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>cd_17</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>4</span><span class='op'>)</span><span class='op'>)</span>
@@ -2760,7 +2767,7 @@ First you needed to subset the shape and then rebuild a new adjacency graph that
 </code></pre>
 </div>
 </div>
-Then, if your target on the full map was 1%, you had to compute the equivalent on the subset map, as a 1% population deviation on a subset is often larger once recombined with the full map.
+<p>Then, if your target on the full map was 1%, you had to compute the equivalent on the subset map, as a 1% population deviation on a subset is often larger once recombined with the full map.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pop_tol</span> <span class='op'>&lt;-</span> <span class='fl'>0.01</span>
@@ -2772,22 +2779,23 @@ Then, if your target on the full map was 1%, you had to compute the equivalent o
 <span class='va'>sub_pop_tol</span>
 </code></pre>
 </div>
-<pre><code>[1] 0.009639859</code></pre>
+<pre><code>[1] 0.00964</code></pre>
 </div>
-Now we can simulate again, but on the smaller map.
+<p>Now we can simulate again, but on the smaller map.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sims_sub</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist_smc.html'>redist.smc</a></span><span class='op'>(</span>adj <span class='op'>=</span> <span class='va'>sub_adj</span>, total_pop <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>pop</span>,
-                      nsims <span class='op'>=</span> <span class='fl'>1000</span>,  ndists <span class='op'>=</span> <span class='fl'>3</span>, counties <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>county</span>, <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>county</span><span class='op'>)</span><span class='op'>)</span>,
+                      nsims <span class='op'>=</span> <span class='fl'>1000</span>,  ndists <span class='op'>=</span> <span class='fl'>3</span>, 
+                      counties <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>county</span>, <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>county</span><span class='op'>)</span><span class='op'>)</span>,
                       pop_tol <span class='op'>=</span> <span class='va'>sub_pop_tol</span>, silent <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-As before, we have to compute metrics for both the reference plan and the simulated plans.
+<p>As before, we have to compute metrics for both the reference plan and the simulated plans.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sub_metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='va'>sims_sub</span><span class='op'>$</span><span class='va'>plans</span>, measure <span class='op'>=</span> <span class='st'>'DVS'</span>, 
-                          rvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
+                              rvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
 
 <span class='va'>sub_sorted</span> <span class='op'>&lt;-</span> <span class='va'>sub_metrics</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>draw</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
@@ -2795,15 +2803,19 @@ As before, we have to compute metrics for both the reference plan and the simula
   <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'>ungroup</span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='va'>sub_reference_metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>cd_17</span>, <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>cd_17</span><span class='op'>)</span><span class='op'>)</span>, 
-                                    measure <span class='op'>=</span> <span class='st'>'DVS'</span>, 
-                                    rvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, dvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
+<span class='va'>sub_reference_metrics</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://alarm-redist.github.io/redist/reference/redist.metrics.html'>redist.metrics</a></span><span class='op'>(</span>plans <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/match.html'>match</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>cd_17</span>, 
+                                                      <span class='fu'><a href='https://rdrr.io/r/base/unique.html'>unique</a></span><span class='op'>(</span><span class='va'>sub</span><span class='op'>$</span><span class='va'>cd_17</span><span class='op'>)</span><span class='op'>)</span>, 
+                                        measure <span class='op'>=</span> <span class='st'>'DVS'</span>, 
+                                        rvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_r</span>, 
+                                        dvote <span class='op'>=</span> <span class='va'>sub</span><span class='op'>$</span><span class='va'>el14g_uss_d</span><span class='op'>)</span>
 
-<span class='va'>sub_sorted_reference</span> <span class='op'>&lt;-</span> <span class='va'>sub_reference_metrics</span> <span class='op'>%&gt;%</span> <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>DVS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span>
+<span class='va'>sub_sorted_reference</span> <span class='op'>&lt;-</span> <span class='va'>sub_reference_metrics</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>arrange</span><span class='op'>(</span><span class='va'>DVS</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+    <span class='fu'>mutate</span><span class='op'>(</span>district <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-And finally, we can plot the metrics and manually add the reference points.
+<p>And finally, we can plot the metrics and manually add the reference points.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>sub_sorted</span> <span class='op'>%&gt;%</span> <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span>, y <span class='op'>=</span> <span class='va'>DVS</span>, group <span class='op'>=</span> <span class='va'>district</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
@@ -2811,12 +2823,13 @@ And finally, we can plot the metrics and manually add the reference points.
   <span class='fu'>theme_minimal</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>'District, sorted by DVS'</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>geom_segment</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>sub_sorted_reference</span>, size <span class='op'>=</span> <span class='fl'>1</span>,
-               <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span> <span class='op'>-</span> <span class='fl'>0.35</span>, xend <span class='op'>=</span> <span class='va'>district</span> <span class='op'>+</span> <span class='fl'>0.35</span>, yend <span class='op'>=</span> <span class='va'>DVS</span>, color <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+               <span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>district</span> <span class='op'>-</span> <span class='fl'>0.35</span>, xend <span class='op'>=</span> <span class='va'>district</span> <span class='op'>+</span> <span class='fl'>0.35</span>, 
+                   yend <span class='op'>=</span> <span class='va'>DVS</span>, color <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
   <span class='fu'>scale_color_manual</span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>''</span>, values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'red'</span> <span class='op'>=</span> <span class='st'>'red'</span><span class='op'>)</span>,
   labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'ref'</span><span class='op'>)</span>, guide <span class='op'>=</span> <span class='st'>'legend'</span><span class='op'>)</span>
 </code></pre>
 </div>
-<p><img src="redist-300_files/figure-html5/unnamed-chunk-15-1.png" width="624" /></p>
+<p><img src="redist-300_files/figure-html5/unnamed-chunk-17-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
@@ -2834,7 +2847,7 @@ And finally, we can plot the metrics and manually add the reference points.
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-  <p>Â© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
+  <p>© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
   <p>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
