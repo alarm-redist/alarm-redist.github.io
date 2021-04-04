@@ -26,7 +26,7 @@ The ALARM Project is excited to announce the release of
 with it new algorithms and major new workflow improvements, making redistricting
 analysis broadly accessible to data scientists everywhere.
 
-![](https://corymccartan.github.io/redist/reference/figures/map_photo.jpg)
+![](/redist/reference/figures/map_photo.jpg)
 
 # New Features
 This release includes far too many changes to list comprehensively.  Key
