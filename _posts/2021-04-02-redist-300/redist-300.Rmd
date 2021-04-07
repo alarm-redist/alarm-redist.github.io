@@ -1,5 +1,5 @@
 ---
-title: "redist 3.0.0"
+title: "redist 3.0"
 description: |
   A major release brings new algorithms, new workflows, and significant 
   usability improvements.
@@ -10,7 +10,7 @@ author:
   - name: Christopher Kenny
     affiliation: Department of Government, Harvard University 
     url: https://www.christophertkenny.com/
-date: April 2, 2021
+date: April 7, 2021
 output:
   distill::distill_article:
     self_contained: false
@@ -22,11 +22,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 The ALARM Project is excited to announce the release of 
-[**redist** 3.0.0](https://alarm-redist.github.io/redist/). This release brings
-with it new algorithms and major new workflow improvements, making redistricting
-analysis broadly accessible to data scientists everywhere.
+[**redist** 3.0](https://alarm-redist.github.io/redist/) on CRAN. This release
+brings with it new algorithms and major new workflow improvements, making
+redistricting analysis broadly accessible to data scientists everywhere.
 
 ![](/redist/reference/figures/map_photo.jpg)
+
+Install the new version with `install.packages("redist")`.
+
 
 # New Features
 This release includes far too many changes to list comprehensively.  Key
