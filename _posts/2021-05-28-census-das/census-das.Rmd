@@ -92,7 +92,7 @@ improving redistricting outcomes.  In particular, preserving the accuracy of
 populations at the voting tabulation district level would be critical.  The
 Bureau must avoid injecting noise that systematically undercounts certain racial
 and partisan groups in the privacy-protected data. Additional recommendations
-are given in the paper.
+are given in [the paper](Harvard-DAS-Evaluation.pdf).
 
 
 
