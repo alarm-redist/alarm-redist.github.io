@@ -44,7 +44,9 @@ for real-world purposes.  The ALARM project has conducted an extensive analysis
 into how the DAS-protected data affects redistricting and voting rights analyses,
 and has submitted these findings to the Census Bureau.
 
-**Read the report: *[The Impact of the U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis](Harvard-DAS-Evaluation.pdf)***
+**Read the report: *[The Impact of the U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis](https://arxiv.org/abs/2105.14197)***
+
+**Also see: [Answers to Frequently Asked Questions](https://alarm-redist.github.io/posts/2021-06-02-das-evaluation-faq/) Added on June 2, 2021.**
 
 ![A figure from the report, indicating partisan biases in the DAS-protected data.](ex_plot.png){width=100% .external}
 
