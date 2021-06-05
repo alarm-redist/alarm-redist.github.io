@@ -5,3 +5,4 @@
 *.tmp
 *.bak
 _posts/**/*_cache/*
+_posts/**/*_files/*
