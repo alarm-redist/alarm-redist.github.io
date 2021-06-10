@@ -1,5 +1,42 @@
 [
   {
+    "path": "posts/2021-06-09-dsep-decision-response/",
+    "title": "Reaction to the Census Bureau's Updated Parameters",
+    "description": "The Data Stewardship Executive Policy Committee announces a higher privacy \nloss budget and other changes to the Disclosure Avoidance System.",
+    "author": [
+      {
+        "name": "Christopher T. Kenny",
+        "url": {}
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": {}
+      },
+      {
+        "name": "Cory McCartan",
+        "url": {}
+      },
+      {
+        "name": "Evan Rosenman",
+        "url": {}
+      },
+      {
+        "name": "Tyler Simko",
+        "url": {}
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": {}
+      }
+    ],
+    "date": "2021-06-09",
+    "categories": [],
+    "contents": "\nOn June 9, The Census Bureau released information on their final parameters for the 2020 Census data release. We are grateful that they have incorporated some of the recommendations from our report to help build a better data product for redistricting.\nThe Bureau has made several welcome changes. They state that they have updated the post-processing component of the Disclosure Avoidance System (DAS) to address the undercounting bias in racially and ethnically diverse areas, which we reported in our analysis. As we recommended, the Bureau has also increased the privacy-loss budget, allocating the increase towards more accurate population and racial counts on geographies at the block group level and higher. We are hopeful that this targeted increase will help attenuate the DAS- induced population change at the voting district and precinct level.\nSome unresolved issues remain, however. The Bureau indicates that a new demonstration data product will not be released until September. Yet they plan to first release 2020 census redistricting data, which we expect states and localities to begin using immediately, by August 16, 2021.1 Given the timing, it is unclear how the evaluation of the new demonstration data will affect the upcoming redistricting process and related litigation.  The Bureau also states that there will be no direct increases in accuracy for block-level data, in order to protect privacy.  As this is a key aspect of ensuring the equality of vote and protecting the principle of One Person, One Vote, map drawers and analysts may have to adjust their interpretation of this long-standing principle.\nThe Bureau also announced that they plan to release the final version of the DAS code base.  This is an important step for transparency. However, the code alone does not allow analysts to evaluate the impacts of DAS on redistricting and properly account for the additional uncertainty due to the injected noise. We recommend the Bureau also release differentially private noisy population counts that have not been subject to the post-processing steps, as well as parameter values used for noise generation. Although scholarly communities have not fully resolved the issue of incorporating additional noise into redistricting simulation analysis, the availability of such information should facilitate future methodological development. In particular, it is of interest to examine whether or not the additional noise makes it more difficult to detect partisan and racial gerrymandering.\n\nCaliper, who makes the software Maptitude for Redistricting, has announced they will process the legacy format data, and two ALARM Project members have created an R package to process legacy data as well. These types of resources should allow people to immediately begin drawing maps.↩︎\n",
+    "preview": "posts/2021-06-09-dsep-decision-response/census_slide.jpg",
+    "last_modified": "2021-06-09T20:36:09-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-06-02-das-evaluation-faq/",
     "title": "FAQ: Impact of the Census Disclosure Avoidance System",
     "description": "Answers to common questions about our recently-released report \nevaluating the Census' Disclosure Avoidance System.",
