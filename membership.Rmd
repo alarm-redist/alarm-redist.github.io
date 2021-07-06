@@ -10,14 +10,14 @@ description: |
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
 * **Christopher Kenny**, Department of Government, Harvard University
 * **Shiro Kuriwaki**, Department of Government, Harvard University
-* **Sho Miyazaki**
+* **Sho Miyazaki**, Keio University
 * **Cory McCartan**, Department of Statistics, Harvard University
 * **Sneha Revanur**
 * **Evan Rosenman**, Harvard Data Science Initiative
 * **Tyler Simko**, Department of Government, Harvard University
 * **Sam Thau**, Harvard College
 * **Melissa Wu**
-* **Kento Yamada**
+* **Kento Yamada**, Harvard College
 * **Rei Yatsuhashi**, Harvard College
 
 # Project Alumni

@@ -27,7 +27,7 @@ create useful plots.
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
 * **Christopher Kenny**, Department of Government, Harvard University
 * **Shiro Kuriwaki**, Department of Government, Harvard University
-* **Sho Miyazaki**
+* **Sho Miyazaki**, Keio University
 * **Cory McCartan**, Department of Statistics, Harvard University
 * **Sneha Revanur**
 * **Evan Rosenman**, Harvard Data Science Initiative
