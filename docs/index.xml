@@ -11,7 +11,21 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Revised: Impact of the Census Disclosure Avoidance System</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact</link>
+      <description>We are releasing an updated version of our analysis of the U.S. Census'
+privacy protection system and its impacts on the redistricting process.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact</guid>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Reaction to the Census Bureau's Updated Parameters</title>
       <dc:creator>Christopher T. Kenny</dc:creator>
