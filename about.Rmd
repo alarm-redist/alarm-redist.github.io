@@ -26,7 +26,7 @@ create useful plots.
 * **Ben Fifield**, American Civil Liberties Union
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
 * **Christopher Kenny**, Department of Government, Harvard University
-* **Shiro Kuriwaki**, Department of Government, Harvard University
+* **Shiro Kuriwaki**, Department of Political Science, Stanford University
 * **Sho Miyazaki**, Keio University
 * **Cory McCartan**, Department of Statistics, Harvard University
 * **Sneha Revanur**
