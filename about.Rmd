@@ -34,7 +34,7 @@ create useful plots.
 * **Tyler Simko**, Department of Government, Harvard University
 * **Sam Thau**, Harvard College
 * **Melissa Wu**
-* **Kento Yamada**
+* **Kento Yamada**, Harvard College
 * **Rei Yatsuhashi**, Harvard College
 
 # Publications
