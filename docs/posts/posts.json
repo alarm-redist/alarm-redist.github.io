@@ -34,7 +34,7 @@
     "contents": "\nLast month, the ALARM Project released a report examining “The Impact U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis.” We thank everyone who provided us with feedback on this first version, which was written as a comment on the April 28, 2021 Demonstration Data. The Census Bureau has since updated the system parameters, and as such, we are releasing an updated version.\nRevised report: The Impact of the U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis\nNotably, we expand our study of bias related to racial heterogeneity to include four new states of interest: Alabama, Delaware, Utah, and Washington. We also expand our studies of partisan and racial effects in redistricting to include more cases and provide additional information on the ranges of possible outcomes. These changes come alongside a restructuring of the paper and several smaller edits to recognize additional work focused on the new DAS methodologies used this year by the Census Bureau.With this version, we are also releasing replication data and code, available on the Harvard Dataverse.\n\n\n\n",
     "preview": {},
     "last_modified": "2021-07-05T21:30:18-04:00",
-    "input_file": "revised-das-impact.knit.md"
+    "input_file": {}
   },
   {
     "path": "posts/2021-06-09-dsep-decision-response/",
