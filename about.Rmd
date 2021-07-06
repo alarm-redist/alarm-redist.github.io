@@ -24,15 +24,18 @@ create useful plots.
 # People
 * **Tahmid Ahmed**, Harvard College
 * **Ben Fifield**, American Civil Liberties Union
-* **Avi Gulati**, Harvard College
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
 * **Christopher Kenny**, Department of Government, Harvard University
 * **Shiro Kuriwaki**, Department of Government, Harvard University
+* **Sho Miyazaki**
 * **Cory McCartan**, Department of Statistics, Harvard University
+* **Sneha Revanur**
 * **Evan Rosenman**, Harvard Data Science Initiative
 * **Tyler Simko**, Department of Government, Harvard University
-* **Kevin Wang**, Harvard College
-* **Rei Yatsuhashi**
+* **Sam Thau**, Harvard College
+* **Melissa Wu**
+* **Kento Yamada**
+* **Rei Yatsuhashi**, Harvard College
 
 # Publications
 
@@ -43,4 +46,12 @@ Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Publi
 - [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting
 Plans](https://arxiv.org/pdf/2008.06131.pdf)
 - [The Impact of the U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis](https://arxiv.org/abs/2105.14197)
+
+# Related R Packages
+- [blockpop](https://corymccartan.github.io/blockpop/): Estimate Census Block Populations for 2020. McCartan (2021).
+- [geomander](https://christopherkenny.github.io/geomander/): Geographic Tools for Studying Gerrymandering. Kenny (2021).
+- [PL94171](https://corymccartan.github.io/PL94171/index.html): Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).
+- [ppmf](https://github.com/christopherkenny/ppmf): Read Census Privacy Protected Microdata Files. Kenny (2021).
+- [redist](https://alarm-redist.github.io/redist/): Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).
+- [wru](https://github.com/kosukeimai/wru): Who Are You? Bayesian Prediction of Racial Category Using Surname and Geolocation. Khanna and Imai (2021).
 

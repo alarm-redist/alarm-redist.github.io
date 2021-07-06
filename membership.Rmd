@@ -1,0 +1,29 @@
+---
+title: "ALARM Project Membership"
+description: |
+  Current membership and alumni of the ALARM Project.
+---
+
+# Current Membership
+* **Tahmid Ahmed**, Harvard College
+* **Ben Fifield**, American Civil Liberties Union
+* **Kosuke Imai**, Departments of Government and Statistics, Harvard University
+* **Christopher Kenny**, Department of Government, Harvard University
+* **Shiro Kuriwaki**, Department of Government, Harvard University
+* **Sho Miyazaki**
+* **Cory McCartan**, Department of Statistics, Harvard University
+* **Sneha Revanur**
+* **Evan Rosenman**, Harvard Data Science Initiative
+* **Tyler Simko**, Department of Government, Harvard University
+* **Sam Thau**, Harvard College
+* **Melissa Wu**
+* **Kento Yamada**
+* **Rei Yatsuhashi**, Harvard College
+
+# Project Alumni
+* **Avi Gulati**, Harvard College
+* **Kevin Wang**, Harvard College
+
+
+# Looking for more information?
+Send us an email at <alarm.redist@gmail.com>.
