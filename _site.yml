@@ -17,7 +17,7 @@ navbar:
         - text: About
           href: about.html
         - text: Members
-          href: members.html
+          href: membership.html
         - text: redist
           href: https://alarm-redist.github.io/redist/
         - icon: fab fa-github
