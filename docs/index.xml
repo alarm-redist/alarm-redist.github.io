@@ -11,7 +11,17 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>2020 Redistricting Data Files</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-08-10-census-2020</link>
+      <description>Census and election data joined together for use in redistricting
+and voting rights analysis.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-08-10-census-2020</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Revised: Impact of the Census Disclosure Avoidance System</title>
       <dc:creator>Christopher T. Kenny</dc:creator>
@@ -79,6 +89,7 @@ Bureau has made its data unsuitable for redistricting purposes.</description>
 usability improvements.</description>
       <guid>https://alarm-redist.github.io/posts/2021-04-02-redist-300</guid>
       <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-04-02-redist-300/redist-300_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
 </rss>

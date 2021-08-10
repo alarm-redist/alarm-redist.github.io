@@ -10,6 +10,24 @@ listing: posts
 </div>
 </div>
 
+<div class="package-box" style="background: #9ACABC">
+<a href="/posts/2021-08-10-census-2020/">
+<h2>2020 Redistricting Data Files</h2>
+</a>
+<p>
+Precinct-level demographic and election data from the 
+<a href="https://www.census.gov/2020census" target="_blank">2020 decennial census</a> 
+and the
+<a href="https://dataverse.harvard.edu/dataverse/electionscience">Voting and Election Science Team</a>
+which have been tidied and joined together using 2020 precinct boundaries.
+</p>
+<p>
+<a href="/posts/2021-08-10-census-2020/#getting-the-data">
+Access the data &raquo;
+</a>
+</p>
+</div>
+
 The Algorithm-Assisted Redistricting Methodology (ALARM) Project is a research
 team at Harvard University led by [Kosuke Imai](https://imai.fas.harvard.edu/).
 It conducts research into redistricting sampling algorithms, best practices and
@@ -33,4 +51,3 @@ Go to package home page &raquo;
 </a>
 </p>
 </div>
-
