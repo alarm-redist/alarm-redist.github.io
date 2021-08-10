@@ -28,6 +28,8 @@ HTML(readLines("state-svg-defs.svg"))
 ```
 
 
+![](graphic.png)
+
 The ALARM Project is glad to provide precinct-level demographic and election data
 from the [2020 decennial census](https://www.census.gov/2020census) and the
 [Voting and Election Science Team](https://dataverse.harvard.edu/dataverse/electionscience)

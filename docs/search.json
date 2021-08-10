@@ -13,7 +13,7 @@
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\nDeveloping methodology and tools to analyze legislative redistricting.\n\n\n\n\n\n\n2020 Redistricting Data Files\n\n\n\nPrecinct-level demographic and election data from the 2020 decennial census and the Voting and Election Science Team which have been tidied and joined together using 2020 precinct boundaries.\n\n\n Access the data » \n\n\nThe Algorithm-Assisted Redistricting Methodology (ALARM) Project is a research team at Harvard University led by Kosuke Imai. It conducts research into redistricting sampling algorithms, best practices and workflows for redistricting analysis, and tools to visualize, explore, and understand redistricting plans.\n\n\n\nredist: Simulation Methods for Legislative Redistricting\n\n\n\nEnables researchers to sample redistricting plans from a pre-specified target distribution using state-of-the-art algorithms. Implements a wide variety constraints in the redistricting process, such as geographic compactness and population parity requirements. Tools for analysis such as computation of various summary statistics and plotting functionality are also included.\n\n\n Go to package home page » \n\n\n\n\n\n",
-      "last_modified": "2021-08-09T18:47:36-04:00"
+      "last_modified": "2021-08-10T12:50:26-04:00"
     },
     {
       "path": "membership.html",

@@ -22,7 +22,7 @@ and the
 which have been tidied and joined together using 2020 precinct boundaries.
 </p>
 <p>
-<a href="/posts/2021-08-10-census-2020/#getting-the-data">
+<a href="/posts/2021-08-10-census-2020/">
 Access the data &raquo;
 </a>
 </p>
