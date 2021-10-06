@@ -11,7 +11,21 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Revised and published: The use of differential privacy for census data and its impact on redistricting</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</link>
+      <description>A new postscript analyzes the final version of the U.S. Census Bureau's Disclosure Avoidance System.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</guid>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://pbs.twimg.com/media/FA8fplwXsAMVffB?format=jpg&amp;name=large" medium="image" type="text/plain"/>
+    </item>
     <item>
       <title>2020 Redistricting Data Files</title>
       <dc:creator>Christopher T. Kenny</dc:creator>

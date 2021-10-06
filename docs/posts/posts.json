@@ -1,5 +1,42 @@
 [
   {
+    "path": "posts/2021-10-06-2021-10-06-das-published/",
+    "title": "Revised and published: The use of differential privacy for census data and its impact on redistricting",
+    "description": "A new postscript analyzes the final version of the U.S. Census Bureau's Disclosure Avoidance System.",
+    "author": [
+      {
+        "name": "Christopher T. Kenny",
+        "url": {}
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": {}
+      },
+      {
+        "name": "Cory McCartan",
+        "url": {}
+      },
+      {
+        "name": "Evan Rosenman",
+        "url": {}
+      },
+      {
+        "name": "Tyler Simko",
+        "url": {}
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": {}
+      }
+    ],
+    "date": "2021-10-07",
+    "categories": [],
+    "contents": "\nAt the end of May, the ALARM Project released a report examining “The Impact U.S. Census Disclosure Avoidance System on Redistricting and Voting Rights Analysis.” The Census Bureau has since updated the system parameters and released 2020 Census Data protected under this Disclosure Avoidance System.\nOur original report has been revised to include an analysis of the new system parameters, and appears today in the journal Science Advances.\nRead the paper: The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census\n\n\n\n",
+    "preview": "https://pbs.twimg.com/media/FA8fplwXsAMVffB?format=jpg&name=large",
+    "last_modified": "2021-10-06T14:16:05-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2021-08-10-census-2020/",
     "title": "2020 Redistricting Data Files",
     "description": "Census and election data joined together for use in redistricting\nand voting rights analysis.",
@@ -18,7 +55,7 @@
     "contents": "\n\nAKALARAZCACOCTDEFLGAHIIAIDILINKSKYLAMAMDMEMIMNMOMSMTNCNDNENHNJNMNVNYOHOKORPARISCSDTNTXUTVAVTWAWIWVWYDCUSA\n\n\nThe ALARM Project is glad to provide precinct-level demographic and election data from the 2020 decennial census and the Voting and Election Science Team which have been tidied and joined together using 2020 precinct boundaries. Where 2020 precinct boundaries are not available, Census block-level data is provided instead, and where no VEST data is available, only demographic information is provided. Code to generate the data from these sources is included; the entire workflow is open-source and reproducible.\nGetting the data\nDownload individual states’ data below, or download a ZIP of all the data here. Our repository also contains more detailed data, as well as code and instructions for programmatic downloading, adding shapefile geometries, and other use cases.\nPlease make sure to cite the Voting and Election Science Team and the U.S. Census Bureau. Consult the license for information on modifying and sharing the data and/or code.\n2020 state data\n\n\n\n\n \n\nAlabama\n \nVTDs\n\n \n\n \nal_2020_vtd.csv\n\n\n\n\n\n \n\nAlaska\n \nVTDs\n\n \n\n \nak_2020_vtd.csv\n\n\n\n\n\n \n\nArizona\n \nVTDs\n\n \n\n \naz_2020_vtd.csv\n\n\n\n\n\n \n\nArkansas\n \nVTDs\n\n \n\n \nar_2020_vtd.csv\n\n\n\n\n\n \n\nCalifornia\n \nCensus blocks\n\n \n\n \nca_2020_block.csv\n\n\n\n\n\n \n\nColorado\n \nVTDs\n\n \n\n \nco_2020_vtd.csv\n\n\n\n\n\n \n\nConnecticut\n \nVTDs\n\n \n\n \nct_2020_vtd.csv\n\n\n\n\n\n \n\nDelaware\n \nVTDs\n\n \n\n \nde_2020_vtd.csv\n\n\n\n\n\n \n\nDistrict of Columbia\n \nVTDs\n\n \n\n \ndc_2020_vtd.csv\n\n\n\n\n\n \n\nFlorida\n \nVTDs\n\n \n\n \nfl_2020_vtd.csv\n\n\n\n\n\n \n\nGeorgia\n \nVTDs\n\n \n\n \nga_2020_vtd.csv\n\n\n\n\n\n \n\nHawaii\n \nCensus blocks\n\n \n\n \nhi_2020_block.csv\n\n\n\n\n\n \n\nIdaho\n \nVTDs\n\n \n\n \nid_2020_vtd.csv\n\n\n\n\n\n \n\nIllinois\n \nVTDs\n\n \n\n \nil_2020_vtd.csv\n\n\n\n\n\n \n\nIndiana\n \nVTDs\n\n \n\n \nin_2020_vtd.csv\n\n\n\n\n\n \n\nIowa\n \nVTDs\n\n \n\n \nia_2020_vtd.csv\n\n\n\n\n\n \n\nKansas\n \nVTDs\n\n \n\n \nks_2020_vtd.csv\n\n\n\n\n\n \n\nKentucky\n \nVTDs\n\n \n\n \nky_2020_vtd.csv\n\n\n\n\n\n \n\nLouisiana\n \nVTDs\n\n \n\n \nla_2020_vtd.csv\n\n\n\n\n\n \n\nMaine\n \nVTDs\n\n \n\n \nme_2020_vtd.csv\n\n\n\n\n\n \n\nMaryland\n \nVTDs\n\n \n\n \nmd_2020_vtd.csv\n\n\n\n\n\n \n\nMassachusetts\n \nVTDs\n\n \n\n \nma_2020_vtd.csv\n\n\n\n\n\n \n\nMichigan\n \nVTDs\n\n \n\n \nmi_2020_vtd.csv\n\n\n\n\n\n \n\nMinnesota\n \nVTDs\n\n \n\n \nmn_2020_vtd.csv\n\n\n\n\n\n \n\nMississippi\n \nVTDs\n\n \n\n \nms_2020_vtd.csv\n\n\n\n\n\n \n\nMissouri\n \nVTDs\n\n \n\n \nmo_2020_vtd.csv\n\n\n\n\n\n \n\nMontana\n \nVTDs\n\n \n\n \nmt_2020_vtd.csv\n\n\n\n\n\n \n\nNebraska\n \nVTDs\n\n \n\n \nne_2020_vtd.csv\n\n\n\n\n\n \n\nNevada\n \nVTDs\n\n \n\n \nnv_2020_vtd.csv\n\n\n\n\n\n \n\nNew Hampshire\n \nVTDs\n\n \n\n \nnh_2020_vtd.csv\n\n\n\n\n\n \n\nNew Jersey\n \nVTDs\n\n \n\n \nnj_2020_vtd.csv\n\n\n\n\n\n \n\nNew Mexico\n \nVTDs\n\n \n\n \nnm_2020_vtd.csv\n\n\n\n\n\n \n\nNew York\n \nVTDs\n\n \n\n \nny_2020_vtd.csv\n\n\n\n\n\n \n\nNorth Carolina\n \nVTDs\n\n \n\n \nnc_2020_vtd.csv\n\n\n\n\n\n \n\nNorth Dakota\n \nVTDs\n\n \n\n \nnd_2020_vtd.csv\n\n\n\n\n\n \n\nOhio\n \nVTDs\n\n \n\n \noh_2020_vtd.csv\n\n\n\n\n\n \n\nOklahoma\n \nVTDs\n\n \n\n \nok_2020_vtd.csv\n\n\n\n\n\n \n\nOregon\n \nCensus blocks\n\n \n\n \nor_2020_block.csv\n\n\n\n\n\n \n\nPennsylvania\n \nVTDs\n\n \n\n \npa_2020_vtd.csv\n\n\n\n\n\n \n\nRhode Island\n \nVTDs\n\n \n\n \nri_2020_vtd.csv\n\n\n\n\n\n \n\nSouth Carolina\n \nVTDs\n\n \n\n \nsc_2020_vtd.csv\n\n\n\n\n\n \n\nSouth Dakota\n \nVTDs\n\n \n\n \nsd_2020_vtd.csv\n\n\n\n\n\n \n\nTennessee\n \nVTDs\n\n \n\n \ntn_2020_vtd.csv\n\n\n\n\n\n \n\nTexas\n \nVTDs\n\n \n\n \ntx_2020_vtd.csv\n\n\n\n\n\n \n\nUtah\n \nVTDs\n\n \n\n \nut_2020_vtd.csv\n\n\n\n\n\n \n\nVermont\n \nVTDs\n\n \n\n \nvt_2020_vtd.csv\n\n\n\n\n\n \n\nVirginia\n \nVTDs\n\n \n\n \nva_2020_vtd.csv\n\n\n\n\n\n \n\nWashington\n \nVTDs\n\n \n\n \nwa_2020_vtd.csv\n\n\n\n\n\n \n\nWest Virginia\n \nVTDs\n\n \n\n \nwv_2020_vtd.csv\n\n\n\n\n\n \n\nWisconsin\n \nVTDs\n\n \n\n \nwi_2020_vtd.csv\n\n\n\n\n\n \n\nWyoming\n \nVTDs\n\n \n\n \nwy_2020_vtd.csv\n\n\n\n\nUsing the data\nData Format\nEach data table contains several identification columns, a set of census-derived demographic columns, and a set of VEST-derived election columns.\nGEOID20 is the unique identifier for a precinct or Census block. The state and county of the precinct or block are also provided.\nCensus variables are prefixed with pop_ or vap_, depending on whether they are for the entire population or the voting-age population. Suffixes refer to racial and ethnic categories, as follows:\n_hisp: Hispanic or Latino (of any race)\n_white: White alone, not Hispanic or Latino\n_black: Black or African American alone, not Hispanic or Latino\n_aian: American Indian and Alaska Native alone, not Hispanic or Latino\n_asian: Asian alone, not Hispanic or Latino\n_nhpi: Native Hawaiian and Other Pacific Islander alone, not Hispanic or Latino\n_other: Some Other Race alone, not Hispanic or Latino\n_two: Population of two or more races, not Hispanic or Latino\n\nElection variables consist of average vote counts for Democratic and Republican candidates. The adv_## and arv_## columns report the average vote count in the ## election, across all statewide races contested by both parties. The ndv and nrv columns further average the vote counts across all available election years. For specific statewide races, you may download the files in vest-2020/ and join them to the data using the GEOID20 column.\nMore Tools\nFor redistricting and voting rights analysis, we recommend the redist package.\nFor pre-processing and tidying data for redistricting analysis, we recommend the geomander package.\nFor more custom tabulations of the 2020 census data, we recommend the PL94171 package.\nFor general-purpose census data processing, we recommend the censable package.\nFor alternate data unaffected by Census differential privacy, you may want to consider FCC block-level estimates, available using the blockpop package.\nTechnical notes\nTo produce election data using 2020 precinct boundaries, election results were projected down to the 2010 block level using voting-age population as weights. Results for 2020 blocks were then estimated using 2010 blocks and the land-use-based crosswalk files from VEST. Finally, 2020 blocks were aggregated to 2020 precincts using the Census’ 2020 block assignment files.\n\n\n\n",
     "preview": {},
     "last_modified": "2021-08-12T13:52:37-04:00",
-    "input_file": "census-2020.knit.md"
+    "input_file": {}
   },
   {
     "path": "posts/2021-07-05-revised-das-impact/",
