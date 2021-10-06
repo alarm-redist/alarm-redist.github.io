@@ -6,3 +6,4 @@
 *.bak
 _posts/**/*_cache/*
 _posts/**/*_files/*
+!_posts/**/*_files/figure-html5
