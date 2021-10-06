@@ -44,3 +44,5 @@ Our original report has been revised to include an analysis of the new system
 parameters, and appears today in the journal *Science Advances*.
 
 **Read the paper: [*The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census*](https://www.science.org/doi/10.1126/sciadv.abk3283)**
+
+![](Kenny_abk3283_Infographic.jpeg)
