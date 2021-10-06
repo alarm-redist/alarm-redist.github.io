@@ -8,8 +8,8 @@ author:
       location: Cambridge, MA
       email: christopherkenny@fas.harvard.edu
     - name: Shiro Kuriwaki
-      affiliation: Department of Government, Harvard University
-      location: Cambridge, MA
+      affiliation: Department of Political Science, Stanford University
+      location: Stanford, CA
       email: kuriwaki@g.harvard.edu
     - name: Cory McCartan
       affiliation: Department of Statistics, Harvard University
