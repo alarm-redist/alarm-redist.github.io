@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://alarm-redist.github.io/about.html</loc>
-    <lastmod>2021-10-06T14:05:19-04:00</lastmod>
+    <lastmod>2021-10-20T22:46:26-04:00</lastmod>
   </url>
   <url>
-    <loc>https://alarm-redist.github.io/applications.html</loc>
-    <lastmod>2021-10-06T14:04:54-04:00</lastmod>
+    <loc>https://alarm-redist.github.io/Applications.html</loc>
+    <lastmod>2021-10-20T22:46:26-04:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states.html</loc>
+    <lastmod>2021-10-21T01:02:38-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/</loc>
-    <lastmod>2021-08-10T12:50:24-04:00</lastmod>
+    <lastmod>2021-10-20T22:46:26-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/membership.html</loc>
-    <lastmod>2021-10-06T13:59:18-04:00</lastmod>
+    <lastmod>2021-09-17T22:33:12-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published/</loc>
-    <lastmod>2021-10-06T14:19:18-04:00</lastmod>
+    <lastmod>2021-10-20T22:46:26-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-08-10-census-2020/</loc>
-    <lastmod>2021-08-12T13:52:37-04:00</lastmod>
+    <lastmod>2021-10-20T22:46:26-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact/</loc>
-    <lastmod>2021-07-05T21:30:18-04:00</lastmod>
+    <lastmod>2021-07-05T22:03:37-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response/</loc>
-    <lastmod>2021-06-09T20:36:09-04:00</lastmod>
+    <lastmod>2021-07-05T19:51:58-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-06-02-das-evaluation-faq/</loc>
-    <lastmod>2021-06-02T21:58:53-04:00</lastmod>
+    <lastmod>2021-07-05T19:51:58-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-05-28-census-das/</loc>
-    <lastmod>2021-06-05T13:07:29-04:00</lastmod>
+    <lastmod>2021-07-05T19:51:58-04:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2021-04-02-redist-300/</loc>
-    <lastmod>2021-04-07T10:58:43-04:00</lastmod>
+    <lastmod>2021-07-05T19:51:58-04:00</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,47 @@
+---
+title: "Fifty States"
+description: |
+  Comprehensive project for creating simulated alternatives for all fifty states.
+---
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(tigris)
+library(tidyverse)
+library(ggiraph)
+
+usa <- states(year = 2020) %>%
+    filter(STUSPS %in% state.abb) %>%
+    shift_geometry()
+
+usa <- usa %>% mutate(link = 'https://alarm-redist.github.io/')
+
+files <- dataverse::dataset_files('doi:10.7910/DVN/SLCD3E')
+
+if (length(files) > 0) {
+    links <- purrr::map_dfr(files, function(x){
+        c(
+            STUSPS = toupper(stringr::str_sub(x[['label']], 1, 2)),
+            link = stringr::str_glue('https://dataverse.harvard.edu/file.xhtml?fileId={x$dataFile$id}')
+        )
+    }) %>% 
+        dplyr::filter(STUSPS %in% state.abb)
+    
+    usa %>% dplyr::rows_update(links, by = 'STUSPS')
+}
+
+p <- usa %>%
+    ggplot(aes(fill = link == 'https://alarm-redist.github.io/')) +
+    geom_sf_interactive(aes(onclick = paste0('window.open("', link , '")'))) +
+    theme_void() +
+    guides(fill = 'none') + 
+    wacolors::scale_fill_wa_d(which = c('ground', 'paintbrush'), palette = 'rainier')
+
+```
+
+This page largely links to the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E&version=DRAFT).
+
+```{r, echo = FALSE}
+girafe(ggobj = p, 
+       options = list(opts_hover(css = "fill:#CC7810;stroke:black;cursor:pointer;opacity:0.80",
+               reactive = TRUE)))
+```

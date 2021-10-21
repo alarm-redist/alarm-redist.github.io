@@ -16,6 +16,8 @@ navbar:
           href: index.html
         - text: About
           href: about.html
+        - text: Applications
+          href: Applications.html
         - text: redist
           href: https://alarm-redist.github.io/redist/
         - icon: fab fa-github

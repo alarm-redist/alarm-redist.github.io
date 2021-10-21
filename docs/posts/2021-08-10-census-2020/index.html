@@ -478,7 +478,7 @@ d-title {
 
 </style>
 
-<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
 <link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1885,7 +1885,10 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2453,7 +2456,7 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"2020 Redistricting Data Files","description":"Census and election data joined together for use in redistricting\nand voting rights analysis.","authors":[{"author":"Christopher T. Kenny","authorURL":"#","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Cory McCartan","authorURL":"#","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-10T00:00:00.000+00:00","citationText":"Kenny & McCartan, 2021"}
+{"title":"2020 Redistricting Data Files","description":"Census and election data joined together for use in redistricting\nand voting rights analysis.","authors":[{"author":"Christopher T. Kenny","authorURL":"#","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Cory McCartan","authorURL":"#","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-08-10T00:00:00.000-04:00","citationText":"Kenny & McCartan, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2470,6 +2473,7 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <div class="nav-right">
 <a href="../../index.html">Home</a>
 <a href="../../about.html">About</a>
+<a href="../../Applications.html">Applications</a>
 <a href="https://alarm-redist.github.io/redist/">redist</a>
 <a href="https://github.com/alarm-redist">
 <i class="fab fa-github" aria-hidden="true"></i>
@@ -3637,12 +3641,14 @@ VTDs
 }</pre>
 </div>
 <!--/radix_placeholder_appendices-->
-<!--radix_placeholder_navigation_after_body-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--radix_placeholder_navigation_after_body--><html><body>
 <div class="distill-site-nav distill-site-footer">
-  <p>© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
-  <p>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
+<p>Â© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
+<p>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
+</body></html>
 
 
 </body>
