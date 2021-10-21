@@ -4,7 +4,7 @@ description: |
   Comprehensive project for creating simulated alternatives for all fifty states.
 ---
 
-```{r, echo = FALSE, message=FALSE, warning=FALSE}
+```{r, echo = FALSE, message=FALSE, warning=FALSE, results='hide'}
 library(tigris)
 library(tidyverse)
 library(ggiraph)
@@ -29,6 +29,8 @@ if (length(files) > 0) {
     usa %>% dplyr::rows_update(links, by = 'STUSPS')
 }
 
+usa$link[usa$STUSPS == 'CO'] <- 'https://www.christophertkenny.com/alarm-redist.github.io/fifty-states/DS_cd_2020.html'
+
 p <- usa %>%
     ggplot(aes(fill = link == 'https://alarm-redist.github.io/')) +
     geom_sf_interactive(aes(onclick = paste0('window.open("', link , '")'))) +
@@ -38,10 +40,12 @@ p <- usa %>%
 
 ```
 
-This page largely links to the [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E&version=DRAFT).
+This page largely links to subpages, with one for each state 
 
 ```{r, echo = FALSE}
 girafe(ggobj = p, 
        options = list(opts_hover(css = "fill:#CC7810;stroke:black;cursor:pointer;opacity:0.80",
                reactive = TRUE)))
 ```
+
+All data will be hosted on the ALARM Project [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E&version=DRAFT).

@@ -169,8 +169,34 @@ pre code {
 
 
 <p>Demo page for congressional districts. Map of state goes here in place of this text.</p>
-<div id="legal-requirements" class="section level1">
-<h1>Legal Requirements</h1>
+<div id="redistricting-requirements" class="section level1">
+<h1>Redistricting requirements</h1>
+<p>In Colorado, districts must:</p>
+<ol style="list-style-type: decimal">
+<li>be contiguous</li>
+<li>have equal populations – Section 44.3 1(a)</li>
+<li>be geographically compact – Section 44.3 2(b)</li>
+<li>preserve county and municipality boundaries as much as possible – Section 44.3 2(a)</li>
+<li>preserve whole communities of interest – Section 44.3 2(a)</li>
+<li>maximize the number of politically competitive districts – Section 44.3 3(a)</li>
+<li>not be drawn protect incumbents</li>
+</ol>
+<div id="interpretation-of-requirements" class="section level3">
+<h3>Interpretation of requirements</h3>
+<p>We enforce a maximum population deviation of 0.5%.</p>
+</div>
+<div id="data-sources" class="section level2">
+<h2>Data Sources</h2>
+<p>Data for Colorado comes from the ALARM Project’s <a href="https://alarm-redist.github.io/posts/2021-08-10-census-2020/">2020 Redistricting Data Files</a>.</p>
+</div>
+<div id="pre-processing-notes" class="section level2">
+<h2>Pre-processing Notes</h2>
+<p>No manual pre-processing decisions were necessary.</p>
+</div>
+<div id="simulation-notes" class="section level2">
+<h2>Simulation Notes</h2>
+<p>We sample 5,000 districting plans for Colorado. A partisan competitiveness constraint was used.</p>
+</div>
 </div>
 <div id="summary-statistics" class="section level1">
 <h1>Summary Statistics</h1>
