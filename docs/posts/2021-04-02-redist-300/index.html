@@ -1881,10 +1881,7 @@ function init_distill() {
 
     // hoverable references
     $('span.citation[data-cites]').each(function() {
-      var refs = $(this).attr('data-cites').split(" ");
-      var refHtml = refs.map(function(ref) {
-        return "<p>" + $('#ref-' + ref).html() + "</p>";
-      }).join("\n");
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
       window.tippy(this, {
         allowHTML: true,
         content: refHtml,
@@ -2452,7 +2449,7 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"redist 3.0","description":"A major release brings new algorithms, new workflows, and significant \nusability improvements.","authors":[{"author":"Cory McCartan","authorURL":"https://corymccartan.github.io/","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Christopher Kenny","authorURL":"https://www.christophertkenny.com/","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-07T00:00:00.000-04:00","citationText":"McCartan & Kenny, 2021"}
+{"title":"redist 3.0","description":"A major release brings new algorithms, new workflows, and significant \nusability improvements.","authors":[{"author":"Cory McCartan","authorURL":"https://corymccartan.github.io/","affiliation":"Department of Statistics, Harvard University","affiliationURL":"#","orcidID":""},{"author":"Christopher Kenny","authorURL":"https://www.christophertkenny.com/","affiliation":"Department of Government, Harvard University","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-07T00:00:00.000+00:00","citationText":"McCartan & Kenny, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2857,14 +2854,12 @@ With geometry:
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<!--radix_placeholder_navigation_after_body--><html><body>
+<!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Â© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
-<p>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
+  <p>© Copyright 2021 the <a href="../../about.html">ALARM Project</a>.</p>
+  <p>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
 </div>
 <!--/radix_placeholder_navigation_after_body-->
-</body></html>
 
 
 </body>
