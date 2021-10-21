@@ -34,7 +34,7 @@ p <- usa %>%
     geom_sf_interactive(aes(onclick = paste0('window.open("', link , '")'))) +
     theme_void() +
     guides(fill = 'none') + 
-    wacolors::scale_fill_wa_d(which = c('ground', 'paintbrush'), palette = 'rainier')
+    wacolors::scale_fill_wa_d(which = c('paintbrush', 'ground'), palette = 'rainier')
 
 ```
 
