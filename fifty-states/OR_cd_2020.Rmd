@@ -1,9 +1,9 @@
 ---
-title: "STATE Congressional Districts"
+title: "Oregon Congressional Districts"
 description: |
-    "Simulation Analysis for Congressional Districts in ST"
+    "Simulation Analysis for Congressional Districts in OR"
 params:
-    analysis: 'ST_cd_2020'
+    analysis: 'OR_cd_2020'
 ---
 
     ```{r setup, include=FALSE}
