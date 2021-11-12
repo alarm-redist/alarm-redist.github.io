@@ -7,3 +7,10 @@
 _posts/**/*_cache/*
 _posts/**/*_files/*
 !_posts/**/*_files/figure-html5
+_fifty-states/**/*.html
+_fifty-states/**/*_files/
+*_cache
+docs/**/*.R
+docs/**/*.Rmd
+docs/**/*.csv
+docs/**/*.rds

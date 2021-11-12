@@ -20,6 +20,7 @@ output:
 citation: true
 slug: alarm2020census
 citation_url: https://github.com/alarm-redist/census-2020/
+preview: https://alarm-redist.github.io/posts/2021-08-10-census-2020/graphic.png
 ---
 
 ```{r echo=FALSE}

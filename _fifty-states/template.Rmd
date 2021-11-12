@@ -1,9 +1,12 @@
 ---
-title: "STATE Congressional Districts"
-description: |
-    "Simulation Analysis for Congressional Districts in ST"
+title: "`r paste0(params$state, ' Congressional Districts')`"
 params:
-    analysis: 'ST_cd_2020'
+    slug: IA_cd_2020
+    state: Iowa
+output:
+  distill::distill_article:
+    self_contained: false
+repository_url: https://github.com/alarm-redist/fifty-states/
 ---
 
     ```{r setup, include=FALSE}
@@ -45,7 +48,7 @@ file_names <- map_chr(files, \(x) x$label)
 tf <- fs::file_temp(ext = 'rds')
 get_file_by_name(filename = file_names[str_detect(file_names, 'map.rds') &
                                            str_detect(file_names,
-                                                      params$analysis)],
+                                                      params$slug)],
                  dataset = doi,
                  server = "dataverse.harvard.edu") %>%
     writeBin(con = tf)
@@ -54,7 +57,7 @@ map <- read_rds(tf)
 tf <- fs::file_temp(ext = 'rds')
 get_file_by_name(filename = file_names[str_detect(file_names, 'plans.rds') &
                                            str_detect(file_names,
-                                                      params$analysis)],
+                                                      params$slug)],
                  dataset = doi,
                  server = "dataverse.harvard.edu") %>%
     writeBin(con = tf)
@@ -63,7 +66,7 @@ plans <- read_rds(tf)
 tf <- fs::file_temp(ext = 'tab')
 get_file_by_name(filename = file_names[str_detect(file_names, 'stats.tab') &
                                            str_detect(file_names,
-                                                      params$analysis)],
+                                                      params$slug)],
                  dataset = doi,
                  server = "dataverse.harvard.edu") %>%
     writeBin(con = tf)
@@ -77,7 +80,7 @@ plans <- plans %>% mutate(dvs = group_frac(map, ndv, ndv + nrv))
 tf <- fs::file_temp(ext = 'html')
 get_file_by_name(filename = file_names[str_detect(file_names, 'doc.html') &
                                            str_detect(file_names,
-                                                      params$analysis)],
+                                                      params$slug)],
                  dataset = doi,
                  server = "dataverse.harvard.edu")  %>%
     writeBin(con = tf)

@@ -1,51 +1,66 @@
 ---
-title: "Fifty States"
+title: 50-State Redistricting Simulations
 description: |
-  Comprehensive project for creating simulated alternatives for all fifty states.
+  Comprehensive project to simulate alternative redistricting plans for all fifty states.
+date: November 11, 2021
+output:
+  distill::distill_article:
+    self_contained: false
+repository_url: https://github.com/alarm-redist/fifty-states/
+doi: "10.7910/DVN/SLCD3E"
+citation: true
 ---
 
-```{r, echo = FALSE, message=FALSE, warning=FALSE, results='hide'}
-library(tigris)
+Click on a state to learn more.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, layout="l-body-outset", cache=TRUE}
 library(tidyverse)
 library(ggiraph)
+library(sf)
+library(here)
 
-usa <- states(year = 2020) %>%
-    filter(STUSPS %in% state.abb) %>%
-    shift_geometry()
+states = Sys.glob(here("_fifty-states/*_cd_2020")) %>%
+    basename() %>%
+    str_sub(1, 2)
 
-usa <- usa %>% mutate(link = 'https://alarm-redist.github.io/')
+d_appor = read_csv(here("_fifty-states/apportionment.csv"), col_types="ci")
 
-files <- dataverse::dataset_files('doi:10.7910/DVN/SLCD3E')
+usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
+    st_set_crs(NA) %>%
+    rename(state=STATEAB, state_name=STATENAME) %>%
+    left_join(d_appor, by="state_name") %>%
+    mutate(available = state %in% states,
+           href = if_else(available, str_glue("fifty-states/{state}_cd_2020/"), "#"),
+           code = if_else(available, str_glue('window.open("{href}", "_blank")'), ""),
+           tooltip = str_glue("<b>{state_name}</b><br />{cds} district{if_else(cds > 1, 's', '')}"))
 
-if (length(files) > 0) {
-    links <- purrr::map_dfr(files, function(x){
-        c(
-            STUSPS = toupper(stringr::str_sub(x[['label']], 1, 2)),
-            link = stringr::str_glue('https://dataverse.harvard.edu/file.xhtml?fileId={x$dataFile$id}')
-        )
-    }) %>% 
-        dplyr::filter(STUSPS %in% state.abb)
-    
-    usa %>% dplyr::rows_update(links, by = 'STUSPS')
-}
-
-usa$link[usa$STUSPS == 'CO'] <- 'https://www.christophertkenny.com/alarm-redist.github.io/fifty-states/DS_cd_2020.html'
-
-p <- usa %>%
-    ggplot(aes(fill = link == 'https://alarm-redist.github.io/')) +
-    geom_sf_interactive(aes(onclick = paste0('window.open("', link , '")'))) +
+p = ggplot(usa, aes(fill=available)) +
+    geom_sf_interactive(aes(onclick=code, tooltip=tooltip), color=NA, size=0) +
+    geom_sf_text(aes(label=if_else(available, state, "")), 
+                 size=1.8, color="white", fontface="bold") +
+    scale_fill_manual(values=c(`TRUE`="#444444", `FALSE`="#aaaaaa"), 
+                      guide="none") +
     theme_void() +
-    guides(fill = 'none') + 
-    wacolors::scale_fill_wa_d(which = c('paintbrush', 'ground'), palette = 'rainier')
-
+    theme(plot.margin = margin(0, 0, 0, 0, "cm"))
+girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
+    opts_hover(css="cursor: pointer;
+                    opacity: 0.1"),
+    opts_tooltip(css="font-family: 'Arial'; 
+                 background: #fff8; 
+                 border-radius: 3px; 
+                 padding: 0.3em;
+                 backdrop-filter: blur(6px);",
+                 delay_mouseover=100,
+                 delay_mouseout=100),
+    opts_toolbar(saveaspng=FALSE)
+    ))
 ```
 
-This page largely links to subpages, with one for each state 
 
-```{r, echo = FALSE}
-girafe(ggobj = p, 
-       options = list(opts_hover(css = "fill:#CC7810;stroke:black;cursor:pointer;opacity:0.80",
-               reactive = TRUE)))
-```
+All data is available [on our  Dataverse](https://doi.org/10.7910/DVN/SLCD3E).
+Code is available [on GitHub](https://github.com/alarm-redist/fifty-states/).
 
-All data will be hosted on the ALARM Project [Harvard Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E&version=DRAFT).
+
+## Acknowledgments {.appendix}
+
+U.S. map, scaled to reflect Congressional representations, courtesy of <https://dkel.ec/map>.
