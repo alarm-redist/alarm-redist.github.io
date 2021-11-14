@@ -10,138 +10,126 @@ repository_url: https://github.com/alarm-redist/fifty-states/
 ---
 
     ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
 library(redist)
 library(tidyverse)
 library(scales)
 library(patchwork)
 library(dataverse)
+library(here)
 ggplot2::theme_set(ggplot2::theme_bw())
-doi <- '10.7910/DVN/SLCD3E'
+doi <- "10.7910/DVN/SLCD3E"
+
+source(here("_fifty-states/fifty-states.R"))
 ```
 
-```{r colors, include = FALSE, results = 'hide'}
-GOP_DEM <- c("#A0442C", "#B25D4C", "#C27568", "#D18E84", "#DFA8A0",
-             "#EBC2BC",  "#F6DCD9", "#F9F9F9", "#DAE2F4", "#BDCCEA",
-             "#9FB6DE", "#82A0D2", "#638BC6", "#3D77BB", "#0063B1")
-scale_fill_party_c <- function(name="Democratic share", midpoint=0.5, limits=0:1,
-                               labels=percent, oob=squish, ...) {
-    scale_fill_gradient2(name=name, ..., low = GOP_DEM[1], high = GOP_DEM[15],
-                         midpoint=midpoint, limits=limits, labels=labels, oob=oob)
-}
-scale_color_party_c <- function(name="Democratic share", midpoint=0.5, limits=0:1,
-                                labels=percent, oob=squish, ...) {
-    scale_color_gradient2(name=name, ..., low = GOP_DEM[1], high = GOP_DEM[15],
-                          midpoint=midpoint, limits=limits, labels=labels, oob=oob)
-}
+```{r data, include=FALSE}
+a = download_dataverse(params$slug)
 
-scale_color_party_d = function(...) {
-    scale_color_manual(..., values=c(GOP_DEM[2], GOP_DEM[14]),
-                       labels=c("Rep.", "Dem."))
-}
+n_ref = redist:::get_n_ref(a$plans)
+m = as.matrix(a$plans)
+N = ncol(m) - n_ref
+
+abbr = str_sub(params$slug, 1, 2)
+places = suppressMessages(tigris::places(abbr, cb=TRUE))
+
+# aspect ratio for plots
+bbox = sf::st_bbox(a$map)
+asp_st = diff(bbox[c(2, 4)]) / diff(bbox[c(1, 3)])
+knitr::opts_chunk$set(fig.asp = asp_st)
 ```
 
-```{r data, include = FALSE, results = 'hide'}
-files <- dataset_files(doi)
-file_names <- map_chr(files, \(x) x$label)
+```{r enacted-samples, layout="l-body-outset", fig.width=9}
+idxs = sample(N, 3, replace=FALSE)
+while (all(m[, idxs[1]] == m[, idxs[2]])) 
+    idxs[2] = sample(N, 1)
+while (all(m[, idxs[1]] == m[, idxs[3]]) || all(m[, idxs[2]] == m[, idxs[3]])) 
+    idxs[3] = sample(N, 1)
 
-tf <- fs::file_temp(ext = 'rds')
-get_file_by_name(filename = file_names[str_detect(file_names, 'map.rds') &
-                                           str_detect(file_names,
-                                                      params$slug)],
-                 dataset = doi,
-                 server = "dataverse.harvard.edu") %>%
-    writeBin(con = tf)
-map <- read_rds(tf)
-
-tf <- fs::file_temp(ext = 'rds')
-get_file_by_name(filename = file_names[str_detect(file_names, 'plans.rds') &
-                                           str_detect(file_names,
-                                                      params$slug)],
-                 dataset = doi,
-                 server = "dataverse.harvard.edu") %>%
-    writeBin(con = tf)
-plans <- read_rds(tf)
-
-tf <- fs::file_temp(ext = 'tab')
-get_file_by_name(filename = file_names[str_detect(file_names, 'stats.tab') &
-                                           str_detect(file_names,
-                                                      params$slug)],
-                 dataset = doi,
-                 server = "dataverse.harvard.edu") %>%
-    writeBin(con = tf)
-sum_stat <- read_csv(tf, show_col_types = FALSE) %>%
-    mutate(draw = factor(draw))
-
-plans <- plans %>% left_join(sum_stat, by = c("draw", "district"))
-
-plans <- plans %>% mutate(dvs = group_frac(map, ndv, ndv + nrv))
-
-tf <- fs::file_temp(ext = 'html')
-get_file_by_name(filename = file_names[str_detect(file_names, 'doc.html') &
-                                           str_detect(file_names,
-                                                      params$slug)],
-                 dataset = doi,
-                 server = "dataverse.harvard.edu")  %>%
-    writeBin(con = tf)
-htmls <- read_lines(tf)
-start <- which(startsWith(htmls, '<p>In '))[1]
-end <- which(htmls == '<h2 id="contents">Contents</h2>') - 1
-tf <- fs::file_temp(ext = 'html')
-write_lines(htmls[start:end], tf)
-```
-
-## Enacted Plan
-
-```{r enacted}
-redist.plot.plans(plans, 'cd', shp = map, qty = dvs) +
-    geom_sf(data = map %>% group_by(cd) %>%
-                summarize(geometry = sf::st_union(geometry)), fill = NA, lwd = 2) +
-    scale_fill_party_c() +
-    labs(title = '')
-```
-
-## Sample Simulated Plans
-
-```{r, warning=FALSE}
-redist.plot.plans(plans, sample(1:5000, 3), geom = map, qty = dvs) &
-    scale_fill_party_c() &
-    guides(fill = 'none')
-```
-
-## Expected Partisanship
-
-```{r}
-redist.plot.distr_qtys(plans, dvs, color_thresh = 0.5) +
-    scale_color_party_d()
-```
-
-## Partisan Bias
-
-```{r}
-{redist.plot.hist(plans, pbias) + labs(x = 'Partisan Bias')} +
-    {redist.plot.hist(plans, egap)  + labs(x = 'Efficiency Gap')}
+p1 = plot_cds(a$map, m[, idxs[1]], county, abbr, "dem") + labs(title="Sample plan 1")
+p2 = plot_cds(a$map, m[, idxs[2]], county, abbr, "dem") + labs(title="Sample plan 2")
+p3 = plot_cds(a$map, m[, idxs[3]], county, abbr, "dem") + labs(title="Sample plan 3")
+p4 = plot_cds(a$map, get_existing(a$map), county, abbr, "dem") + 
+    labs(title=~underline(Enacted~plan))
+p1 + p2 + p3 + p4 + plot_layout(guides="collect")
 ```
 
 
-## Compactness
+## Partisan Features
 
-```{r}
-redist.plot.distr_qtys(plans, comp_polsby, geom = 'boxplot') +
-    labs(y = "Polsby Popper",
-         x = 'Ordered District, by Polsby Popper')
+```{r seats}
+redist.plot.hist(a$plans, e_dem, breaks=seq(0, attr(a$map, "ndists"), 0.25)) +
+    labs(x="Average number of Democratic seats") +
+    guides(color="none")
 ```
 
-## Simulation Notes
-
-````{=html}
-```{r, echo=FALSE, results='asis'}
-xfun::file_string(tf)
+```{r distr-dem}
+redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05) +
+    geom_hline(yintercept=0.5, color="#00000055", size=0.5) +
+    scale_y_continuous("Two-party vote margin", labels=lbl_party) +
+    labs(x="Districts, numbered by vote margin") +
+    scale_color_party_d(guide="none") +
+    guides(lty="none")
 ```
-````
+
+
+## Gerrymandering metrics
+
+```{r pbias-egap}
+p_pbias = redist.plot.hist(a$plans, pbias) + 
+    geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
+    labs(x = "Partisan Bias") +
+    guides(color = "none")
+p_egap = redist.plot.hist(a$plans, egap) + 
+    geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
+    labs(x = "Efficiency Gap") +
+    guides(color = "none")
+p_pbias + p_egap
+```
+
+## Traditional redistricting criteria
+
+```{r trad-criteria}
+p_comp = group_by(a$plans, draw) %>%
+    summarize(comp = mean(comp_polsby)) %>%
+    redist.plot.hist(comp) +
+    labs(x = "Compactness (larger is more compact)") +
+    guides(color = "none")
+p_spl = redist.plot.hist(a$plans, county_splits) + 
+    labs(x = "Counties split") +
+    guides(color = "none")
+p_comp + p_spl
+```
+
+## Geography
+
+```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st}
+geom_state = summarize(a$map, is_coverage=TRUE)
+p_party = plot(as_redist_map(a$map), ndv/(ndv+nrv)) +
+    geom_sf(data=places, inherit.aes=FALSE, fill="#00000033", color=NA) +
+    geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
+    scale_fill_party_c("Two-party vote margin", limits=c(0.1, 0.9)) +
+    theme(legend.key.width=unit(1, "cm"))
+p_race = plot(as_redist_map(a$map), vap_white/vap) +
+    geom_sf(data=places, inherit.aes=FALSE, fill="#00000033", color=NA) +
+    geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
+    scale_fill_steps("Pct. white", high="#344669", low="#ffffff", 
+                     limits=c(0.25, 1), oob=squish, labels=\(x) percent(x, 1)) +
+    theme(legend.key.width=unit(1, "cm"))
+p_party + p_race
+```
+
+## More information
+[Download the data for `r params$state` here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E).
+
+### Redistricting requirements
+
+```{r reqs, results='asis'}
+docstr = as.character(a$doc)
+idx1 = str_locate(docstr, "requirements</h2>")[1, 2]
+idx2 = str_locate(docstr, "<h3 id=\"interpretation")[1, 1]
+str_sub(docstr, idx1+2L, idx2-1L) %>% cat()
+```
 
 
 
-# Download the Data
-
-[Download](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E)
