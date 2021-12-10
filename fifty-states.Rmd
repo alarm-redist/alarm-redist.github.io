@@ -33,11 +33,13 @@ div.girafe { margin-bottom: 0; }
 [More information about the project]. 
 Click on a state to learn more.
 
-```{r map, layout="l-body-outset", cache=TRUE}
+```{r include=F}
 states = Sys.glob(here("_fifty-states/*_cd_2020")) %>%
     basename() %>%
     str_sub(1, 2)
+```
 
+```{r map, layout="l-body-outset", cache=TRUE, cache.extra=states}
 d_appor = read_csv(here("_fifty-states/apportionment.csv"), col_types="cii")
 
 usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
@@ -49,12 +51,12 @@ usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
            geometry = (geometry - centroid)*factor + centroid) %>%
     mutate(available = state %in% states,
            href = if_else(available, str_glue("fifty-states/{state}_cd_2020/"), "#"),
-           code = if_else(available, str_glue('window.open("{href}", "_blank")'), ""),
+           code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
            tooltip = str_glue("<b>{state_name}</b><br />{cds} district{if_else(cds > 1, 's', '')}"))
 
 p = ggplot(usa, aes(fill=available, data_id=state)) +
     geom_sf_interactive(aes(onclick=code, tooltip=tooltip), color=NA, size=0.0) +
-    geom_sf_text(aes(label=if_else(available, state, "")), 
+    geom_sf_text(aes(label=if_else(available, state, ""), geometry=centroid), 
                  size=2.5, color="white", fontface="bold", ) +
     scale_fill_manual(values=c(`TRUE`="#925637", `FALSE`="#333333"), 
                       guide="none") +
@@ -79,6 +81,7 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
 ```{r links, results="asis"}
 cat('<div class="state-links">')
 filter(usa, available) %>%
+    arrange(state_name) %>%
     mutate(html = str_glue('<p><a href="{href}">{state_name}</a></p>')) %>%
     pull() %>%
     cat(collapse="\n")
@@ -88,7 +91,7 @@ cat('</div><br />\n\n')
 
 <center>
 
-**Download the data: *[ALARM Dataverse](https://doi.org/10.7910/DVN/SLCD3E)* &raquo;**
+**Download the data: *[ALARM Project Dataverse](https://doi.org/10.7910/DVN/SLCD3E)* &raquo;**
 
 </center>
 

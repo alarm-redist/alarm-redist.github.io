@@ -1,9 +1,20 @@
+library(redist)
+library(tidyverse)
+library(sf)
+library(scales)
+library(patchwork)
+library(dataverse)
+
+doi <- "10.7910/DVN/SLCD3E"
+
 PAL_COAST = c("#7BAEA0", "#386276", "#3A4332", "#7A7D6F", "#D9B96E", "#BED4F0")
 PAL_LARCH = c("#D2A554", "#626B5D", "#8C8F9E", "#858753", "#A4BADF", "#D3BEAF")
 PAL = PAL_COAST[c(5, 1, 2, 4, 3, 6)]
 GOP_DEM <- c("#A0442C", "#B25D4C", "#C27568", "#D18E84", "#DFA8A0",
              "#EBC2BC",  "#F6DCD9", "#F9F9F9", "#DAE2F4", "#BDCCEA",
              "#9FB6DE", "#82A0D2", "#638BC6", "#3D77BB", "#0063B1")
+
+ggplot2::theme_set(ggplot2::theme_bw())
 
 lbl_party = function(x) {
     if_else(x == 0.5, "Even",

@@ -10,16 +10,8 @@ repository_url: https://github.com/alarm-redist/fifty-states/
 ---
 
     ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
-library(redist)
-library(tidyverse)
-library(scales)
-library(patchwork)
-library(dataverse)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dev="svglite")
 library(here)
-ggplot2::theme_set(ggplot2::theme_bw())
-doi <- "10.7910/DVN/SLCD3E"
-
 source(here("_fifty-states/fifty-states.R"))
 ```
 
@@ -29,6 +21,7 @@ a = download_dataverse(params$slug)
 n_ref = redist:::get_n_ref(a$plans)
 m = as.matrix(a$plans)
 N = ncol(m) - n_ref
+n_dists = attr(a$map, "ndists")
 
 abbr = str_sub(params$slug, 1, 2)
 places = suppressMessages(tigris::places(abbr, cb=TRUE))
@@ -39,7 +32,8 @@ asp_st = diff(bbox[c(2, 4)]) / diff(bbox[c(1, 3)])
 knitr::opts_chunk$set(fig.asp = asp_st)
 ```
 
-```{r enacted-samples, layout="l-body-outset", fig.width=9}
+```{r enacted-samples, layout="l-body-outset", fig.width=9, dev = "ragg_png"}
+set.seed(5118)
 idxs = sample(N, 3, replace=FALSE)
 while (all(m[, idxs[1]] == m[, idxs[2]])) 
     idxs[2] = sample(N, 1)
@@ -57,17 +51,27 @@ p1 + p2 + p3 + p4 + plot_layout(guides="collect")
 
 ## Partisan Features
 
-```{r seats}
-redist.plot.hist(a$plans, e_dem, breaks=seq(0, attr(a$map, "ndists"), 0.25)) +
+```{r seats, fig.asp=0.55}
+prop_seats = n_dists * sum(a$map$ndv)/sum(a$map$ndv + a$map$nrv)
+redist.plot.hist(a$plans, e_dem, breaks=seq(0, n_dists, 1/7), 
+                 fill="#777777", color="#777777") +
+    geom_vline(xintercept=prop_seats, color="#00000055", size=0.8) +
     labs(x="Average number of Democratic seats") +
+    annotate("text", x=n_dists, y=0, label=str_glue("{n_dists} total districts"),
+             angle=90, hjust=-0.1, size=3) +
+    annotate("text", x=a$plans$e_dem[1], y=Inf, label="Enacted plan", 
+             angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
+    annotate("text", x=prop_seats, y=Inf, label=str_glue("Proportional share"),
+             angle=90, hjust=2.2, vjust=-0.5, size=3) +
     guides(color="none")
 ```
 
-```{r distr-dem}
-redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05) +
+```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
+set.seed(5118)
+redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05, alpha=0.5) +
     geom_hline(yintercept=0.5, color="#00000055", size=0.5) +
     scale_y_continuous("Two-party vote margin", labels=lbl_party) +
-    labs(x="Districts, numbered by vote margin") +
+    labs(x="Simulated districts, ordered by Democratic vote margin") +
     scale_color_party_d(guide="none") +
     guides(lty="none")
 ```
@@ -75,35 +79,46 @@ redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05) +
 
 ## Gerrymandering metrics
 
-```{r pbias-egap}
-p_pbias = redist.plot.hist(a$plans, pbias) + 
+```{r pbias-egap, fig.asp=0.6}
+p_pbias = redist.plot.hist(a$plans, pbias, bins=24, 
+                 fill="#777777", color="#777777") + 
     geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
-    labs(x = "Partisan Bias") +
+    labs(x = "Partisan bias") +
+    annotate("text", x=a$plans$pbias[1], y=Inf, label="Enacted plan", 
+             angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
-p_egap = redist.plot.hist(a$plans, egap) + 
+p_egap = redist.plot.hist(a$plans, egap, bins=32, 
+                 fill="#777777", color="#777777") + 
     geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
-    labs(x = "Efficiency Gap") +
+    labs(x = "Efficiency gap") +
+    annotate("text", x=a$plans$egap[1], y=Inf, label="Enacted plan", 
+             angle=90, hjust=1.1, vjust=-0.5) +
     guides(color = "none")
 p_pbias + p_egap
 ```
 
 ## Traditional redistricting criteria
 
-```{r trad-criteria}
+```{r trad-criteria, fig.asp=0.6}
 p_comp = group_by(a$plans, draw) %>%
     summarize(comp = mean(comp_polsby)) %>%
-    redist.plot.hist(comp) +
+    redist.plot.hist(comp, bins=64, fill="#777777", color="#777777") +
     labs(x = "Compactness (larger is more compact)") +
+    annotate("text", x=mean(a$plans$comp_polsby[1:n_dists]), y=Inf, 
+             label="Enacted plan", angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
-p_spl = redist.plot.hist(a$plans, county_splits) + 
+p_spl = redist.plot.hist(a$plans, county_splits, 
+                 fill="#777777", color="#777777") + 
     labs(x = "Counties split") +
+    annotate("text", x=a$plans$county_splits[1], y=Inf, label="Enacted plan", 
+             angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
 p_comp + p_spl
 ```
 
 ## Geography
 
-```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st}
+```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st, dev = "ragg_png"}
 geom_state = summarize(a$map, is_coverage=TRUE)
 p_party = plot(as_redist_map(a$map), ndv/(ndv+nrv)) +
     geom_sf(data=places, inherit.aes=FALSE, fill="#00000033", color=NA) +
@@ -111,10 +126,10 @@ p_party = plot(as_redist_map(a$map), ndv/(ndv+nrv)) +
     scale_fill_party_c("Two-party vote margin", limits=c(0.1, 0.9)) +
     theme(legend.key.width=unit(1, "cm"))
 p_race = plot(as_redist_map(a$map), vap_white/vap) +
-    geom_sf(data=places, inherit.aes=FALSE, fill="#00000033", color=NA) +
     geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
     scale_fill_steps("Pct. white", high="#344669", low="#ffffff", 
-                     limits=c(0.25, 1), oob=squish, labels=\(x) percent(x, 1)) +
+                     limits=c(0.2, 1), breaks=c(0.2, 0.35, 0.5, 0.65, 0.8, 1),
+                     oob=squish, labels=\(x) percent(x, 1)) +
     theme(legend.key.width=unit(1, "cm"))
 p_party + p_race
 ```
