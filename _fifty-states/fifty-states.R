@@ -143,7 +143,8 @@ download_dataverse = function(slug) {
 }
 
 
-render_state_page = function(slugs) {
+render_state_page = function(states) {
+    slugs = paste0(states, "_cd_2020")
     walk(slugs, function(slug) {
         state_name = state.name[state.abb == substr(slug, 1, 2)]
         dir.create(here("_fifty-states", slug), showWarnings=FALSE)
