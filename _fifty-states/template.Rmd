@@ -85,7 +85,7 @@ redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05, alpha=0.5)
 p_pbias = redist.plot.hist(a$plans, pbias, bins=24, 
                  fill="#777777", color="#777777") + 
     geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
-    labs(x = "Partisan bias") +
+    labs(x = "Partisan bias (Deviation from Partisan Symmetry)") +
     annotate("text", x=a$plans$pbias[1], y=Inf, label="Enacted plan", 
              angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
@@ -105,7 +105,7 @@ p_pbias + p_egap
 p_comp = group_by(a$plans, draw) %>%
     summarize(comp = mean(comp_polsby)) %>%
     redist.plot.hist(comp, bins=64, fill="#777777", color="#777777") +
-    labs(x = "Compactness (larger is more compact)") +
+    labs(x = "Average Polsby Popper (larger is more compact)") +
     annotate("text", x=mean(a$plans$comp_polsby[1:n_dists]), y=Inf, 
              label="Enacted plan", angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
@@ -118,7 +118,7 @@ p_spl = redist.plot.hist(a$plans, county_splits,
 p_comp + p_spl
 ```
 
-## Geography
+## Political Geography
 
 ```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st, dev = "ragg_png"}
 geom_state = summarize(a$map, is_coverage=TRUE)
