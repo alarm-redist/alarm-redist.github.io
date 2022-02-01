@@ -32,7 +32,11 @@ asp_st = diff(bbox[c(2, 4)]) / diff(bbox[c(1, 3)])
 knitr::opts_chunk$set(fig.asp = asp_st)
 ```
 
-```{r enacted-samples, layout="l-body-outset", fig.width=9, dev = "ragg_png"}
+`r params$state` has `r n_dists` congressional districts.
+We've generated `r comma(N)` sets of simulated districts according to [the relevant criteria](#redistricting-requirements).
+Three of these districts are shown here, along with the actual enacted plan.
+
+```{r enacted-samples, layout="l-body-outset", fig.width=9, dev="ragg_png"}
 set.seed(5118)
 idxs = sample(N, 3, replace=FALSE)
 while (all(m[, idxs[1]] == m[, idxs[2]])) 
@@ -40,19 +44,30 @@ while (all(m[, idxs[1]] == m[, idxs[2]]))
 while (all(m[, idxs[1]] == m[, idxs[3]]) || all(m[, idxs[2]] == m[, idxs[3]])) 
     idxs[3] = sample(N, 1)
 
-p1 = plot_cds(a$map, m[, idxs[1]], county, abbr, "dem") + labs(title="Sample plan 1")
-p2 = plot_cds(a$map, m[, idxs[2]], county, abbr, "dem") + labs(title="Sample plan 2")
-p3 = plot_cds(a$map, m[, idxs[3]], county, abbr, "dem") + labs(title="Sample plan 3")
-p4 = plot_cds(a$map, get_existing(a$map), county, abbr, "dem") + 
-    labs(title=~underline(Enacted~plan))
+p1 = plot_cds(a$map, get_existing(a$map), county, abbr, "dem") + 
+    labs(title=~underline(Enacted~plan)) +
+    theme(plot.background=element_rect(fill="#f0f0f0", color="white"))
+p2 = plot_cds(a$map, m[, idxs[1]], county, abbr, "dem") + 
+    labs(title="Sample plan 1") +
+    theme(plot.margin=unit(c(0, 0, 0, 0.1), "cm"))
+p3 = plot_cds(a$map, m[, idxs[2]], county, abbr, "dem") + labs(title="Sample plan 2")
+p4 = plot_cds(a$map, m[, idxs[3]], county, abbr, "dem") + labs(title="Sample plan 3")
 p1 + p2 + p3 + p4 + plot_layout(guides="collect")
 ```
 
 
 ## Partisan Features
 
+```{r}
+prop_votes = sum(a$map$ndv)/sum(a$map$ndv + a$map$nrv)
+prop_seats = n_dists * prop_votes
+e_dem_samp = subset_sampled(a$plans)$e_dem
+```
+
+In `r params$state`, Democrats win about `r percent(prop_votes)` of the vote in a typical statewide election.
+Proportionally, that would translate to `r number(prop_seats, 0.1)` Democratic seats out of `r n_dists` total.
+
 ```{r seats, fig.asp=0.55}
-prop_seats = n_dists * sum(a$map$ndv)/sum(a$map$ndv + a$map$nrv)
 redist.plot.hist(a$plans, e_dem, breaks=seq(0, n_dists, 1/7), 
                  fill="#777777", color="#777777") +
     geom_vline(xintercept=prop_seats, color="#00000055", size=0.8) +
@@ -66,6 +81,16 @@ redist.plot.hist(a$plans, e_dem, breaks=seq(0, n_dists, 1/7),
     guides(color="none")
 ```
 
+<aside>
+[Learn more about this graph](../about/#plots-exp-seats)
+</aside>
+
+But proportionality isn't guaranteed, even in a fair redistricting process.
+In our simulated plans, Democrats won anywhere from `r number(quantile(e_dem_samp, 0.01), 0.1)` to `r number(quantile(e_dem_samp, 0.99), 0.1)` seats on average, with `r number(median(e_dem_samp), 0.1)` being the most typical.
+In contrast, **we expect the enacted plan to yield `r number(a$plans$e_dem[1], 0.1)` Democratic seats on average, which is `r qile_english(a$plans$e_dem[1], e_dem_samp)` simulated plans.**
+
+The graph below breaks this down in detail, showing how each district of the enacted plan compares to the set of simulated districts.
+
 ```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
 set.seed(5118)
 redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05, alpha=0.5) +
@@ -78,32 +103,71 @@ redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05, alpha=0.5)
     guides(lty="none")
 ```
 
+<aside>
+[Learn more about this graph](../about/#plots-districts)
+</aside>
 
 ## Gerrymandering metrics
 
+```{r}
+if (prop_votes > 0.65) {
+    warning = str_glue("These metrics may be misleading for a strongly Democratic state like {params$state}.")
+} else if (prop_votes < 0.35) {
+    warning = str_glue("These metrics may be misleading for a strongly Republican state like {params$state}.")
+} else {
+    warning = ""
+}
+```
+
+There are other ways of measuring the partisan skew of redistricting plan.
+The graph below shows two these metrics. 
+The deviation from partisan symmetry measures the expected difference in each party's share of seats if they each won 50% of the statewide vote.
+The efficiency gap is calculated as the difference in the number of wasted votes for each party.
+`r warning `
+[Learn more about these metrics here](../about/#plots-pbias-egap).
+
 ```{r pbias-egap, fig.asp=0.6}
+pbias_lim = c(min(-0.1, a$plans$pbias), max(0.1, a$plans$pbias))
+egap_lim = c(min(-0.1, a$plans$egap), max(0.1, a$plans$egap))
+
 p_pbias = redist.plot.hist(a$plans, pbias, bins=24, 
                  fill="#777777", color="#777777") + 
     geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
-    labs(x = "Partisan bias") +
+    scale_x_continuous("Deviation from partisan symmetry", 
+                       labels=lbl_party_zero, limits=pbias_lim) +
     annotate("text", x=a$plans$pbias[1], y=Inf, label="Enacted plan", 
              angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
 p_egap = redist.plot.hist(a$plans, egap, bins=32, 
                  fill="#777777", color="#777777") + 
     geom_vline(xintercept=0.0, color="#00000055", size=0.8) +
-    labs(x = "Efficiency gap") +
+    scale_x_continuous("Efficiency gap", labels=lbl_party_zero, limits=egap_lim) +
     annotate("text", x=a$plans$egap[1], y=Inf, label="Enacted plan", 
              angle=90, hjust=1.1, vjust=-0.5) +
     guides(color = "none")
-p_pbias + p_egap
+suppressWarnings(print(p_pbias + p_egap))
 ```
+
+<aside>
+[Learn more about this graph](../about/#plots-pbias-egap)
+</aside>
 
 ## Traditional redistricting criteria
 
+```{r}
+d_comp = group_by(a$plans, draw) %>%
+    summarize(comp = mean(comp_polsby))
+comp_sims = subset_sampled(d_comp)$comp
+spl_sims = subset_sampled(a$plans)$county_splits
+```
+
+Factors other than partisanship are important for redistricting, too.
+The graph below shows the geographic compactness and the number of counties which are split into multiple districts.
+In `r params$state`, the enacted plan is `r qile_english(d_comp$comp[1], comp_sims, "compact ")` simulated plans.
+It splits `r cli::pluralize("{a$plans$county_splits[1]} count{?y/ies}")`, compared to an average of `r cli::pluralize("{median(spl_sims)} count{?y/ies}")` for our simulated plans.
+
 ```{r trad-criteria, fig.asp=0.6}
-p_comp = group_by(a$plans, draw) %>%
-    summarize(comp = mean(comp_polsby)) %>%
+p_comp = d_comp %>%
     redist.plot.hist(comp, bins=64, fill="#777777", color="#777777") +
     labs(x = "Compactness (larger is more compact)") +
     annotate("text", x=mean(a$plans$comp_polsby[1:n_dists]), y=Inf, 
@@ -118,21 +182,28 @@ p_spl = redist.plot.hist(a$plans, county_splits,
 p_comp + p_spl
 ```
 
+<aside>
+[Learn more about this graph](../about/#plots-trad)
+</aside>
+
 ## Geography
 
-```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st, dev = "ragg_png"}
+These two maps show the partisan lean across `r params$state` in a typical statewide election, and the share of minority voters around the state.
+
+```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st, dev="ragg_png"}
 geom_state = summarize(a$map, is_coverage=TRUE)
+suppressMessages({
 p_party = plot(as_redist_map(a$map), ndv/(ndv+nrv)) +
-    geom_sf(data=places, inherit.aes=FALSE, fill="#00000033", color=NA) +
     geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
     scale_fill_party_c("Two-party vote margin", limits=c(0.1, 0.9)) +
     theme(legend.key.width=unit(1, "cm"))
 p_race = plot(as_redist_map(a$map), vap_white/vap) +
     geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
-    scale_fill_steps("Pct. white", high="#344669", low="#ffffff", 
+    scale_fill_steps("Pct. white", high="#24324c", low="#ffffff", 
                      limits=c(0.2, 1), breaks=c(0.2, 0.35, 0.5, 0.65, 0.8, 1),
                      oob=squish, labels=\(x) percent(x, 1)) +
     theme(legend.key.width=unit(1, "cm"))
+})
 p_party + p_race
 ```
 

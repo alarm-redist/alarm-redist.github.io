@@ -4,6 +4,7 @@ library(sf)
 library(scales)
 library(patchwork)
 library(dataverse)
+library(here)
 
 doi <- "10.7910/DVN/SLCD3E"
 
@@ -19,6 +20,10 @@ ggplot2::theme_set(ggplot2::theme_bw())
 lbl_party = function(x) {
     if_else(x == 0.5, "Even",
             paste0(if_else(x < 0.5, "R+", "D+"), number(200*abs(x-0.5), 1)))
+}
+lbl_party_zero = function(x) {
+    if_else(x == 0.0, "Even",
+            paste0(if_else(x < 0.0, "R+", "D+"), number(100*abs(x), 1)))
 }
 
 scale_fill_party_b <- function(name="Democratic share", midpoint=0.5, limits=0:1,
@@ -39,6 +44,19 @@ scale_color_party_c <- function(name="Democratic share", midpoint=0.5, limits=0:
 scale_color_party_d = function(...) {
     scale_color_manual(..., values=c(GOP_DEM[2], GOP_DEM[14]),
                        labels=c("Rep.", "Dem."))
+}
+
+qile_english = function(x, ref, extra="") {
+    qile = mean(ref <= x)
+    if (diff(range(ref)) == 0) {
+        "in line with the"
+    } else if (qile < 0.35) {
+        str_glue("less {extra}than {percent(1 - qile)} of all")
+    } else if (qile > 0.65) {
+        str_glue("more {extra}than {percent(qile)} of all")
+    } else {
+        "in line with the"
+    }
 }
 
 #' Plot Congressional Districts
@@ -152,7 +170,7 @@ render_state_page = function(states) {
                           params=list(slug=slug, state=state_name),
                           output_file=paste0(slug, "/index.html"),
                           quiet=TRUE)
-        rmarkdown::render_site(here(), quiet=TRUE)
+        #rmarkdown::render_site(here(), quiet=TRUE)
         cat("Rendered `", slug, "`\n", sep="")
     })
 }
