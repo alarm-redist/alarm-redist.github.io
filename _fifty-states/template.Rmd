@@ -33,7 +33,7 @@ knitr::opts_chunk$set(fig.asp = asp_st)
 ```
 
 `r params$state` has `r n_dists` congressional districts.
-We've generated `r comma(N)` sets of simulated districts according to [the relevant criteria](#redistricting-requirements).
+We've generated `r comma(N)` sets of randomly simulated districts according to [the relevant criteria](#redistricting-requirements).
 Three of these districts are shown here, along with the actual enacted plan.
 
 ```{r enacted-samples, layout="l-body-outset", fig.width=9, dev="ragg_png"}
