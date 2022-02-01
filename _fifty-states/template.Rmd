@@ -169,7 +169,7 @@ It splits `r cli::pluralize("{a$plans$county_splits[1]} count{?y/ies}")`, compar
 ```{r trad-criteria, fig.asp=0.6}
 p_comp = d_comp %>%
     redist.plot.hist(comp, bins=64, fill="#777777", color="#777777") +
-    labs(x = "Compactness (larger is more compact)") +
+    labs(x = "Average Polsby Popper (larger is more compact)") +
     annotate("text", x=mean(a$plans$comp_polsby[1:n_dists]), y=Inf, 
              label="Enacted plan", angle=90, hjust=1.1, vjust=-0.5, size=3.5) +
     guides(color = "none")
@@ -186,7 +186,7 @@ p_comp + p_spl
 [Learn more about this graph](../about/#plots-trad)
 </aside>
 
-## Geography
+## Political Geography
 
 These two maps show the partisan lean across `r params$state` in a typical statewide election, and the share of minority voters around the state.
 
