@@ -14,3 +14,7 @@ docs/**/*.R
 docs/**/*.Rmd
 docs/**/*.csv
 docs/**/*.rds
+docs/fifty-states/**/*_files/*
+docs/fifty-states/**/*.html
+!docs/fifty-states/**/index.html
+!docs/fifty-states/**/*_files/figure-html5

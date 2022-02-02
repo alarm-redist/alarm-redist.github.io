@@ -1,16 +1,24 @@
 ---
-title: 50-State Simulation Project
+title: 50-State Redistricting Simulations
 description: |
   Comprehensive project to simulate alternative redistricting plans for all fifty states.
-date: February 1, 2021
+date: February 7, 2021
 authors:
-    - ALARM Project
+    - Cory McCartan
+    - Christopher Kenny
+    - Tyler Simko
+    - Shiro Kuriwaki
+    - George Garcia III
+    - Kevin Wang
+    - Melissa Wu
+    - Kosuke Imai
 output:
   distill::distill_article:
     self_contained: false
 repository_url: https://github.com/alarm-redist/fifty-states/
 doi: "10.7910/DVN/SLCD3E"
 citation: true
+citation_url: https://doi.org/10.7910/DVN/SLCD3E
 editor_options: 
   markdown: 
     wrap: sentence
@@ -109,6 +117,12 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
     opts_toolbar(saveaspng=FALSE)
     ))
 ```
+
+<div style="font-size: var(--aside-size, 12px); color: var(--aside-color, rgba(0, 0, 0, 0.6)); line-height: 1.2;">
+States colored <span style="background: #925637; color: white;">&nbsp;red&nbsp;</span> have enacted a congressional map and been fully analyzed, 
+states colored <span style="background: #343659; color: white;">&nbsp;blue&nbsp;</span> have enacted a plan but haven't yet been analyzed, and 
+states colored <span style="background: #333333; color: white;">&nbsp;gray&nbsp;</span> haven't enacted a plan yet.
+</div>
 
 ### Analyzed States
 

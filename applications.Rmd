@@ -15,4 +15,6 @@ Plans](https://arxiv.org/pdf/2008.06131.pdf)
 
 # Reports with ALARM Project Members
 - [Maryland Congressional District Memo](https://redistricting.maryland.gov/Documents/Library/mcrc-draft-senate-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
-- [Leage of Women Voters of Ohio v. Ohio Redistricting Commission, Dr. Kosuke Imai Expert Report](https://www.supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=911966.pdf)
+- *Leage of Women Voters of Ohio v. Ohio Redistricting Commission*
+    - [Dr. Kosuke Imai Expert Report](https://www.supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=911966.pdf)
+    - [Dr. Kosuke Imai Supplementary Expert Report](http://supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=918618.pdf)

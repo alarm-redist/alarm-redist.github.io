@@ -153,7 +153,8 @@ download_dataverse = function(slug) {
 
     map = load_file("map.rds")
     plans = load_file("plans.rds")
-    stats = load_file("stats.tab")
+    stats_file = str_sub(file_names[str_detect(file_names, paste0(slug, "_stats\\."))], -9)
+    stats = load_file(stats_file)
     doc = load_file("doc.html")
     plans = left_join(plans, stats, by=c("draw", "district", "total_pop"))
 
@@ -168,7 +169,7 @@ render_state_page = function(states) {
         dir.create(here("_fifty-states", slug), showWarnings=FALSE)
         rmarkdown::render(here("_fifty-states/template.Rmd"),
                           params=list(slug=slug, state=state_name),
-                          output_file=paste0(slug, "/index.html"),
+                          output_file=paste0(slug, "/", slug, ".html"),
                           quiet=TRUE)
         #rmarkdown::render_site(here(), quiet=TRUE)
         cat("Rendered `", slug, "`\n", sep="")
