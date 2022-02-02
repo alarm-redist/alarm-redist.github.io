@@ -22,7 +22,7 @@ navbar:
         - text: About
           href: about.html
         - text: Applications
-          href: Applications.html
+          href: applications.html
         - text: redist
           href: https://alarm-redist.github.io/redist/
         - icon: fab fa-github
