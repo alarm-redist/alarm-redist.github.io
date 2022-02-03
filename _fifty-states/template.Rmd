@@ -132,8 +132,8 @@ The efficiency gap is calculated as the difference in the number of wasted votes
 [Learn more about these metrics here](../about/#plots-pbias-egap).
 
 ```{r pbias-egap, fig.asp=0.6}
-pbias_lim = c(min(-0.1, a$plans$pbias), max(0.1, a$plans$pbias))
-egap_lim = c(min(-0.1, a$plans$egap), max(0.1, a$plans$egap))
+pbias_lim = c(min(-0.1, a$plans$pbias), max(0.1, a$plans$pbias)) * 1.05
+egap_lim = c(min(-0.1, a$plans$egap), max(0.1, a$plans$egap)) * 1.05
 
 p_pbias = redist.plot.hist(a$plans, pbias, bins=24, 
                  fill="#777777", color="#777777") + 
