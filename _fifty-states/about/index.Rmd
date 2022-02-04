@@ -83,7 +83,7 @@ Less than 1% of simulated plans would yield the same or higher expected number o
 The histogram ranges from 3.5 to 4.5, which tells us that the Democrats would likely not be able to consistently win 5 seats under Oregon's geography, legal constraints, and recent performance in statewide elections, regardless of the plan.
 A takeaway from this histogram is that although the majority party usually wins more seats than proportional representation, the enacted map is a statistical outlier in the degree of that Democratic advantage.
 
-![](../OR_cd_2020/index_files/figure-html5/seats-1.svg "OR expected number of seats")
+![](../OR_cd_2020/OR_cd_2020_files/figure-html5/seats-1.svg "OR expected number of seats")
 
 ### Election results by districts {#plots-districts}
 
@@ -99,7 +99,7 @@ Again, the number on the x-axis does not correspond to the actual district numbe
 Instead, it represents the order of districts sorted by the variable of interest for each plan.
 The variable of interest is then made into the y-axis.
 
-![](../OR_cd_2020/index_files/figure-html5/distr-dem-1.png)
+![](../OR_cd_2020/OR_cd_2020_files/figure-html5/distr-dem-1.png)
 
 ### Partisan bias metrics {#plots-pbias-egap}
 
@@ -112,7 +112,7 @@ The efficiency gap for Democrats shown in the histogram is the Democratic wasted
 Thus, positive values indicate a pro-Republican bias whereas a negative value indicates a pro-Democratic bias.
 In the Oregon plan, the gap is -0.10, meaning that Democratic votes are wasted at a much smaller rate than Republican votes.
 
-![](../OR_cd_2020/index_files/figure-html5/pbias-egap-1.svg)
+![](../OR_cd_2020/OR_cd_2020_files/figure-html5/pbias-egap-1.svg)
 
 Another measure we use is deviation from partisan symmetry in the seats-votes curve.
 Suppose a plan leads to 60% Democratic seats when their statewide vote share is 55%.
@@ -131,7 +131,7 @@ The "counties split" measure is the number of counties which are not wholly cont
 In the Oregon example, the enacted plan is near the central tendency of the alternatives in terms of compactness.
 However, it splits 11 counties whereas the alternative plans only split up to 6 counties.
 
-![](../OR_cd_2020/index_files/figure-html5/trad-criteria-1.svg)
+![](../OR_cd_2020/OR_cd_2020_files/figure-html5/trad-criteria-1.svg)
 
 ## What are the redistricting rules used to generate simulated plans?
 
