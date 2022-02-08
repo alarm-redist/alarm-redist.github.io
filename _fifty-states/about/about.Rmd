@@ -146,6 +146,22 @@ The set of constraints used depends on the state's redistricting rules.
 -   **Municipality** splitting constraint: In some states, the simulations avoid splitting municipalities within large counties many times to preserve political subdivisions.
 -   **VRA constraint**: In some states, the simulations are encouraged to accept plans that have a concentrated minority share of the voting age population or citizen voting age population, in accordance with the Voting Rights Act of 1965.
 
+## Disclaimers
+
+-   For consistency, reference plans, such as the 2010 or 2020 enacted plans, are best matched to the VTD or tract level.
+    Reference plans often split a few of these at the block level.
+    This may have a very small impact on estimated metrics.
+
+-   VRA compliance requires substantial information, including a racially polarized voting analysis and knowledge of local history.
+    For the purposes of this project, we target the number of minority-opportunity districts as in the enacted plan.
+    We check approximate performance of these districts.
+    Simulation results can change if different VRA constraints are imposed.
+
+-   Constraints are based on our interpretation of the law, but we are not lawyers.
+    We do our best to follow the requirements and choices made by states.
+
+-   Any suggestions for improving the analysis, including legal interpretation of statutory requirements are welcome and should be submitted [as a GitHub issue](https://github.com/alarm-redist/fifty-states/issues/new).
+
 ## Data Sources and Availability {.appendix}
 
 Unless otherwise noted, data for each state comes from the ALARM Project's [2020 Redistricting Data Files](https://alarm-redist.github.io/posts/2021-08-10-census-2020/), which use U.S.
@@ -156,3 +172,4 @@ The U.S. map here, scaled to reflect Congressional representations, is courtesy 
 
 All data is available on [our Dataverse](https://doi.org/10.7910/DVN/SLCD3E) and has been released to the public domain.
 Code is available on [GitHub](https://github.com/alarm-redist/fifty-states/) under an MIT license.
+

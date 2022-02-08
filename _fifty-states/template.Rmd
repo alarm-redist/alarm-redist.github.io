@@ -98,11 +98,11 @@ The graph below breaks this down in detail, showing how each district of the ena
 
 ```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
 set.seed(5118)
-redist.plot.distr_qtys(a$plans, ndshare, color_thresh=0.5, size=0.05, alpha=0.5) +
+redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5, size=0.05, alpha=0.5) +
     geom_hline(yintercept=0.5, color="#00000055", size=0.5) +
     scale_y_continuous("Two-party vote margin", labels=lbl_party) +
     labs(x="Simulated districts, ordered by Democratic vote margin") +
-    annotate("text", x=1.5, y=min(a$plans$ndshare[1:n_dists]), 
+    annotate("text", x=1.5, y=min(a$plans$e_dvs[1:n_dists]), 
              label="Enacted plan", hjust=-0.05, size=3.5) +
     scale_color_party_d(guide="none") +
     guides(lty="none")
