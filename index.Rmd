@@ -11,7 +11,7 @@ listing: posts
 </div>
 
 <div class="package-box" style="background: #9ACABA">
-<a href="/posts/2021-08-10-census-2020/">
+<a href="/fifty-states/">
 <h2>50-State Redistricting Simulations</h2>
 </a>
 <div style="display:flex">
