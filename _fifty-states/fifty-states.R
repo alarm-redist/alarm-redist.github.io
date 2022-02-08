@@ -23,7 +23,7 @@ lbl_party = function(x) {
 }
 lbl_party_zero = function(x) {
     if_else(x == 0.0, "Even",
-            paste0(if_else(x < 0.0, "R+", "D+"), number(100*abs(x), 1)))
+            paste0(if_else(x < 0.0, "D+", "R+"), number(100*abs(x), 1)))
 }
 
 scale_fill_party_b <- function(name="Democratic share", midpoint=0.5, limits=0:1,
@@ -136,8 +136,10 @@ download_dataverse = function(slug) {
         ext = strsplit(suffix, "\\.")[[1]][2]
         if (ext == "tab") ext = "csv"
 
-        tf <- tempfile(fileext=ext)
-        get_file_by_name(filename=paste0(slug, "_", suffix), dataset=doi) %>%
+        tf <- tempfile(fileext = paste0(".", ext))
+        fname = paste0(slug, "_", suffix)
+        if (!fname %in% file_names) cli::cli_abort("File {.file {fname}} doesn't exist on Dataverse.")
+        get_file_by_name(filename=fname, dataset=doi) %>%
             writeBin(tf)
 
         if (ext == "rds") {

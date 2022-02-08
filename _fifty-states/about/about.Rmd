@@ -18,7 +18,7 @@ editor_options:
 
 ## What is the 50-State Simulation Project about? {#overview}
 
-Every decade following the Census, states and municipalities must redraw districts for Congress, state houses, city councils, and more.
+<img src="/assets/fifty_states.svg" height="180" style="float: left; width: auto; margin: -12px 0.75em 0 0;"/> Every decade following the Census, states and municipalities must redraw districts for Congress, state houses, city councils, and more.
 The goal of the 50-State Simulation project is to enable researchers, practitioners, and the general public to use cutting-edge redistricting simulation analysis to evaluate enacted Congressional districts.
 
 Over the past few years, academic researchers, including those on the [ALARM Project](https://alarm-redist.github.io/), have developed redistricting simulation algorithms.
@@ -172,4 +172,3 @@ The U.S. map here, scaled to reflect Congressional representations, is courtesy 
 
 All data is available on [our Dataverse](https://doi.org/10.7910/DVN/SLCD3E) and has been released to the public domain.
 Code is available on [GitHub](https://github.com/alarm-redist/fifty-states/) under an MIT license.
-

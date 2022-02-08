@@ -1,17 +1,18 @@
 ---
 title: 50-State Redistricting Simulations
 description: |
-  Comprehensive project to simulate alternative redistricting plans for all fifty states.
-date: February 7, 2021
+  <img src='/assets/fifty_states_256_tr.png' height=100 style='float: left; margin: -18px 8px -2px 0;'>
+  Comprehensive project to simulate alternative congressional redistricting plans for all fifty states.
+date: February 8, 2022
 authors:
-    - Cory McCartan
-    - Christopher Kenny
-    - Tyler Simko
-    - Shiro Kuriwaki
-    - George Garcia III
-    - Kevin Wang
-    - Melissa Wu
-    - Kosuke Imai
+    - name: Cory McCartan
+    - name: Christopher Kenny
+    - name: Tyler Simko
+    - name: Shiro Kuriwaki
+    - name: George Garcia III
+    - name: Kevin Wang
+    - name: Melissa Wu
+    - name: Kosuke Imai
 output:
   distill::distill_article:
     self_contained: false

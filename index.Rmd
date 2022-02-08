@@ -10,22 +10,23 @@ listing: posts
 </div>
 </div>
 
-<div class="package-box" style="background: #9ACABC">
+<div class="package-box" style="background: #9ACABA">
 <a href="/posts/2021-08-10-census-2020/">
-<h2>2020 Redistricting Data Files</h2>
+<h2>50-State Redistricting Simulations</h2>
 </a>
+<div style="display:flex">
+<img src="/assets/fifty_states.svg" height=180>
+<div style="margin-left: 1em;">
 <p>
-Precinct-level demographic and election data from the 
-<a href="https://www.census.gov/2020census" target="_blank">2020 decennial census</a> 
-and the
-<a href="https://dataverse.harvard.edu/dataverse/electionscience">Voting and Election Science Team</a>
-which have been tidied and joined together using 2020 precinct boundaries.
+Comprehensive project to simulate alternative congressional redistricting plans for all fifty states in the 2022 redistricting cycle.
 </p>
 <p>
-<a href="/posts/2021-08-10-census-2020/">
-Access the data &raquo;
+<a href="/fifty-states/">
+<b>Explore the project and data &raquo;</b>
 </a>
 </p>
+</div>
+</div>
 </div>
 
 The Algorithm-Assisted Redistricting Methodology (ALARM) Project is a research
@@ -48,6 +49,24 @@ various summary statistics and plotting functionality are also included.
 <p>
 <a href="https://alarm-redist.github.io/redist/">
 Go to package home page &raquo;
+</a>
+</p>
+</div>
+
+<div class="package-box" style="background: #8f9fbc">
+<a href="/posts/2021-08-10-census-2020/">
+<h2>2020 Redistricting Data Files</h2>
+</a>
+<p>
+Precinct-level demographic and election data from the 
+<a href="https://www.census.gov/2020census" target="_blank">2020 decennial census</a> 
+and the
+<a href="https://dataverse.harvard.edu/dataverse/electionscience">Voting and Election Science Team</a>
+which have been tidied and joined together using 2020 precinct boundaries.
+</p>
+<p>
+<a href="/posts/2021-08-10-census-2020/">
+Access the data &raquo;
 </a>
 </p>
 </div>
