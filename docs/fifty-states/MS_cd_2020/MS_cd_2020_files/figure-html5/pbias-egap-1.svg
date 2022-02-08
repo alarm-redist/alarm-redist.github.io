@@ -96,10 +96,10 @@
 <polyline points='106.61,246.15 106.61,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='150.90,246.15 150.90,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='195.20,246.15 195.20,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
-<text x='62.32' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+10</text>
+<text x='62.32' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+10</text>
 <text x='106.61' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='20.06px' lengthAdjust='spacingAndGlyphs'>Even</text>
-<text x='150.90' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+10</text>
-<text x='195.20' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+20</text>
+<text x='150.90' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+10</text>
+<text x='195.20' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+20</text>
 <text x='141.49' y='267.42' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='163.83px' lengthAdjust='spacingAndGlyphs'>Deviation from partisan symmetry</text>
 <text transform='translate(18.85,127.18) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='81.32px' lengthAdjust='spacingAndGlyphs'>Fraction of plans</text>
 </g>
@@ -194,11 +194,11 @@
 <polyline points='371.08,246.15 371.08,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='412.52,246.15 412.52,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='453.96,246.15 453.96,243.41 ' style='stroke-width: 1.07; stroke: #333333; stroke-linecap: butt;' />
-<text x='288.19' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+10</text>
+<text x='288.19' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+10</text>
 <text x='329.63' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='20.06px' lengthAdjust='spacingAndGlyphs'>Even</text>
-<text x='371.08' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+10</text>
-<text x='412.52' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+20</text>
-<text x='453.96' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>D+30</text>
+<text x='371.08' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+10</text>
+<text x='412.52' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+20</text>
+<text x='453.96' y='254.65' text-anchor='middle' style='font-size: 8.80px; fill: #4D4D4D; font-family: Arial;' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>R+30</text>
 <text x='367.51' y='267.42' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='68.48px' lengthAdjust='spacingAndGlyphs'>Efficiency gap</text>
 <text transform='translate(249.88,127.18) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: Arial;' textLength='81.32px' lengthAdjust='spacingAndGlyphs'>Fraction of plans</text>
 </g>
