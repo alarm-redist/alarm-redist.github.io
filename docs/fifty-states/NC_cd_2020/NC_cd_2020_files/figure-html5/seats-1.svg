@@ -139,10 +139,10 @@
 <rect x='431.64' y='225.65' width='3.91' height='0.00' style='stroke-width: 1.07; stroke: #777777; stroke-linecap: square; stroke-linejoin: miter; fill: #777777;' />
 <rect x='435.54' y='225.65' width='3.91' height='0.00' style='stroke-width: 1.07; stroke: #777777; stroke-linecap: square; stroke-linejoin: miter; fill: #777777;' />
 <rect x='439.45' y='225.65' width='3.91' height='0.00' style='stroke-width: 1.07; stroke: #777777; stroke-linecap: square; stroke-linejoin: miter; fill: #777777;' />
-<line x1='175.17' y1='225.65' x2='175.17' y2='5.48' style='stroke-width: 2.45; stroke: #465177; stroke-linecap: butt;' />
+<line x1='249.06' y1='225.65' x2='249.06' y2='5.48' style='stroke-width: 2.45; stroke: #465177; stroke-linecap: butt;' />
 <line x1='251.86' y1='225.65' x2='251.86' y2='5.48' style='stroke-width: 1.71; stroke: #000000; stroke-opacity: 0.33; stroke-linecap: butt;' />
 <text transform='translate(446.42,219.73) rotate(-90)' style='font-size: 8.54px; font-family: Arial;' textLength='59.25px' lengthAdjust='spacingAndGlyphs'>14 total districts</text>
-<text transform='translate(171.60,11.29) rotate(-90)' text-anchor='end' style='font-size: 9.96px; font-family: Arial;' textLength='58.11px' lengthAdjust='spacingAndGlyphs'>Enacted plan</text>
+<text transform='translate(245.49,11.29) rotate(-90)' text-anchor='end' style='font-size: 9.96px; font-family: Arial;' textLength='58.11px' lengthAdjust='spacingAndGlyphs'>Enacted plan</text>
 <text transform='translate(248.80,89.13) rotate(-90)' text-anchor='end' style='font-size: 8.54px; font-family: Arial;' textLength='69.71px' lengthAdjust='spacingAndGlyphs'>Proportional share</text>
 <rect x='41.07' y='5.48' width='421.45' height='220.17' style='stroke-width: 1.07; stroke: #333333;' />
 </g>
