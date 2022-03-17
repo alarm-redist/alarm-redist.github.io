@@ -98,7 +98,8 @@ The graph below breaks this down in detail, showing how each district of the ena
 
 ```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
 set.seed(5118)
-redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5, size=0.03, alpha=0.4) +
+redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5, 
+                       size=0.04-sqrt(8)/250, alpha=0.4) +
     geom_hline(yintercept=0.5, color="#00000055", size=0.5) +
     scale_y_continuous("Two-party vote margin", labels=lbl_party) +
     labs(x="Simulated districts, ordered by Democratic vote margin") +
