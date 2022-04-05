@@ -112,7 +112,7 @@ cat('</div><br />\n\n')
 ```
 
 
-## 出典 {.appendix}
+## データについて {.appendix}
 
 特に明記されていない限り、本プロジェクトで用いた人口等のデータは、総務省統計局がe-Statにて公開している[令和2年国勢調査](https://www.e-stat.go.jp/stat-search/files?page=1&toukei=00200521&tstat=000001136464&cycle=0&tclass1=000001136472)および[平成27国勢調査](https://www.e-stat.go.jp/stat-search/files?page=1&toukei=00200521&tstat=000001080615)を利用しています。
 
@@ -122,3 +122,16 @@ cat('</div><br />\n\n')
 
 全ての分析結果のデータは[Dataverse](https://doi.org/10.7910/DVN/Z9UKSH)にて、R言語によるプログラムは[GitHub](https://github.com/alarm-redist/japan)にて公開されています。
 
+## 出典と著作権 {.appendix}  
+本プロジェクトを引用する場合は以下のように明記してください。
+
+<pre class="citation-appendix short">Miyazaki, et al. (2022, April 6). 47-Prefecture Redistricting Simulations
+. Retrieved from https://doi.org/10.7910/DVN/Z9UKSH</pre> 
+<p>BibTeX citation</p>
+<pre class="citation-appendix long">@misc{miyazaki202247-prefecture,
+  author = {Miyazaki, Sho and Yamada, Kento and Yatsuhashi, Rei and Imai, Kosuke},
+  title = {47-Prefecture Redistricting Simulations
+},
+  url = {https://doi.org/10.7910/DVN/Z9UKSH},
+  year = {2022}
+}</pre>
