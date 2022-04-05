@@ -60,16 +60,16 @@ You can view the results of our analyses by clicking on a prefecture of interest
 Each prefecture page presents the summary of our analysis, an example plan, and link to the code and data used for our analysis.
 
 ```{r include=F}
-prefs = Sys.glob(here("analyses/*_*")) |>
+prefs = Sys.glob(here("_japan-47-pref/analyses/*_*")) |>
     basename() |>
     substr(1, 2) |>
     as.integer()
 ```
 
 ```{r map, layout="l-body-outset", cache=TRUE, cache.extra=prefs}
-d_appor = read_csv(here("pref_code.csv"))
+d_appor = read_csv(here("_japan-47-pref/pref_code.csv"))
 
-japan = readRDS(here("carto_japan.rds")) %>%
+japan = readRDS(here("_japan-47-pref/carto_japan.rds")) %>%
     st_set_crs(NA) %>%
     rename(pref_code = ken) %>%
     mutate(pref_japanese = d_appor$pref_japanese) %>%
@@ -84,7 +84,7 @@ japan = readRDS(here("carto_japan.rds")) %>%
                                  TRUE ~ "not_ready"),
            href = if_else(available, str_glue("analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
            code = if_else(available, str_glue('window.open("{href}web_{str_pad(pref_code, 2, pad = "0")}_{tolower(pref_english)}.html", "_self")'), ""),
-           tooltip = str_glue("<b>{pref_japanese}</b><br />区割り改定前：{n_dist_old}席<br />区割り改定後：{n_dist_new}席"))
+           tooltip = str_glue("<b>{pref_english}</b><br />Before：{n_dist_old} districts<br />After：{n_dist_new} districts"))
 
 p = ggplot(japan, aes(fill=fill_code, data_id=pref_japanese)) +
     geom_sf_interactive(aes(onclick=code, tooltip=tooltip), color=NA, size=0.0) +

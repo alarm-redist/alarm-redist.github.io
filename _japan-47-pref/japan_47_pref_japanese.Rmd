@@ -53,16 +53,16 @@ div.girafe { margin-bottom: 0; }
 地図上の対象の都府県をクリックすることで、それぞれアルゴリズムが導き出した区割り案と分析結果が閲覧することができます。
 
 ```{r include=F}
-prefs = Sys.glob(here("analyses/*_*")) |>
+prefs = Sys.glob(here("_japan-47-pref/analyses/*_*")) |>
     basename() |>
     substr(1, 2) |>
     as.integer()
 ```
 
 ```{r map, layout="l-body-outset", cache=TRUE, cache.extra=prefs}
-d_appor = read_csv(here("pref_code.csv"))
+d_appor = read_csv(here("_japan-47-pref/pref_code.csv"))
 
-japan = readRDS(here("carto_japan.rds")) %>%
+japan = readRDS(here("_japan-47-pref/carto_japan.rds")) %>%
     st_set_crs(NA) %>%
     rename(pref_code = ken) %>%
     mutate(pref_japanese = d_appor$pref_japanese) %>%
