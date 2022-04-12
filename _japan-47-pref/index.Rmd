@@ -4,7 +4,7 @@ title: |
 description: |
   <img src='../assets/japan_47pref_256_tr.png' height=100 style='float: left; margin: -18px 8px -2px 0;'>
   アルゴリズムを活用した<br/> 衆議院小選挙区の区割り改定案の作成と分析 
-date: April 7, 2022
+date: April 14, 2022
 authors:
     - name: 宮﨑 将
     - name: 山田 健人
