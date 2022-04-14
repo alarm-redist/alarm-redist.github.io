@@ -37,7 +37,7 @@ div.girafe { margin-bottom: 0; }
 }
 ```
 
-<p style="text-align:right;">**日本語** / [**English**](japan-47-pref-english.html)</p>
+<p style="text-align:right;">**日本語** / [**English**](en/index.rmd)</p>
 
 本プロジェクトの目的は、シミュレーションアルゴリズムを活用し、衆議院議員選挙の小選挙区の区割り改定案の作成と分析を行うことです。
 アルゴリズムを活用することで、透明性が確保され、合理的かつ均衡の取れた選挙区の区割り改定を行うことができます。
