@@ -18,3 +18,10 @@ docs/fifty-states/**/*_files/*
 docs/fifty-states/**/*.html
 !docs/fifty-states/**/index.html
 !docs/fifty-states/**/*_files/figure-html5
+docs/japan-47-pref/*.css
+docs/japan-47-pref/*.rds
+docs/japan-47-pref/*.csv
+docs/japan-47-pref/*_files/*
+docs/japan-47-pref/*_catche/*
+docs/japan-47-pref/en/*_files/*
+docs/japan-47-pref/en/*_catche/*
