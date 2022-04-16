@@ -25,3 +25,6 @@ docs/japan-47-pref/*_files/*
 docs/japan-47-pref/*_catche/*
 docs/japan-47-pref/en/*_files/*
 docs/japan-47-pref/en/*_catche/*
+docs/japan-47-pref/**/analyses/*
+!docs/japan-47-pref/analyses/**/*.html
+!docs/japan-47-pref/analyses/**/*_files/figure-html5
