@@ -28,3 +28,4 @@ docs/japan-47-pref/en/*_catche/*
 docs/japan-47-pref/**/analyses/*
 !docs/japan-47-pref/analyses/**/*.html
 !docs/japan-47-pref/analyses/**/*_files/figure-html5
+docs/japan-47-pref/analyses/**/*hr_2020_doc.html
