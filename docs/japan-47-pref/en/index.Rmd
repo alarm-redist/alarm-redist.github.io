@@ -82,7 +82,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
            fill_code = case_when(n_dist_new == 1 ~ "ready",
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
-           href = if_else(available, str_glue("analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
+           href = if_else(available, str_glue("../analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
            code = if_else(available, str_glue('window.open("{href}web_{str_pad(pref_code, 2, pad = "0")}_{tolower(pref_english)}.html", "_self")'), ""),
            tooltip = str_glue("<b>{pref_english}</b><br />Before：{n_dist_old} districts<br />After：{n_dist_new} districts"))
 
