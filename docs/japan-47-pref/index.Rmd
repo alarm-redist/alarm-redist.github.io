@@ -76,7 +76,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
            href = if_else(available, str_glue("analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
-           code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
+           code = if_else(available, str_glue('window.open("{href}/index.html", "_self")'), ""),
            tooltip = str_glue("<b>{pref_japanese}</b><br />区割り改定前：{n_dist_old}席<br />区割り改定後：{n_dist_new}席"))
 
 p = ggplot(japan, aes(fill=fill_code, data_id=pref_japanese)) +

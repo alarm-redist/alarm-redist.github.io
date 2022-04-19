@@ -112,7 +112,7 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
 cat('<div class="state-links">')
 filter(japan, available) %>%
     arrange(pref_japanese) %>%
-    mutate(html = str_glue('<p><a href="{href}">{pref_english}</a></p>')) %>%
+    mutate(html = str_glue('<p><a href="{href}/index.html">{pref_english}</a></p>')) %>%
     pull() %>%
     cat(collapse="\n")
 cat('</div><br />\n\n')
