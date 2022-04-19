@@ -37,7 +37,7 @@ div.girafe { margin-bottom: 0; }
 }
 ```
 
-<p style="text-align:right;">**日本語** / [**English**](en/index.html)</p>
+<p style="text-align:right;">**日本語** / [**English**](en/)</p>
 
 本プロジェクトの目的は、シミュレーションアルゴリズムを活用し、衆議院議員選挙の小選挙区の区割り改定案の作成と分析を行うことです。
 アルゴリズムを活用することで、透明性が確保され、合理的かつ均衡の取れた選挙区の区割り改定を行うことができます。
@@ -76,7 +76,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
            href = if_else(available, str_glue("analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
-           code = if_else(available, str_glue('window.open("{href}/index.html", "_self")'), ""),
+           code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
            tooltip = str_glue("<b>{pref_japanese}</b><br />区割り改定前：{n_dist_old}席<br />区割り改定後：{n_dist_new}席"))
 
 p = ggplot(japan, aes(fill=fill_code, data_id=pref_japanese)) +
@@ -105,7 +105,7 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
 cat('<div class="state-links">')
 filter(japan, available) %>%
     arrange(pref_japanese) %>%
-    mutate(html = str_glue('<p><a href="{href}/index.html">{pref_japanese}</a></p>')) %>%
+    mutate(html = str_glue('<p><a href="{href}">{pref_japanese}</a></p>')) %>%
     pull() %>%
     cat(collapse="\n")
 cat('</div><br />\n\n')

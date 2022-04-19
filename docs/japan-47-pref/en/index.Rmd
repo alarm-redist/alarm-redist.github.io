@@ -40,7 +40,7 @@ div.girafe { margin-bottom: 0; }
 }
 ```
 
-<p style="text-align:right;">[**日本語**](../index.html) / **English**</p>
+<p style="text-align:right;">[**日本語**](../) / **English**</p>
 
 The goal of the 47-Prefecture Simulation Project is to generate and analyze redistricting plans for the single-member districts of the House of Representatives of Japan using a redistricting simulation algorithm. 
 Redistricting simulation algorithms can be used to redraw legislative districts in a transparent manner while following redistricting rules such as criteria on geographic compactness and population parity.
@@ -83,7 +83,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
            href = if_else(available, str_glue("../analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
-           code = if_else(available, str_glue('window.open("{href}/index.html", "_self")'), ""),
+           code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
            tooltip = str_glue("<b>{pref_english}</b><br />Before：{n_dist_old} districts<br />After：{n_dist_new} districts"))
 
 p = ggplot(japan, aes(fill=fill_code, data_id=pref_japanese)) +
@@ -112,7 +112,7 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
 cat('<div class="state-links">')
 filter(japan, available) %>%
     arrange(pref_japanese) %>%
-    mutate(html = str_glue('<p><a href="{href}/index.html">{pref_english}</a></p>')) %>%
+    mutate(html = str_glue('<p><a href="{href}">{pref_english}</a></p>')) %>%
     pull() %>%
     cat(collapse="\n")
 cat('</div><br />\n\n')
