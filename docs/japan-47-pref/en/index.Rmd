@@ -60,7 +60,7 @@ You can view the results of our analyses by clicking on a prefecture of interest
 Each prefecture page presents the summary of our analysis, an example plan, and link to the code and data used for our analysis.
 
 ```{r include=F}
-prefs = Sys.glob(here("docs/japan-47-pref/analyses/*_*")) |>
+prefs = Sys.glob(here("docs/japan-47-pref/*_*")) |>
     basename() |>
     substr(1, 2) |>
     as.integer()
@@ -82,7 +82,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
            fill_code = case_when(n_dist_new == 1 ~ "ready",
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
-           href = if_else(available, str_glue("../analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
+           href = if_else(available, str_glue("../{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
            code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
            tooltip = str_glue("<b>{pref_english}</b><br />Before：{n_dist_old} districts<br />After：{n_dist_new} districts"))
 
