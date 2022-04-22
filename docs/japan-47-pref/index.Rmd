@@ -53,7 +53,7 @@ div.girafe { margin-bottom: 0; }
 地図上の対象の都府県をクリックすることで、それぞれアルゴリズムが導き出した区割り案と分析結果が閲覧することができます。
 
 ```{r include=F}
-prefs = Sys.glob(here("docs/japan-47-pref/analyses/*_*")) |>
+prefs = Sys.glob(here("docs/japan-47-pref/*_*")) |>
     basename() |>
     substr(1, 2) |>
     as.integer()
@@ -75,7 +75,7 @@ japan = readRDS(here("docs/japan-47-pref/carto_japan.rds")) %>%
            fill_code = case_when(n_dist_new == 1 ~ "ready",
                                  available ~ "ready",
                                  TRUE ~ "not_ready"),
-           href = if_else(available, str_glue("analyses/{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
+           href = if_else(available, str_glue("{str_pad(pref_code, 2, pad = '0')}_{tolower(pref_english)}/"), "#"),
            code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
            tooltip = str_glue("<b>{pref_japanese}</b><br />区割り改定前：{n_dist_old}席<br />区割り改定後：{n_dist_new}席"))
 
