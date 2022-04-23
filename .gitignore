@@ -23,6 +23,9 @@ docs/japan-47-pref/*.rds
 docs/japan-47-pref/*.csv
 docs/japan-47-pref/*_files/*
 docs/japan-47-pref/*_catche/*
+!docs/japan-47-pref/alarm_japan.css
+!docs/japan-47-pref/carto_japan.rds
+!docs/japan-47-pref/pref_code.csv
 !docs/japan-47-pref/index.Rmd
 docs/japan-47-pref/en/*_files/*
 docs/japan-47-pref/en/*_catche/*
