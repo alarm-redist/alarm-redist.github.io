@@ -138,16 +138,32 @@ download_dataverse = function(slug) {
 
         tf <- tempfile(fileext = paste0(".", ext))
         fname = paste0(slug, "_", suffix)
-        if (!fname %in% file_names) cli::cli_abort("File {.file {fname}} doesn't exist on Dataverse.")
-        get_file_by_name(filename=fname, dataset=doi) %>%
-            writeBin(tf)
+        idx = match(fname, file_names)
+        if (is.na(idx)) cli::cli_abort("File {.file {fname}} doesn't exist on Dataverse.")
+
+        url <- str_c("https://dataverse.harvard.edu/api/access/datafile/", files[[idx]]$dataFile$id)
+        resp <- httr::GET(
+            url,
+            httr::add_headers("X-Dataverse-key"=Sys.getenv("DATAVERSE_KEY")),
+            query=list(format="original")
+        )
+
+        httr::stop_for_status(resp, task = httr::content(resp)$message)
+        writeBin(httr::content(resp, as="raw"), tf)
 
         if (ext == "rds") {
-            read_rds(tf)
+            out <- read_rds(tf)
+            file.remove(tf)
+            out
         } else if (ext == "csv") {
-            read_csv(tf, col_types=cols(draw="f"), show_col_types=FALSE)
+            out <- read_csv(tf, col_types=cols(draw="f", chain="i", district="i"),
+                     trim_ws=TRUE, show_col_types=FALSE)
+            file.remove(tf)
+            out
         } else if (ext == "html") {
-            rvest::read_html(tf, encoding="utf-8")
+            out <- rvest::read_html(tf, encoding="utf-8")
+            file.remove(tf)
+            out
         } else {
             tf
         }
@@ -158,7 +174,13 @@ download_dataverse = function(slug) {
     stats_file = str_sub(file_names[str_detect(file_names, paste0(slug, "_stats\\."))], -9)
     stats = load_file(stats_file)
     doc = load_file("doc.html")
-    plans = left_join(plans, stats, by=c("draw", "district", "total_pop"))
+    if (is.ordered(plans$district))
+        plans$district = as.integer(plans$district)
+    if (is.character(plans$draw))
+        plans$draw = forcats::fct_inorder(plans$draw)
+    if (!is.null(plans$pop_overlap))
+        plans$pop_overlap = NULL
+    plans = left_join(plans, stats, by=c("draw", "district", "chain", "total_pop"))
 
     list(map=map, plans=plans, doc=doc)
 }
