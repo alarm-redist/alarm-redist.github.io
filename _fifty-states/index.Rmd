@@ -88,7 +88,7 @@ usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
            centroid = st_centroid(geometry),
            geometry = (geometry - centroid)*factor + centroid) %>%
     mutate(available = state %in% states,
-           fill_code = case_when(cds == 1 ~ "ready",
+           fill_code = case_when(cds == 1 ~ "approved",
                                  available ~ "ready",
                                  approved ~ "approved",
                                  TRUE ~ "not_ready"),
@@ -100,8 +100,8 @@ p = ggplot(usa, aes(fill=fill_code, data_id=state)) +
     geom_sf_interactive(aes(onclick=code, tooltip=tooltip), color=NA, size=0.0) +
     geom_sf_text(aes(label=if_else(available, state, ""), geometry=centroid), 
                  size=2.5, color="white", fontface="bold", ) +
-    scale_fill_manual(values=c(ready="#925637", not_ready="#333333", 
-                               approved="#343659"), 
+    scale_fill_manual(values=c(not_ready="#925637", approved="#333333", 
+                               ready="#404268"), 
                       guide="none") +
     theme_void() +
     theme(plot.margin = margin(0, 0, 0, 0, "cm"))
@@ -120,9 +120,9 @@ girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
 ```
 
 <div style="font-size: var(--aside-size, 12px); color: var(--aside-color, rgba(0, 0, 0, 0.6)); line-height: 1.2;">
-States colored <span style="background: #925637; color: white;">&nbsp;red&nbsp;</span> have enacted a congressional map and been fully analyzed, 
-states colored <span style="background: #343659; color: white;">&nbsp;blue&nbsp;</span> have enacted a plan but haven't yet been analyzed, and 
-states colored <span style="background: #333333; color: white;">&nbsp;gray&nbsp;</span> haven't enacted a plan yet.
+States colored <span style="background: #404268; color: white;">&nbsp;blue&nbsp;</span> have enacted a congressional map and been fully analyzed, 
+states colored <span style="background: #333333; color: white;">&nbsp;gray&nbsp;</span> have enacted a plan but haven't yet been analyzed, or just have a single district (and hence no redistricting), and 
+states colored <span style="background: #925637; color: white;">&nbsp;red&nbsp;</span> haven't enacted a plan yet.
 </div>
 
 ### Analyzed States

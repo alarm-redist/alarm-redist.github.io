@@ -1,0 +1,610 @@
+[
+  {
+    "path": "fifty-states/about/",
+    "title": "50-State Simulations FAQ",
+    "description": "Frequently asked questions about the project and our methodology.",
+    "author": [],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\n\nContents\nWhat is the 50-State\nSimulation Project about?\nWhy are simulations\nuseful?\nWhere can I find the code,\ndata, and simulated plans?\nHow should I interpret the\nsimulation graphs?\nExpected number\nof seats\nElection results\nby districts\nPartisan bias\nmetrics\nTraditional Redistricting\nCriteria\n\nWhat\nare the redistricting rules used to generate simulated plans?\nDisclaimers\nData Sources and\nAvailability\n\nWhat is the 50-State Simulation Project about?\n\nEvery decade following the Census, states and municipalities must redraw\ndistricts for Congress, state houses, city councils, and more. The goal\nof the 50-State Simulation project is to enable researchers,\npractitioners, and the general public to use cutting-edge redistricting\nsimulation analysis to evaluate enacted Congressional districts.\nOver the past few years, academic researchers, including those on the\nALARM Project, have\ndeveloped redistricting simulation algorithms. These algorithms can be\nused to obtain a representative sample of alternative plans one could\ndraw under each state’s rules for drawing districts. The comparison of\nan enacted plan with these sampled alternative plans can reveal the\nextent to which the enacted plan is likely to yield extreme partisan,\nracial, or other outcomes.\nOur mission is to bring these modern redistricting simulation\nalgorithms to researchers, policy makers, data journalists, and citizen\ndata scientists. The ALARM project has developed an open-source software\npackage redist to\nsimulate and analyze alternative plans under any redistricting criteria\ntailored to the user’s analysis goals. We have also developed a set of\nnew tools that facilitate the efficient workflow including data\ningestion, preprocessing, diagnostics, visualizations, and\npost-simulation analyses. The 50-State Simulation Project demonstrates\nhow to use all of these tools in a unified workflow in the context of\neach state, and provides a set of 5,000 alternative plans for each\ncongressional (and later, state legislative) redistricting plan.\nOur simulation analyses should serve as a realistic template for\nthose who are interested in conducting their own analyses. Our code can\nbe modified and extended, and the resulting samples can be used to\nexplore various properties of potential plans under the specific\nredistricting criteria of our analysis. Our simulations presented here,\nhowever, do not represent our evaluation of the\nlegality of the enacted and other plans. Any such evaluation of\nthe enacted plan would require the interpretation of relevant laws.\nAlthough some requirements are relatively straightforward to interpret\nand operationalize (e.g., minimizing splits of administrative\nboundaries), others such as compliance with the Voting Rights Act\nrequire legal justifications. For this reason, we do not claim that the\nanalyses presented here are necessarily applicable when evaluating the\nlegality of redistricting plans.\nWhy are simulations useful?\nEvaluating a redistricting plan requires analysts to take into\naccount each state’s redistricting rules and particular political\ngeography. Comparing the partisan bias of a plan for Texas with the bias\nof a plan for New York, for example, is likely misleading. Comparing a\nstate’s current plan to a past plan is also problematic because of\ndemographic and political changes over time. Simulations generate an\nensemble of alternative redistricting plans within a given state which\nare tailored to its redistricting rules. Unlike traditional evaluation\nmethods, therefore, simulations are able to directly account for the\nstate’s political geography and redistricting criteria.\nWhere can I find the code, data, and simulated\nplans?\nFor each state, we release 5,000 alternative plans, according to our\nbest approximation of each state’s redistricting rules. The code used to\ngenerate the simulated plans is also available so that others can use it\nas a template to generate their own simulated plans under different\nspecifications. The major outputs are posted on the ALARM\nProject Dataverse, and the code is available on GitHub.\nOutput File\nWhat is it?\n*_map.rds\nA redist_map R object. A geographic (typically\nVTD-level) dataset with election data, demographics, a shapefile, and an\nadjacency graph.\n*_plans.rds\nA redist_plans R object. A district-level dataset\ncontaining the 5,000 simulated plans as a matrix of district assignments\ncorresponding to the rows in *_map.rds.\n*_stats.csv\nA district-level dataset with standard redistricting measures\nreported for the enacted plan and all 5,000 simulations.\n*_doc.html\nA documentation file containing data sources, our interpretations of\nlegal requirements, and other simulation decisions.\nTo …\nLook at …\nSee key metrics for the enacted map and simulated plans\nSummary file (e.g. MA_cd_2020_stats.csv)\nWork with the simulated and enacted plans\nPlans object (e.g. MA_cd_2020_plans.rds)\nSee the constraints used to make the simulations\nDocumentation HTML (e.g. MA_cd_2020_doc.html)\nVisualize the Enacted map and precinct-level data\nredist_map R object (e.g. MA_cd_2020_map.rds)\nCreate custom metrics to evaluate the enacted map\nredist_map combined with the plan object\nThose wishing to add additional metrics to these districts may find\nthe documentation for redist\nand redistmetrics\nuseful.\nHow should I interpret the simulation graphs?\nThe graphs we provide with each simulation compare the enacted plan\nwith the range of alternative plans in terms of expected number of\nseats, election results by districts, partisan bias, and some\ntraditional districting criteria. We explain how to interpret graphs\nwith examples below.\nExpected number of seats\nIn each state, we average across several statewide elections from\n2016-2020, and represent the range of the expected number of districts\nwon by a party with a histogram. In Oregon, for example, Democrats are\nexpected to win about 3.5 out of the 6 congressional districts under\nsimulated plans. This is close to proportional representation of their\nstatewide vote of 3.3 Democratic seats. In contrast, under the enacted\nplan, the Democratic party is expected to win as many as 4.2 seats. Less\nthan 1% of simulated plans would yield the same or higher expected\nnumber of Democratic seats as the enacted plan. The histogram ranges\nfrom 3.5 to 4.5, which tells us that the Democrats would likely not be\nable to consistently win 5 seats under Oregon’s geography, legal\nconstraints, and recent performance in statewide elections, regardless\nof the plan. A takeaway from this histogram is that although the\nmajority party usually wins more seats than proportional representation,\nthe enacted map is a statistical outlier in the degree of that\nDemocratic advantage.\n\nElection results by districts\nIn addition to the statewide, we can also compare the enacted plan\nwith the simulated plans at the district level. We first order the\ndistricts of the enacted plan by the variable of interest. For example,\nto evaluate district level Democratic vote in Oregon with 6 districts,\nwe sort the districts from the least Democratic (ordered district 1) to\nthe most Democratic district (ordered district 6). We repeat this for\neach of the simulated plans. Once the districts are sorted for both the\nenacted and simulated plans, we use a dot to represent the Democratic\nvote percent for each ordered district of a simulated plan. For the\nenacted plan, we use a black horizontal line. This allows visual\ncomparison between the enacted and simulated plans. In the example\nbelow, the enacted plan appears to pack Republicans in the most\nRepublican district (1), while making the second most Republican\ndistrict (2) barely Democratic. Again, the number on the x-axis does not\ncorrespond to the actual district number under the enacted plan.\nInstead, it represents the order of districts sorted by the variable of\ninterest for each plan. The variable of interest is then made into the\ny-axis.\n\nPartisan bias metrics\nWe measure the partisan bias of a plan in two ways: the efficiency\ngap and the deviation from partisan symmetry. The efficiency gap of a\nplan is the difference in the two party’s wasted votes as a fraction of\nthe statewide turnout. It is a measure of packing and cracking. If a\nDemocrat won a district with 60% of the vote, then each vote above 50% +\n1 of the total votes are wasted because the district could have won by\n50% + 1 votes. Similarly, if a Democrat loses a district with 45%, then\neach of those votes are wasted because those votes did not lead to a\nseat. The efficiency gap for Democrats shown in the histogram is the\nDemocratic wasted votes minus the Republican wasted votes. Thus,\npositive values indicate a pro-Republican bias whereas a negative value\nindicates a pro-Democratic bias. In the Oregon plan, the gap is -0.10,\nmeaning that Democratic votes are wasted at a much smaller rate than\nRepublican votes.\n\nAnother measure we use is deviation from partisan symmetry in the\nseats-votes curve. Suppose a plan leads to 60% Democratic seats when\ntheir statewide vote share is 55%. If the map satisfies partisan\nsymmetry, the Republican seat share should also be 60% if they win 55%\nof the votes in another election. We represent the deviation\nfrom partisan symmetry by computing the excess Republican seat share\nabove 50% when their vote share is 50%. This measure is typically called\nthe “partisan bias” of a plan in the academic literature on\nredistricting. In the Oregon example below, the 0.1 deviation from\npartisan symmetry means that in a 50-50 election, the plan allocates 60%\nof seats to the Republicans, rather than the symmetric outcome of 50% of\nseats. While the enacted plan is more favorable towards the Republican\nparty than a plan that exhibits partisan symmetry (a value of 0), it\nstill favors the Democratic plan more than the modal simulated plan\n(around 0.18 on the histogram).\nTraditional Redistricting Criteria\nThe histograms for compactness and counties split compare the enacted\nand expected maps in the same way as partisan metrics. We measure\ngeographic compactness with the Polsby-Popper compactness score of each\ndistrict, and take its average across districts. Polsby Popper scores\nrange from 0 to 1 with 1 indicating a circle. The “counties split”\nmeasure is the number of counties which are not wholly contained within\na single district. In the Oregon example, the enacted plan is near the\ncentral tendency of the alternatives in terms of compactness. However,\nit splits 11 counties whereas the alternative plans only split up to 6\ncounties.\n\nWhat\nare the redistricting rules used to generate simulated plans?\nWe have documented the rules we used to simulate our alternative\nplans. All simulated plans will be contiguous, respect population\nequality, and are at least somewhat compact. Many states have their own\nspecific rules, which we attempt to follow. The set of constraints used\ndepends on the state’s redistricting rules.\nHard county splitting constraint: Unless otherwise\nnoted, a simulated plan will split fewer counties than the number of\ndistricts.\nHard population constraint: Congressional districts\nmust be roughly equal in population, so all state simulations contain a\nuser-specified cap on the maximum deviation of any one district from the\ntarget population, which is the total statewide population divided by\nthe number of districts. This deviation is 0.5% of the target population\nor less, except when a state explicitly specifies a maximum.\nCompactness constraint: Unless otherwise noted, the\nalgorithm nudges towards compact districts by an adjacency-graph-based\nmeasure of compactness, the fraction of edges kept.\nMunicipality splitting constraint: In some states,\nthe simulations avoid splitting municipalities within large counties\nmany times to preserve political subdivisions.\nVRA constraint: In some states, the simulations are\nencouraged to accept plans that have a concentrated minority share of\nthe voting age population or citizen voting age population, in\naccordance with the Voting Rights Act of 1965.\nDisclaimers\nFor consistency, reference plans, such as the 2010 or 2020\nenacted plans, are best matched to the VTD or tract level. Reference\nplans often split a few of these at the block level. This may have a\nvery small impact on estimated metrics.\nVRA compliance requires substantial information, including a\nracially polarized voting analysis and knowledge of local history. For\nthe purposes of this project, we target the number of\nminority-opportunity districts as in the enacted plan. We check\napproximate performance of these districts. Simulation results can\nchange if different VRA constraints are imposed.\nConstraints are based on our interpretation of the law, but we\nare not lawyers. We do our best to follow the requirements and choices\nmade by states.\nAny suggestions for improving the analysis, including legal\ninterpretation of statutory requirements are welcome and should be\nsubmitted as a\nGitHub issue.\nData Sources and\nAvailability\nUnless otherwise noted, data for each state comes from the ALARM\nProject’s 2020\nRedistricting Data Files, which use U.S. Census demographic data (in\nthe public domain) and election data from the Voting\nand Election Science Team, which is licensed under a CC BY 4.0\nlicense. In these cases, shapefiles are also taken from the U.S. Census\nBureau. The U.S. map here, scaled to reflect Congressional\nrepresentations, is courtesy of https://dkel.ec/map.\nAll data is available on our Dataverse and has been\nreleased to the public domain. Code is available on GitHub under an\nMIT license.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-07-18T12:30:45-07:00",
+    "input_file": {}
+  },
+  {
+    "path": "fifty-states/AZ_cd_2020/",
+    "title": "Arizona Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nArizona has 9 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Arizona, Democrats win about 48% of the vote in a typical\nstatewide election. Proportionally, that would translate to 4.4\nDemocratic seats out of 9 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 2.8 to 4.5\nseats on average, with 3.5 being the most typical. In contrast,\nwe expect the enacted plan to yield 3.2 Democratic seats on\naverage, which is less than 78% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nArizona’s enacted plan scores a 0.26, in line with the simulated plans\n(a higher score means more compact). It splits 7 counties, compared to\nan average of 6 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Arizona in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Arizona here.\nRedistricting requirements\n\n\nIn Arizona, districts must,\nunder\nthe state constitution:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\nfavor competitive districts to the extent practicable\n\n\n\n\n\n",
+    "preview": "fifty-states/AZ_cd_2020/AZ_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:57:14-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/CO_cd_2020/",
+    "title": "Colorado Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nColorado has 8 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Colorado, Democrats win about 54% of the vote in a typical\nstatewide election. Proportionally, that would translate to 4.4\nDemocratic seats out of 8 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 3.3 to 5.6\nseats on average, with 4.1 being the most typical. In contrast,\nwe expect the enacted plan to yield 4.7 Democratic seats on\naverage, which is more than 82% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nColorado’s enacted plan scores a 0.29, less than 78% of all simulated\nplans (a higher score means more compact). It splits 9 counties,\ncompared to an average of 7 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Colorado in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Colorado here.\nRedistricting requirements\n\n\nIn Colorado, districts must:\n\n\nbe contiguous\n\n\nhave equal populations – Section 44.3 1(a)\n\n\nbe geographically compact – Section 44.3 2(b)\n\n\npreserve county and municipality boundaries as much as possible –\nSection 44.3 2(a)\n\n\npreserve whole communities of interest – Section 44.3 2(a)\n\n\nmaximize the number of politically competitive districts – Section 44.3\n3(a)\n\n\nnot be drawn protect incumbents\n\n\n\n\n\n",
+    "preview": "fifty-states/CO_cd_2020/CO_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:57:32-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1248
+  },
+  {
+    "path": "fifty-states/HI_cd_2020/",
+    "title": "Hawaii Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nHawaii has 2 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Hawaii, Democrats win about 69% of the vote in a typical statewide\nelection. Proportionally, that would translate to 1.4 Democratic seats\nout of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 2.0 to 2.0\nseats on average, with 2.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 2.0 Democratic seats on\naverage, which is in line with the simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty. These metrics may be misleading for a strongly Democratic state\nlike Hawaii. Learn more about these\nmetrics here.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nHawaii’s enacted plan scores a 0.16, less than 90% of all simulated\nplans (a higher score means more compact). It splits 1 county, compared\nto an average of 1 county for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Hawaii in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Hawaii here.\nRedistricting requirements\n\n\nIn Hawaii, under\nHRS\nTitle 1 S25, districts must:\n\n\nbe contiguous unless crossing islands (25-2 (b) (2))\n\n\nbe geographically compact (25-2(b)(3))\n\n\npreserve tract boundaries as much as possible (25-2(b)(4))\n\n\nnot unduly favor any people or party (25-2(b)(6))\n\n\navoid mixing substantially different socioeconomic regions (25-2(b)(6))\n\n\n\n\n\n",
+    "preview": "fifty-states/HI_cd_2020/HI_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:57:39-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 907
+  },
+  {
+    "path": "fifty-states/IA_cd_2020/",
+    "title": "Iowa Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nIowa has 4 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Iowa, Democrats win about 46% of the vote in a typical statewide\nelection. Proportionally, that would translate to 1.8 Democratic seats\nout of 4 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 1.0 to 1.7\nseats on average, with 1.2 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.5 Democratic seats on\naverage, which is less than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nIowa’s enacted plan scores a 0.33, in line with the simulated plans (a\nhigher score means more compact). It splits 0 counties, compared to an\naverage of 0 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Iowa in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Iowa here.\nRedistricting requirements\n\n\nIn Iowa, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe constructed only from counties\n\n\nbe geographically compact, as defined by two compactness measures:\n\nlength-width compactness, which measures the total absolute difference\nbetween the length and width of a district, across all districts\n\n\nperimeter compactness, which measures the total perimeter of all\ndistricts\n\n\n\n\n\n\n",
+    "preview": "fifty-states/IA_cd_2020/IA_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:57:49-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1128
+  },
+  {
+    "path": "fifty-states/ID_cd_2020/",
+    "title": "Idaho Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nIdaho has 2 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Idaho, Democrats win about 34% of the vote in a typical statewide\nelection. Proportionally, that would translate to 0.7 Democratic seats\nout of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.0 to 0.0\nseats on average, with 0.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.0 Democratic seats on\naverage, which is in line with the simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty. These metrics may be misleading for a strongly Republican state\nlike Idaho. Learn more about these\nmetrics here.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nIdaho’s enacted plan scores a 0.25, less than 82% of all simulated plans\n(a higher score means more compact). It splits 1 county, compared to an\naverage of 1 county for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Idaho in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Idaho here.\nRedistricting requirements\n\n\nIn\nIdaho, districts must:\n\n\nbe contiguous (72-1506(6)).\n\n\nhave equal populations (72-1506(3)).\n\n\nbe geographically compact (72-1506(4), 72-1506(5)).\n\n\npreserve county and municipality boundaries as much as possible\n(72-1506(2)).\n\n\nnot be drawn to favor party or incumbents (72-1506(8)).\n\n\nconnect counties based on highways (72-1506(9)).\n\n\n\n\n\n",
+    "preview": "fifty-states/ID_cd_2020/ID_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:58:01-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/IN_cd_2020/",
+    "title": "Indiana Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nIndiana has 9 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Indiana, Democrats win about 42% of the vote in a typical\nstatewide election. Proportionally, that would translate to 3.8\nDemocratic seats out of 9 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 1.4 to 2.6\nseats on average, with 2.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 2.0 Democratic seats on\naverage, which is more than 68% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nIndiana’s enacted plan scores a 0.48, more than 100% of all simulated\nplans (a higher score means more compact). It splits 8 counties,\ncompared to an average of 7 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Indiana in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Indiana here.\nRedistricting requirements\n\n\nIn Indiana, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\n\n\n\n",
+    "preview": "fifty-states/IN_cd_2020/IN_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:58:22-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/KS_cd_2020/",
+    "title": "Kansas Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nKansas has 4 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Kansas, Democrats win about 43% of the vote in a typical statewide\nelection. Proportionally, that would translate to 1.7 Democratic seats\nout of 4 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.7 to 1.1\nseats on average, with 0.9 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.6 Democratic seats on\naverage, which is less than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nKansas’s enacted plan scores a 0.35, less than 66% of all simulated\nplans (a higher score means more compact). It splits 4 counties,\ncompared to an average of 3 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Kansas in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Kansas here.\nRedistricting requirements\n\n\nIn Kansas, according to the\nProposed\nGuidelines and Criteria for 2022 Kansas Congressional Redistricting\ndistricts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\npreserve the cores of existing districts\n\n\npreserve communities of social, cultural, racial, ethnic, and economic\ninterest to the extent possible\n\n\n\n\n\n",
+    "preview": "fifty-states/KS_cd_2020/KS_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:58:41-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 892
+  },
+  {
+    "path": "fifty-states/LA_cd_2020/",
+    "title": "Louisiana Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nLouisiana has 6 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Louisiana, Democrats win about 42% of the vote in a typical\nstatewide election. Proportionally, that would translate to 2.5\nDemocratic seats out of 6 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 1.0 to 1.0\nseats on average, with 1.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 1.0 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nLouisiana’s enacted plan scores a 0.14, less than 100% of all simulated\nplans (a higher score means more compact). It splits 15 counties,\ncompared to an average of 14 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Louisiana in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Louisiana here.\nRedistricting requirements\n\n\nIn Louisiana, according to\nLouisiana\nJoint Rule No. 21 districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve parish and municipality boundaries as much as possible\n\n\npreserve the cores of traditional district alignments\n\n\n\n\n\n",
+    "preview": "fifty-states/LA_cd_2020/LA_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:59:01-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/MA_cd_2020/",
+    "title": "Massachusetts Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMassachusetts has 9 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Massachusetts, Democrats win about 61% of the vote in a typical\nstatewide election. Proportionally, that would translate to 5.5\nDemocratic seats out of 9 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 7.5 to 7.7\nseats on average, with 7.7 being the most typical. In contrast,\nwe expect the enacted plan to yield 7.7 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMassachusetts’s enacted plan scores a 0.22, less than 100% of all\nsimulated plans (a higher score means more compact). It splits 9\ncounties, compared to an average of 7 counties for our simulated\nplans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Massachusetts in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Massachusetts here.\nRedistricting requirements\n\n\nIn Massachusetts, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\n\n\n\n",
+    "preview": "fifty-states/MA_cd_2020/MA_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:59:13-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1072
+  },
+  {
+    "path": "fifty-states/MD_cd_2020/",
+    "title": "Maryland Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMaryland has 8 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Maryland, Democrats win about 62% of the vote in a typical\nstatewide election. Proportionally, that would translate to 5.0\nDemocratic seats out of 8 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 4.8 to 6.7\nseats on average, with 5.7 being the most typical. In contrast,\nwe expect the enacted plan to yield 6.7 Democratic seats on\naverage, which is more than 99% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMaryland’s enacted plan scores a 0.16, less than 100% of all simulated\nplans (a higher score means more compact). It splits 8 counties,\ncompared to an average of 5 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Maryland in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Maryland here.\nRedistricting requirements\n\n\nIn\nMaryland, districts must:\n\n\nbe contiguous (C.1.a.i.)\n\n\nhave equal populations (C.1.c.i.)\n\n\nbe geographically compact (C.1.a.iv.)\n\n\npreserve county and municipality boundaries as much as possible\n(C.1.a.iii.)\n\n\nnot consider incumbent or partisan information (C.1.b.i., C.1.b.ii.)\n\n\n\n\n\n",
+    "preview": "fifty-states/MD_cd_2020/MD_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:59:26-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 912
+  },
+  {
+    "path": "fifty-states/ME_cd_2020/",
+    "title": "Maine Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMaine has 2 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Maine, Democrats win about 49% of the vote in a typical statewide\nelection. Proportionally, that would translate to 1.0 Democratic seats\nout of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.8 to 1.0\nseats on average, with 1.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.8 Democratic seats on\naverage, which is less than 78% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMaine’s enacted plan scores a 0.08, less than 99% of all simulated plans\n(a higher score means more compact). It splits 1 county, compared to an\naverage of 1 county for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Maine in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Maine here.\nRedistricting requirements\n\n\nIn\nMaine, following Title 21-A, Chapter 15, Section 1206, districts\nmust:\n\n\nbe contiguous (1)\n\n\nhave equal populations (1)\n\n\nbe geographically compact (1)\n\n\npreserve county and municipality boundaries as much as possible (1)\n\n\n\n\n\n",
+    "preview": "fifty-states/ME_cd_2020/ME_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:59:36-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/MI_cd_2020/",
+    "title": "Michigan Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMichigan has 13 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Michigan, Democrats win about 52% of the vote in a typical\nstatewide election. Proportionally, that would translate to 6.8\nDemocratic seats out of 13 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 5.3 to 7.4\nseats on average, with 6.3 being the most typical. In contrast,\nwe expect the enacted plan to yield 7.1 Democratic seats on\naverage, which is more than 97% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMichigan’s enacted plan scores a 0.34, more than 98% of all simulated\nplans (a higher score means more compact). It splits 14 counties,\ncompared to an average of 9 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Michigan in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Michigan here.\nRedistricting requirements\n\n\nIn Michigan, districts must:\n\n\nbe contiguous (Mich. Const. art. IV, § 6(13)(b)). Island areas are\nconsidered to be contiguous by land to the county of which they are a\npart.\n\n\nhave equal populations (Mich. Const. art. IV, § 6(13)(a))\n\n\nbe geographically compact (Mich. Const. art. IV, § 6(13)(g))\n\n\nreflect consideration of county, city, and township boundaries (Mich.\nConst. art. IV, § 6(13)(f))\n\n\nnot provide a disproportionate advantage to any political party,\ndetermined using accepted measures of partisan fairness (Mich. Const.\nart. IV, § 6(13)(d))\n\n\nBased on the current plan, two districts should be majority-minority in\norder to comply with the Voting Rights Act.\n\n\n\n\n\n",
+    "preview": "fifty-states/MI_cd_2020/MI_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:59:56-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/MO_cd_2020/",
+    "title": "Missouri Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMissouri has 8 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Missouri, Democrats win about 42% of the vote in a typical\nstatewide election. Proportionally, that would translate to 3.4\nDemocratic seats out of 8 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 1.5 to 2.3\nseats on average, with 2.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 2.0 Democratic seats on\naverage, which is in line with the simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMissouri’s enacted plan scores a 0.31, less than 69% of all simulated\nplans (a higher score means more compact). It splits 9 counties,\ncompared to an average of 6 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Missouri in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Missouri here.\nRedistricting requirements\n\n\nIn\nMissouri,\ndistricts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\n\n\n\n",
+    "preview": "fifty-states/MO_cd_2020/MO_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:00:18-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/MS_cd_2020/",
+    "title": "Mississippi Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMississippi has 4 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Mississippi, Democrats win about 43% of the vote in a typical\nstatewide election. Proportionally, that would translate to 1.7\nDemocratic seats out of 4 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 1.0 to 1.0\nseats on average, with 1.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 1.0 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMississippi’s enacted plan scores a 0.31, more than 91% of all simulated\nplans (a higher score means more compact). It splits 4 counties,\ncompared to an average of 3 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Mississippi in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Mississippi here.\nRedistricting requirements\n\n\nIn Mississippi,\nunder\nMississippi Code 5-3-123 and\nCommittee\nagreement, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\ncomply with the Voting Rights Act of 1965\n\n\n\n\n\n",
+    "preview": "fifty-states/MS_cd_2020/MS_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:00:36-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/MT_cd_2020/",
+    "title": "Montana Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nMontana has 2 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Montana, Democrats win about 43% of the vote in a typical\nstatewide election. Proportionally, that would translate to 0.9\nDemocratic seats out of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.2 to 0.4\nseats on average, with 0.3 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.2 Democratic seats on\naverage, which is in line with the simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nMontana’s enacted plan scores a 0.36, more than 84% of all simulated\nplans (a higher score means more compact). It splits 1 county, compared\nto an average of 1 county for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Montana in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Montana here.\nRedistricting requirements\n\n\nIn Montana, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\n\n\n\n",
+    "preview": "fifty-states/MT_cd_2020/MT_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:00:50-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 997
+  },
+  {
+    "path": "fifty-states/NC_cd_2020/",
+    "title": "North Carolina Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nNorth Carolina has 14 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn North Carolina, Democrats win about 50% of the vote in a typical\nstatewide election. Proportionally, that would translate to 7.0\nDemocratic seats out of 14 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 5.0 to 7.6\nseats on average, with 6.2 being the most typical. In contrast,\nwe expect the enacted plan to yield 6.9 Democratic seats on\naverage, which is more than 87% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nNorth Carolina’s enacted plan scores a 0.34, more than 97% of all\nsimulated plans (a higher score means more compact). It splits 12\ncounties, compared to an average of 11 counties for our simulated\nplans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across North Carolina in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for North Carolina here.\nRedistricting requirements\n\n\nIn North Carolina, under\nNorth\nCarolina State Constitution Article II Sections 3 & 5, districts\nmust:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county boundaries as much as possible\n\n\n\n\n\n",
+    "preview": "fifty-states/NC_cd_2020/NC_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:01:12-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 675
+  },
+  {
+    "path": "fifty-states/NE_cd_2020/",
+    "title": "Nebraska Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nNebraska has 3 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Nebraska, Democrats win about 37% of the vote in a typical\nstatewide election. Proportionally, that would translate to 1.1\nDemocratic seats out of 3 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.2 to 0.8\nseats on average, with 0.5 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.5 Democratic seats on\naverage, which is more than 78% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nNebraska’s enacted plan scores a 0.31, less than 88% of all simulated\nplans (a higher score means more compact). It splits 2 counties,\ncompared to an average of 2 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Nebraska in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Nebraska here.\nRedistricting requirements\n\n\nIn Nebraska, districts must, under a\nlegislative\nresolution:\n\n\nbe contiguous\n\n\nhave equal populations (specifically, within 0.5% of equality)\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\npreserve the cores of prior districts\n\n\nnot be drawn using partisan information\n\n\n\n\n\n",
+    "preview": "fifty-states/NE_cd_2020/NE_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:01:30-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 794
+  },
+  {
+    "path": "fifty-states/NH_cd_2020/",
+    "title": "New Hampshire Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nNew Hampshire has 2 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn New Hampshire, Democrats win about 49% of the vote in a typical\nstatewide election. Proportionally, that would translate to 1.0\nDemocratic seats out of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.9 to 1.0\nseats on average, with 1.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 1.0 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nNew Hampshire’s enacted plan scores a 0.16, less than 100% of all\nsimulated plans (a higher score means more compact). It splits 5\ncounties, compared to an average of 1 county for our simulated\nplans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across New Hampshire in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for New Hampshire here.\nRedistricting requirements\n\n\nIn New Hampshire, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\n\n\n\n",
+    "preview": "fifty-states/NH_cd_2020/NH_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:30:19-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/NJ_cd_2020/",
+    "title": "New Jersey Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nNew Jersey has 12 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn New Jersey, Democrats win about 57% of the vote in a typical\nstatewide election. Proportionally, that would translate to 6.8\nDemocratic seats out of 12 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 7.5 to 9.5\nseats on average, with 8.5 being the most typical. In contrast,\nwe expect the enacted plan to yield 9.0 Democratic seats on\naverage, which is more than 99% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nNew Jersey’s enacted plan scores a 0.21, less than 98% of all simulated\nplans (a higher score means more compact). It splits 14 counties,\ncompared to an average of 14 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across New Jersey in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for New Jersey here.\nRedistricting requirements\n\n\nIn New Jersey, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\n\n\n\n",
+    "preview": "fifty-states/NJ_cd_2020/NJ_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:22:06-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/NV_cd_2020/",
+    "title": "Nevada Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nNevada has 4 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Nevada, Democrats win about 51% of the vote in a typical statewide\nelection. Proportionally, that would translate to 2.0 Democratic seats\nout of 4 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 2.0 to 3.0\nseats on average, with 2.9 being the most typical. In contrast,\nwe expect the enacted plan to yield 3.0 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nNevada’s enacted plan scores a 0.44, more than 97% of all simulated\nplans (a higher score means more compact). It splits 2 counties,\ncompared to an average of 2 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Nevada in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Nevada here.\nRedistricting requirements\n\n\nIn Nevada, districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\npreserve communities of interest.\n\n\n\n\n\n",
+    "preview": "fifty-states/NV_cd_2020/NV_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:04:15-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/OH_cd_2020/",
+    "title": "Ohio Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nOhio has 15 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Ohio, Democrats win about 47% of the vote in a typical statewide\nelection. Proportionally, that would translate to 7.0 Democratic seats\nout of 15 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 4.9 to 6.4\nseats on average, with 5.9 being the most typical. In contrast,\nwe expect the enacted plan to yield 4.9 Democratic seats on\naverage, which is less than 98% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nOhio’s enacted plan scores a 0.29, in line with the simulated plans (a\nhigher score means more compact). It splits 14 counties, compared to an\naverage of 9 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Ohio in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Ohio here.\nRedistricting requirements\n\n\nIn Ohio, districts must, under\nArticle\nXIX of the Ohio Constitution:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\nnot split Cincinnati or Cleveland\n\n\nminimize splitting of Columbus\n\n\nsplit no more than 18 counties once, and no more than 5 counties twice,\nand no counties three times\n\n\nadditionally preserve county and municipality boundaries where possible\n\n\n\n\n\n",
+    "preview": "fifty-states/OH_cd_2020/OH_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:04:42-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/OK_cd_2020/",
+    "title": "Oklahoma Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nOklahoma has 5 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Oklahoma, Democrats win about 34% of the vote in a typical\nstatewide election. Proportionally, that would translate to 1.7\nDemocratic seats out of 5 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.0 to 0.5\nseats on average, with 0.2 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.0 Democratic seats on\naverage, which is less than 96% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty. These metrics may be misleading for a strongly Republican state\nlike Oklahoma. Learn more about\nthese metrics here.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nOklahoma’s enacted plan scores a 0.28, in line with the simulated plans\n(a higher score means more compact). It splits 6 counties, compared to\nan average of 4 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Oklahoma in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Oklahoma here.\nRedistricting requirements\n\n\nIn\nOklahoma, districts must:\n\n\nbe contiguous (C)\n\n\nhave equal populations (A.2)\n\n\nbe geographically compact (C)\n\n\npreserve county and municipality boundaries as much as possible (C)\n\n\n\n\n\n",
+    "preview": "fifty-states/OK_cd_2020/OK_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:04:59-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 850
+  },
+  {
+    "path": "fifty-states/OR_cd_2020/",
+    "title": "Oregon Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nOregon has 6 congressional districts. We’ve generated 6,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Oregon, Democrats win about 56% of the vote in a typical statewide\nelection. Proportionally, that would translate to 3.4 Democratic seats\nout of 6 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 3.2 to 4.3\nseats on average, with 3.8 being the most typical. In contrast,\nwe expect the enacted plan to yield 4.3 Democratic seats on\naverage, which is more than 99% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nOregon’s enacted plan scores a 0.33, more than 65% of all simulated\nplans (a higher score means more compact). It splits 11 counties,\ncompared to an average of 4 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Oregon in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Oregon here.\nRedistricting requirements\n\n\nIn Oregon, districts must, under Or. Rev. Stat. § 188.010:\n\n\nbe contiguous\n\n\nbe of equal population\n\n\nutilize existing geographic or political boundaries\n\n\nnot divide communities of common interest\n\n\nbe connected by transportation links\n\n\nAdditionally, districts may not favor any political party or incumbent,\nand may not dilute the voting strength of any language or ethnic\nminority group.\n\n\n\n\n\n",
+    "preview": "fifty-states/OR_cd_2020/OR_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:05:13-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1270
+  },
+  {
+    "path": "fifty-states/PA_cd_2020/",
+    "title": "Pennsylvania Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nPennsylvania has 17 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Pennsylvania, Democrats win about 53% of the vote in a typical\nstatewide election. Proportionally, that would translate to 9.0\nDemocratic seats out of 17 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 7.4 to 8.8\nseats on average, with 8.2 being the most typical. In contrast,\nwe expect the enacted plan to yield 9.2 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nPennsylvania’s enacted plan scores a 0.32, more than 100% of all\nsimulated plans (a higher score means more compact). It splits 14\ncounties, compared to an average of 12 counties for our simulated\nplans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Pennsylvania in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Pennsylvania here.\nRedistricting requirements\n\n\nIn Pennsylvania, there are few formal districting requirements, but\ndistricts must generally:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\n\n\n\n",
+    "preview": "fifty-states/PA_cd_2020/PA_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:05:36-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1089
+  },
+  {
+    "path": "fifty-states/RI_cd_2020/",
+    "title": "Rhode Island Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nRhode Island has 2 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Rhode Island, Democrats win about 62% of the vote in a typical\nstatewide election. Proportionally, that would translate to 1.2\nDemocratic seats out of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 2.0 to 2.0\nseats on average, with 2.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 2.0 Democratic seats on\naverage, which is more than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nRhode Island’s enacted plan scores a 0.28, less than 70% of all\nsimulated plans (a higher score means more compact). It splits 1 county,\ncompared to an average of 1 county for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Rhode Island in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Rhode Island here.\nRedistricting requirements\n\n\nIn Rhode Island, according to the\nRhode\nIsland Laws, Chapter 100, Section 2 districts must:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve state senate district boundaries as much as possible\n\n\n\n\n\n",
+    "preview": "fifty-states/RI_cd_2020/RI_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:05:45-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/TX_cd_2020/",
+    "title": "Texas Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nTexas has 38 congressional districts. We’ve generated 5,000 sets of\nrandomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Texas, Democrats win about 46% of the vote in a typical statewide\nelection. Proportionally, that would translate to 17.6 Democratic seats\nout of 38 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 15.0 to\n19.0 seats on average, with 17.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 13.7 Democratic seats on\naverage, which is less than 100% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nTexas’s enacted plan scores a 0.18, less than 100% of all simulated\nplans (a higher score means more compact). It splits 30 counties,\ncompared to an average of 21 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Texas in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Texas here.\nRedistricting requirements\n\n\nIn Texas, districts must meet US constitutional requirements, but there\nare\nno\nstate-specific statutes.\n\n\n\n\n\n",
+    "preview": "fifty-states/TX_cd_2020/TX_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:28:44-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/WA_cd_2020/",
+    "title": "Washington Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nWashington has 10 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Washington, Democrats win about 56% of the vote in a typical\nstatewide election. Proportionally, that would translate to 5.6\nDemocratic seats out of 10 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 5.7 to 6.6\nseats on average, with 6.3 being the most typical. In contrast,\nwe expect the enacted plan to yield 6.0 Democratic seats on\naverage, which is less than 86% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nWashington’s enacted plan scores a 0.31, more than 96% of all simulated\nplans (a higher score means more compact). It splits 7 counties,\ncompared to an average of 7 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Washington in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Washington here.\nRedistricting requirements\n\n\nIn Washington, districts must, under\nArticle\n2, Section 43 of the constitution and\nRCW\n44.05.090:\n\n\nbe contiguous\n\n\nhave equal populations\n\n\nbe geographically compact\n\n\npreserve county and municipality boundaries as much as possible\n\n\nnot be connected across geographic barriers, although ferries across\nwater may establish contiguity\n\n\n“provide fair and effective representation and … encourage electoral\ncompetition”\n\n\n\n\n\n",
+    "preview": "fifty-states/WA_cd_2020/WA_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T11:54:49-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1119
+  },
+  {
+    "path": "fifty-states/WI_cd_2020/",
+    "title": "Wisconsin Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nWisconsin has 8 congressional districts. We’ve generated 5,000 sets\nof randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn Wisconsin, Democrats win about 51% of the vote in a typical\nstatewide election. Proportionally, that would translate to 4.1\nDemocratic seats out of 8 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 2.3 to 4.0\nseats on average, with 2.7 being the most typical. In contrast,\nwe expect the enacted plan to yield 2.9 Democratic seats on\naverage, which is more than 74% of all simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty.\nLearn more about these metrics\nhere.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nWisconsin’s enacted plan scores a 0.31, less than 81% of all simulated\nplans (a higher score means more compact). It splits 12 counties,\ncompared to an average of 6 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across Wisconsin in a typical\nstatewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for Wisconsin here.\nRedistricting requirements\n\n\nIn Wisconsin, districts must:\n\n\nhave equal populations\n\n\n\n\n\n",
+    "preview": "fifty-states/WI_cd_2020/WI_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:07:27-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/WV_cd_2020/",
+    "title": "West Virginia Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-07-18",
+    "categories": [],
+    "contents": "\nWest Virginia has 2 congressional districts. We’ve generated 5,000\nsets of randomly simulated districts according to the relevant criteria. Three of\nthese plans are shown here, along with the actual enacted map.\n\n\n\nPartisan Features\n\n\n\nIn West Virginia, Democrats win about 30% of the vote in a typical\nstatewide election. Proportionally, that would translate to 0.6\nDemocratic seats out of 2 total.\n\n\n\nLearn more about this graph\nBut proportionality isn’t guaranteed, even in a fair redistricting\nprocess. In our simulated plans, Democrats won anywhere from 0.0 to 0.0\nseats on average, with 0.0 being the most typical. In contrast,\nwe expect the enacted plan to yield 0.0 Democratic seats on\naverage, which is in line with the simulated plans.\nThe graph below breaks this down in detail, showing how each district\nof the enacted plan compares to the set of simulated districts.\n\n\n\nLearn more about this graph\nGerrymandering metrics\n\n\n\nThere are other ways of measuring the partisan skew of redistricting\nplan. The graph below shows two these metrics. The deviation from\npartisan symmetry measures the expected difference in each party’s share\nof seats if they each won 50% of the statewide vote. The efficiency gap\nis calculated as the difference in the number of wasted votes for each\nparty. These metrics may be misleading for a strongly Republican state\nlike West Virginia. Learn more\nabout these metrics here.\n\n\n\nLearn more about this graph\nTraditional redistricting\ncriteria\n\n\n\nFactors other than partisanship are important for redistricting, too.\nThe graph below shows the geographic compactness and the number of\ncounties which are split into multiple districts. As far as compactness,\nWest Virginia’s enacted plan scores a 0.20, in line with the simulated\nplans (a higher score means more compact). It splits 0 counties,\ncompared to an average of 0 counties for our simulated plans.\n\n\n\nLearn more about this graph\nPolitical Geography\nThese two maps show the partisan lean across West Virginia in a\ntypical statewide election, and the share of minority voters around the\nstate.\n\n\n\nMore information\nDownload\nthe data for West Virginia here.\nRedistricting requirements\n\n\nIn West\nVirginia, under the state constitution, districts must:\n\n\nbe contiguous (I 1-4)\n\n\nhave equal populations (I 1-4)\n\n\nbe geographically compact (I 1-4)\n\n\ndistricts must be made of contiguous counties (I 1-4)\n\n\n\n\n\n",
+    "preview": "fifty-states/WV_cd_2020/WV_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-07-18T12:07:35-07:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/",
+    "title": "50-State Redistricting Simulations",
+    "description": "<img src='/assets/fifty_states_256_tr.png' height=100 style='float: left; margin: -18px 8px -2px 0;'>\nComprehensive project to simulate alternative congressional redistricting plans for all fifty states.",
+    "author": [
+      {
+        "name": "Cory McCartan",
+        "url": {}
+      },
+      {
+        "name": "Christopher Kenny",
+        "url": {}
+      },
+      {
+        "name": "Tyler Simko",
+        "url": {}
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": {}
+      },
+      {
+        "name": "George Garcia III",
+        "url": {}
+      },
+      {
+        "name": "Kevin Wang",
+        "url": {}
+      },
+      {
+        "name": "Melissa Wu",
+        "url": {}
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": {}
+      }
+    ],
+    "date": "2022-02-08",
+    "categories": [],
+    "contents": "\n\n\nEvery decade following the Census, states and municipalities must\nredraw districts for Congress, state houses, city councils, and more.\nThe goal of the 50-State Simulation Project is to enable researchers,\npractitioners, and the general public to use cutting-edge redistricting\nsimulation analysis to evaluate enacted congressional districts.\nEvaluating a redistricting plan requires analysts to take into\naccount each state’s redistricting rules and particular political\ngeography. Comparing the partisan bias of a plan for Texas with the bias\nof a plan for New York, for example, is likely misleading. Comparing a\nstate’s current plan to a past plan is also problematic because of\ndemographic and political changes over time. Redistricting simulations\ngenerate an ensemble of alternative redistricting plans within a given\nstate which are tailored to its redistricting rules. Unlike traditional\nevaluation methods, therefore, simulations are able to directly account\nfor the state’s political geography and redistricting criteria.\n\nLearn more about the\nproject and our methodology »\n\nYou can dive into our analyses straightaway by clicking on a state\nbelow. From there, you’ll be able to see how the state’s new\ncongressional districts stack up compared to a set of 5,000 simulated\nplans.\n\n\n\n\nStates colored  blue  have enacted a\ncongressional map and been fully analyzed, states colored  gray  have enacted a\nplan but haven’t yet been analyzed, or just have a single district (and\nhence no redistricting), and states colored  red  haven’t enacted\na plan yet.\n\nAnalyzed States\n\n\n\nArizona\n\n\nColorado\n\n\nHawaii\n\n\nIdaho\n\n\nIndiana\n\n\nIowa\n\n\nKansas\n\n\nLouisiana\n\n\nMaine\n\n\nMaryland\n\n\nMassachusetts\n\n\nMichigan\n\n\nMississippi\n\n\nMissouri\n\n\nMontana\n\n\nNebraska\n\n\nNevada\n\n\nNew Hampshire\n\n\nNew Jersey\n\n\nNorth Carolina\n\n\nOhio\n\n\nOklahoma\n\n\nOregon\n\n\nPennsylvania\n\n\nRhode Island\n\n\nTexas\n\n\nWashington\n\n\nWest Virginia\n\n\nWisconsin\n\n\n\n\nFor each state, we release 5,000 alternative plans, according to our\nbest approximation of each state’s redistricting rules. The code used to\ngenerate the simulated plans is also available so that others can use it\nas a template to generate their own simulated plans under different\nspecifications.  The major outputs are posted on the ALARM\nProject Dataverse, and the code is available on Github.).\n\nDownload the\ndata »\n\nOur simulation analyses should serve as a realistic template for\nthose who are interested in conducting their own analyses. Our code can\nbe modified and extended, and the resulting samples can be used to\nexplore various properties of potential plans under the specific\nredistricting criteria of our analysis. Our simulations presented here,\nhowever, do not represent our evaluation of the\nlegality of the enacted and other plans. Any such evaluation of\nthe enacted plan would require the interpretation of relevant laws.\nAlthough some requirements are relatively straightforward to interpret\nand operationalize (e.g., minimizing splits of administrative\nboundaries), others such as compliance with the Voting Rights Act\nrequire legal justifications. For this reason, we do not claim that the\nanalyses presented here are necessarily applicable when evaluating the\nlegality of redistricting plans.\nData Sources and\nAvailability\nUnless otherwise noted, data for each state comes from the ALARM\nProject’s 2020\nRedistricting Data Files, which use U.S. Census demographic data (in\nthe public domain) and election data from the Voting\nand Election Science Team, which is licensed under a CC BY 4.0\nlicense. In these cases, shapefiles are also taken from the U.S. Census\nBureau. The U.S. map here, scaled to reflect Congressional\nrepresentations, is courtesy of https://dkel.ec/map.\nAll data is available on our Dataverse and has been\nreleased to the public domain. Code is available on GitHub under an\nMIT license.\nThank you to the Harvard Data Science Initiative and Microsoft for\ncomputational support.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-07-18T12:35:48-07:00",
+    "input_file": "index.knit.md"
+  }
+]
