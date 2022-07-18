@@ -1,0 +1,171 @@
+---
+title: 50-State Redistricting Simulations
+description: |
+  <img src='/assets/fifty_states_256_tr.png' height=100 style='float: left; margin: -18px 8px -2px 0;'>
+  Comprehensive project to simulate alternative congressional redistricting plans for all fifty states.
+date: February 8, 2022
+authors:
+    - name: Cory McCartan
+    - name: Christopher Kenny
+    - name: Tyler Simko
+    - name: Shiro Kuriwaki
+    - name: George Garcia III
+    - name: Kevin Wang
+    - name: Melissa Wu
+    - name: Kosuke Imai
+output:
+  distill::distill_article:
+    self_contained: false
+repository_url: https://github.com/alarm-redist/fifty-states/
+doi: "10.7910/DVN/SLCD3E"
+citation: true
+citation_url: https://doi.org/10.7910/DVN/SLCD3E
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r include=F}
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+library(dplyr)
+library(stringr)
+library(here)
+```
+
+```{css echo=FALSE}
+div.girafe { margin-bottom: 0; }
+.girafe_container_std svg text { pointer-events: none; }
+.state-links { column-count: 3; }
+@media only screen and (max-width: 600px) {
+    .state-links { column-count: 2; }
+}
+```
+
+Every decade following the Census, states and municipalities must redraw districts for Congress, state houses, city councils, and more.
+The goal of the 50-State Simulation Project is to enable researchers, practitioners, and the general public to use cutting-edge redistricting simulation analysis to evaluate enacted congressional districts.
+
+Evaluating a redistricting plan requires analysts to take into account each state's redistricting rules and particular political geography.
+Comparing the partisan bias of a plan for Texas with the bias of a plan for New York, for example, is likely misleading.
+Comparing a state's current plan to a past plan is also problematic because of demographic and political changes over time.
+Redistricting simulations generate an ensemble of alternative redistricting plans within a given state which are tailored to its redistricting rules.
+Unlike traditional evaluation methods, therefore, simulations are able to directly account for the state's political geography and redistricting criteria.
+
+<center>
+
+[***Learn more about the project and our methodology***](/fifty-states/about/) **»**
+
+</center>
+
+You can dive into our analyses straightaway by clicking on a state below.
+From there, you'll be able to see how the state's new congressional districts stack up compared to a set of 5,000 simulated plans.
+
+```{r include=F}
+states = Sys.glob(here("_fifty-states/*_cd_2020")) |>
+    basename() |>
+    substr(1, 2)
+```
+
+```{r map, layout="l-body-outset", cache=TRUE, cache.extra=states}
+library(tidyverse)
+library(ggiraph)
+library(sf)
+
+d_appor = read_csv(here("_fifty-states/apportionment.csv"), col_types="cii")
+
+d_approved = jsonlite::read_json("https://projects.fivethirtyeight.com/redistricting-2022-maps/district-pvis.json",
+                                 simplifyVector=FALSE) %>%
+    map_dfr(function(x) {
+        tibble(state_name = x$state,
+               approved = !is.null(x$pvis$approved[[1]]$pvi))
+    })
+
+usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
+    st_set_crs(NA) %>%
+    rename(state=STATEAB, state_name=STATENAME) %>%
+    left_join(d_appor, by="state_name") %>%
+    left_join(d_approved, by="state_name") %>%
+    mutate(factor = sqrt(cds/cds_2010),
+           centroid = st_centroid(geometry),
+           geometry = (geometry - centroid)*factor + centroid) %>%
+    mutate(available = state %in% states,
+           fill_code = case_when(cds == 1 ~ "ready",
+                                 available ~ "ready",
+                                 approved ~ "approved",
+                                 TRUE ~ "not_ready"),
+           href = if_else(available, str_glue("/fifty-states/{state}_cd_2020/"), "#"),
+           code = if_else(available, str_glue('window.open("{href}", "_self")'), ""),
+           tooltip = str_glue("<b>{state_name}</b><br />{cds} district{if_else(cds > 1, 's', '')}"))
+
+p = ggplot(usa, aes(fill=fill_code, data_id=state)) +
+    geom_sf_interactive(aes(onclick=code, tooltip=tooltip), color=NA, size=0.0) +
+    geom_sf_text(aes(label=if_else(available, state, ""), geometry=centroid), 
+                 size=2.5, color="white", fontface="bold", ) +
+    scale_fill_manual(values=c(ready="#925637", not_ready="#333333", 
+                               approved="#343659"), 
+                      guide="none") +
+    theme_void() +
+    theme(plot.margin = margin(0, 0, 0, 0, "cm"))
+girafe(ggobj=p, width_svg=9, height_svg=6, options=list(
+    opts_hover(css="cursor: pointer;
+                    filter: drop-shadow(2px 2px 3px #0004)"),
+    opts_tooltip(css="font-family: 'Arial'; 
+                 background: #fffa; 
+                 border-radius: 3px; 
+                 padding: 0.3em;
+                 backdrop-filter: blur(6px);",
+                 delay_mouseover=100,
+                 delay_mouseout=100),
+    opts_toolbar(saveaspng=FALSE)
+    ))
+```
+
+<div style="font-size: var(--aside-size, 12px); color: var(--aside-color, rgba(0, 0, 0, 0.6)); line-height: 1.2;">
+States colored <span style="background: #925637; color: white;">&nbsp;red&nbsp;</span> have enacted a congressional map and been fully analyzed, 
+states colored <span style="background: #343659; color: white;">&nbsp;blue&nbsp;</span> have enacted a plan but haven't yet been analyzed, and 
+states colored <span style="background: #333333; color: white;">&nbsp;gray&nbsp;</span> haven't enacted a plan yet.
+</div>
+
+### Analyzed States
+
+```{r links, results="asis"}
+cat('<div class="state-links">')
+usa %>%
+    select(-geometry, -centroid) %>%
+    as_tibble() %>%
+    filter(available) %>%
+    arrange(state_name) %>%
+    mutate(html = str_glue('<p><a href="{href}">{state_name}</a></p>')) %>%
+    pull() %>%
+    cat(collapse="\n")
+cat('</div><br />\n\n')
+```
+
+For each state, we release 5,000 alternative plans, according to our best approximation of each state's redistricting rules.
+The code used to generate the simulated plans is also available so that others can use it as a template to generate their own simulated plans under different specifications. 
+The major outputs are posted on the [ALARM Project Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E), and the code is available on [Github](https://github.com/alarm-redist/fifty-states/).).
+
+<center>
+
+[***Download the data***](https://doi.org/10.7910/DVN/SLCD3E) **»**
+
+</center>
+
+Our simulation analyses should serve as a realistic template for those who are interested in conducting their own analyses.
+Our code can be modified and extended, and the resulting samples can be used to explore various properties of potential plans under the specific redistricting criteria of our analysis.
+Our simulations presented here, however, do *not* represent our evaluation of the *legality* of the enacted and other plans.
+Any such evaluation of the enacted plan would require the interpretation of relevant laws.
+Although some requirements are relatively straightforward to interpret and operationalize (e.g., minimizing splits of administrative boundaries), others such as compliance with the Voting Rights Act require legal justifications.
+For this reason, we do not claim that the analyses presented here are necessarily applicable when evaluating the legality of redistricting plans.
+
+## Data Sources and Availability {.appendix}
+
+Unless otherwise noted, data for each state comes from the ALARM Project's [2020 Redistricting Data Files](https://alarm-redist.github.io/posts/2021-08-10-census-2020/), which use U.S.
+Census demographic data (in the public domain) and election data from the [Voting and Election Science Team](https://dataverse.harvard.edu/dataverse/electionscience), which is licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+In these cases, shapefiles are also taken from the U.S.
+Census Bureau.
+The U.S. map here, scaled to reflect Congressional representations, is courtesy of <https://dkel.ec/map>.
+
+All data is available on [our Dataverse](https://doi.org/10.7910/DVN/SLCD3E) and has been released to the public domain.
+Code is available on [GitHub](https://github.com/alarm-redist/fifty-states/) under an MIT license.
+
+Thank you to the Harvard Data Science Initiative and Microsoft for computational support.

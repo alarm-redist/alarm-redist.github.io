@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>ALARM Project</title>
+    <link>https://alarm-redist.github.io/</link>
+    <atom:link href="https://alarm-redist.github.io/index.xml" rel="self" type="application/rss+xml"/>
+    <description>The Algorithm-Assisted Redistricting Methodology Project</description>
+    <image>
+      <title>ALARM Project</title>
+      <url>https://alarm-redist.github.io/assets/favicon.png</url>
+      <link>https://alarm-redist.github.io/</link>
+    </image>
+    <generator>Distill</generator>
+    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>47-Prefectures at the Japanese Society of Quantitative Political Science</title>
+      <dc:creator>Sho Miyazaki</dc:creator>
+      <dc:creator>Kento Yamada</dc:creator>
+      <dc:creator>Rei Yatsuhashi</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2022-07-06-japanese-society-of-quantitative-political-science</link>
+      <description>We are presenting Friday on malapportionment. 私たちは、アルゴリズムを用いた一票の格差の是正について、金曜日に発表します。</description>
+      <guid>https://alarm-redist.github.io/posts/2022-07-06-japanese-society-of-quantitative-political-science</guid>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>redist 4.0</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2022-06-20-redist-40</link>
+      <description>A major release with big changes to constraints and diagnostics.</description>
+      <guid>https://alarm-redist.github.io/posts/2022-06-20-redist-40</guid>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2022-06-20-redist-40/redist-40_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>47-Prefecture Project</title>
+      <dc:creator>Sho Miyazaki</dc:creator>
+      <dc:creator>Kento Yamada</dc:creator>
+      <dc:creator>Rei Yatsuhashi</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2022-04-23-47-prefecture-project</link>
+      <description>Using redistricting simulation methods to better understand redistricting in Japan.</description>
+      <guid>https://alarm-redist.github.io/posts/2022-04-23-47-prefecture-project</guid>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Revised and published: The use of differential privacy for census data and its impact on redistricting</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</link>
+      <description>A new postscript analyzes the final version of the U.S. Census Bureau's Disclosure Avoidance System.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</guid>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://pbs.twimg.com/media/FA8fplwXsAMVffB?format=jpg&amp;name=large" medium="image" type="text/plain"/>
+    </item>
+    <item>
+      <title>2020 Redistricting Data Files</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-08-10-census-2020</link>
+      <description>Census and election data joined together for use in redistricting
+and voting rights analysis.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-08-10-census-2020</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-08-10-census-2020/graphic.png" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Revised: Impact of the Census Disclosure Avoidance System</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact</link>
+      <description>We are releasing an updated version of our analysis of the U.S. Census'
+privacy protection system and its impacts on the redistricting process.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact</guid>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reaction to the Census Bureau's Updated Parameters</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response</link>
+      <description>The Data Stewardship Executive Policy Committee announces a higher privacy 
+loss budget and other changes to the Disclosure Avoidance System.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response</guid>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response/census_slide.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>FAQ: Impact of the Census Disclosure Avoidance System</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-06-02-das-evaluation-faq</link>
+      <description>Answers to common questions about our recently-released report 
+evaluating the Census' Disclosure Avoidance System.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-06-02-das-evaluation-faq</guid>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Impact of the Census Disclosure Avoidance System on Redistricting</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Evan Rosenman</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-05-28-census-das</link>
+      <description>In attempting to protect the privacy of 2020 Census respondents, the Census 
+Bureau has made its data unsuitable for redistricting purposes.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-05-28-census-das</guid>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-05-28-census-das/ex_plot.png" medium="image" type="image/png" width="1500" height="1200"/>
+    </item>
+    <item>
+      <title>redist 3.0</title>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Christopher Kenny</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2021-04-02-redist-300</link>
+      <description>A major release brings new algorithms, new workflows, and significant 
+usability improvements.</description>
+      <guid>https://alarm-redist.github.io/posts/2021-04-02-redist-300</guid>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2021-04-02-redist-300/redist-300_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+  </channel>
+</rss>
