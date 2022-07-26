@@ -50,6 +50,7 @@ Unlike traditional evaluation methods, therefore, simulations are able to direct
 For each state, we release 5,000 alternative plans, according to our best approximation of each state's redistricting rules.
 The code used to generate the simulated plans is also available so that others can use it as a template to generate their own simulated plans under different specifications.
 The major outputs are posted on the [ALARM Project Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E), and the code is available on [GitHub](https://github.com/alarm-redist/fifty-states/).
+We have also developed a package, [`alarmdata`](/alarmdata/), which makes it easy to download and work with the simulation outputs in R.
 An overview of the entire project and the methodology can be found in our [data paper](https://arxiv.org/abs/2206.10763).
 
 | Output File   | What is it?                                                                                                                                                            |
