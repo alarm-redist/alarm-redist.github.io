@@ -87,8 +87,9 @@ usa = read_rds(here("_fifty-states/carto_states.rds")) %>%
     left_join(d_appor, by="state_name") %>%
     left_join(d_approved, by="state_name") %>%
     mutate(factor = sqrt(cds/cds_2010),
-           centroid = st_centroid(geometry),
+           centroid = st_geometry(geomander::st_circle_center(.)),
            geometry = (geometry - centroid)*factor + centroid) %>%
+    suppressWarnings() %>%
     mutate(available = state %in% states,
            fill_code = case_when(cds == 1 ~ "approved",
                                  available ~ "ready",
