@@ -23,7 +23,7 @@ create useful plots.
 
 # People
 * **Ben Fifield**, American Civil Liberties Union
-* **George Garcia III** 
+* **George Garcia III**, Department of Economics, Massachusetts Institute of Technology
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
 * **Christopher Kenny**, Department of Government, Harvard University
 * **Shiro Kuriwaki**, Department of Political Science, Stanford University
@@ -33,7 +33,7 @@ create useful plots.
 * **Tyler Simko**, Department of Government, Harvard University
 * **Sam Thau**, Harvard College
 * **Kevin Wang**, Harvard College
-* **Melissa Wu**
+* **Melissa Wu**, Harvard College
 * **Kento Yamada**, Harvard College
 * **Rei Yatsuhashi**, Harvard College
 * **Anna Yorozuya**, University of Tokyo
@@ -51,8 +51,10 @@ Plans](https://arxiv.org/pdf/2008.06131.pdf)
 # Related R Packages
 - [blockpop](https://corymccartan.github.io/blockpop/): Estimate Census Block Populations for 2020. McCartan (2021).
 - [geomander](https://christopherkenny.github.io/geomander/): Geographic Tools for Studying Gerrymandering. Kenny (2021).
+- [ggredist](https://alarm-redist.github.io/ggredist/): Scales, Palettes, and Extensions of 'ggplot2' for Redistricting . Kenny and McCartan (2022).
 - [PL94171](https://corymccartan.github.io/PL94171/index.html): Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).
 - [ppmf](https://github.com/christopherkenny/ppmf): Read Census Privacy Protected Microdata Files. Kenny (2021).
 - [redist](https://alarm-redist.github.io/redist/): Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).
+- [redistmetrics](https://alarm-redist.github.io/redistmetrics/): Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).
 - [wru](https://github.com/kosukeimai/wru): Who Are You? Bayesian Prediction of Racial Category Using Surname and Geolocation. Khanna and Imai (2021).
 
