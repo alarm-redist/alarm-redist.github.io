@@ -58,126 +58,186 @@
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/about/</loc>
-    <lastmod>2022-07-18T12:30:45-07:00</lastmod>
+    <lastmod>2022-07-26T14:21:56-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/AL_cd_2020/</loc>
+    <lastmod>2022-07-26T15:02:06-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/AR_cd_2020/</loc>
+    <lastmod>2022-07-26T15:02:35-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/AZ_cd_2020/</loc>
-    <lastmod>2022-07-18T11:57:14-07:00</lastmod>
+    <lastmod>2022-07-26T15:02:18-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/CA_cd_2020/</loc>
+    <lastmod>2022-07-26T15:03:11-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/CO_cd_2020/</loc>
-    <lastmod>2022-07-18T11:57:32-07:00</lastmod>
+    <lastmod>2022-07-26T15:03:27-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/CT_cd_2020/</loc>
+    <lastmod>2022-07-26T15:03:37-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/FL_cd_2020/</loc>
+    <lastmod>2022-07-26T15:17:59-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/GA_cd_2020/</loc>
+    <lastmod>2022-07-26T15:35:03-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/HI_cd_2020/</loc>
-    <lastmod>2022-07-18T11:57:39-07:00</lastmod>
+    <lastmod>2022-07-26T15:18:49-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/IA_cd_2020/</loc>
-    <lastmod>2022-07-18T11:57:49-07:00</lastmod>
+    <lastmod>2022-07-26T14:59:36-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/ID_cd_2020/</loc>
-    <lastmod>2022-07-18T11:58:01-07:00</lastmod>
+    <lastmod>2022-07-26T15:19:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/IL_cd_2020/</loc>
+    <lastmod>2022-07-26T15:33:38-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/IN_cd_2020/</loc>
-    <lastmod>2022-07-18T11:58:22-07:00</lastmod>
+    <lastmod>2022-07-26T15:19:52-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/KS_cd_2020/</loc>
-    <lastmod>2022-07-18T11:58:41-07:00</lastmod>
+    <lastmod>2022-07-26T15:20:11-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/KY_cd_2020/</loc>
+    <lastmod>2022-07-26T15:34:01-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/LA_cd_2020/</loc>
-    <lastmod>2022-07-18T11:59:01-07:00</lastmod>
+    <lastmod>2022-07-26T15:20:52-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MA_cd_2020/</loc>
-    <lastmod>2022-07-18T11:59:13-07:00</lastmod>
+    <lastmod>2022-07-26T15:21:29-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MD_cd_2020/</loc>
-    <lastmod>2022-07-18T11:59:26-07:00</lastmod>
+    <lastmod>2022-07-26T15:21:15-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/ME_cd_2020/</loc>
-    <lastmod>2022-07-18T11:59:36-07:00</lastmod>
+    <lastmod>2022-07-26T15:21:01-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MI_cd_2020/</loc>
-    <lastmod>2022-07-18T11:59:56-07:00</lastmod>
+    <lastmod>2022-07-26T15:21:50-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/MN_cd_2020/</loc>
+    <lastmod>2022-07-26T15:31:49-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MO_cd_2020/</loc>
-    <lastmod>2022-07-18T12:00:18-07:00</lastmod>
+    <lastmod>2022-07-26T15:22:52-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MS_cd_2020/</loc>
-    <lastmod>2022-07-18T12:00:36-07:00</lastmod>
+    <lastmod>2022-07-26T15:22:29-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/MT_cd_2020/</loc>
-    <lastmod>2022-07-18T12:00:50-07:00</lastmod>
+    <lastmod>2022-07-26T15:23:05-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/NC_cd_2020/</loc>
-    <lastmod>2022-07-18T12:01:12-07:00</lastmod>
+    <lastmod>2022-07-26T15:25:09-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/NE_cd_2020/</loc>
-    <lastmod>2022-07-18T12:01:30-07:00</lastmod>
+    <lastmod>2022-07-26T15:23:22-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/NH_cd_2020/</loc>
-    <lastmod>2022-07-18T12:30:19-07:00</lastmod>
+    <lastmod>2022-07-26T15:23:42-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/NJ_cd_2020/</loc>
-    <lastmod>2022-07-18T12:22:06-07:00</lastmod>
+    <lastmod>2022-07-26T15:23:58-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/NM_cd_2020/</loc>
+    <lastmod>2022-07-26T15:35:16-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/NV_cd_2020/</loc>
-    <lastmod>2022-07-18T12:04:15-07:00</lastmod>
+    <lastmod>2022-07-26T15:23:33-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/NY_cd_2020/</loc>
+    <lastmod>2022-07-26T15:31:18-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/OH_cd_2020/</loc>
-    <lastmod>2022-07-18T12:04:42-07:00</lastmod>
+    <lastmod>2022-07-26T15:25:35-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/OK_cd_2020/</loc>
-    <lastmod>2022-07-18T12:04:59-07:00</lastmod>
+    <lastmod>2022-07-26T15:25:52-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/OR_cd_2020/</loc>
-    <lastmod>2022-07-18T12:05:13-07:00</lastmod>
+    <lastmod>2022-07-26T15:26:05-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/PA_cd_2020/</loc>
-    <lastmod>2022-07-18T12:05:36-07:00</lastmod>
+    <lastmod>2022-07-26T15:26:30-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/RI_cd_2020/</loc>
-    <lastmod>2022-07-18T12:05:45-07:00</lastmod>
+    <lastmod>2022-07-26T15:26:39-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/SC_cd_2020/</loc>
+    <lastmod>2022-07-26T15:34:37-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/TN_cd_2020/</loc>
+    <lastmod>2022-07-26T15:34:20-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/TX_cd_2020/</loc>
-    <lastmod>2022-07-18T12:28:44-07:00</lastmod>
+    <lastmod>2022-07-26T15:28:06-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/UT_cd_2020/</loc>
+    <lastmod>2022-07-26T15:35:29-07:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/fifty-states/VA_cd_2020/</loc>
+    <lastmod>2022-07-26T15:33:08-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/WA_cd_2020/</loc>
-    <lastmod>2022-07-18T11:54:49-07:00</lastmod>
+    <lastmod>2022-07-26T15:29:20-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/WI_cd_2020/</loc>
-    <lastmod>2022-07-18T12:07:27-07:00</lastmod>
+    <lastmod>2022-07-26T15:01:02-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/WV_cd_2020/</loc>
-    <lastmod>2022-07-18T12:07:35-07:00</lastmod>
+    <lastmod>2022-07-26T15:29:28-07:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/fifty-states/</loc>
-    <lastmod>2022-07-18T12:35:48-07:00</lastmod>
+    <lastmod>2022-07-26T15:29:43-07:00</lastmod>
   </url>
 </urlset>

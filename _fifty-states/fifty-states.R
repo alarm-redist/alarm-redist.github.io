@@ -178,7 +178,7 @@ download_dataverse = function(slug) {
         plans$district = as.integer(plans$district)
     if (is.character(plans$draw))
         plans$draw = forcats::fct_inorder(plans$draw)
-    if (!is.null(plans$pop_overlap))
+    if ("pop_overlap" %in% names(plans))
         plans$pop_overlap = NULL
     plans = left_join(plans, stats, by=c("draw", "district", "chain", "total_pop"))
 
@@ -186,15 +186,19 @@ download_dataverse = function(slug) {
 }
 
 
-render_state_page = function(states) {
+render_state_page = function(states, quiet=TRUE) {
     slugs = paste0(states, "_cd_2020")
     walk(slugs, function(slug) {
         state_name = state.name[state.abb == substr(slug, 1, 2)]
         dir.create(here("_fifty-states", slug), showWarnings=FALSE)
+
+        cover = TRUE
+        if (slug %in% c("FL_cd_2020")) cover = FALSE
+
         rmarkdown::render(here("_fifty-states/template.Rmd"),
-                          params=list(slug=slug, state=state_name),
+                          params=list(slug=slug, state=state_name, cover=cover),
                           output_file=paste0(slug, "/", slug, ".html"),
-                          quiet=TRUE)
+                          quiet=quiet)
         #rmarkdown::render_site(here(), quiet=TRUE)
         cat("Rendered `", slug, "`\n", sep="")
     })

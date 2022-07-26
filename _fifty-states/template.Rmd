@@ -1,11 +1,13 @@
 ---
 title: "`r paste0(params$state, ' Congressional Districts')`"
+subtitle: "[&laquo; Back](/fifty-states/)"
 authors:
     - "50-State Simulation Project Team"
 date: "`r Sys.Date()`"
 params:
     slug: IA_cd_2020
     state: Iowa
+    cover: true
 output:
   distill::distill_article:
     self_contained: false
@@ -29,7 +31,6 @@ N = ncol(m) - n_ref
 n_dists = attr(a$map, "ndists")
 
 abbr = str_sub(params$slug, 1, 2)
-places = suppressMessages(tigris::places(abbr, cb=TRUE))
 
 # aspect ratio for plots
 bbox = sf::st_bbox(a$map)
@@ -37,11 +38,15 @@ asp_st = min(diff(bbox[c(2, 4)]) / diff(bbox[c(1, 3)]), 0.85)
 knitr::opts_chunk$set(fig.asp = asp_st)
 ```
 
+<p style="grid-column: kicker; position: sticky; top: 1em; display: block;">
+<a href="/fifty-states/" style="font-weight: bold;">« Back</a>
+</p>
+
 `r params$state` has `r n_dists` congressional districts.
 We've generated `r comma(N)` sets of randomly simulated districts according to [the relevant criteria](#redistricting-requirements).
 Three of these plans are shown here, along with the actual enacted map.
 
-```{r enacted-samples, layout="l-body-outset", fig.width=9, dev="ragg_png"}
+```{r enacted-samples, message=FALSE, layout="l-body-outset", fig.width=9, dev="ragg_png"}
 set.seed(5118)
 idxs = sample(N, 3, replace=FALSE)
 while (all(m[, idxs[1]] == m[, idxs[2]])) 
@@ -49,14 +54,18 @@ while (all(m[, idxs[1]] == m[, idxs[2]]))
 while (all(m[, idxs[1]] == m[, idxs[3]]) || all(m[, idxs[2]] == m[, idxs[3]])) 
     idxs[3] = sample(N, 1)
 
-p1 = plot_cds(a$map, a$map$cd_2020, county, abbr, "dem") + 
+a$map$geometry = sf::st_make_valid(a$map$geometry)
+
+p1 = plot_cds(a$map, a$map$cd_2020, county, abbr, "dem", coverage=params$cover) + 
     labs(title=~underline(Enacted~plan)) +
     theme(plot.background=element_rect(fill="#f0f0f0", color="white"))
-p2 = plot_cds(a$map, m[, idxs[1]], county, abbr, "dem") + 
+p2 = plot_cds(a$map, m[, idxs[1]], county, abbr, "dem", coverage=params$cover) + 
     labs(title="Sample plan 1") +
     theme(plot.margin=unit(c(0, 0, 0, 0.1), "cm"))
-p3 = plot_cds(a$map, m[, idxs[2]], county, abbr, "dem") + labs(title="Sample plan 2")
-p4 = plot_cds(a$map, m[, idxs[3]], county, abbr, "dem") + labs(title="Sample plan 3")
+p3 = plot_cds(a$map, m[, idxs[2]], county, abbr, "dem", coverage=params$cover) + 
+    labs(title="Sample plan 2")
+p4 = plot_cds(a$map, m[, idxs[3]], county, abbr, "dem", coverage=params$cover) + 
+    labs(title="Sample plan 3")
 p1 + p2 + p3 + p4 + plot_layout(guides="collect")
 ```
 
@@ -97,6 +106,11 @@ In contrast, **we expect the enacted plan to yield `r number(a$plans$e_dem[1], 0
 The graph below breaks this down in detail, showing how each district of the enacted plan compares to the set of simulated districts.
 
 ```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
+color_scale = scale_color_party_d(guide="none")
+if (all(a$plans$e_dvs > 0.5)) {
+    color_scale = scale_color_manual(values=GOP_DEM[14], labels="Dem.")
+}
+
 set.seed(5118)
 redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5, 
                        size=0.04-sqrt(8)/250, alpha=0.4) +
@@ -105,7 +119,7 @@ redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5,
     labs(x="Simulated districts, ordered by Democratic vote margin") +
     annotate("text", x=1.5, y=min(a$plans$e_dvs[1:n_dists]), 
              label="Enacted plan", hjust=-0.05, size=3.5) +
-    scale_color_party_d(guide="none") +
+    color_scale +
     guides(lty="none")
 ```
 
@@ -197,7 +211,7 @@ p_comp + p_spl
 These two maps show the partisan lean across `r params$state` in a typical statewide election, and the share of minority voters around the state.
 
 ```{r geography, layout="l-page", fig.width=12, fig.asp=0.6*asp_st, dev="ragg_png"}
-geom_state = summarize(a$map, is_coverage=TRUE)
+geom_state = summarize(a$map, is_coverage=params$cover)
 suppressMessages({
 p_party = plot(as_redist_map(a$map), ndv/(ndv+nrv)) +
     geom_sf(data=geom_state, fill=NA, color="black", size=0.5) +
@@ -214,7 +228,9 @@ p_party + p_race
 ```
 
 ## More information
-[Download the data for `r params$state` here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E).
+[Download the data for `r params$state`](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E).
+
+[Learn more about our methodology](/fifty-states/about/).
 
 ### Redistricting requirements
 
@@ -227,3 +243,9 @@ str_sub(docstr, idx1+2L, idx2-1L) %>% cat()
 
 
 
+
+<style>
+d-article {
+    overflow: visible !important;
+}
+</style>

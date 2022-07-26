@@ -54,6 +54,8 @@ Unlike traditional evaluation methods, therefore, simulations are able to direct
 
 [***Learn more about the project and our methodology***](/fifty-states/about/) **»**
 
+[***Read the data paper***](https://arxiv.org/abs/2206.10763) **»**
+
 </center>
 
 You can dive into our analyses straightaway by clicking on a state below.
