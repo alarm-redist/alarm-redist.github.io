@@ -6,7 +6,7 @@
       "description": "Developing methodology and tools to analyze legislative redistricting.",
       "author": [],
       "contents": "\nThe Project\n The ALARM Project\nis a research team at Harvard University led by Kosuke Imai. It conducts\nresearch into redistricting sampling algorithms, best practices and\nworkflows for redistricting analysis, and tools to visualize, explore,\nand understand redistricting plans. ALARM Project researchers develop redist,\nan open-source R package for redistricting simulation and analysis which\nimplements state-of-the-art MCMC and SMC redistricting sampling\nalgorithms. The package allows for the implementation of various\nconstraints in the redistricting process such as geographic compactness\nand population parity requirements, and includes tools to compute\nvarious summary statistics and create useful plots.\nPeople\nBen Fifield, American Civil Liberties Union\nGeorge Garcia III, Department of Economics,\nMassachusetts Institute of Technology\nKosuke Imai, Departments of Government and\nStatistics, Harvard University\nChristopher Kenny, Department of Government,\nHarvard University\nShiro Kuriwaki, Department of Political Science,\nStanford University\nSho Miyazaki, Keio University\nCory McCartan, Department of Statistics, Harvard\nUniversity\nEvan Rosenman, Harvard Data Science Initiative\nTyler Simko, Department of Government, Harvard\nUniversity\nSam Thau, Harvard College\nKevin Wang, Harvard College\nMelissa Wu, Harvard College\nKento Yamada, Harvard College\nRei Yatsuhashi, Harvard College\nAnna Yorozuya, University of Tokyo\nPublications\nAutomated\nRedistricting Simulation Using Markov Chain Monte Carlo Journal\nof Computational and Graphical Statistics (2020) Vol. 29, No. 4,\npp. 715-728.\nThe\nEssential Role of Empirical Validation in Legislative Redistricting\nSimulation Statistics and Public Policy (2020) Vol. 7,\nNo. 1, pp. 52-68.\nSequential Monte\nCarlo for Sampling Balanced and Compact Redistricting Plans\nThe use of\ndifferential privacy for census data and its impact on redistricting:\nThe case of the 2020 U.S. Census Science Advances (2021)\nVol. 7, No. 41.\nRelated R Packages\nblockpop:\nEstimate Census Block Populations for 2020. McCartan (2021).\ngeomander:\nGeographic Tools for Studying Gerrymandering. Kenny (2021).\nggredist:\nScales, Palettes, and Extensions of ‘ggplot2’ for Redistricting . Kenny\nand McCartan (2022).\nPL94171:\nTabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and\nKenny (2021).\nppmf: Read\nCensus Privacy Protected Microdata Files. Kenny (2021).\nredist:\nSimulation Methods for Legislative Redistricting. Kenny, McCartan,\nFifield, and Imai (2021).\nredistmetrics:\nRedistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).\nwru: Who Are You?\nBayesian Prediction of Racial Category Using Surname and Geolocation.\nKhanna and Imai (2021).\n\n\n\n",
-      "last_modified": "2022-07-26T15:59:19-07:00"
+      "last_modified": "2022-07-26T21:06:19-07:00"
     },
     {
       "path": "applications.html",
@@ -14,14 +14,14 @@
       "description": "Applications of redistricting simulation involving members of the ALARM Project.",
       "author": [],
       "contents": "\nPapers with ALARM Project\nMembers\nAutomated\nRedistricting Simulation Using Markov Chain Monte Carlo Journal\nof Computational and Graphical Statistics (2020) Vol. 29, No. 4,\npp. 715-728.\nThe\nEssential Role of Empirical Validation in Legislative Redistricting\nSimulation Statistics and Public Policy (2020) Vol. 7,\nNo. 1, pp. 52-68.\nSequential Monte\nCarlo for Sampling Balanced and Compact Redistricting Plans\nThe use of\ndifferential privacy for census data and its impact on redistricting:\nThe case of the 2020 U.S. Census Science Advances (2021)\nVol. 7, No. 41.\nReports with ALARM Project\nMembers\nMaryland\nCongressional District Memo\nLeage of Women Voters of Ohio v. Ohio Redistricting\nCommission\nDr. Kosuke\nImai Expert Report\nDr. Kosuke\nImai Supplementary Expert Report\n\n",
-      "last_modified": "2022-07-26T15:59:19-07:00"
+      "last_modified": "2022-07-26T21:06:19-07:00"
     },
     {
       "path": "index.html",
       "title": "Posts",
       "author": [],
       "contents": "\n\n\n\nDeveloping methodology and tools to analyze legislative redistricting.\n\n\n\n\n\n\n50-State Redistricting Simulations\n\n\n\n\n\nComprehensive project to simulate alternative congressional\nredistricting plans for all fifty states in the 2022 redistricting\ncycle.\n\n\n Explore the project and data » \n\n\n\n\nThe Algorithm-Assisted Redistricting Methodology (ALARM) Project is a\nresearch team at Harvard University led by Kosuke Imai. It conducts\nresearch into redistricting sampling algorithms, best practices and\nworkflows for redistricting analysis, and tools to visualize, explore,\nand understand redistricting plans.\n\n\n\nredist: Simulation Methods for Legislative Redistricting\n\n\n\nEnables researchers to sample redistricting plans from a pre-specified\ntarget distribution using state-of-the-art algorithms. Implements a wide\nvariety constraints in the redistricting process, such as geographic\ncompactness and population parity requirements. Tools for analysis such\nas computation of various summary statistics and plotting functionality\nare also included.\n\n\n Go to package home\npage » \n\n\n\n\n\n2020 Redistricting Data Files\n\n\n\nPrecinct-level demographic and election data from the\n2020\ndecennial census and the\nVoting\nand Election Science Team which have been tidied and joined together\nusing 2020 precinct boundaries.\n\n\n Access the data » \n\n\n\n\n\n",
-      "last_modified": "2022-07-26T15:59:20-07:00"
+      "last_modified": "2022-07-26T21:06:20-07:00"
     },
     {
       "path": "membership.html",
@@ -29,7 +29,7 @@
       "description": "Current membership and alumni of the ALARM Project.",
       "author": [],
       "contents": "\nCurrent Membership\nBen Fifield, American Civil Liberties Union\nGeorge Garcia III\nKosuke Imai, Departments of Government and\nStatistics, Harvard University\nChristopher Kenny, Department of Government,\nHarvard University\nShiro Kuriwaki, Department of Political Science,\nStanford University\nSho Miyazaki, Keio University\nCory McCartan, Department of Statistics, Harvard\nUniversity\nEvan Rosenman, Harvard Data Science Initiative\nTyler Simko, Department of Government, Harvard\nUniversity\nSam Thau, Harvard College\nKevin Wang, Harvard College\nMelissa Wu\nKento Yamada, Harvard College\nRei Yatsuhashi, Harvard College\nAnna Yorozuya, University of Tokyo\nProject Alumni\nTahmid Ahmed, Harvard College\nAvi Gulati, Harvard College\nSneha Revanur\nLooking for more information?\nSend us an email at alarm.redist@gmail.com.\n\n\n\n",
-      "last_modified": "2022-07-26T15:59:20-07:00"
+      "last_modified": "2022-07-26T21:06:20-07:00"
     }
   ],
   "collections": ["posts/posts.json", "fifty-states/fifty-states.json"]
