@@ -42,7 +42,7 @@ author:
       location: Cambridge, MA
       email: imai@harvard.edu
       url: https://imai.fas.harvard.edu/
-date: 2022-06-27
+date: 2022-07-28
 output:
   distill::distill_article:
     self_contained: false
