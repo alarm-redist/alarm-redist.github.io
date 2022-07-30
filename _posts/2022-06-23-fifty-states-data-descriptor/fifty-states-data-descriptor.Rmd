@@ -70,7 +70,7 @@ This package provides a simplified interface to download the underlying geograph
 
 The package can be installed with:
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 remotes::install_github('alarm-redist/alarmdata')
 ```
 
