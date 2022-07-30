@@ -11,7 +11,23 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Fifty States Data Descriptor</title>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>George Garcia III</dc:creator>
+      <dc:creator>Kevin Wang</dc:creator>
+      <dc:creator>Melissa Wu</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2022-06-23-fifty-states-data-descriptor</link>
+      <description>A detailed description of the 50-State Redistricting Simulations 
+and new software to help you use them.</description>
+      <guid>https://alarm-redist.github.io/posts/2022-06-23-fifty-states-data-descriptor</guid>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>47-Prefectures at the Japanese Society of Quantitative Political Science</title>
       <dc:creator>Sho Miyazaki</dc:creator>
