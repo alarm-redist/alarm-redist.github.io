@@ -73,3 +73,6 @@ The package can be installed with:
 ```{r, eval = FALSE}
 remotes::install_github('alarm-redist/alarmdata')
 ```
+
+
+Thank you to the Harvard Data Science Initiative and Microsoft for computational support.
