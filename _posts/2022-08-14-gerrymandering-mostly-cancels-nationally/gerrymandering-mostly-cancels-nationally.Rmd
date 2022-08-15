@@ -1,0 +1,50 @@
+---
+title: "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition"
+description: |
+  Gerrymandering in 2020 redistricting makes the US House elections less 
+  competitive, but net seat gains are small nationally. The partisan bias of the
+  enacted national map is about as biased as non-partisan simulations, due to
+  geography and legal requirements.
+
+author:
+  - name: Christopher T. Kenny
+    url: https://www.christophertkenny.com/
+  - name: Cory McCartan
+    url: https://www.corymccartan.com
+  - name: Tyler Simko
+    url: https://tylersimko.com/
+  - name: Shiro Kuriwaki
+    url: https://www.shirokuriwaki.com/
+  - name: Kosuke Imai
+    url: https://imai.fas.harvard.edu/
+date: 2022-08-16
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+We're excited to release a new working paper **insert link to paper** studying partisan bias in the 2020 US House plan. We employ redistricting simulations from the 50stateSimulations.[^1] with a model of partisanship to dig into geographic details of what happened where. _Gerrymandering in 2020 redistricting makes the US House elections less competitive, but net seat gains are small nationally._ The abstract below highlights more of our findings.
+
+[^1]: In case you missed it, [we have a blog post introducing those simulations and their contributors](https://alarm-redist.github.io/posts/2022-06-23-fifty-states-data-descriptor/).
+
+> Congressional district lines in many U.S. states are drawn by partisan actors, raising concerns about gerrymandering. To isolate the electoral impact of gerrymandering from the effects of other factors including geography and redistricting rules, we compare predicted election outcomes under the enacted plan with those under a large sample of non-partisan, simulated alternative plans for all states. We find that partisan gerrymandering is widespread in the 2020 redistricting cycle, but most of the bias it creates cancels at the national level, giving Republicans two additional seats, on average. In contrast, moderate pro-Republican bias due to geography and redistricting rules remains. Finally, we find that partisan gerrymandering reduces electoral competition and makes the House's partisan composition less responsive to shifts in the national vote.
+
+All in all, most of the states you thought were gerrymandered are indeed gerrymandered.
+
+Some gerrymandered states that you might have missed include those drawn by commissions (like Michigan and Iowa) and those drawn by courts (like Pennsylvania and North Carolina). The state-by-state results are below, with a national topline that the US map favors Republicans by about two seats beyond what's explained by geography, on average.
+
+```{r}
+knitr::include_graphics('state_sum.pdf')
+```
+
+We can take this further and look at a *partisan manipulation map*. Each district is colored by the difference in probability that it is represented by a Republican or Democrat in the enacted from the simulated plans. Red areas favor Republicans over simulations, blue areas favor Democrats over simulations. The darkness of each district represents the intensity of that difference.
+
+```{r}
+knitr::include_graphics('manipulation.pdf')
+```
+
+If you're interested in more information on our findings or methods, take a look here **insert link to paper**.
