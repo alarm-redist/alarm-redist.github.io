@@ -38,14 +38,14 @@ All in all, most of the states you thought were gerrymandered are indeed gerryma
 
 Some gerrymandered states that you might have missed include those drawn by commissions (like Michigan and Iowa) and those drawn by courts (like Pennsylvania and North Carolina). The state-by-state results are below, with a national topline that the US map favors Republicans by about two seats beyond what's explained by geography, on average.
 
-```{r}
-knitr::include_graphics('state_sum.pdf')
+```{r, fig.height=7, fig.align='center'}
+knitr::include_graphics('state_sum_1.png')
 ```
 
 We can take this further and look at a *partisan manipulation map*. Each district is colored by the difference in probability that it is represented by a Republican or Democrat in the enacted from the simulated plans. Red areas favor Republicans over simulations, blue areas favor Democrats over simulations. The darkness of each district represents the intensity of that difference.
 
-```{r}
-knitr::include_graphics('manipulation.pdf')
+```{r, fig.width=8, fig.align='center'}
+knitr::include_graphics('manipulation_1.png')
 ```
 
 If you're interested in more information on our findings or methods, [take a look here](https://arxiv.org/abs/2208.06968).
