@@ -49,3 +49,5 @@ knitr::include_graphics('manipulation_1.png')
 ```
 
 If you're interested in more information on our findings or methods, [take a look here](https://arxiv.org/abs/2208.06968).
+
+A special thank you to George Garcia III, Kevin Wang, and Melissa Wu for their contributions to the [50stateSimulations](https://arxiv.org/abs/2206.10763) which made this research possible.
