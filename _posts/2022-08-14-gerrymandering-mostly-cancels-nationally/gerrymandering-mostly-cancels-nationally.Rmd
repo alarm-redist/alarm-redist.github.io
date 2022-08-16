@@ -21,6 +21,7 @@ date: 2022-08-16
 output:
   distill::distill_article:
     self_contained: false
+citation: false
 ---
 
 ```{r setup, include=FALSE}
