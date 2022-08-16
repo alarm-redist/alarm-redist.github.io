@@ -27,7 +27,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-We're excited to release a new working paper **insert link to paper** studying partisan bias in the 2020 US House plan. We employ redistricting simulations from the 50stateSimulations.[^1] with a model of partisanship to dig into geographic details of what happened where. _Gerrymandering in 2020 redistricting makes the US House elections less competitive, but net seat gains are small nationally._ The abstract below highlights more of our findings.
+We're excited to [release a new working paper](https://arxiv.org/abs/2208.06968) studying partisan bias in the 2020 US House plan. We employ redistricting simulations from the 50stateSimulations.[^1] with a model of partisanship to dig into geographic details of what happened where. _Gerrymandering in 2020 redistricting makes the US House elections less competitive, but net seat gains are small nationally._ The abstract below highlights more of our findings.
 
 [^1]: In case you missed it, [we have a blog post introducing those simulations and their contributors](https://alarm-redist.github.io/posts/2022-06-23-fifty-states-data-descriptor/).
 
@@ -47,4 +47,4 @@ We can take this further and look at a *partisan manipulation map*. Each distric
 knitr::include_graphics('manipulation.pdf')
 ```
 
-If you're interested in more information on our findings or methods, take a look here **insert link to paper**.
+If you're interested in more information on our findings or methods, [take a look here](https://arxiv.org/abs/2208.06968).
