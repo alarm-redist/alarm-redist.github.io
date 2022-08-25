@@ -5,8 +5,8 @@ authors:
     - "50-State Simulation Project Team"
 date: "`r Sys.Date()`"
 params:
-    slug: IA_cd_2020
-    state: Iowa
+    slug: AL_cd_2020
+    state: Alabama
     cover: true
 output:
   distill::distill_article:
@@ -22,7 +22,7 @@ library(here)
 source(here("_fifty-states/fifty-states.R"))
 ```
 
-```{r data, include=FALSE}
+```{r data, include=FALSE,echo=FALSE}
 a = download_dataverse(params$slug)
 
 n_ref = redist:::get_n_ref(a$plans)
@@ -55,6 +55,7 @@ while (all(m[, idxs[1]] == m[, idxs[3]]) || all(m[, idxs[2]] == m[, idxs[3]]))
     idxs[3] = sample(N, 1)
 
 a$map$geometry = sf::st_make_valid(a$map$geometry)
+a$map$geometry = sf::st_buffer(a$map$geometry, 0)
 
 p1 = plot_cds(a$map, a$map$cd_2020, county, abbr, "dem", coverage=params$cover) + 
     labs(title=~underline(Enacted~plan)) +

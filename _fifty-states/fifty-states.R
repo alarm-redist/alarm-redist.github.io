@@ -6,6 +6,8 @@ library(patchwork)
 library(dataverse)
 library(here)
 
+sf::sf_use_s2(FALSE)
+
 doi <- "10.7910/DVN/SLCD3E"
 
 PAL_COAST = c("#7BAEA0", "#386276", "#3A4332", "#7A7D6F", "#D9B96E", "#BED4F0")

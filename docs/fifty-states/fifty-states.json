@@ -1,5 +1,81 @@
 [
   {
+    "path": "fifty-states/AL_cd_2020/",
+    "title": "Alabama Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-25",
+    "categories": [],
+    "contents": "\r\n\r\n« Back\r\n\r\nAlabama has 7 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Alabama, Democrats win about 38% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 2.7\r\nDemocratic seats out of 7 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 0.7 to 2.0\r\nseats on average, with 1.3 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.0 Democratic seats on\r\naverage, which is less than 67% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nAlabama’s enacted plan scores a 0.22, less than 92% of all simulated\r\nplans (a higher score means more compact). It splits 6 counties,\r\ncompared to an average of 5 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Alabama in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Alabama.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\nOur algorithmic constraints used in simulations are in part are based\r\non some of these requirements and discretionary criteria. See full\r\ndocumentation and code for the complete implementation details.\r\n\r\n\r\nIn Alabama, according to the\r\nReapportionment\r\nCommittee Redistricting Guidelines, districts must:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve county and municipality boundaries as much as possible\r\n\r\n\r\npreserve communities of interest as much as possible\r\n\r\n\r\navoid competition between incumbents\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "fifty-states/AL_cd_2020/AL_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-08-25T13:21:32-04:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/KY_cd_2020/",
+    "title": "Kentucky Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-25",
+    "categories": [],
+    "contents": "\r\n\r\n« Back\r\n\r\nKentucky has 6 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Kentucky, Democrats win about 39% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 2.3\r\nDemocratic seats out of 6 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 1.0 to 1.5\r\nseats on average, with 1.5 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.5 Democratic seats on\r\naverage, which is more than 100% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nKentucky’s enacted plan scores a 0.23, in line with the simulated plans\r\n(a higher score means more compact). It splits 6 counties, compared to\r\nan average of 4 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Kentucky in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Kentucky.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\nOur algorithmic constraints used in simulations are in part are based\r\non some of these requirements and discretionary criteria. See full\r\ndocumentation and code for the complete implementation details.\r\n\r\n\r\nIn Kentucky, under the Criteria and Standards for Congressional\r\nRedistricting adopted by Interim Joint Committee on State Government’s\r\nRedistricting Subcommittee in 1991, districts must:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve county and municipality boundaries as much as possible\r\n\r\n\r\npreserve communities of interest as much as possible\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "fifty-states/KY_cd_2020/KY_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-08-25T13:33:28-04:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 731
+  },
+  {
+    "path": "fifty-states/OH_cd_2020/",
+    "title": "Ohio Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-25",
+    "categories": [],
+    "contents": "\r\n\r\n« Back\r\n\r\nOhio has 15 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Ohio, Democrats win about 47% of the vote in a typical statewide\r\nelection. Proportionally, that would translate to 7.0 Democratic seats\r\nout of 15 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 4.9 to 6.4\r\nseats on average, with 5.9 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 4.9 Democratic seats on\r\naverage, which is less than 98% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nOhio’s enacted plan scores a 0.29, in line with the simulated plans (a\r\nhigher score means more compact). It splits 14 counties, compared to an\r\naverage of 9 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Ohio in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Ohio.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\nOur algorithmic constraints used in simulations are in part are based\r\non some of these requirements and discretionary criteria. See full\r\ndocumentation and code for the complete implementation details.\r\n\r\n\r\nIn Ohio, districts must, under\r\nArticle\r\nXIX of the Ohio Constitution:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\nnot split Cincinnati or Cleveland\r\n\r\n\r\nminimize splitting of Columbus\r\n\r\n\r\nsplit no more than 18 counties once, and no more than 5 counties twice,\r\nand no counties three times\r\n\r\n\r\nadditionally preserve county and municipality boundaries where possible\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "fifty-states/OH_cd_2020/OH_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-08-25T13:33:01-04:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1468
+  },
+  {
+    "path": "fifty-states/SC_cd_2020/",
+    "title": "South Carolina Congressional Districts",
+    "description": {},
+    "author": [
+      {
+        "name": "50-State Simulation Project Team",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-25",
+    "categories": [],
+    "contents": "\r\n\r\n« Back\r\n\r\nSouth Carolina has 7 congressional districts. We’ve generated 5,000\r\nsets of randomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn South Carolina, Democrats win about 43% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 3.0\r\nDemocratic seats out of 7 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 1.1 to 2.6\r\nseats on average, with 1.7 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.0 Democratic seats on\r\naverage, which is less than 100% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nSouth Carolina’s enacted plan scores a 0.21, less than 93% of all\r\nsimulated plans (a higher score means more compact). It splits 10\r\ncounties, compared to an average of 5 counties for our simulated\r\nplans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across South Carolina in a\r\ntypical statewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for South Carolina.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\nOur algorithmic constraints used in simulations are in part are based\r\non some of these requirements and discretionary criteria. See full\r\ndocumentation and code for the complete implementation details.\r\n\r\n\r\nSouth Carolina has no state constitution or statute for redistricting.\r\nHowever, the state legislature committees do provide guidelines\r\nfor redistricting.\r\n(House\r\nlink,\r\nSenate\r\nlink), According to these guidelines, districts should:\r\n\r\n\r\nbe contiguous (including contiguity by water)\r\n\r\n\r\nhave equal populations as is practicable\r\n\r\n\r\ncomply with VRA Section 2\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve boundaries of counties, municipalities, voting tabulation\r\ndistricts, cores of previous districts, and other communities of\r\ninterests as much as possible\r\n\r\n\r\npreserve separation of incumbents as much as possible\r\n\r\n\r\nThe House guidelines state that if the criteria come into conflict,\r\nfederal law (including the VRA) and population parity should be\r\nprioritized over others.\r\n\r\n\r\n\r\n\r\n\r\n",
+    "preview": "fifty-states/SC_cd_2020/SC_cd_2020_files/figure-html5/enacted-samples-1.png",
+    "last_modified": "2022-08-25T13:29:53-04:00",
+    "input_file": {},
+    "preview_width": 1728,
+    "preview_height": 1383
+  },
+  {
     "path": "fifty-states/about/",
     "title": "50-State Simulations FAQ",
     "description": "Frequently asked questions about the project and our methodology.",
@@ -10,25 +86,6 @@
     "preview": {},
     "last_modified": "2022-07-28T17:44:43-04:00",
     "input_file": {}
-  },
-  {
-    "path": "fifty-states/AL_cd_2020/",
-    "title": "Alabama Congressional Districts",
-    "description": {},
-    "author": [
-      {
-        "name": "50-State Simulation Project Team",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-26",
-    "categories": [],
-    "contents": "\r\n\r\n« Back\r\n\r\nAlabama has 7 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Alabama, Democrats win about 38% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 2.7\r\nDemocratic seats out of 7 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 0.7 to 2.0\r\nseats on average, with 1.3 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.0 Democratic seats on\r\naverage, which is less than 67% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nAlabama’s enacted plan scores a 0.22, less than 92% of all simulated\r\nplans (a higher score means more compact). It splits 6 counties,\r\ncompared to an average of 5 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Alabama in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Alabama.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\n\r\n\r\nIn Alabama, according to the\r\nReapportionment\r\nCommittee Redistricting Guidelines, districts must:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve county and municipality boundaries as much as possible\r\n\r\n\r\npreserve communities of interest as much as possible\r\n\r\n\r\navoid competition between incumbents\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "fifty-states/AL_cd_2020/AL_cd_2020_files/figure-html5/enacted-samples-1.png",
-    "last_modified": "2022-07-28T17:44:42-04:00",
-    "input_file": {},
-    "preview_width": 1728,
-    "preview_height": 1468
   },
   {
     "path": "fifty-states/AR_cd_2020/",
@@ -276,25 +333,6 @@
     "input_file": {},
     "preview_width": 1728,
     "preview_height": 892
-  },
-  {
-    "path": "fifty-states/KY_cd_2020/",
-    "title": "Kentucky Congressional Districts",
-    "description": {},
-    "author": [
-      {
-        "name": "50-State Simulation Project Team",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-26",
-    "categories": [],
-    "contents": "\r\n\r\n« Back\r\n\r\nKentucky has 6 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Kentucky, Democrats win about 39% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 2.3\r\nDemocratic seats out of 6 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 1.0 to 1.5\r\nseats on average, with 1.5 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.5 Democratic seats on\r\naverage, which is more than 100% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nKentucky’s enacted plan scores a 0.23, in line with the simulated plans\r\n(a higher score means more compact). It splits 6 counties, compared to\r\nan average of 4 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Kentucky in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Kentucky.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\n\r\n\r\nIn Kentucky, under the Criteria and Standards for Congressional\r\nRedistricting adopted by Interim Joint Committee on State Government’s\r\nRedistricting Subcommittee in 1991, districts must:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve county and municipality boundaries as much as possible\r\n\r\n\r\npreserve communities of interest as much as possible\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "fifty-states/KY_cd_2020/KY_cd_2020_files/figure-html5/enacted-samples-1.png",
-    "last_modified": "2022-07-28T17:44:42-04:00",
-    "input_file": {},
-    "preview_width": 1728,
-    "preview_height": 731
   },
   {
     "path": "fifty-states/LA_cd_2020/",
@@ -601,25 +639,6 @@
     "preview_height": 1310
   },
   {
-    "path": "fifty-states/OH_cd_2020/",
-    "title": "Ohio Congressional Districts",
-    "description": {},
-    "author": [
-      {
-        "name": "50-State Simulation Project Team",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-26",
-    "categories": [],
-    "contents": "\r\n\r\n« Back\r\n\r\nOhio has 15 congressional districts. We’ve generated 5,000 sets of\r\nrandomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn Ohio, Democrats win about 47% of the vote in a typical statewide\r\nelection. Proportionally, that would translate to 7.0 Democratic seats\r\nout of 15 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 4.9 to 6.4\r\nseats on average, with 5.9 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 4.9 Democratic seats on\r\naverage, which is less than 98% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nOhio’s enacted plan scores a 0.29, in line with the simulated plans (a\r\nhigher score means more compact). It splits 14 counties, compared to an\r\naverage of 9 counties for our simulated plans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across Ohio in a typical\r\nstatewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for Ohio.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\n\r\n\r\nIn Ohio, districts must, under\r\nArticle\r\nXIX of the Ohio Constitution:\r\n\r\n\r\nbe contiguous\r\n\r\n\r\nhave equal populations\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\nnot split Cincinnati or Cleveland\r\n\r\n\r\nminimize splitting of Columbus\r\n\r\n\r\nsplit no more than 18 counties once, and no more than 5 counties twice,\r\nand no counties three times\r\n\r\n\r\nadditionally preserve county and municipality boundaries where possible\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "fifty-states/OH_cd_2020/OH_cd_2020_files/figure-html5/enacted-samples-1.png",
-    "last_modified": "2022-07-28T17:44:43-04:00",
-    "input_file": {},
-    "preview_width": 1728,
-    "preview_height": 1468
-  },
-  {
     "path": "fifty-states/OK_cd_2020/",
     "title": "Oklahoma Congressional Districts",
     "description": {},
@@ -694,25 +713,6 @@
     "input_file": {},
     "preview_width": 1728,
     "preview_height": 1468
-  },
-  {
-    "path": "fifty-states/SC_cd_2020/",
-    "title": "South Carolina Congressional Districts",
-    "description": {},
-    "author": [
-      {
-        "name": "50-State Simulation Project Team",
-        "url": {}
-      }
-    ],
-    "date": "2022-07-26",
-    "categories": [],
-    "contents": "\r\n\r\n« Back\r\n\r\nSouth Carolina has 7 congressional districts. We’ve generated 5,000\r\nsets of randomly simulated districts according to the relevant criteria. Three of\r\nthese plans are shown here, along with the actual enacted map.\r\n\r\n\r\n\r\nPartisan Features\r\n\r\n\r\n\r\nIn South Carolina, Democrats win about 43% of the vote in a typical\r\nstatewide election. Proportionally, that would translate to 3.0\r\nDemocratic seats out of 7 total.\r\n\r\n\r\n\r\nLearn more about this graph\r\nBut proportionality isn’t guaranteed, even in a fair redistricting\r\nprocess. In our simulated plans, Democrats won anywhere from 1.1 to 2.6\r\nseats on average, with 1.7 being the most typical. In contrast,\r\nwe expect the enacted plan to yield 1.0 Democratic seats on\r\naverage, which is less than 100% of all simulated plans.\r\nThe graph below breaks this down in detail, showing how each district\r\nof the enacted plan compares to the set of simulated districts.\r\n\r\n\r\n\r\nLearn more about this graph\r\nGerrymandering metrics\r\n\r\n\r\n\r\nThere are other ways of measuring the partisan skew of redistricting\r\nplan. The graph below shows two these metrics. The deviation from\r\npartisan symmetry measures the expected difference in each party’s share\r\nof seats if they each won 50% of the statewide vote. The efficiency gap\r\nis calculated as the difference in the number of wasted votes for each\r\nparty.\r\nLearn more about these metrics\r\nhere.\r\n\r\n\r\n\r\nLearn more about this graph\r\nTraditional redistricting\r\ncriteria\r\n\r\n\r\n\r\nFactors other than partisanship are important for redistricting, too.\r\nThe graph below shows the geographic compactness and the number of\r\ncounties which are split into multiple districts. As far as compactness,\r\nSouth Carolina’s enacted plan scores a 0.21, less than 93% of all\r\nsimulated plans (a higher score means more compact). It splits 10\r\ncounties, compared to an average of 5 counties for our simulated\r\nplans.\r\n\r\n\r\n\r\nLearn more about this graph\r\nPolitical Geography\r\nThese two maps show the partisan lean across South Carolina in a\r\ntypical statewide election, and the share of minority voters around the\r\nstate.\r\n\r\n\r\n\r\nMore information\r\nDownload\r\nthe data for South Carolina.\r\nLearn more about our\r\nmethodology.\r\nRedistricting requirements\r\n\r\n\r\nSouth Carolina has no state constitution or statute for redistricting.\r\nHowever, the state legislature committees do provide guidelines\r\nfor redistricting.\r\n(House\r\nlink,\r\nSenate\r\nlink), According to these guidelines, districts should:\r\n\r\n\r\nbe contiguous (including contiguity by water)\r\n\r\n\r\nhave equal populations as is practicable\r\n\r\n\r\ncomply with VRA Section 2\r\n\r\n\r\nbe geographically compact\r\n\r\n\r\npreserve boundaries of counties, municipalities, voting tabulation\r\ndistricts, cores of previous districts, and other communities of\r\ninterests as much as possible\r\n\r\n\r\npreserve separation of incumbents as much as possible\r\n\r\n\r\nThe House guidelines state that if the criteria come into conflict,\r\nfederal law (including the VRA) and population parity should be\r\nprioritized over others.\r\n\r\n\r\n\r\n\r\n\r\n",
-    "preview": "fifty-states/SC_cd_2020/SC_cd_2020_files/figure-html5/enacted-samples-1.png",
-    "last_modified": "2022-07-28T17:44:43-04:00",
-    "input_file": {},
-    "preview_width": 1728,
-    "preview_height": 1383
   },
   {
     "path": "fifty-states/TN_cd_2020/",
