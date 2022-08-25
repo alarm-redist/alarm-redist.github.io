@@ -234,10 +234,13 @@ p_party + p_race
 
 ### Redistricting requirements
 
+Our algorithmic constraints used in simulations are in part are based on some of these requirements and discretionary criteria. See full documentation and code for the complete implementation details.
+
 ```{r reqs, results='asis'}
 docstr = as.character(a$doc)
 idx1 = str_locate(docstr, "requirements</h2>")[1, 2]
 idx2 = str_locate(docstr, "<h3 id=\"interpretation")[1, 1]
+if (is.na(idx2)) idx2 <- str_locate(docstr, "<h3 id=\"algorithmic")[1, 1]
 str_sub(docstr, idx1+2L, idx2-1L) %>% cat()
 ```
 
