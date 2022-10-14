@@ -1,5 +1,34 @@
 [
   {
+    "path": "posts/2022-09-30-nikkei/",
+    "title": "'One vote disparity' can be improved with state-of-the-art algorithms",
+    "description": "Our article in Nikkei Business on reducing Japanese malapportionment was released!",
+    "author": [
+      {
+        "name": "Kosuke Imai",
+        "url": "https://imai.fas.harvard.edu/"
+      },
+      {
+        "name": "Kento Yamada",
+        "url": {}
+      },
+      {
+        "name": "Rei Yatsuhashi",
+        "url": {}
+      },
+      {
+        "name": "Sho Miyazaki",
+        "url": {}
+      }
+    ],
+    "date": "2022-09-30",
+    "categories": [],
+    "contents": "\r\nALARMプロジェクトは、日経ビジネスの依頼を受け、衆議院の区割り改定案の作成とその分析の記事を寄稿しました。区割りシミュレーションアルゴリズムの活用により、区画審の改定案よりも、市区町村の分割数と一票の格差が少なくなる区割り案が作成できます。https://business.nikkei.com/atcl/gen/19/00351/092100048/\r\nWe were invited to contribute to Nikkei Business (Japan)! We show\r\nthat the SMC redistricting simulation algorithm can be used to reduce\r\nmalapportionment without splitting more municipalities, when compared to\r\nthe districting plan proposed by the commission. https://business.nikkei.com/atcl/gen/19/00351/092100048/\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-10-13T21:02:40-04:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-08-14-gerrymandering-mostly-cancels-nationally/",
     "title": "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition",
     "description": "Gerrymandering in 2020 redistricting makes the US House elections less \ncompetitive, but net seat gains are small nationally. The partisan bias of the\nenacted national map is about as biased as non-partisan simulations, due to\ngeography and legal requirements.",

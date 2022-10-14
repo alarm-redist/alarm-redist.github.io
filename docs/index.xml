@@ -11,7 +11,18 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>'One vote disparity' can be improved with state-of-the-art algorithms</title>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <dc:creator>Kento Yamada</dc:creator>
+      <dc:creator>Rei Yatsuhashi</dc:creator>
+      <dc:creator>Sho Miyazaki</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2022-09-30-nikkei</link>
+      <description>Our article in Nikkei Business on reducing Japanese malapportionment was released!</description>
+      <guid>https://alarm-redist.github.io/posts/2022-09-30-nikkei</guid>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</title>
       <dc:creator>Christopher T. Kenny</dc:creator>
