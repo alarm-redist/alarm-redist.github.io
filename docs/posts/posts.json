@@ -1,7 +1,7 @@
 [
   {
     "path": "posts/2022-10-13-policy-evaluation-commentary/",
-    "title": "The Essential Role of Policy Evaluation for the 2020 Census Disclousre Avoidance System",
+    "title": "Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System",
     "description": "We're excited to announce our forthcoming article discussing boyd and Sarathy (2022).",
     "author": [
       {
@@ -33,7 +33,7 @@
     "categories": [],
     "contents": "\r\nWe’re excited to announce a new paper, Comment: The Essential Role of\r\nPolicy Evaluation for the 2020 Census Disclosure Avoidance System,\r\nnow forthcoming at the Harvard Data Science Review. This\r\narticle responds to boyd and\r\nSarathy (2022). This builds on our research into\r\nthe impact of differential privacy on redistricting and advances our\r\nrespsonses\r\nto some common questions.\r\nThe abstract is listed below:\r\n\r\nIn “Differential Perspectives: Epistemic Disconnects Surrounding the\r\nUS Census Bureau’s Use of Differential Privacy,” boyd and Sarathy argue\r\nthat empirical evaluations of the Census Disclosure Avoidance System\r\n(DAS), including our published analysis, failed to recognize how the\r\nbenchmark data against which the 2020 DAS was evaluated is never a\r\nground truth of population counts. In this commentary, we explain why\r\npolicy evaluation, which was the main goal of our analysis, is still\r\nmeaningful without access to a perfect ground truth. We also point out\r\nthat our evaluation leveraged features specific to the decennial Census\r\nand redistricting data, such as block-level population invariance under\r\nswapping and voter file racial identification, better approximating a\r\ncomparison with the ground truth. Lastly, we show that accurate\r\nstatistical predictions of individual race based on the Bayesian\r\nImproved Surname Geocoding, while not a violation of differential\r\nprivacy, substantially increases the disclosure risk of private\r\ninformation the Census Bureau sought to protect. We conclude by arguing\r\nthat policy makers must confront a key trade-off between data utility\r\nand privacy protection, and an epistemic disconnect alone is\r\ninsufficient to explain disagreements between policy choices.\r\n\r\nFor those interested in the full commentary, a preprint is available\r\nhere.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2022-10-18T18:44:52-04:00",
+    "last_modified": "2022-10-18T18:54:27-04:00",
     "input_file": {}
   },
   {
