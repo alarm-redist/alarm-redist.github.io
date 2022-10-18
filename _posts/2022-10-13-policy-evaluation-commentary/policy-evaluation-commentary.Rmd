@@ -1,5 +1,5 @@
 ---
-title: "Commentary: The Essential Role of Policy Evaluation for the 2020 Census Disclousre Avoidance System"
+title: "The Essential Role of Policy Evaluation for the 2020 Census Disclousre Avoidance System"
 description: |
   We're excited to announce our forthcoming article discussing boyd and Sarathy (2022).
 author:
