@@ -38,7 +38,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-We're excited to announce a new paper, [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://arxiv.org/abs/2210.08383), now forthcoming at the _Harvard Data Science Review_. This article responds to [boyd and Sarathy (2022)](https://hdsr.mitpress.mit.edu/pub/3vj5j6i0/release/1). This builds on our [research into the impact of differential privacy on redistricting](https://www.science.org/doi/10.1126/sciadv.abk3283) and advances our [respsonses to some common questions](https://alarm-redist.org/posts/2021-06-02-das-evaluation-faq/).
+We're excited to announce a new paper, [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://arxiv.org/abs/2210.08383), now forthcoming at the _Harvard Data Science Review_. This article responds to [boyd and Sarathy (2022)](https://hdsr.mitpress.mit.edu/pub/3vj5j6i0/release/1). This builds on our [research into the impact of differential privacy on redistricting](https://www.science.org/doi/10.1126/sciadv.abk3283) and advances our [responses to some common questions](https://alarm-redist.org/posts/2021-06-02-das-evaluation-faq/).
 
 The abstract is listed below:
 
