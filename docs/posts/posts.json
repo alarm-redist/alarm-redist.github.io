@@ -1,5 +1,50 @@
 [
   {
+    "path": "posts/2022-11-01-50statessimulations/",
+    "title": "50statesSimulations in Nature Scientific Data",
+    "description": "Now published at Nature Scientific Data.",
+    "author": [
+      {
+        "name": "Cory McCartan",
+        "url": "https://www.corymccartan.com"
+      },
+      {
+        "name": "Christopher T. Kenny",
+        "url": "https://www.christophertkenny.com/"
+      },
+      {
+        "name": "Tyler Simko",
+        "url": "https://tylersimko.com/"
+      },
+      {
+        "name": "George Garcia III",
+        "url": {}
+      },
+      {
+        "name": "Kevin Wang",
+        "url": "https://scholar.harvard.edu/kevinwang"
+      },
+      {
+        "name": "Melissa Wu",
+        "url": {}
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": "https://www.shirokuriwaki.com/"
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": "https://imai.fas.harvard.edu/"
+      }
+    ],
+    "date": "2022-11-14",
+    "categories": [],
+    "contents": "\r\nWe’re excited to share that our article, Simulated redistricting\r\nplans for the analysis and evaluation of redistricting in the United\r\nStates, is now available through Nature\r\nScientific Data. This is a great step in making alternative\r\nredistricting plans more available for the public and researchers.\r\nCheck out the alarmdata R\r\npackage for some helpers for working with this data!\r\nWant more information? Take a look at the\r\nblog post that accompanied the release of the original working paper\r\nor an\r\nearly use of this data.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2022-11-14T13:58:25-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-10-13-policy-evaluation-commentary/",
     "title": "Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System",
     "description": "We're excited to announce our forthcoming article discussing boyd and Sarathy (2022).",
