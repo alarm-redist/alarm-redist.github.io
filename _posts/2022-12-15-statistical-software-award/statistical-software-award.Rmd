@@ -3,10 +3,10 @@ title: "redist Recieved POLMETH's 2022 Statistical Software Award"
 description: |
   Our software won the Society for Political Methodology's Statistical Software Award.
 author:
-  - name: Cory McCartan
-    url: https://www.corymccartan.com
   - name: Christopher T. Kenny
     url: https://www.christophertkenny.com/
+  - name: Cory McCartan
+    url: https://www.corymccartan.com
   - name: Ben Fifield
     url: https://www.benfifield.com/
   - name: Kosuke Imai
@@ -15,6 +15,7 @@ date: 2022-12-15
 output:
   distill::distill_article:
     self_contained: false
+preview: https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png
 ---
 
 
@@ -22,7 +23,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-![](https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png)
 
 Last week, `redist` received this year's Statistical Software Award from the Society for Political Methodology.
 
