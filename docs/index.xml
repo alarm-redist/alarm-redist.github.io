@@ -14,14 +14,15 @@
     <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>redist Recieved POLMETH's 2022 Statistical Software Award</title>
-      <dc:creator>Cory McCartan</dc:creator>
       <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
       <dc:creator>Ben Fifield</dc:creator>
       <dc:creator>Kosuke Imai</dc:creator>
       <link>https://alarm-redist.github.io/posts/2022-12-15-statistical-software-award</link>
       <description>Our software won the Society for Political Methodology's Statistical Software Award.</description>
       <guid>https://alarm-redist.github.io/posts/2022-12-15-statistical-software-award</guid>
       <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>50statesSimulations in Nature Scientific Data</title>
