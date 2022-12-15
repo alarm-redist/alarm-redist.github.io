@@ -2,7 +2,7 @@
   {
     "path": "posts/2022-12-15-statistical-software-award/",
     "title": "redist Recieved POLMETH's 2022 Statistical Software Award",
-    "description": "A short description of the post.",
+    "description": "Our software won the Society for Political Methodology's Statistical Software Award.",
     "author": [
       {
         "name": "Cory McCartan",
@@ -23,9 +23,9 @@
     ],
     "date": "2022-12-15",
     "categories": [],
-    "contents": "\r\nLast week, redist received this year’s Statistical\r\nSoftware Award from the Society for Political Methodology.\r\nWe are grateful for the honor! Thank you to the award committee for\r\nconsidering our software.\r\nredist is an open source R package for sampling\r\nredistricting plans, available here.\r\n\r\n\r\n\r\n",
+    "contents": "\r\n\r\nLast week, redist received this year’s Statistical\r\nSoftware Award from the Society for Political Methodology.\r\nWe are grateful for the honor! Thank you to the award committee for\r\nconsidering our software.\r\nredist is an open source R package for sampling\r\nredistricting plans, available here.\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2022-12-15T13:16:57-05:00",
+    "last_modified": "2022-12-15T15:19:14-05:00",
     "input_file": {}
   },
   {

@@ -1,7 +1,7 @@
 ---
 title: "redist Recieved POLMETH's 2022 Statistical Software Award"
 description: |
-  A short description of the post.
+  Our software won the Society for Political Methodology's Statistical Software Award.
 author:
   - name: Cory McCartan
     url: https://www.corymccartan.com
@@ -21,6 +21,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+![](https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png)
 
 Last week, `redist` received this year's Statistical Software Award from the Society for Political Methodology.
 
