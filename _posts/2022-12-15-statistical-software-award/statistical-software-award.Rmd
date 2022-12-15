@@ -1,0 +1,32 @@
+---
+title: "redist Recieved POLMETH's 2022 Statistical Software Award"
+description: |
+  A short description of the post.
+author:
+  - name: Cory McCartan
+    url: https://www.corymccartan.com
+  - name: Christopher T. Kenny
+    url: https://www.christophertkenny.com/
+  - name: Ben Fifield
+    url: https://www.benfifield.com/
+  - name: Kosuke Imai
+    url: https://imai.fas.harvard.edu/
+date: 2022-12-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Last week, `redist` received this year's Statistical Software Award from the Society for Political Methodology.
+
+
+We are grateful for the honor! Thank you to the award committee for considering our software.
+
+`redist` is an open source R package for sampling redistricting plans, [available here](https://alarm-redist.org/redist/).
+
+
