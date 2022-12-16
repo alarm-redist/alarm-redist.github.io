@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-Last week, Chris Kenny, Cory McCartan, Ben Fifield, and Kosuke Imai received this year's Statistical Software Award from the Society for Political Methodology for the R package `redist`.
+Last week, Chris Kenny, Cory McCartan, Ben Fifield, and Kosuke Imai received this year's [Statistical Software Award from the Society for Political Methodology](https://polmeth.org/statistical-software-award) for the R package `redist`.
 
 The announcement stated:
 
