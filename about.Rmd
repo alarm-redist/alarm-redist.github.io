@@ -22,20 +22,34 @@ requirements, and includes tools to compute various summary statistics and
 create useful plots.
 
 # People
-* **Ben Fifield**, American Civil Liberties Union
-* **George Garcia III**, Department of Economics, Massachusetts Institute of Technology
+
+### Current Membership
+
+* **Aneetej Arora**, Harvard College
+* **Emma Ebowe**, Department of Government, Harvard University
+* **Ben Fifield**, Meta
+* **Jennifer Gao**, Harvard College
 * **Kosuke Imai**, Departments of Government and Statistics, Harvard University
-* **Christopher Kenny**, Department of Government, Harvard University
-* **Shiro Kuriwaki**, Department of Political Science, Stanford University
+* **Christopher T. Kenny**, Department of Government, Harvard University
+* **Shiro Kuriwaki**, Department of Political Science, Yale University
 * **Sho Miyazaki**, Keio University
 * **Cory McCartan**, Department of Statistics, Harvard University
+* **Philip O'Sullivan**, Department of Statistics, Harvard University
 * **Evan Rosenman**, Harvard Data Science Initiative
+* **Taran Samarth**, Pennsylvania State University
 * **Tyler Simko**, Department of Government, Harvard University
-* **Sam Thau**, Harvard College
 * **Kevin Wang**, Harvard College
 * **Melissa Wu**, Harvard College
 * **Kento Yamada**, Harvard College
 * **Rei Yatsuhashi**, Harvard College
+* **Amy Zhou**, Harvard College
+* **Michael Zhao**, Harvard College
+
+### Project Alumni
+
+* **Tahmid Ahmed**, Harvard College
+* **George Garcia III**, Department of Economics, MIT
+* **Sam Thau**, Department of Economics, Princeton University
 * **Anna Yorozuya**, University of Tokyo
 
 # Publications
