@@ -1,5 +1,42 @@
 [
   {
+    "path": "posts/2023-01-31-comment-the-essenital-role-of-policy-evaluation/",
+    "title": "Comment: The Essenital Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System",
+    "description": "Our response to boyd and Sarathy (2022) is now published in the HDSR!",
+    "author": [
+      {
+        "name": "Christopher T. Kenny",
+        "url": {}
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": "https://www.shirokuriwaki.com/"
+      },
+      {
+        "name": "Cory McCartan",
+        "url": {}
+      },
+      {
+        "name": "Evan Rosenman",
+        "url": {}
+      },
+      {
+        "name": "Tyler Simko",
+        "url": {}
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": {}
+      }
+    ],
+    "date": "2023-01-31",
+    "categories": [],
+    "contents": "\r\nWe’re excited to share that Comment: The Essenital Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System is now available at the Harvard Data Science Review. We discuss boyd and Sarathy (2022), addressing both factual inaccuracies in their work and their contention that disagreements over privacy in the 2020 Census are primarily academic issues.\r\n\r\nIn “Differential Perspectives: Epistemic Disconnects Surrounding the U.S. Census Bureau’s Use of Differential Privacy,” boyd and Sarathy argue that empirical evaluations of the Census Disclosure Avoidance System (DAS), including our published analysis (Kenny et al., 2021b), failed to recognize that the benchmark data against which the 2020 DAS was evaluated is never a ground truth of population counts. In this commentary, we explain why policy evaluation, which was the main goal of our analysis, is still meaningful without access to a perfect ground truth. We also point out that our evaluation leveraged features specific to the decennial census and redistricting data, such as block-level population invariance under swapping and voter file racial identification, better approximating a comparison with the ground truth. Lastly, we show that accurate statistical predictions of individual race based on the Bayesian Improved Surname Geocoding, while not a violation of differential privacy, substantially increases the disclosure risk of private information the Census Bureau sought to protect. We conclude by arguing that policymakers must confront a key trade-off between data utility and privacy protection, and an epistemic disconnect alone is insufficient to explain disagreements between policy choices.\r\n\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2023-01-31T15:25:56-05:00",
+    "input_file": "comment-the-essenital-role-of-policy-evaluation.knit.md"
+  },
+  {
     "path": "posts/2022-12-15-statistical-software-award/",
     "title": "redist Recieved POLMETH's 2022 Statistical Software Award",
     "description": "Our software won the Society for Political Methodology's Statistical Software Award.",
