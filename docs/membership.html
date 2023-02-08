@@ -790,6 +790,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1862,15 +1863,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2438,7 +2445,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2509,47 +2516,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h1 id="current-membership">Current Membership</h1>
 <ul>
-<li><strong>Aneetej Arora</strong>, Harvard College</li>
-<li><strong>Emma Ebowe</strong>, Department of Government, Harvard
-University</li>
-<li><strong>Ben Fifield</strong>, Meta</li>
+<li><strong>Aneetej Arora</strong>, Ohio State University</li>
+<li><strong>Emma Ebowe</strong>, Department of Government, Harvard University</li>
+<li><a href="https://www.benfifield.com/"><strong>Ben Fifield</strong></a>, Meta</li>
 <li><strong>Jennifer Gao</strong>, Harvard College</li>
-<li><strong>Kosuke Imai</strong>, Departments of Government and
-Statistics, Harvard University</li>
-<li><strong>Christopher T. Kenny</strong>, Department of Government,
-Harvard University</li>
-<li><strong>Shiro Kuriwaki</strong>, Department of Political Science,
-Yale University</li>
+<li><a href="https://imai.fas.harvard.edu/"><strong>Kosuke Imai</strong></a>, Departments of Government and Statistics, Harvard University</li>
+<li><a href="https://christophertkenny.com/"><strong>Christopher T. Kenny</strong></a>, Department of Government, Harvard University</li>
+<li><a href="https://www.shirokuriwaki.com/"><strong>Shiro Kuriwaki</strong></a>, Department of Political Science, Yale University</li>
 <li><strong>Sho Miyazaki</strong>, Keio University</li>
-<li><strong>Cory McCartan</strong>, Department of Statistics, Harvard
-University</li>
-<li><strong>Philip O’Sullivan</strong>, Department of Statistics,
-Harvard University</li>
+<li><a href="https://corymccartan.com/"><strong>Cory McCartan</strong></a>, Department of Statistics, Harvard University</li>
+<li><strong>Philip O’Sullivan</strong>, Department of Statistics, Harvard University</li>
 <li><strong>Evan Rosenman</strong>, Harvard Data Science Initiative</li>
-<li><strong>Taran Samarth</strong>, Pennsylvania State University</li>
-<li><strong>Tyler Simko</strong>, Department of Government, Harvard
-University</li>
-<li><strong>Kevin Wang</strong>, Harvard College</li>
+<li><a href="https://taransamarth.com/"><strong>Taran Samarth</strong></a>, Pennsylvania State University</li>
+<li><a href="https://tylersimko.com/"><strong>Tyler Simko</strong></a>, Department of Government, Harvard University</li>
+<li><a href="https://scholar.harvard.edu/kevinwang/home"><strong>Kevin Wang</strong></a>, Harvard College</li>
 <li><strong>Melissa Wu</strong>, Harvard College</li>
 <li><strong>Kento Yamada</strong>, Harvard College</li>
-<li><strong>Rei Yatsuhashi</strong>, Harvard College</li>
-<li><strong>Amy Zhou</strong>, Harvard College</li>
 <li><strong>Michael Zhao</strong>, Harvard College</li>
 </ul>
 <h1 id="project-alumni">Project Alumni</h1>
 <ul>
-<li><strong>Tahmid Ahmed</strong>, Harvard College</li>
-<li><strong>George Garcia III</strong>, Department of Economics,
-MIT</li>
-<li><strong>Sam Thau</strong>, Department of Economics, Princeton
-University</li>
-<li><strong>Anna Yorozuya</strong>, University of Tokyo</li>
+<li><strong>George Garcia III</strong>, Department of Economics, MIT</li>
+<li><strong>Sam Thau</strong>, Department of Economics, Princeton University</li>
+<li><strong>Rei Yatsuhashi</strong>, Harvard College</li>
+<li><strong>Anna Yorozuya</strong>, Department of Political Science, Yale University</li>
 </ul>
 <h1 id="looking-for-more-information">Looking for more information?</h1>
-<p>Send us an email at <a href="mailto:alarm.redist@gmail.com"
-class="email">alarm.redist@gmail.com</a>.</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Send us an email at <a href="mailto:alarm.redist@gmail.com" class="email">alarm.redist@gmail.com</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

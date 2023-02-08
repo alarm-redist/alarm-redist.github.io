@@ -5,31 +5,29 @@ description: |
 ---
 
 # Current Membership
-* **Aneetej Arora**, Harvard College
+* **Aneetej Arora**, Ohio State University
 * **Emma Ebowe**, Department of Government, Harvard University
-* **Ben Fifield**, Meta
+* [**Ben Fifield**](https://www.benfifield.com/), Meta
 * **Jennifer Gao**, Harvard College
-* **Kosuke Imai**, Departments of Government and Statistics, Harvard University
-* **Christopher T. Kenny**, Department of Government, Harvard University
-* **Shiro Kuriwaki**, Department of Political Science, Yale University
+* [**Kosuke Imai**](https://imai.fas.harvard.edu/), Departments of Government and Statistics, Harvard University
+* [**Christopher T. Kenny**](https://christophertkenny.com/), Department of Government, Harvard University
+* [**Shiro Kuriwaki**](https://www.shirokuriwaki.com/), Department of Political Science, Yale University
 * **Sho Miyazaki**, Keio University
-* **Cory McCartan**, Department of Statistics, Harvard University
+* [**Cory McCartan**](https://corymccartan.com/), Department of Statistics, Harvard University
 * **Philip O'Sullivan**, Department of Statistics, Harvard University
 * **Evan Rosenman**, Harvard Data Science Initiative
-* **Taran Samarth**, Pennsylvania State University
-* **Tyler Simko**, Department of Government, Harvard University
-* **Kevin Wang**, Harvard College
+* [**Taran Samarth**](https://taransamarth.com/), Pennsylvania State University
+* [**Tyler Simko**](https://tylersimko.com/), Department of Government, Harvard University
+* [**Kevin Wang**](https://scholar.harvard.edu/kevinwang/home), Harvard College
 * **Melissa Wu**, Harvard College
 * **Kento Yamada**, Harvard College
-* **Rei Yatsuhashi**, Harvard College
-* **Amy Zhou**, Harvard College
 * **Michael Zhao**, Harvard College
 
 # Project Alumni
-* **Tahmid Ahmed**, Harvard College
 * **George Garcia III**, Department of Economics, MIT
 * **Sam Thau**, Department of Economics, Princeton University
-* **Anna Yorozuya**, University of Tokyo
+* **Rei Yatsuhashi**, Harvard College
+* **Anna Yorozuya**, Department of Political Science, Yale University
 
 
 # Looking for more information?
