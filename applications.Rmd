@@ -5,12 +5,9 @@ description: |
 ---
 
 # Papers with ALARM Project Members
-- [Automated Redistricting Simulation Using Markov Chain Monte
-Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics* (2020) Vol. 29, No. 4, pp. 715-728.
-- [The Essential Role of Empirical Validation in Legislative Redistricting
-Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy* (2020) Vol. 7, No. 1, pp. 52-68.
-- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting
-Plans](https://arxiv.org/pdf/2008.06131.pdf)
+- [Automated Redistricting Simulation Using Markov Chain Monte Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics* (2020) Vol. 29, No. 4, pp. 715-728.
+- [The Essential Role of Empirical Validation in Legislative Redistricting Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy* (2020) Vol. 7, No. 1, pp. 52-68.
+- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans](https://arxiv.org/pdf/2008.06131.pdf)
 - [The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census](https://doi.org/10.1126/sciadv.abk3283) *Science Advances* (2021) Vol. 7, No. 41.
 - [Simulated redistricting plans for the analysis and evaluation of redistricting in the United States](https://www.nature.com/articles/s41597-022-01808-2) *Scientific Data* (2022) Vol. 9, No. 1.
 - [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1) *Harvard Data Science Review* (2023) Special Issue 2.

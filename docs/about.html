@@ -790,6 +790,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1862,15 +1863,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2438,7 +2445,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2502,111 +2509,75 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>The Algorithm-Assisted Redistricting Methodology (ALARM) Project</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Developing methodology and tools to analyze legislative
-redistricting.</p></p>
+<p><p>Developing methodology and tools to analyze legislative redistricting.</p></p>
 </div>
 
 
 <div class="d-article">
 <h1 id="the-project">The Project</h1>
 <p><img src="assets/alarm_1200_tr.png" alt="ALARM logo" 
-  style="width: 256px; float: right; margin: 8px;" /> The ALARM Project
-is a research team at Harvard University led by <a
-href="https://imai.fas.harvard.edu/">Kosuke Imai</a>. It conducts
-research into redistricting sampling algorithms, best practices and
-workflows for redistricting analysis, and tools to visualize, explore,
-and understand redistricting plans. ALARM Project researchers develop <a
-href="https://alarm-redist.github.io/redist/"><strong>redist</strong></a>,
+  style="width: 256px; float: right; margin: 8px;" />
+The ALARM Project is a research team at Harvard University led by
+<a href="https://imai.fas.harvard.edu/">Kosuke Imai</a>. It conducts research into
+redistricting sampling algorithms, best practices and workflows for
+redistricting analysis, and tools to visualize, explore, and understand
+redistricting plans.
+ALARM Project researchers develop <a href="https://alarm-redist.github.io/redist/"><strong>redist</strong></a>,
 an open-source R package for redistricting simulation and analysis which
-implements state-of-the-art MCMC and SMC redistricting sampling
-algorithms. The package allows for the implementation of various
-constraints in the redistricting process such as geographic compactness
-and population parity requirements, and includes tools to compute
-various summary statistics and create useful plots.</p>
+implements state-of-the-art MCMC and SMC redistricting sampling algorithms. The
+package allows for the implementation of various constraints in the
+redistricting process such as geographic compactness and population parity
+requirements, and includes tools to compute various summary statistics and
+create useful plots.</p>
 <h1 id="people">People</h1>
-<h3 id="current-membership">Current Membership</h3>
+<h1 id="current-membership">Current Membership</h1>
 <ul>
-<li><strong>Aneetej Arora</strong>, Harvard College</li>
-<li><strong>Emma Ebowe</strong>, Department of Government, Harvard
-University</li>
-<li><strong>Ben Fifield</strong>, Meta</li>
+<li><strong>Aneetej Arora</strong>, Ohio State University</li>
+<li><strong>Emma Ebowe</strong>, Department of Government, Harvard University</li>
+<li><a href="https://www.benfifield.com/"><strong>Ben Fifield</strong></a>, Meta</li>
 <li><strong>Jennifer Gao</strong>, Harvard College</li>
-<li><strong>Kosuke Imai</strong>, Departments of Government and
-Statistics, Harvard University</li>
-<li><strong>Christopher T. Kenny</strong>, Department of Government,
-Harvard University</li>
-<li><strong>Shiro Kuriwaki</strong>, Department of Political Science,
-Yale University</li>
+<li><a href="https://imai.fas.harvard.edu/"><strong>Kosuke Imai</strong></a>, Departments of Government and Statistics, Harvard University</li>
+<li><a href="https://christophertkenny.com/"><strong>Christopher T. Kenny</strong></a>, Department of Government, Harvard University</li>
+<li><a href="https://www.shirokuriwaki.com/"><strong>Shiro Kuriwaki</strong></a>, Department of Political Science, Yale University</li>
 <li><strong>Sho Miyazaki</strong>, Keio University</li>
-<li><strong>Cory McCartan</strong>, Department of Statistics, Harvard
-University</li>
-<li><strong>Philip O’Sullivan</strong>, Department of Statistics,
-Harvard University</li>
+<li><a href="https://corymccartan.com/"><strong>Cory McCartan</strong></a>, Department of Statistics, Harvard University</li>
+<li><strong>Philip O’Sullivan</strong>, Department of Statistics, Harvard University</li>
 <li><strong>Evan Rosenman</strong>, Harvard Data Science Initiative</li>
-<li><strong>Taran Samarth</strong>, Pennsylvania State University</li>
-<li><strong>Tyler Simko</strong>, Department of Government, Harvard
-University</li>
-<li><strong>Kevin Wang</strong>, Harvard College</li>
+<li><a href="https://taransamarth.com/"><strong>Taran Samarth</strong></a>, Pennsylvania State University</li>
+<li><a href="https://tylersimko.com/"><strong>Tyler Simko</strong></a>, Department of Government, Harvard University</li>
+<li><a href="https://scholar.harvard.edu/kevinwang/home"><strong>Kevin Wang</strong></a>, Harvard College</li>
 <li><strong>Melissa Wu</strong>, Harvard College</li>
 <li><strong>Kento Yamada</strong>, Harvard College</li>
-<li><strong>Rei Yatsuhashi</strong>, Harvard College</li>
-<li><strong>Amy Zhou</strong>, Harvard College</li>
 <li><strong>Michael Zhao</strong>, Harvard College</li>
 </ul>
-<h3 id="project-alumni">Project Alumni</h3>
+<h1 id="project-alumni">Project Alumni</h1>
 <ul>
-<li><strong>Tahmid Ahmed</strong>, Harvard College</li>
-<li><strong>George Garcia III</strong>, Department of Economics,
-MIT</li>
-<li><strong>Sam Thau</strong>, Department of Economics, Princeton
-University</li>
-<li><strong>Anna Yorozuya</strong>, University of Tokyo</li>
+<li><strong>George Garcia III</strong>, Department of Economics, MIT</li>
+<li><strong>Sam Thau</strong>, Department of Economics, Princeton University</li>
+<li><strong>Rei Yatsuhashi</strong>, Harvard College</li>
+<li><strong>Anna Yorozuya</strong>, Department of Political Science, Yale University</li>
 </ul>
 <h1 id="publications">Publications</h1>
 <ul>
-<li><a href="https://doi.org/10.1080/10618600.2020.1739532">Automated
-Redistricting Simulation Using Markov Chain Monte Carlo</a> <em>Journal
-of Computational and Graphical Statistics</em> (2020) Vol. 29, No. 4,
-pp. 715-728.</li>
-<li><a href="https://doi.org/10.1080/2330443X.2020.1791773">The
-Essential Role of Empirical Validation in Legislative Redistricting
-Simulation</a> <em>Statistics and Public Policy</em> (2020) Vol. 7,
-No. 1, pp. 52-68.</li>
-<li><a href="https://arxiv.org/pdf/2008.06131.pdf">Sequential Monte
-Carlo for Sampling Balanced and Compact Redistricting Plans</a></li>
-<li><a href="https://doi.org/10.1126/sciadv.abk3283">The use of
-differential privacy for census data and its impact on redistricting:
-The case of the 2020 U.S. Census</a> <em>Science Advances</em> (2021)
-Vol. 7, No. 41.</li>
+<li><a href="https://doi.org/10.1080/10618600.2020.1739532">Automated Redistricting Simulation Using Markov Chain Monte Carlo</a> <em>Journal of Computational and Graphical Statistics</em> (2020) Vol. 29, No. 4, pp. 715-728.</li>
+<li><a href="https://doi.org/10.1080/2330443X.2020.1791773">The Essential Role of Empirical Validation in Legislative Redistricting Simulation</a> <em>Statistics and Public Policy</em> (2020) Vol. 7, No. 1, pp. 52-68.</li>
+<li><a href="https://arxiv.org/pdf/2008.06131.pdf">Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</a></li>
+<li><a href="https://doi.org/10.1126/sciadv.abk3283">The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census</a> <em>Science Advances</em> (2021) Vol. 7, No. 41.</li>
+<li><a href="https://www.nature.com/articles/s41597-022-01808-2">Simulated redistricting plans for the analysis and evaluation of redistricting in the United States</a> <em>Scientific Data</em> (2022) Vol. 9, No. 1.</li>
+<li><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1">Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</a> <em>Harvard Data Science Review</em> (2023) Special Issue 2.</li>
 </ul>
 <h1 id="related-r-packages">Related R Packages</h1>
 <ul>
-<li><a href="https://corymccartan.github.io/blockpop/">blockpop</a>:
-Estimate Census Block Populations for 2020. McCartan (2021).</li>
-<li><a
-href="https://christopherkenny.github.io/geomander/">geomander</a>:
-Geographic Tools for Studying Gerrymandering. Kenny (2021).</li>
-<li><a href="https://alarm-redist.github.io/ggredist/">ggredist</a>:
-Scales, Palettes, and Extensions of ‘ggplot2’ for Redistricting . Kenny
-and McCartan (2022).</li>
-<li><a
-href="https://corymccartan.github.io/PL94171/index.html">PL94171</a>:
-Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and
-Kenny (2021).</li>
-<li><a href="https://github.com/christopherkenny/ppmf">ppmf</a>: Read
-Census Privacy Protected Microdata Files. Kenny (2021).</li>
-<li><a href="https://alarm-redist.github.io/redist/">redist</a>:
-Simulation Methods for Legislative Redistricting. Kenny, McCartan,
-Fifield, and Imai (2021).</li>
-<li><a
-href="https://alarm-redist.github.io/redistmetrics/">redistmetrics</a>:
-Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).</li>
-<li><a href="https://github.com/kosukeimai/wru">wru</a>: Who Are You?
-Bayesian Prediction of Racial Category Using Surname and Geolocation.
-Khanna and Imai (2021).</li>
+<li><a href="https://corymccartan.github.io/blockpop/">blockpop</a>: Estimate Census Block Populations for 2020. McCartan (2021).</li>
+<li><a href="https://christopherkenny.github.io/geomander/">geomander</a>: Geographic Tools for Studying Gerrymandering. Kenny (2021).</li>
+<li><a href="https://alarm-redist.github.io/ggredist/">ggredist</a>: Scales, Palettes, and Extensions of ‘ggplot2’ for Redistricting . Kenny and McCartan (2022).</li>
+<li><a href="https://corymccartan.github.io/PL94171/index.html">PL94171</a>: Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).</li>
+<li><a href="https://github.com/christopherkenny/ppmf">ppmf</a>: Read Census Privacy Protected Microdata Files. Kenny (2021).</li>
+<li><a href="https://alarm-redist.github.io/redist/">redist</a>: Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).</li>
+<li><a href="https://alarm-redist.github.io/redistmetrics/">redistmetrics</a>: Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).</li>
+<li><a href="https://github.com/kosukeimai/wru">wru</a>: Who Are You? Bayesian Prediction of Racial Category Using Surname and Geolocation. Khanna and Imai (2021).</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
