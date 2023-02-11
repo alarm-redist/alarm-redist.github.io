@@ -13,7 +13,7 @@ description: |
 - [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1) *Harvard Data Science Review* (2023) Special Issue 2.
 
 # Reports with ALARM Project Members
-- [Maryland Congressional District Memo, Christopher T. Kenny and Johnathan Rodden](https://redistricting.maryland.gov/Documents/Library/mcrc-drafts-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
+- [Maryland Congressional District Memo, Christopher T. Kenny and Jonathan Rodden](https://redistricting.maryland.gov/Documents/Library/mcrc-drafts-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
 - *League of Women Voters of Ohio v. Ohio Redistricting Commission*
     - [Dr. Kosuke Imai Expert Report](https://www.supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=911966.pdf)
     - [Dr. Kosuke Imai Supplementary Expert Report](http://supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=918618.pdf)
