@@ -44,7 +44,7 @@ create useful plots.
 
 # Project Alumni
 * **George Garcia III**, Department of Economics, MIT
-* **Sam Thau**, Department of Economics, Princeton University
+* **Sam Thau**, Department of Economics, Stanford University
 * **Rei Yatsuhashi**, Harvard College
 * **Anna Yorozuya**, Department of Political Science, Yale University
 

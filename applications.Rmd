@@ -15,15 +15,8 @@ description: |
 # Reports with ALARM Project Members
 - [Maryland Congressional District Memo, Christopher T. Kenny and Jonathan Rodden](https://redistricting.maryland.gov/Documents/Library/mcrc-drafts-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
 - *League of Women Voters of Ohio v. Ohio Redistricting Commission*
-    - [Dr. Kosuke Imai Expert Report](https://www.supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=911966.pdf)
-    - [Dr. Kosuke Imai Supplementary Expert Report](http://supremecourt.ohio.gov/pdf_viewer/pdf_viewer.aspx?pdf=918618.pdf)
 - *Merril v. Milligan*
-    - [Expert Report, Kosuke Imai, Ph.D.](https://storage.courtlistener.com/recap/gov.uscourts.alnd.179302/gov.uscourts.alnd.179302.68.4_1.pdf)
-    - [Rebuttal Expert Report, Kosuke Imai, Ph.D.](https://storage.courtlistener.com/recap/gov.uscourts.alnd.179302/gov.uscourts.alnd.179302.76.3.pdf)
 - *South Carolina NAACP v. Alexander*
-    - [Expert Report, Kosuke Imai, Ph.D.](https://storage.courtlistener.com/recap/gov.uscourts.scd.267522/gov.uscourts.scd.267522.344.1.pdf)
 - *Jacksonville Branch of NAACP v. City of Jacksonville*
-    - [Expert Report, Kosuke Imai, Ph.D.](https://www.hlselectionlaw.org/s/34-19-Imai-Rpt.pdf)
--  *The Pennsylvania Legislative Reapportionment Commission* and *Benninghoff v. 2021 Legislative Reapportionment Commission*
-    - [Statement to Pennsylvania Reapportionment Commission Regarding Proposed House Preliminary Plan](https://www.redistricting.state.pa.us/resources/Press/2022-01-14%20IMAI%20Testimony.pdf)
-    - [Supplementary Expert Report of Kosuke Imai, Ph.D.](https://www.pacourts.us/Storage/media/pdfs/20220311/214416-march11,2022-lrcanswertopetitionforreview.pdf)
+- *The Pennsylvania Legislative Reapportionment Commission* and *Benninghoff v. 2021 Legislative Reapportionment Commission*
+
