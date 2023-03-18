@@ -191,7 +191,35 @@ redist.plot.distr_qtys(plans, qty = e_dvs, geom = raincloud, ref_geom = r_geom) 
 
 # Better Diagnostics for `summary.redist_plans()`
 
-# Confidence Intervals from `redist_ci()`
+Like above, let's get some simulated plans from the [50-State Redistricting Simulations](https://alarm-redist.org/posts/2022-11-01-50statessimulations/). We can get a state like Nevada, which has fewer districts and shorter summary.
+
+```{r}
+library(alarmdata)
+plans <- alarm_50state_plans('NV')
+```
+
+To get diagnostics, we can call `summary(plans)` which computes R-hats, sample diversity, and some split-by-split SMC diagnostics.
+
+```{r}
+summary(plans)
+```
+The first big change here is that the digits are now rounded to three digits. 
+You no longer need to search through 8 decimal digits at 3am for the ones that matter.
+
+Typically, we want R-hat values between 1 and 1.05, so this looks pretty good.
+What if they weren't? We can introduce this behavior by adding some new variable with very different values by independent run of SMC (denoted by the `chain` column).
+
+```{r}
+plans <- plans %>% 
+    mutate(bad_rhat = rnorm(n = n(), mean = dplyr::coalesce(chain, 0)))
+```
+
+Now this gets angry:
+
+```{r}
+summary(plans)
+```
+It warns about convergence, as it has since 4.0. But it now also adds a big red "x" next to `bad_rhat`'s R-hat.
 
 
 ----
