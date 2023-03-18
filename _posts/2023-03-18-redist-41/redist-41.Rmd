@@ -192,3 +192,8 @@ redist.plot.distr_qtys(plans, qty = e_dvs, geom = raincloud, ref_geom = r_geom) 
 # Better Diagnostics for `summary.redist_plans()`
 
 # Confidence Intervals from `redist_ci()`
+
+
+----
+
+Any questions? [Open an issue on GitHub](https://github.com/alarm-redist/redist/issues) or [find us on Twitter](https://twitter.com/alarm_redist).
