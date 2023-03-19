@@ -183,7 +183,7 @@ raincloud <- function(...) {
 
 This gives us a fun plot to work with, though this might be best suited for much larger plot areas.
 
-```{r}
+```{r, preview = TRUE}
 redist.plot.distr_qtys(plans, qty = e_dvs, geom = raincloud, ref_geom = r_geom) + 
     geom_hline(yintercept = 0.5, linetype = 'dotted') + 
     scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
