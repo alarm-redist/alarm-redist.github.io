@@ -11,7 +11,18 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 31 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>redist 4.1</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-03-18-redist-41</link>
+      <description>A medium-sized release with more flexible plotting, better diagnostics, and
+speed improvements.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-03-18-redist-41</guid>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2023-03-18-redist-41/redist-41_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</title>
       <dc:creator>Christopher T. Kenny</dc:creator>

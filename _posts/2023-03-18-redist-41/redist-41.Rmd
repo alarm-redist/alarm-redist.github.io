@@ -10,7 +10,7 @@ author:
   - name: Cory McCartan
     affiliation: Department of Statistics, Harvard University
     url: https://www.corymccartan.com
-date: 2023-03-18
+date: 2023-03-19
 output:
   distill::distill_article:
     self_contained: false
