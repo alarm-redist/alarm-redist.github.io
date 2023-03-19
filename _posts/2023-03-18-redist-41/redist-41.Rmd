@@ -54,7 +54,7 @@ Let's build this out a bit. First, we'll use some data from the [50-State Redist
 
 We can get the `redist_map` and corresponding 5,000 sampled plus the enacted plans in a `redist_plans` object for Michigan.  
 
-```{r}
+```{r, message = FALSE, warning=FALSE}
 library(dplyr)
 library(redist)
 library(alarmdata)
@@ -63,11 +63,13 @@ plans <- alarm_50state_plans('MI')
 ```
 
 `plans` here has a column `e_dvs` that gives the expected Democratic vote share for each district in each plan.
+
 ```{r}
 redist.plot.distr_qtys(plans, qty = e_dvs)
 ```
 
 We've always been able to clean or augment this plot up using regular `ggplot2` things:
+
 ```{r}
 library(ggplot2)
 
