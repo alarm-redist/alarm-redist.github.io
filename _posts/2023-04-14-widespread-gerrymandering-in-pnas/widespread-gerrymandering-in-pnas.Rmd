@@ -1,0 +1,36 @@
+---
+title: "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Forthcoming in PNAS"
+description: |
+  Redistricting plans in legislatures determine how voters' preferences are translated into representative's seats.
+  Political parties may manipulate the redistricting process to gain additional seats and insulate incumbents from electoral competition, a process known as *gerrymandering*. 
+  But detecting gerrymandering is difficult without a representative set of alternative plans that comply with the same geographic and legal constraints.
+  Harnessing recent algorithmic advances in sampling, we study such a collection of alternative redistricting plans that can serve as a non-partisan baseline.
+  This methodological approach can distinguish electoral bias due to partisan effects from electoral bias due to other factors. 
+  We find that Democrats are structurally and geographically disadvantaged in House elections by 8 seats, while partisan gerrymandering disadvantages them by 2 seats.
+author:
+  - name: Christopher T. Kenny
+    url: https://www.christophertkenny.com/
+  - name: Cory McCartan
+    url: https://www.corymccartan.com
+  - name: Tyler Simko
+    url: https://tylersimko.com/
+  - name: Shiro Kuriwaki
+    url: https://www.shirokuriwaki.com/
+  - name: Kosuke Imai
+    url: https://imai.fas.harvard.edu/
+date: 2023-04-14
+output:
+  distill::distill_article:
+    self_contained: false
+citation: false
+---
+
+```{r, fig.height=8, fig.align='center'}
+knitr::include_graphics('manipulation.png')
+```
+
+We are delighted to announce that "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition" has been accepted for publication in *PNAS*, the *Proceedings of the National Academy of Sciences of the United States of America*. This article evaluates the partisan effects of redistricting in 2020 using simulations, allowing us to account for both compliance with legal requirements and the effects of political geography. While many individual state plans are biased in favor of one party or the other, the US House plan for 2022 is relatively unbiased. However, many districts are quite a bit less competitive than would be typically expected. 
+
+A pre-print of the article is available [on arXiv](https://arxiv.org/abs/2208.06968).
+
+We are grateful to the editors and reviewers for their helpful feedback in improving this paper.
