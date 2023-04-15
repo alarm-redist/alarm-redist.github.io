@@ -1,12 +1,7 @@
 ---
 title: "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Forthcoming in PNAS"
 description: |
-  Redistricting plans in legislatures determine how voters' preferences are translated into representative's seats.
-  Political parties may manipulate the redistricting process to gain additional seats and insulate incumbents from electoral competition, a process known as *gerrymandering*. 
-  But detecting gerrymandering is difficult without a representative set of alternative plans that comply with the same geographic and legal constraints.
-  Harnessing recent algorithmic advances in sampling, we study such a collection of alternative redistricting plans that can serve as a non-partisan baseline.
-  This methodological approach can distinguish electoral bias due to partisan effects from electoral bias due to other factors. 
-  We find that Democrats are structurally and geographically disadvantaged in House elections by 8 seats, while partisan gerrymandering disadvantages them by 2 seats.
+  Our paper describing partisan gerrymandering and competition in the 2022 US congressional districts is now forthcoming in PNAS.
 author:
   - name: Christopher T. Kenny
     url: https://www.christophertkenny.com/
@@ -25,7 +20,7 @@ output:
 citation: false
 ---
 
-```{r, fig.height=8, fig.align='center'}
+```{r, fig.height=8, fig.align='center', echo = FALSE}
 knitr::include_graphics('manipulation.png')
 ```
 

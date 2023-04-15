@@ -2,15 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://alarm-redist.github.io/about.html</loc>
-    <lastmod>2023-02-12T17:46:57-05:00</lastmod>
+    <lastmod>2023-04-14T18:52:35-05:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/applications.html</loc>
-    <lastmod>2023-02-12T17:46:46-05:00</lastmod>
+    <lastmod>2023-04-14T18:52:35-05:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/</loc>
-    <lastmod>2022-07-28T17:44:44-04:00</lastmod>
+    <lastmod>2023-04-14T18:52:36-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas/</loc>
+    <lastmod>2023-04-14T19:20:44-05:00</lastmod>
   </url>
   <url>
     <loc>https://alarm-redist.github.io/posts/2023-03-18-redist-41/</loc>

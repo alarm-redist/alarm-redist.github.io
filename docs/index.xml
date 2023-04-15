@@ -11,7 +11,20 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 19 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Forthcoming in PNAS</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas</link>
+      <description>Our paper describing partisan gerrymandering and competition in the 2022 US congressional districts is now forthcoming in PNAS.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas</guid>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas/manipulation.png" medium="image" type="image/png" width="6000" height="4350"/>
+    </item>
     <item>
       <title>redist 4.1</title>
       <dc:creator>Christopher T. Kenny</dc:creator>
