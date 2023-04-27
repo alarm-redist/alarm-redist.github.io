@@ -1476,7 +1476,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="redist-41_files/header-attrs-2.20/header-attrs.js"></script>
+  <script src="redist-41_files/header-attrs-2.21/header-attrs.js"></script>
   <script src="redist-41_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="redist-41_files/popper-2.6.0/popper.min.js"></script>
   <link href="redist-41_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1526,7 +1526,9 @@ speed improvements.</p></p>
 <p>It’s been a while since <a href="https://alarm-redist.org/posts/2022-06-20-redist-40/"><code>redist</code> 4.0</a> was released and things have been fairly stable. Most of the changes in this release are behind-the-scenes improvements that shouldn’t break your workflow, but should improve your experience using the package.</p>
 <p>To install version 4.1, get the new version from CRAN:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>'redist'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <h1 id="new-features">New Features</h1>
 <ul>
@@ -1547,28 +1549,69 @@ speed improvements.</p></p>
 <p>Let’s build this out a bit. First, we’ll use some data from the <a href="https://alarm-redist.org/posts/2022-11-01-50statessimulations/">50-State Redistricting Simulations</a> via the <a href="https://alarm-redist.org/alarmdata/"><code>alarmdata</code></a> package.</p>
 <p>We can get the <code>redist_map</code> and corresponding 5,000 sampled plus the enacted plans in a <code>redist_plans</code> object for Michigan.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://alarm-redist.org/redist/'>redist</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/alarm-redist/alarmdata/'>alarmdata</a></span><span class='op'>)</span></span>
+<span><span class='va'>map</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_map</a></span><span class='op'>(</span><span class='st'>'MI'</span><span class='op'>)</span></span>
+<span><span class='va'>plans</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_plans</a></span><span class='op'>(</span><span class='st'>'MI'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p><code>plans</code> here has a column <code>e_dvs</code> that gives the expected Democratic vote share for each district in each plan.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <p>We’ve always been able to clean or augment this plot up using regular <code>ggplot2</code> things:</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <p>You can draw clear conclusions here, like that districts 2, 3, and 4 are abnormally packed with Republicans compared to what we might normally see when drawing districts that follow the state’s redistricting rules. We might not be able to get all of the information out of this plot that we want, beyond which districts are <em>clear</em> outliers.</p>
 <p>Now, if we made it a box plot instead of a jitter plot, as the points can be overwhelming, we can still draw the same major conclusions, and we now have a more formal idea of outliers that don’t just sit above or below the data. Things like district 6 can be still be a bit unclear. Is district 6 in the outlier range or are the points just big on this small plot?</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='st'>'boxplot'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 <p>A first thing we might consider doing is to use a violin plot instead of a boxplot, as that doesn’t summarize distributional information in the same way as a box plot. This is now really easy, just pass <code>ggplot2::geom_violin</code> as an argument to geom.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/geom_violin.html'>geom_violin</a></span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <p>The defaults here don’t always play the best though, so we might want to also change the reference geometry.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>r_geom</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> </span>
+<span>    <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_segment.html'>geom_segment</a></span><span class='op'>(</span></span>
+<span>        <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>.distr_no</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>0.5</span>,</span>
+<span>                     xend <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>.distr_no</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>0.5</span>,</span>
+<span>                     yend <span class='op'>=</span> <span class='va'>e_dvs</span>,</span>
+<span>                     color <span class='op'>=</span> <span class='va'>.data</span><span class='op'>$</span><span class='va'>draw</span><span class='op'>)</span>,</span>
+<span>        <span class='va'>...</span></span>
+<span>    <span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>This immediately gets a bit more complicated. For this to work, we need to know a few things:</p>
 <ol type="1">
@@ -1578,36 +1621,90 @@ speed improvements.</p></p>
 </ol>
 <p>The above then says, on the x-axis, we want a line from the district - 0.5 to the district + 0.5, while we set <code>yend = e_dvs</code> to match the implicitly set <code>y = e_dvs</code>, since we passed <code>qty = e_dvs</code> before.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/geom_violin.html'>geom_violin</a></span>, ref_geom <span class='op'>=</span> <span class='va'>r_geom</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
 </div>
 <p>The good thing here is that we can adjust the <code>ref_geom</code> however we see fit at this point. So if that red line is <em>too</em> dark, but also too skinny, we can do something like changing the <code>alpha</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>r_geom</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> </span>
+<span>    <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_segment.html'>geom_segment</a></span><span class='op'>(</span></span>
+<span>        <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>.distr_no</span><span class='op'>)</span> <span class='op'>-</span> <span class='fl'>0.5</span>,</span>
+<span>                     xend <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>.distr_no</span><span class='op'>)</span> <span class='op'>+</span> <span class='fl'>0.5</span>,</span>
+<span>                     yend <span class='op'>=</span> <span class='va'>e_dvs</span>,</span>
+<span>                     color <span class='op'>=</span> <span class='va'>.data</span><span class='op'>$</span><span class='va'>draw</span><span class='op'>)</span>,</span>
+<span>        linewidth <span class='op'>=</span> <span class='fl'>1</span>, alpha <span class='op'>=</span> <span class='fl'>0.7</span>,</span>
+<span>        <span class='va'>...</span></span>
+<span>    <span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>Then this fixes those particular issues.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='va'><a href='https://ggplot2.tidyverse.org/reference/geom_violin.html'>geom_violin</a></span>, ref_geom <span class='op'>=</span> <span class='va'>r_geom</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
 </div>
 <p>Now, there are tons of other things we can do here. If we want to revisit the 95% confidence interval issue, we can turn to <code>ggdist</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://mjskay.github.io/ggdist/'>ggdist</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='va'>stat_pointinterval</span>, ref_geom <span class='op'>=</span> <span class='va'>r_geom</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.25</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-11-1.png" width="624" /></p>
 </div>
 <p>Now, we have really clear idea of how wide the 95% confidence interval goes (via the length of the skinny lines).</p>
 <p>And really, the sky is the limit with packages like <code>ggdist</code>. For example, if we want a <code>raincloud</code>, we can do that.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>raincloud</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span>        <span class='fu'>ggdist</span><span class='fu'>::</span><span class='fu'><a href='http://mjskay.github.io/ggdist/reference/stat_slab.html'>stat_slab</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>thickness <span class='op'>=</span> <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes_eval.html'>after_stat</a></span><span class='op'>(</span><span class='va'>pdf</span><span class='op'>*</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span>, scale <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span>,</span>
+<span>        <span class='fu'>ggdist</span><span class='fu'>::</span><span class='fu'><a href='http://mjskay.github.io/ggdist/reference/stat_dotsinterval.html'>stat_dotsinterval</a></span><span class='op'>(</span>side <span class='op'>=</span> <span class='st'>"bottom"</span>, scale <span class='op'>=</span> <span class='fl'>1</span>,</span>
+<span>                                  slab_size <span class='op'>=</span> <span class='cn'>NA</span>, quantiles <span class='op'>=</span> <span class='fl'>100</span><span class='op'>)</span></span>
+<span>    <span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
 </div>
 <p>This gives us a fun plot to work with, though this might be best suited for much larger plot areas.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans</span>, qty <span class='op'>=</span> <span class='va'>e_dvs</span>, geom <span class='op'>=</span> <span class='va'>raincloud</span>, ref_geom <span class='op'>=</span> <span class='va'>r_geom</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, linetype <span class='op'>=</span> <span class='st'>'dotted'</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span>name <span class='op'>=</span> <span class='st'>'Expected Dem. Vote Share'</span>, labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_percent.html'>label_percent</a></span><span class='op'>(</span><span class='op'>)</span>, </span>
+<span>                       limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.35</span>, <span class='fl'>0.95</span><span class='op'>)</span>, breaks <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0.2</span>, <span class='fl'>0.9</span>, by <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="redist-41_files/figure-html5/unnamed-chunk-13-1.png" width="624" data-distill-preview=1 /></p>
 </div>
 <h1 id="better-diagnostics-for-summary.redist_plans">Better Diagnostics for <code>summary.redist_plans()</code></h1>
 <p>Like above, let’s get some simulated plans from the <a href="https://alarm-redist.org/posts/2022-11-01-50statessimulations/">50-State Redistricting Simulations</a>. We can get a state like Nevada, which has fewer districts and shorter summary.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/alarm-redist/alarmdata/'>alarmdata</a></span><span class='op'>)</span></span>
+<span><span class='va'>plans</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_plans</a></span><span class='op'>(</span><span class='st'>'NV'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>To get diagnostics, we can call <code>summary(plans)</code> which computes R-hats, sample diversity, and some split-by-split SMC diagnostics.</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>plans</span><span class='op'>)</span></span></code></pre>
+</div>
 <pre><code>
 
 R-hat values for summary statistics:
@@ -1655,10 +1752,16 @@ You no longer need to search through 8 decimal digits at 3am for the ones that m
 <p>Typically, we want R-hat values between 1 and 1.05, so this looks pretty good.
 What if they weren’t? We can introduce this behavior by adding some new variable with very different values by independent run of SMC (denoted by the <code>chain</code> column).</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>plans</span> <span class='op'>&lt;-</span> <span class='va'>plans</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> </span>
+<span>    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>bad_rhat <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/context.html'>n</a></span><span class='op'>(</span><span class='op'>)</span>, mean <span class='op'>=</span> <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/coalesce.html'>coalesce</a></span><span class='op'>(</span><span class='va'>chain</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>Now this gets angry:</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>plans</span><span class='op'>)</span></span></code></pre>
+</div>
 <pre><code>
 
 R-hat values for summary statistics:
@@ -1687,7 +1790,7 @@ sos_18_rep_ceg pre_20_dem_bid pre_20_rep_tru         arv_16
            nrv        ndshare          e_dvs         pr_dem 
          1.003          1.003          1.003          1.001 
          e_dem          pbias           egap       bad_rhat 
-         1.002          1.000          1.001        ❌1.231 
+         1.002          1.000          1.001        ❌1.224 
 
          Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
 Split 1     2,215 (88.6%)     19.7%        0.93 1,583 (100%)     10 
