@@ -140,3 +140,7 @@ Results for 2020 blocks were then estimated using 2010 blocks and the
 [land-use-based crosswalk files](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/T9VMJO)
 from VEST. Finally, 2020 blocks were aggregated to 2020 precincts using the 
 Census' 2020 [block assignment files](https://www.census.gov/geographies/reference-files/time-series/geo/block-assignment-files.html).
+
+## 2010 Data Addendum
+
+If you are looking for a similar construction for 2010 data, [please see here](https://github.com/alarm-redist/census-2020/tree/main/census-vest-2010).
