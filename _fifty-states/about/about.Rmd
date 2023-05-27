@@ -153,6 +153,7 @@ The set of constraints used depends on the state's redistricting rules.
 -   For consistency, reference plans, such as the 2010 or 2020 enacted plans, are best matched to the VTD or tract level.
     Reference plans often split a few of these at the block level.
     This may have a very small impact on estimated metrics.
+    For example, NE's 2010 plan has a very small county split which does not appear at the VTD level.
 
 -   VRA compliance requires substantial information, including a racially polarized voting analysis and knowledge of local history.
     For the purposes of this project, we target the number of minority-opportunity districts as in the enacted plan.
