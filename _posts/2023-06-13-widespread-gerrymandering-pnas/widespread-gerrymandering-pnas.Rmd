@@ -1,12 +1,16 @@
 ---
 title: "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Published in PNAS"
 description: |
-  A short description of the post.
+  Our paper which details gerrymandering and partisan fairness in the 2022 redistricting maps is now published in PNAS.
 author:
+  - name: Christopher T. Kenny
+    url: https://www.christophertkenny.com/
   - name: Cory McCartan
     url: https://www.corymccartan.com
   - name: Tyler Simko
     url: https://tylersimko.com/
+  - name: Shiro Kuriwaki
+    url: https://www.shirokuriwaki.com/
   - name: Kosuke Imai
     url: https://imai.fas.harvard.edu/
 date: 2023-06-13
