@@ -24,9 +24,11 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-We are excited to announce a new working paper [Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods](TODO link to arxiv). This paper is the first independent evaluation of effects of the Census Bureau's privacy protection on noise and bias in released counts. We leverage the recent release of the Noisy Measurements file to evaluate both swapping and the newer TopDown algorithm. 
+We are excited to announce a new working paper [Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods](TODO link to arxiv). This paper is the first independent evaluation of effects of the Census Bureau's privacy protection on noise and bias in released counts. We leverage the recent release of the Noisy Measurements file (NMF) to evaluate both swapping and the newer TopDown algorithm. 
 
-Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below. An important finding from this research is that the average bias is fairly low across groups, but there is the more uncertainty and noise for Hispanic and multiracial people.
+We find that the NMF is too noisy to use alone, but the post-processing step of the TopDown algorithm reduces error substantially, making the post-processed data as accurate as swapping.
+Although errors from privacy protection methods are generally smaller than other sources of census errors, they can be substantial for census geographies with small populations.
+We also find that the average bias is fairly low across groups, but there is the more uncertainty and noise for Hispanic and multiracial people. Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below.
 
 ```{r, message = FALSE, warning = FALSE}
 knitr::include_graphics('bias_rmse_by_race.png')
