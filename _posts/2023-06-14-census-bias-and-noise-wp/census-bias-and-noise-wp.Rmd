@@ -30,7 +30,7 @@ We find that:
 
 - the NMF is too noisy to use alone, but the post-processing step of the TopDown algorithm reduces error substantially, making the post-processed data as accurate as swapping.
 - errors from privacy protection methods are generally smaller than other sources of census errors, they can be substantial for census geographies with small populations.
-- the average bias is fairly low across groups, but there is the more uncertainty and noise for Hispanic and multiracial people. Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below.
+- the average bias is fairly low across groups, but there is more uncertainty and noise for Hispanic and multiracial people. Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below.
 
 ```{r, message = FALSE, warning = FALSE}
 knitr::include_graphics('bias_rmse_by_race.png')
