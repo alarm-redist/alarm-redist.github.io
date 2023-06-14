@@ -11,7 +11,20 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>2023-06-13</lastBuildDate>
+    <lastBuildDate>2023-06-14</lastBuildDate>
+    <item>
+      <title>Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods</title>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Shiro Kuriwaki</dc:creator>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp</link>
+      <description>Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).</description>
+      <guid>https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp</guid>
+      <pubDate>2023-06-14</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp/bias_rmse_by_race.png" medium="image" type="image/png" width="1950" height="2700"/>
+    </item>
     <item>
       <title>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Published in PNAS</title>
       <dc:creator>Christopher T. Kenny</dc:creator>

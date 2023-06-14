@@ -1,5 +1,40 @@
 [
   {
+    "path": "posts/2023-06-14-census-bias-and-noise-wp/",
+    "title": "Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods",
+    "description": "Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).",
+    "author": [
+      {
+        "name": "Christopher T. Kenny",
+        "url": "https://www.christophertkenny.com/"
+      },
+      {
+        "name": "Shiro Kuriwaki",
+        "url": "https://www.shirokuriwaki.com/"
+      },
+      {
+        "name": "Cory McCartan",
+        "url": "https://www.corymccartan.com"
+      },
+      {
+        "name": "Tyler Simko",
+        "url": "https://tylersimko.com/"
+      },
+      {
+        "name": "Kosuke Imai",
+        "url": "https://imai.fas.harvard.edu/"
+      }
+    ],
+    "date": "2023-06-14",
+    "categories": [],
+    "contents": "\r\nWe are excited to announce a new working paper Evaluating Bias and Noise Induced by the U.S. Census Bureau’s Privacy Protection Methods. This paper is the first independent evaluation of effects of the Census Bureau’s privacy protection on noise and bias in released counts. We leverage the recent release of the Noisy Measurements file (NMF) to evaluate both swapping and the newer TopDown algorithm.\r\nWe find that:\r\nthe NMF is too noisy to use alone, but the post-processing step of the TopDown algorithm reduces error substantially, making the post-processed data as accurate as swapping.\r\nerrors from privacy protection methods are generally smaller than other sources of census errors, they can be substantial for census geographies with small populations.\r\nthe average bias is fairly low across groups, but there is the more uncertainty and noise for Hispanic and multiracial people. Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below.\r\n\r\n\r\n\r\nThe full abstract is below:\r\n\r\nThe United States Census Bureau faces a difficult trade-off between the accuracy of Census statistics and the protection of individual information. We conduct the first independent evaluation of bias and noise induced by the Bureau’s two main disclosure avoidance systems: the TopDown algorithm employed for the 2020 nsus and the swapping algorithm implemented for the 1990, 2000, and 2010 Censuses. Our evaluation leverages the recent release of the Noisy Measure File (NMF) as well as the availability of two independent runs of the TopDown algorithm applied to the 10 decennial Census. We find that the NMF contains too much noise to be directly useful alone, especially for Hispanic and multiracial populations. TopDown’s post-processing dramatically reduces the NMF noise and produces similarly accurate data to swapping in terms of bias and noise. These patterns hold across census geographies with varying population sizes and racial diversity. While the estimated errors for both TopDown and swapping are generally no larger than other sources of Census error, they can be relatively substantial for geographies with small total populations.\r\n\r\n\r\n\r\n\r\n",
+    "preview": "posts/2023-06-14-census-bias-and-noise-wp/bias_rmse_by_race.png",
+    "last_modified": "2023-06-14T09:51:45-04:00",
+    "input_file": {},
+    "preview_width": 1950,
+    "preview_height": 2700
+  },
+  {
     "path": "posts/2023-06-13-widespread-gerrymandering-pnas/",
     "title": "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Published in PNAS",
     "description": "Our paper which details gerrymandering and partisan fairness in the 2022 redistricting maps is now published in PNAS.",

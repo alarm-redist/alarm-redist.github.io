@@ -88,640 +88,43 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>ALARM Project: The Algorithm-Assisted Redistricting Methodology (ALARM) Project</title>
+  <title>Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods</title>
 
-  <meta property="description" itemprop="description" content="Developing methodology and tools to analyze legislative redistricting."/>
+  <meta property="description" itemprop="description" content="Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020)."/>
 
-  <link rel="icon" type="image/png" href="assets/favicon.png"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2023-06-14"/>
+  <meta property="article:created" itemprop="dateCreated" content="2023-06-14"/>
+  <meta name="article:author" content="Christopher T. Kenny"/>
+  <meta name="article:author" content="Shiro Kuriwaki"/>
+  <meta name="article:author" content="Cory McCartan"/>
+  <meta name="article:author" content="Tyler Simko"/>
+  <meta name="article:author" content="Kosuke Imai"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="ALARM Project: The Algorithm-Assisted Redistricting Methodology (ALARM) Project"/>
+  <meta property="og:title" content="Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau&#39;s Privacy Protection Methods"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Developing methodology and tools to analyze legislative redistricting."/>
+  <meta property="og:description" content="Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020)."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="ALARM Project"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="ALARM Project: The Algorithm-Assisted Redistricting Methodology (ALARM) Project"/>
-  <meta property="twitter:description" content="Developing methodology and tools to analyze legislative redistricting."/>
-  <meta property="twitter:site" content="@alarm_redist"/>
+  <meta property="twitter:title" content="Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau&#39;s Privacy Protection Methods"/>
+  <meta property="twitter:description" content="Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020)."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["The Algorithm-Assisted Redistricting Methodology (ALARM) Project"]},{"type":"character","attributes":{},"value":["Developing methodology and tools to analyze legislative redistricting."]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods"]},{"type":"character","attributes":{},"value":["Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Christopher T. Kenny"]},{"type":"character","attributes":{},"value":["https://www.christophertkenny.com/"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Shiro Kuriwaki"]},{"type":"character","attributes":{},"value":["https://www.shirokuriwaki.com/"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Cory McCartan"]},{"type":"character","attributes":{},"value":["https://www.corymccartan.com"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Tyler Simko"]},{"type":"character","attributes":{},"value":["https://tylersimko.com/"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Kosuke Imai"]},{"type":"character","attributes":{},"value":["https://imai.fas.harvard.edu/"]}]}]},{"type":"character","attributes":{},"value":["2023-06-14"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["bias_rmse_by_race.png","census-bias-and-noise-wp_files/anchor-4.2.2/anchor.min.js","census-bias-and-noise-wp_files/bowser-1.9.3/bowser.min.js","census-bias-and-noise-wp_files/distill-2.2.21/template.v2.js","census-bias-and-noise-wp_files/header-attrs-2.22/header-attrs.js","census-bias-and-noise-wp_files/jquery-3.6.0/jquery-3.6.0.js","census-bias-and-noise-wp_files/jquery-3.6.0/jquery-3.6.0.min.js","census-bias-and-noise-wp_files/jquery-3.6.0/jquery-3.6.0.min.map","census-bias-and-noise-wp_files/popper-2.6.0/popper.min.js","census-bias-and-noise-wp_files/tippy-6.2.7/tippy-bundle.umd.min.js","census-bias-and-noise-wp_files/tippy-6.2.7/tippy-light-border.css","census-bias-and-noise-wp_files/tippy-6.2.7/tippy.css","census-bias-and-noise-wp_files/tippy-6.2.7/tippy.umd.min.js","census-bias-and-noise-wp_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -2075,393 +1478,18 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      48px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       20px;
-    --text-color:       #222222;
-    --text-size:        16px;
-    --hover-color:      #444444;
-    --bkgd-color:       #eaeaea;
-  }
-
-  .distill-site-footer {
-    --text-color:       #222222;
-    --text-size:        15px;
-    --hover-color:      #444444;
-    --bkgd-color:       #eaeaea;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-
-  html {
-      height: 100vh;
-      background: #eaeaea;
-  }
-
-  .home-cover {
-      position: relative;
-      width: 100vw;
-      height: 400px;
-      background: url(assets/cover.png);
-      margin-bottom: 1em;
-  }
-  .home-cover .fg {
-      backdrop-filter: blur(7px) brightness(50%);
-      -webkit-backdrop-filter: blur(7px) brightness(50%);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  }
-  .home-cover h1 {
-      margin: 0;
-      padding: 4rem max(1rem, 15vw);
-      text-align: center;
-      color: #ffffffdd;
-      line-height: min(calc(3vh + 3vw), 48pt);
-      font-size: min(calc(3vh + 3vw), 48pt);
-  }
-
-  .package-box {
-      display: block;
-      background: #d4dce2;
-      padding: 1rem;
-      border-radius: 4px;
-      margin: 1rem 0;
-  }
-  .package-box h2 {
-      margin: 0;
-      border: none;
-  }
-
-
-  .layout-listing d-article > .posts-container {
-      grid-column: text;
-  }
-
-  a.title {
-      font-weight: bold;
-  }
-  .distill-site-header .logo img {
-      max-height: 44px;
-      margin-bottom: -14px;
-      image-rendering: -webkit-optimize-contrast;
-  }
-
-  .distill-site-header a, .distill-site-header .title {
-      padding: 20px 10px 20px 10px;
-  }
-  </style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="census-bias-and-noise-wp_files/header-attrs-2.22/header-attrs.js"></script>
+  <script src="census-bias-and-noise-wp_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="census-bias-and-noise-wp_files/popper-2.6.0/popper.min.js"></script>
+  <link href="census-bias-and-noise-wp_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="census-bias-and-noise-wp_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="census-bias-and-noise-wp_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="census-bias-and-noise-wp_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="census-bias-and-noise-wp_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="census-bias-and-noise-wp_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="census-bias-and-noise-wp_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script type="text/javascript" cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-8ZZ8YY5N8M"></script>
-  <script type="text/javascript" cookie-consent="tracking">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8ZZ8YY5N8M');
-  </script>
   <!--/radix_placeholder_site_in_header-->
 
 
@@ -2472,111 +1500,51 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"The Algorithm-Assisted Redistricting Methodology (ALARM) Project","description":"Developing methodology and tools to analyze legislative redistricting.","authors":[]}
+{"title":"Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods","description":"Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).","authors":[{"author":"Christopher T. Kenny","authorURL":"https://www.christophertkenny.com/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Shiro Kuriwaki","authorURL":"https://www.shirokuriwaki.com/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Cory McCartan","authorURL":"https://www.corymccartan.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Tyler Simko","authorURL":"https://tylersimko.com/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""},{"author":"Kosuke Imai","authorURL":"https://imai.fas.harvard.edu/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2023-06-14T00:00:00.000-04:00","citationText":"Kenny, et al., 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a class="logo" href="index.html">
-<img src="assets/alarm_256_tr.png" alt="Logo"/>
-</a>
-<a href="index.html" class="title">ALARM Project</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="applications.html">Applications</a>
-<a href="https://alarm-redist.github.io/redist/">redist</a>
-<a href="https://github.com/alarm-redist">
-<i class="fab fa-github" aria-hidden="true"></i>
-</a>
-<a href="https://twitter.com/alarm_redist">
-<i class="fab fa-twitter" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>The Algorithm-Assisted Redistricting Methodology (ALARM) Project</h1>
+<h1>Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau’s Privacy Protection Methods</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Developing methodology and tools to analyze legislative redistricting.</p></p>
+<p><p>Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).</p></p>
 </div>
 
+<div class="d-byline">
+  Christopher T. Kenny <a href="https://www.christophertkenny.com/" class="uri">https://www.christophertkenny.com/</a> 
+  
+,   Shiro Kuriwaki <a href="https://www.shirokuriwaki.com/" class="uri">https://www.shirokuriwaki.com/</a> 
+  
+,   Cory McCartan <a href="https://www.corymccartan.com" class="uri">https://www.corymccartan.com</a> 
+  
+,   Tyler Simko <a href="https://tylersimko.com/" class="uri">https://tylersimko.com/</a> 
+  
+,   Kosuke Imai <a href="https://imai.fas.harvard.edu/" class="uri">https://imai.fas.harvard.edu/</a> 
+  
+<br/>2023-06-14
+</div>
 
 <div class="d-article">
-<h1 id="the-project">The Project</h1>
-<p><img src="assets/alarm_1200_tr.png" alt="ALARM logo" 
-  style="width: 256px; float: right; margin: 8px;" />
-The ALARM Project is a research team at Harvard University led by
-<a href="https://imai.fas.harvard.edu/">Kosuke Imai</a>. It conducts research into
-redistricting sampling algorithms, best practices and workflows for
-redistricting analysis, and tools to visualize, explore, and understand
-redistricting plans.
-ALARM Project researchers develop <a href="https://alarm-redist.github.io/redist/"><strong>redist</strong></a>,
-an open-source R package for redistricting simulation and analysis which
-implements state-of-the-art MCMC and SMC redistricting sampling algorithms. The
-package allows for the implementation of various constraints in the
-redistricting process such as geographic compactness and population parity
-requirements, and includes tools to compute various summary statistics and
-create useful plots.</p>
-<h1 id="people">People</h1>
-<h1 id="current-membership">Current Membership</h1>
+<p>We are excited to announce a new working paper <a href="https://arxiv.org/abs/2306.07521">Evaluating Bias and Noise Induced by the U.S. Census Bureau’s Privacy Protection Methods</a>. This paper is the first independent evaluation of effects of the Census Bureau’s privacy protection on noise and bias in released counts. We leverage the recent release of the Noisy Measurements file (NMF) to evaluate both swapping and the newer TopDown algorithm.</p>
+<p>We find that:</p>
 <ul>
-<li><strong>Aneetej Arora</strong>, Ohio State University</li>
-<li><strong>Emma Ebowe</strong>, Department of Government, Harvard University</li>
-<li><a href="https://www.benfifield.com/"><strong>Ben Fifield</strong></a>, Meta</li>
-<li><strong>Jennifer Gao</strong>, Harvard College</li>
-<li><a href="https://imai.fas.harvard.edu/"><strong>Kosuke Imai</strong></a>, Departments of Government and Statistics, Harvard University</li>
-<li><a href="https://christophertkenny.com/"><strong>Christopher T. Kenny</strong></a>, Department of Government, Harvard University</li>
-<li><a href="https://www.shirokuriwaki.com/"><strong>Shiro Kuriwaki</strong></a>, Department of Political Science, Yale University</li>
-<li><strong>Sho Miyazaki</strong>, Keio University</li>
-<li><a href="https://corymccartan.com/"><strong>Cory McCartan</strong></a>, Department of Statistics, Harvard University</li>
-<li><strong>Philip O’Sullivan</strong>, Department of Statistics, Harvard University</li>
-<li><strong>Evan Rosenman</strong>, Harvard Data Science Initiative</li>
-<li><a href="https://taransamarth.com/"><strong>Taran Samarth</strong></a>, Pennsylvania State University</li>
-<li><a href="https://tylersimko.com/"><strong>Tyler Simko</strong></a>, Department of Government, Harvard University</li>
-<li><a href="https://scholar.harvard.edu/kevinwang/home"><strong>Kevin Wang</strong></a>, Harvard College</li>
-<li><strong>Melissa Wu</strong>, Harvard College</li>
-<li><strong>Kento Yamada</strong>, Harvard College</li>
-<li><strong>Michael Zhao</strong>, Harvard College</li>
+<li>the NMF is too noisy to use alone, but the post-processing step of the TopDown algorithm reduces error substantially, making the post-processed data as accurate as swapping.</li>
+<li>errors from privacy protection methods are generally smaller than other sources of census errors, they can be substantial for census geographies with small populations.</li>
+<li>the average bias is fairly low across groups, but there is the more uncertainty and noise for Hispanic and multiracial people. Bias and RMSE estimates nationally for 5 geographic levels are displayed by race group below.</li>
 </ul>
-<h1 id="project-alumni">Project Alumni</h1>
-<ul>
-<li><strong>George Garcia III</strong>, Department of Economics, MIT</li>
-<li><strong>Sam Thau</strong>, Department of Economics, Stanford University</li>
-<li><strong>Rei Yatsuhashi</strong>, Harvard College</li>
-<li><strong>Anna Yorozuya</strong>, Department of Political Science, Yale University</li>
-</ul>
-<h1 id="publications">Publications</h1>
-<ul>
-<li><a href="https://doi.org/10.1080/10618600.2020.1739532">Automated Redistricting Simulation Using Markov Chain Monte Carlo</a> <em>Journal of Computational and Graphical Statistics</em> (2020) Vol. 29, No. 4, pp. 715-728.</li>
-<li><a href="https://doi.org/10.1080/2330443X.2020.1791773">The Essential Role of Empirical Validation in Legislative Redistricting Simulation</a> <em>Statistics and Public Policy</em> (2020) Vol. 7, No. 1, pp. 52-68.</li>
-<li><a href="https://arxiv.org/pdf/2008.06131.pdf">Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</a></li>
-<li><a href="https://doi.org/10.1126/sciadv.abk3283">The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census</a> <em>Science Advances</em> (2021) Vol. 7, No. 41.</li>
-<li><a href="https://www.nature.com/articles/s41597-022-01808-2">Simulated redistricting plans for the analysis and evaluation of redistricting in the United States</a> <em>Scientific Data</em> (2022) Vol. 9, No. 1.</li>
-<li><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1">Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</a> <em>Harvard Data Science Review</em> (2023) Special Issue 2.</li>
-</ul>
-<h1 id="related-r-packages">Related R Packages</h1>
-<ul>
-<li><a href="https://corymccartan.github.io/blockpop/">blockpop</a>: Estimate Census Block Populations for 2020. McCartan (2021).</li>
-<li><a href="https://christopherkenny.github.io/geomander/">geomander</a>: Geographic Tools for Studying Gerrymandering. Kenny (2021).</li>
-<li><a href="https://alarm-redist.github.io/ggredist/">ggredist</a>: Scales, Palettes, and Extensions of ‘ggplot2’ for Redistricting . Kenny and McCartan (2022).</li>
-<li><a href="https://corymccartan.github.io/PL94171/index.html">PL94171</a>: Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).</li>
-<li><a href="https://github.com/christopherkenny/ppmf">ppmf</a>: Read Census Privacy Protected Microdata Files. Kenny (2021).</li>
-<li><a href="https://alarm-redist.github.io/redist/">redist</a>: Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).</li>
-<li><a href="https://alarm-redist.github.io/redistmetrics/">redistmetrics</a>: Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).</li>
-<li><a href="https://github.com/kosukeimai/wru">wru</a>: Who Are You? Bayesian Prediction of Racial Category Using Surname and Geolocation. Khanna and Imai (2021).</li>
-</ul>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="bias_rmse_by_race.png" width="975" /></p>
+</div>
+<p>The full abstract is below:</p>
+<blockquote>
+<p>The United States Census Bureau faces a difficult trade-off between the accuracy of Census statistics and the protection of individual information. We conduct the first independent evaluation of bias and noise induced by the Bureau’s two main disclosure avoidance systems: the TopDown algorithm employed for the 2020 nsus and the swapping algorithm implemented for the 1990, 2000, and 2010 Censuses. Our evaluation leverages the recent release of the Noisy Measure File (NMF) as well as the availability of two independent runs of the TopDown algorithm applied to the 10 decennial Census. We find that the NMF contains too much noise to be directly useful alone, especially for Hispanic and multiracial populations. TopDown’s post-processing dramatically reduces the NMF noise and produces similarly accurate data to swapping in terms of bias and noise. These patterns hold across census geographies with varying population sizes and racial diversity. While the estimated errors for both TopDown and swapping are generally no larger than other sources of Census error, they can be relatively substantial for geographies with small total populations.</p>
+</blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
@@ -2592,14 +1560,7 @@ create useful plots.</p>
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
-<div class="distill-site-nav distill-site-footer">
-<p>© Copyright 2021 the <a href="about.html">ALARM Project</a>.</p>
-<p>Software licensed under the <a
-href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU
-Public License, v2.0</a>.</p>
-</div>
 <!--/radix_placeholder_navigation_after_body-->
-
 
 </body>
 
