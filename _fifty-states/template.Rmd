@@ -107,9 +107,13 @@ In contrast, **we expect the enacted plan to yield `r number(a$plans$e_dem[1], 0
 The graph below breaks this down in detail, showing how each district of the enacted plan compares to the set of simulated districts.
 
 ```{r distr-dem, fig.asp=0.75, dev="ragg_png"}
-color_scale = scale_color_party_d(guide="none")
+color_scale = function(...) {
+    scale_color_manual(..., values=c('black', GOP_DEM[2], GOP_DEM[14]),
+                   labels=c('pt', "Rep.", "Dem."), guide = 'none')
+}
 if (all(a$plans$e_dvs > 0.5)) {
-    color_scale = scale_color_manual(values=GOP_DEM[14], labels="Dem.")
+    color_scale = scale_color_manual(values=c('black', GOP_DEM[14]), labels=c('pt', "Dem."),
+                                     guide = 'none')
 }
 
 set.seed(5118)
@@ -120,7 +124,7 @@ redist.plot.distr_qtys(a$plans, e_dvs, color_thresh=0.5,
     labs(x="Simulated districts, ordered by Democratic vote margin") +
     annotate("text", x=1.5, y=min(a$plans$e_dvs[1:n_dists]), 
              label="Enacted plan", hjust=-0.05, size=3.5) +
-    color_scale +
+    color_scale() +
     guides(lty="none")
 ```
 
@@ -232,6 +236,10 @@ p_party + p_race
 [Download the data for `r params$state`](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E).
 
 [Learn more about our methodology](/fifty-states/about/).
+
+Elections included in analysis:
+
+`r cat(paste0('  - ', list_elections(a$map), '\n'))`
 
 ### Redistricting requirements
 
