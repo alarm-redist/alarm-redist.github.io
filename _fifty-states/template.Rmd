@@ -22,7 +22,7 @@ library(here)
 source(here("_fifty-states/fifty-states.R"))
 ```
 
-```{r data, include=FALSE,echo=FALSE}
+```{r data, include=FALSE,echo=FALSE, message=FALSE, results='hide'}
 a = download_dataverse(params$slug)
 
 n_ref = redist:::get_n_ref(a$plans)
@@ -239,7 +239,7 @@ p_party + p_race
 
 Elections included in analysis:
 
-`r cat(paste0('  - ', list_elections(a$map), '\n'))`
+`r paste0(' - ', list_elections(a$map), '\n', collapse = '')`
 
 ### Redistricting requirements
 
