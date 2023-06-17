@@ -144,11 +144,11 @@ download_dataverse = function(slug) {
         if (is.na(idx)) cli::cli_abort("File {.file {fname}} doesn't exist on Dataverse.")
 
         url <- str_c("https://dataverse.harvard.edu/api/access/datafile/", files[[idx]]$dataFile$id)
-        resp <- httr::GET(
+        invisible(capture.output({resp <- httr::GET(
             url,
             httr::add_headers("X-Dataverse-key"=Sys.getenv("DATAVERSE_KEY")),
             query=list(format="original")
-        )
+        )}))
 
         httr::stop_for_status(resp, task = httr::content(resp)$message)
         writeBin(httr::content(resp, as="raw"), tf)
