@@ -27,3 +27,4 @@ description: |
 - *Graham et al. v. Adams et al. Commonwealth of Kentucky Franklin Circuit Court Division, Case No. 22-CI-00047*
 - *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1193*
 - *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1449*
+- *Grace, Inc. et al. v. City of Miami.*
