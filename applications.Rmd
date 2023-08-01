@@ -14,9 +14,17 @@ description: |
 
 # Reports with ALARM Project Members
 - [Maryland Congressional District Memo, Christopher T. Kenny and Jonathan Rodden](https://redistricting.maryland.gov/Documents/Library/mcrc-drafts-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
-- *League of Women Voters of Ohio v. Ohio Redistricting Commission*
-- *Merril v. Milligan*
-- *South Carolina NAACP v. Alexander*
-- *Jacksonville Branch of NAACP v. City of Jacksonville*
+- *League of Women Voters of Ohio et al. v. Frank LaRose et al. The Supreme Court of Ohio, Case No. 2022–0303*
+- *Milligan et al. v. Merrill et al. United States District Court for the Northern District of Alabama, Case No. 2:2021cv01530*
+- *Meryl Neiman, et al. v. Secretary of State Frank LaRose, et al. The Supreme Court of Ohio, Case No. 2022–0298*
+- *Benninghoff v. 2021 Legislative Reapportionment Commission. The Supreme Court of Pennsylvania, Case No. 11 MM 2022*
+- *The South Carolina State Conference of the NAACP, et al. v. Alexander et al. United States District Court for the District of South Carolina Columbia Division, Case No.3-21-cv-03302-JMC-TJH-RMG*
+- *Jacksonville Branch of the NAACP, et al. v. City of Jacksonville et al. United States District Court for the Middle District of Florida Jacksonville Division, Case No. 3:22-cv493-MMH-LLL*
 - *The Pennsylvania Legislative Reapportionment Commission* and *Benninghoff v. 2021 Legislative Reapportionment Commission*
-
+- *Petition of the Central Bucks School District for Approval of Plan For Redistricting Electoral Regions. Court of Common Pleas Bucks County, Pennsylvania, Case No. 2022-06425.*
+- *The South Carolina State Conference of the NAACP, et al. v. McMaster, et al. United States District Court for the District of South Carolina Columbia Division, Case No.3-21-cv-03302-JMC-TJH-RMG*
+- *Petition to Redistrict the Central Bucks School District into Three Electoral Regions for the Election of School Directors, Case No. 2023-00469*
+- *Graham et al. v. Adams et al. Commonwealth of Kentucky Franklin Circuit Court Division, Case No. 22-CI-00047*
+- *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1193*
+- *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1449*
+- *Grace, Inc. et al. v. City of Miami.*
