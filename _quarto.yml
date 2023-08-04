@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: "docs"
+
+website:
+  title: ALARM Project
+  description: The Algorithm-Assisted Redistricting Methodology Project
+  site-url: https://alarm-redist.github.io/
+  google-analytics: "G-8ZZ8YY5N8M"
+  navbar:
+    logo: "assets/alarm_256_tr.png"
+    right:
+        - text: Home
+          href: index.html
+        - text: About
+          href: about.html
+        - text: Applications
+          href: applications.html
+        - text: redist
+          href: https://alarm-redist.github.io/redist/
+        - icon: github
+          href: https://github.com/alarm-redist
+        - icon: twitter
+          href: https://twitter.com/alarm_redist
+
+format:
+  html:
+    theme: alarm.css
