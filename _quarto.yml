@@ -7,6 +7,7 @@ website:
   description: The Algorithm-Assisted Redistricting Methodology Project
   site-url: https://alarm-redist.github.io/
   google-analytics: "G-8ZZ8YY5N8M"
+  favicon: "assets/alarm_256_tr.png"
   navbar:
     logo: "assets/alarm_256_tr.png"
     right:
@@ -26,6 +27,6 @@ website:
     center: |
       © Copyright 2021 the [ALARM Project](about.html). Software licensed under the [GNU Public License, v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
 
-# format:
-#   html:
-#     theme: alarm.css
+format:
+  html:
+    theme: alarm.css

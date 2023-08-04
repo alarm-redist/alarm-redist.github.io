@@ -2,16 +2,19 @@
 title: Posts
 site: distill::distill_website
 listing:
-  contents: posts
+  contents:
+    - "_posts/*/*.html"
   sort: "date desc"
   type: default
 ---
 
+::: {.column-screen}
 <div class="home-cover l-screen">
 <div class="fg">
 <h1>Developing methodology and tools to analyze legislative redistricting.</h1>
 </div>
 </div>
+:::
 
 <div class="package-box" style="background: #9ACABA">
 <a href="/fifty-states/">
