@@ -1,7 +1,10 @@
 ---
 title: Posts
 site: distill::distill_website
-listing: posts
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
 ---
 
 <div class="home-cover l-screen">

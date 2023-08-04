@@ -10,19 +10,19 @@ website:
   navbar:
     logo: "assets/alarm_256_tr.png"
     right:
-        - text: Home
-          href: index.html
-        - text: About
-          href: about.html
-        - text: Applications
-          href: applications.html
-        - text: redist
-          href: https://alarm-redist.github.io/redist/
-        - icon: github
-          href: https://github.com/alarm-redist
-        - icon: twitter
-          href: https://twitter.com/alarm_redist
+      - text: Home
+        href: index.html
+      - text: About
+        href: about.html
+      - text: Applications
+        href: applications.html
+      - text: redist
+        href: https://alarm-redist.github.io/redist/
+      - icon: github
+        href: https://github.com/alarm-redist
+      - icon: twitter
+        href: https://twitter.com/alarm_redist
 
-format:
-  html:
-    theme: alarm.css
+# format:
+#   html:
+#     theme: alarm.css
