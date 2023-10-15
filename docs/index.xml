@@ -11,7 +11,15 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>2023-06-14</lastBuildDate>
+    <lastBuildDate>2023-10-15</lastBuildDate>
+    <item>
+      <title>Using big data to make elections fairer</title>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-10-15-commonwealth-opinion</link>
+      <description>An opinion piece in CommonWealth Magazine with Ruth Greenwood.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-10-15-commonwealth-opinion</guid>
+      <pubDate>2023-10-15</pubDate>
+    </item>
     <item>
       <title>Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods</title>
       <dc:creator>Christopher T. Kenny</dc:creator>
