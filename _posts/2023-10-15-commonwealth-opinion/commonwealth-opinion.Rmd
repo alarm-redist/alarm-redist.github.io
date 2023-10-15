@@ -15,4 +15,4 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-In a [new opinion piece in CommonWealth Magazine this weekend](https://commonwealthmagazine.org/opinion/using-big-data-to-make-elections-fairer/), we detail the work [ALARM](https://alarm-redist.org/) and the [Election Law Clinic](https://www.hlselectionlaw.org/). Our piece talks about new quantitative projects for studying redistricting, developed by our two groups, including the [50-State Redistricting Simulations](https://alarm-redist.org/fifty-states/), [PlanScore](https://planscore.org/), and [RPV Near Me](https://www.rpvnearme.org/).
+In a [new opinion piece in CommonWealth Magazine this weekend](https://commonwealthmagazine.org/opinion/using-big-data-to-make-elections-fairer/), we discuss the work of [ALARM](https://alarm-redist.org/) and the [Election Law Clinic](https://www.hlselectionlaw.org/). Our piece talks about the quantitative redistricting analysis projects, developed by the two groups, including the [50-State Redistricting Simulations](https://alarm-redist.org/fifty-states/), [PlanScore](https://planscore.org/), and [RPV Near Me](https://www.rpvnearme.org/).
