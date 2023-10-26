@@ -1,0 +1,135 @@
+---
+title: "Louisville/Jefferson County metro government (balance), Kentucky"
+description: |
+  An analysis of the electoral competitiveness of Louisville Metro Council Elections.
+author: Itsuki Umeyama
+date: 2023-10-26
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+## Basic Information
+
+### Demographic
+
+Population[^2]: 386,884
+
+[^2]: United States Census Bureau, *Quick Facts Louisville city, Kentucky; Louisville/Jefferson County metro government (balance), Kentucky*, <https://www.census.gov/quickfacts/fact/table/louisvillecitykentucky,louisvillejeffersoncountymetrogovernmentbalancekentucky/POP010220>
+
+|                           | Percentage |
+|---------------------------|------------|
+| White                     | 67.1%      |
+| Black or African American | 23.8%      |
+| Hispanic or Latino        | 6.5%       |
+| Asian                     | 2.7%       |
+
+![Figure 1: This map shows the proportion of minorities within each precinct in Louisville. Darker shades of blue indicate a higher proportion of minorities, including Black, Hispanic, and Asian populations, living in the precinct compared to the majority, White population. The thinner black lines represent precinct boundaries, while the thicker white lines represent current district boundaries.](images/minority.png){fig-align="center" width="80%"}
+
+### Louisville Metro Council
+
+The Louisville Metro Council comprises 26 members who are elected from the city's 26 districts in partisan elections. Council members serve staggered four-year terms. Since the merger with Jefferson County in 2003, the council has consistently maintained a Democratic majority. The distribution of seats held by each party is as follows (Democrats: Republicans): 15:11 (2006), 17:9 (2010), 17:9 (2014), 19:7 (2018), and 17:9 (2022)[^1].
+
+[^1]: All information regarding the elections in Louisville is based on the official statements of votes cast available at the website below. Jefferson County Clerk Election Center, *Election Results*, <https://elections.jeffersoncountyclerk.org/election-results/>
+
+### Mayoral Elections
+
+Democratic candidates have also consistently won in mayoral elections in Louisville. The margins between Democratic and Republican candidates have usually been substantial, often ranging from 30 to 40 percent. However, these elections can still appear competitive. For example, in the 2022 mayoral election, the margin between both candidates was only 6 percent. Additionally, the margin in the 2010 mayoral election was narrower, with a difference of just 3 percent.
+
+| Year | DEM                     | REP                    |
+|------|:------------------------|:-----------------------|
+| 2006 | Jerry Abramson (67.2%)  | Kelly Downard (31.3%)  |
+| 2010 | Greg Fischer (51.1%)    | Hal Heiner (48.4%)     |
+| 2014 | Greg Fischer (68.5%)    | Bob DeVore (31.3%)     |
+| 2018 | Greg Fischer (61.0%)    | Angela Leet (36.3%)    |
+| 2022 | Craig Greenberg (51.7%) | William Dieruf (46.2%) |
+
+![Figure 2: This map displays precinct-level voting shares in Louisville (2022 Mayoral Election). A darker shade indicates a larger number of voters supporting either of the parties within the precinct. The black lines represent the current district boundaries, each marked with its corresponding district number.](images/precincts_voting_behavior.png){fig-align="center" width="80%"}
+
+## Competitiveness in Metro Council Elections
+
+Metro Council elections in Louisville appear to be relatively competitive, even with the strong Democratic presence. For example, in 2022, two Democrats lost their seats, resulting in a shift in the Metro Council's composition from 19 Democrats and 7 Republicans to 17 Democrats and 9 Republicans.
+
+Nonetheless, the competitiveness of Metro Council elections can be significantly affected by the districting process, as council members are chosen from each district. Similar to gerrymandering, changes in district plans can influence the level of competitiveness. While it may seem that Metro Council elections in Louisville are competitive, it remains uncertain how closely the current level of competitiveness aligns with an ideal state, given the absence of a baseline for comparison. Therefore, in the following sections, I will delve into assessing the competitiveness of Metro Council elections in Louisville.
+
+## Assessing Electoral Competitiveness with Algorithm-Assisted Redistricting Methodology
+
+### Approach
+
+Evaluating the baseline of competitiveness is a challenging task, but the Algorithm-Assisted Redistricting Methodology provides a valuable tool for determining where the standard level of competitiveness in Louisville should lie. Originally developed to identify gerrymandering, this methodology generates numerous plans with the same constraints[^3], political geography, and physical geography as the current district plan. Consequently, it provides an essential baseline for our assessment, which is particularly relevant when evaluating the competitiveness of the current district plan in Louisville.
+
+[^3]:  Redistricting requirements in Louisville: in accordance with Kentucky state statutes, Metro Council boundaries must be compact and contiguous, have equal populations, and respect existing neighborhood, community, and city boundaries.
+
+To generate the simulated plans using the Algorithm-Assisted Redistricting Methodology, a specific constraint was introduced. Given that many public concerns in Louisville revolve around the current district plan's neglect of neighborhoods[^4], a constraint was imposed to minimize neighborhood splits. Next, 175,000 district plans were sampled across two independent runs of the Sequential Monte Carlo (SMC) algorithm. From these simulated plans, 5,000 of them were randomly selected for further analysis.
+
+[^4]: Louisville-Jefferson County Metro Government, *Redistricting Information*, <https://louisvilleky.gov/government/metro-council/redistricting-information>
+
+<!-- -->
+
+Electoral competitiveness, in this context, is defined as the difference in vote counts between Democrats and Republicans. As such, I calculated the difference in vote counts within each district across all simulated plans. I then systematically organized the differences in vote counts of districts from smallest to largest within a simulated plan. This process was repeated across 5,000 plans, yielding distributions of differences in vote counts for each district, ordered accordingly. Finally, I assessed the competitiveness of each current district by comparing it to the distribution of the corresponding simulated district.
+
+Within this approach, a district is considered to have ideal competitiveness when its actual competitiveness falls within the 25th to 75th percentile of the corresponding distribution, or when it falls below the 25th percentile (more competitive than most of the simulated districts). This is because a smaller difference in vote counts signifies a more competitive election. Conversely, the competitiveness is notably reduced when the actual competitiveness exceeds the 75th percentile.
+
+### Results
+
+The results suggest that there is considerable room for improvement in the competitiveness of Louisville's metro council elections. Out of the 26 districts, 19 were found to be less competitive, while 4 districts are more competitive and 3 districts fall within the normal range of competitiveness (see the lower graph of Figure 3).
+
+![Figure 3: The graph above shows the probability of winning between the Democratic Party and the Republican Party in each district, corresponding to the graph below. The graph below shows district competitiveness, measured by the difference in vote counts, with districts ordered by their level of competitiveness. A larger (smaller) difference in vote counts indicate the election is less (more) competitive. Both graphs are based on samples from the simulations.](images/competitiveness_2.png){fig-align="center" width="100%"}
+
+![Figure 4: This map illustrates the results as follows: pink represents districts that are less competitive, blue represents districts that are more competitive, and yellow represents those falling within the normal range.](images/map_competitiveness.png){fig-align="center" width="80%"}
+
+### Does Reduced Competitiveness Benefit the Incumbent?
+
+The competitiveness of elections in districts can significantly decrease when partisan gerrymandering is employed to reduce the number of districts which could swing towards the rival party. In light of this, I examine whether this reduced competitiveness in Louisville benefits the incumbent Democratic Party (DEM).
+
+In addition to assessing the competitiveness, I calculated the probability of each district being won by either Democrats or Republicans (as depicted in the upper graph of Figure 3). This additional analysis helped me identify potential cases of gerrymandering. For example, if a district is less competitive and primarily Democratic, but the calculated probability suggests a  likelihood of over 55% for a Republican victory, it raises the possibility of gerrymandering.
+
+Figure 3 reveals that out of the 19 districts found to be less competitive, 4 of them (Districts 7, 17, 21, and 26) are currently represented by Democratic candidates, even though the probability indicates a greater likelihood of Republican success, with over 55%. Remarkably, this reduced competitiveness also appears to work in favor of the Republican Party, leading to 2 districts (Districts 19 and 20) that are more favorable to Republicans.
+
+This finding suggests that the reduced competitiveness in Louisville ultimately appears to contribute to creating favorable conditions for the incumbent, resulting in a 2-seat advantage.
+
+## Methods and Materials
+
+### Methods
+
+I sampled 175,000 districting plans for Louisville across two independent runs of the Sequential Monte Carlo (SMC) algorithm. I performed the analysis above with 5,000 samples from one of the SMC runs.
+
+#### Pre-processing Notes
+
+1.   Excluded 32 precincts[^5] for which geographical data were unavailable.
+
+[^5]: The excluded precincts are: A141, A143, A155, B186, E186, E187, G197, H146, H161, H170, H172, H174, I143, J142, J143, J161, J167, K136, M187, M190, M204, M205, M206, M207, M208, M209, N124, N127, N159, O139, Q147, V135.
+
+<!-- -->
+
+2.   Included 5 elections, Mayor, US Senator, County Judge/Executive, County Clerk, and Coroner to calculate the estimated baseline partisanship.
+
+3.   Combined all geographical data of neighborhoods, municipalities and places into one dataset, removing any overlaps.
+
+![Figure 4: Neighborhoods used for redistricting simulations. Since Louisville has merged with Jefferson County in 2003, there are three types of perceived local communities: Neighborhoods(yellow), Municipalities(green), Places(blue).](images/local_ties.png){fig-align="center" width="80%"}
+
+### Materials
+
+#### Data
+
+-   Election Data
+
+    -   General elections in Louisville 2022 (available at [Jefferson County Clerk Election Center](https://elections.jeffersoncountyclerk.org/election-results/))
+
+-   Geographical Data
+
+    -   [Precincts](https://data.louisvilleky.gov/datasets/LOJIC::jefferson-county-ky-voting-precincts/explore?location=38.189642%2C-85.678250%2C11.32)
+    -   [Districts](https://hub.arcgis.com/datasets/3fcc3da3573e4511a45c19a4e880b05b/explore)
+    -   [Neighborhoods, Municipalities, and Places](https://www.lojic.org/neighborhoods)
+
+#### VRA Compliance
+
+![Figure 5: The graph shows minority voting age population share, with districts ordered from smaller share to larger share. Each point represents a simulated district, with blue indicating that the district is majority Democratic, and red indicating a majority Republican.](images/minority_vap.png){fig-align="center" width="80%"}
+
+The figure above shows that Louisville already has approximately five Black opportunity-to-elect districts. Therefore, I did not impose additional constraints for simulations in this regard. I have also conducted a validation for the VRA Compliance in the simulated plans, and it has been confirmed that VRA Compliance is guaranteed in these plans.
+
+#### Validation Plots
+
+![Figure 6: The validation plots above indicate that the simulated plans meet the basic criteria of redistricting. Firstly, these simulated plans are unique (with few similar plans), distribute populations equally in each districts, and have a sufficient level of compactness (see the first four graphs). Moreover, the graph in the third row, Compactness: Polsby-Popper, suggests that the current district plan could be made more compact. Additionally, the graph in the fifth row, Minority VAP share, indicates that in districts 3 and 4, minority groups are more concentrated than the simulated average, but aside from that, there is little evidence of arbitrary minority group clustering. The last graph represents suggested plans from the simulations.](images/validation_20230914_1908.png){fig-align="center"}
+
