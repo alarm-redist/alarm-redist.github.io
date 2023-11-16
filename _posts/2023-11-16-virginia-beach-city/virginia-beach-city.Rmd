@@ -30,19 +30,12 @@ The ten districts and 108 precincts are displayed in Figure 1 below, as well as 
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 1](fig1ccandprecincts.png){width="328"}
-
-::: {style="width: 328px;"}
-*Map of Voting Precincts and City Council Boundaries in Virginia Beach City*
-:::
+![Figure 1: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](fig1ccandprecincts.png){width="328"}
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 2](fig2ccandblocks.png){width="328"}
+![Figure 2: *Map of Blocks and City Council Boundaries in Virginia Beach City*](fig2ccandblocks.png){width="328"}
 
-::: {style="width: 328px;"}
-*Map of Blocks and City Council Boundaries in Virginia Beach City*
-:::
 :::
 :::
 
@@ -64,19 +57,11 @@ Figures 3 and 4 show the percentage of minority and black populations by precinc
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 3](fig3mppprecinct.svg){width="328"}
-
-::: {style="width: 328px;"}
-*Minority Population Percentage by Precinct*
-:::
+![Figure 3: *Minority Population Percentage by Precinct*](fig3mppprecinct.svg){width="328"}
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 4](fig4blackpct.svg){width="328"}
-
-::: {style="width: 328px;"}
-*Black Population Percentage by Precinct*
-:::
+![Figure 4: *Black Population Percentage by Precinct*](fig4blackpct.svg){width="328"}
 :::
 :::
 
@@ -84,19 +69,12 @@ In Virginia Beach City, minority populations tend to vote as a block for Democra
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 5](fig5demvote.svg){width="328"}
-
-::: {style="width: 328px;"}
-*Minority Population Percentage by Precinct*
-:::
+![Figure 5: *Minority Population Percentage by Precinct*](fig5demvote.svg){width="328"}
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 6](fig6demperf.svg){width="328"}
+![Figure 6: *Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*](fig6demperf.svg){width="328"}
 
-::: {style="width: 328px;"}
-*Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*
-:::
 :::
 :::
 
@@ -128,13 +106,11 @@ Because the Virginia Department of Elections differentiates between early vote (
 
 Both were compiled to create overall vote splits by precinct.
 
-### Methods
-
-#### Runs and Simulations
+### Runs and Simulations
 
 We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html). No special techniques were needed to produce the sample.
 
-#### Constraints
+### Constraints
 
 We add the following constraints to our simulations:
 
@@ -145,7 +121,7 @@ cons <- add_constr_grp_hinge(cons, strength=-20, vap_black, vap, tgts_group = 0.
 cons <- add_constr_grp_hinge(cons, strength=-5, vap_black, vap, tgts_group = 0.2) 
 ```
 
-#### Neighborhoods
+### Neighborhoods
 
 Neighborhoods are important for redistricting simulations, as they help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:
 
@@ -165,13 +141,13 @@ However, we find that school zoning districts are an effective alternative to th
 
 #### Summary of Simulations
 
-![](images/validation_20230903_2333.png)
+![](validation_20230903_2333.png)
 
 From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.
 
 ## Analysis
 
-#### Minority Gerrymandering: Virginia Beach City is Compliant with the Voting Rights Act
+### Minority Gerrymandering: Virginia Beach City is Compliant with the Virginia Voting Rights Act
 
 The Virginia Voting Rights Act mandates that at-large local elections are banned if they dilute the voting power of minority populations. Instead, based on the percentage of the on the percentage of minorities in the citizen Voting Age Population and how cohesive minority voters are, minority opportunity districts would be created to protect minority voting power. Virginia Beach City has a cohesive democratic-leaning minority population that accounts for 32.8% of the citizen Voting Age Population. As there are 10 city council seats, three seats must be in MMDs.
 
@@ -196,6 +172,6 @@ We study the number of districts that are MMDs in any of the 200,000 plans. Tota
 
 As simulations usually only create one MMD (\~88,000 simulations) or even none at all (\~96,000 simulations), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.
 
-#### Partisan Gerrymandering: Low Competitiveness from Plans
+### Partisan Gerrymandering: Low Competitiveness from Plans
 
 ![Figure 8: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](fig8demrepsplit.png)
