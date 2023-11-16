@@ -5,7 +5,6 @@ description: |
   As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.
 author:
   - name: Brian Zhou
-    url: https://imai.fas.harvard.edu/
 date: 2023-11-16
 output:
   distill::distill_article:
@@ -18,7 +17,25 @@ Virginia Beach became an incorporated town in 1906 from Princess Anne County, an
 
 Virginia Beach is heavily influenced by the presence of the military. Apart from the Pentagon in Arlington, Virginia, Virginia Beach has the largest concentration of military personnel with [9 military installations](https://www.yesvirginiabeach.com/business-environment/military) from every branch of the US armed forces; this includes the largest naval base in the world. Thus, it has been classified by the [American Communities Project](https://www.americancommunities.org/) as a military post: "middle-income, diverse communities, around military bases."
 
-There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts, and the eleventh member is elected at-large to serve as the mayor of the city. While the council is legally nonpartisan, candidates with political affiliations emerged just seven years after the formation of the city council in 1963. Historical elections have been competitive between both Democrats and Republicans with a few declared independents, but the overall majority of the city council historically leaned Republican, especially prior to the 2022 court-ordered redistricting. The current 2023 City Council is comprised of six Democrats and five Republicans, with Republican Bobby Dyer serving as mayor. No candidates were up for reelection in the November 7, 2023 Virginia general election.
+There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group. 
+
+::: {style="display: flex;"}
+::: {style="flex-direction: column; margin-right: 5px;"}
+![Figure 1: *Virginia Beach City Council Districts*](citycouncil.svg){width="328"}
+:::
+
+::: {style="flex-direction: column; margin-right: 5px;"}
+![Figure 2: *Majority Minority Districts in Virginia Beach City*](citycouncilmmd.svg){width="328"}
+
+:::
+
+::: {style="flex-direction: column;"}
+![Figure 3: *Partisan Breakdown of Districts in Virginia Beach City*](citycouncilparty.svg){width="328"}
+
+:::
+:::
+
+The eleventh member is elected at-large to serve as the mayor of the city. While the council is legally nonpartisan, candidates with political affiliations emerged just seven years after the formation of the city council in 1963. Historical elections have been competitive between both Democrats and Republicans with a few declared independents, but the overall majority of the city council historically leaned Republican, especially prior to the 2022 court-ordered redistricting. The current 2023 City Council is comprised of six Democrats and five Republicans (Figure 3), with Republican Bobby Dyer serving as mayor. No candidates were up for reelection in the November 7, 2023 Virginia general election.
 
 | [Mayor]{.smallcaps} | [1]{.smallcaps}   | [2]{.smallcaps}       | [3]{.smallcaps}       | [*4*]{.smallcaps}         | [5]{.smallcaps}     | [6]{.smallcaps}  | [*7*]{.smallcaps}    | [8]{.smallcaps}  | 9                  | *10*                 |
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
@@ -26,15 +43,15 @@ There are 11 members in the Virginia Beach City Council. Ten members of the city
 
 : Table 1: Current Virginia Beach City Council makeup. Majority-Minority Districts are italicized.
 
-The ten districts and 108 precincts are displayed in Figure 1 below, as well as the blocks in Figure 2.
+The ten districts are constructed from 108 voting precincts displayed in Figure 1 below. Census blocks, which are areas bounded by visible features such as roads or streams and invisible features such as property lines or other city/school districts, are visualized in Figure 2. These blocks help visualize where the city is located, as census blocks often follow city blocks in urban environments.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 1: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](fig1ccandprecincts.png){width="328"}
+::: {style="flex-direction: column; margin-right: 10px;"}
+![Figure 4: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](fig1ccandprecincts.png){width="328"}
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 2: *Map of Blocks and City Council Boundaries in Virginia Beach City*](fig2ccandblocks.png){width="328"}
+![Figure 5: *Map of Census Blocks and City Council Boundaries in Virginia Beach City*](fig2ccandblocks.png){width="328"}
 
 :::
 :::
@@ -53,19 +70,33 @@ Virginia Beach City has a population of 457,672 recorded in the 2020 US census, 
 
 : Table 2: Demographic Breakdown of Virginia Beach, VA. in 2020
 
-Figures 3 and 4 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs).
+Figure 6 shows the population density of the overall city to a precinct level. This is important for drawing city council boundaries, as per the Virginia Voting Rights Act, a district can only deviate from the average population in every district by 5%. However, how do we know who is actually eligible to vote? Figure 7 shows the percentage of the population in any given precinct that is of voting age, which is more indicative of current voter demographics.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 3: *Minority Population Percentage by Precinct*](fig3mppprecinct.svg){width="328"}
+::: {style="flex-direction: column; margin-right: 10px;"}
+![Figure 6: *Population Density by Precinct*](popmap.svg)
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 4: *Black Population Percentage by Precinct*](fig4blackpct.svg){width="328"}
+![Figure 7: *Percent Voting Age Population by Precinct*](vappop.svg)
+
 :::
 :::
 
-In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 5 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black and minority precincts. To quantify how cohesive a group of voters are, Figure 6 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
+
+Figures 8 and 9 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs), shown in Figure 2.
+
+::: {style="display: flex;"}
+::: {style="flex-direction: column; margin-right: 20px;"}
+![Figure 8: *Minority Population Percentage by Precinct*](fig3mppprecinct.svg){width="328"}
+:::
+
+::: {style="flex-direction: column;"}
+![Figure 9: *Black Population Percentage by Precinct*](fig4blackpct.svg){width="328"}
+:::
+:::
+
+In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 5 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 6 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 20px;"}
@@ -138,6 +169,8 @@ We explore various other alternatives:
 -   [Census block maps](https://www.census.gov/geographies/reference-maps/2020/geo/2020-census-block-maps.html) were also considered, but are intentionally arbitrary to maintain similarly sized blocks across the United States and split neighborhoods
 
 However, we find that school zoning districts are an effective alternative to the missing historic neighborhoods. We utilize the [55 elementary school zoning districts](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School zoning districts usually correlate with historic areas of a city/county, and elementary school zoning districts are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
+
+![Figure 7: *Elementary School Zoning Boundaries Overlayed on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg)
 
 #### Summary of Simulations
 
