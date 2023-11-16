@@ -96,15 +96,15 @@ Figures 8 and 9 show the percentage of minority and black populations by precinc
 :::
 :::
 
-In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 5 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 6 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
+In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 10 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 11 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 5: *Minority Population Percentage by Precinct*](fig5demvote.svg){width="328"}
+![Figure 10: *Minority Population Percentage by Precinct*](fig5demvote.svg){width="328"}
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 6: *Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*](fig6demperf.svg){width="328"}
+![Figure 11: *Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*](fig6demperf.svg){width="328"}
 
 :::
 :::
@@ -135,7 +135,7 @@ Because the Virginia Department of Elections differentiates between early vote (
 
 -   [2022 November General Election Virginia Beach City House of Representatives Absentee Voting by Precinct](https://results.elections.virginia.gov/vaelections/2022%20November%20General/Site/Absentee/VIRGINIA_BEACH_CITY/Index.html)
 
-Both were compiled to create overall vote splits by precinct.
+We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provisional, and Post-Election) to create overall vote splits by precinct. 249 write-in ballots, which constituted 0.15% of the total vote in Virginia Beach, are discarded.
 
 ### Runs and Simulations
 
@@ -143,14 +143,11 @@ We sample 20,000 districting plans for Virginia Beach City across fifteen indepe
 
 ### Constraints
 
-We add the following constraints to our simulations:
-
-``` r
-cons <- redist_constr(map) 
-cons <- add_constr_grp_hinge(cons, strength=20, vap_black, vap, tgts_group = c(0.55)) 
-cons <- add_constr_grp_hinge(cons, strength=-20, vap_black, vap, tgts_group = 0.4)
-cons <- add_constr_grp_hinge(cons, strength=-5, vap_black, vap, tgts_group = 0.2) 
-```
+Three [constraints](https://alarm-redist.org/redist/reference/constraints.html) are added to simulations to promote a majority black district in simulated plans:
+1. A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%. 
+2. A constraint is created that discourages where the proportion of the black voting age population is less than 40%. 
+3. A constraint is created that encourages districts where the black voting age population is less than 20%. 
+Combined, these three constraints promotes districts that will either have a cohesive black voting age population above 55% *or* a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.
 
 ### Neighborhoods
 
@@ -170,7 +167,7 @@ We explore various other alternatives:
 
 However, we find that school zoning districts are an effective alternative to the missing historic neighborhoods. We utilize the [55 elementary school zoning districts](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School zoning districts usually correlate with historic areas of a city/county, and elementary school zoning districts are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
 
-![Figure 7: *Elementary School Zoning Boundaries Overlayed on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg)
+![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg)
 
 #### Summary of Simulations
 
