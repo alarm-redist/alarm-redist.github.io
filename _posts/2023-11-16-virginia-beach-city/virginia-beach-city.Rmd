@@ -133,7 +133,7 @@ We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provi
 
 ### Runs and Simulations
 
-We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html) according to [the relevant criteria](#redistricting-requirements).
+We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html) according to [the relevant criteria](#redistricting-requirements). A [summary of simulations](#summary-of-simulations) can be found below.
 
 ### Redistricting Requirements
 
@@ -187,15 +187,9 @@ We explore various other alternatives:
 
 -   [Census block maps](https://www.census.gov/geographies/reference-maps/2020/geo/2020-census-block-maps.html) were also considered, but are intentionally arbitrary to maintain similarly sized blocks across the United States and split neighborhoods
 
-However, we find that school zoning districts are an effective alternative to the missing historic neighborhoods. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and populations. We utilize the [55 elementary school zoning districts](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School zoning districts usually correlate with historic areas of a city/county, and elementary school zoning districts are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
+However, we find that school zoning districts are an effective alternative to the missing historic neighborhoods. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the [55 elementary school zoning districts](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School zoning districts usually correlate with historic areas of a city/county, and elementary school zoning districts are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
 
 ![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg)
-
-#### Summary of Simulations
-
-![](validation_20230903_2333.png)
-
-From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.
 
 ## Analysis
 
@@ -227,3 +221,9 @@ As simulations usually only create one MMD (\~88,000 simulations) or even none a
 ### Partisan Gerrymandering: Low Competitiveness from Plans
 
 ![Figure 8: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](fig8demrepsplit.png)
+
+## Summary of Simulations
+
+![](validation_20230903_2333.png)
+
+From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.
