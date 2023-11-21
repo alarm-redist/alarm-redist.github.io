@@ -132,7 +132,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["ccandnbhd.png","citycouncil.svg","citycouncilmmd.svg","citycouncilparty.svg","fig1ccandprecincts.png","fig2ccandblocks.png","fig3mppprecinct.svg","fig4blackpct.svg","fig5demvote.svg","fig6demperf.svg","fig7eszoningr.svg","fig7minperfplot.png","fig7schoolzoning.svg","fig8demrepsplit.png","popmap.svg","Rplot.svg","simmbd_20230903_2333.png","simmmd_20230903_2333.png","validation_20230903_2333.png","vappop.svg","virginia-beach-city_files/anchor-4.2.2/anchor.min.js","virginia-beach-city_files/bowser-1.9.3/bowser.min.js","virginia-beach-city_files/distill-2.2.21/template.v2.js","virginia-beach-city_files/header-attrs-2.20/header-attrs.js","virginia-beach-city_files/header-attrs-2.23/header-attrs.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.map","virginia-beach-city_files/popper-2.6.0/popper.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-bundle.umd.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css","virginia-beach-city_files/tippy-6.2.7/tippy.css","virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js","virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js","virginia-beach-city_files.zip"]}
+  {"type":"character","attributes":{},"value":["ccandnbhd.png","citycouncil.svg","citycouncilmmd.svg","citycouncilparty.svg","fig1ccandprecincts.png","fig2ccandblocks.png","fig3mppprecinct.svg","fig4blackpct.svg","fig5demvote.svg","fig6demperf.svg","fig7eszoningr.svg","fig7minperfplot.png","fig7schoolzoning.svg","fig8demrepsplit.png","popmap.svg","redistrictingguidelines.pdf","Rplot.svg","simmbd_20230903_2333.png","simmmd_20230903_2333.png","validation_20230903_2333.png","vappop.svg","virginia-beach-city_files/anchor-4.2.2/anchor.min.js","virginia-beach-city_files/bowser-1.9.3/bowser.min.js","virginia-beach-city_files/distill-2.2.21/template.v2.js","virginia-beach-city_files/header-attrs-2.20/header-attrs.js","virginia-beach-city_files/header-attrs-2.23/header-attrs.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.map","virginia-beach-city_files/popper-2.6.0/popper.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-bundle.umd.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css","virginia-beach-city_files/tippy-6.2.7/tippy.css","virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js","virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js","virginia-beach-city_files.zip"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -479,8 +479,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2489,7 +2489,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.23/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2764,13 +2764,31 @@ gtag('config', 'G-8ZZ8YY5N8M');
 </ul>
 <p>We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provisional, and Post-Election) to create overall vote splits by precinct. 249 write-in ballots, which constituted 0.15% of the total vote in Virginia Beach, are discarded.</p>
 <h3 id="runs-and-simulations">Runs and Simulations</h3>
-<p>We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the <a href="https://alarm-redist.org/redist/reference/redist_smc.html">Sequential Monte Carlo algorithm</a>. No special techniques were needed to produce the sample.</p>
+<p>We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the <a href="https://alarm-redist.org/redist/reference/redist_smc.html">Sequential Monte Carlo algorithm</a> according to <a href="#redistricting-requirements">the relevant criteria</a>.</p>
+<h3 id="redistricting-requirements">Redistricting Requirements</h3>
+<p>Per <a href="redistrictingguidelines.pdf">Virginia and Federal law</a> under <a href="https://casetext.com/statute/code-of-virginia/title-242-elections/chapter-3-election-districts-precincts-and-polling-places/article-2-congressional-senatorial-and-house-of-delegates-districts/section-242-30404-standards-and-criteria-for-congressional-and-state-legislative-districts">Va. Code Ann. § 24.2-304.04</a> redistricting in Virginia Beach must:</p>
+<ol type="1">
+<li><p>have equal populations</p></li>
+<li><p>provide opportunities for racial/ethnic representation</p></li>
+<li><p>preserve communities of interest (Va. Code Ann. § 24.2-304.04(5).)</p></li>
+<li><p>be contiguous (Va. Code Ann. § 24.2-304.04(6).)</p></li>
+<li><p>be compact (Va. Code Ann. § 24.2-304.04(7).)</p></li>
+</ol>
+<p>In the <a href="redistrictingguidelines.pdf">2021 Virginia Redistricting</a>, the following requirements were considered in order of priority:</p>
+<ol type="1">
+<li><p>be contiguous, compact, and equal in population</p></li>
+<li><p>preserve existing political subdivisions</p></li>
+<li><p>create clearly discernible boundaries</p></li>
+<li><p>be reasonably compact</p></li>
+<li><p>maintain neighborhoods who share similar social, cultural, and economic interests</p></li>
+</ol>
 <h3 id="constraints">Constraints</h3>
-<p>Three <a href="https://alarm-redist.org/redist/reference/constraints.html">constraints</a> are added to simulations to promote a majority black district in simulated plans:
-1. A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%.
-2. A constraint is created that discourages where the proportion of the black voting age population is less than 40%.
-3. A constraint is created that encourages districts where the black voting age population is less than 20%.
-Combined, these three constraints promotes districts that will either have a cohesive black voting age population above 55% <em>or</em> a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.</p>
+<p>Three <a href="https://alarm-redist.org/redist/reference/constraints.html">constraints</a> are added to simulations to promote a majority black district in simulated plans:</p>
+<ol type="1">
+<li><p>A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%.</p></li>
+<li><p>A constraint is created that discourages where the proportion of the black voting age population is less than 40%.</p></li>
+<li><p>A constraint is created that encourages districts where the black voting age population is less than 20%. Combined, these three constraints promotes districts that will either have a cohesive black voting age population above 55% <em>or</em> a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.</p></li>
+</ol>
 <h3 id="neighborhoods">Neighborhoods</h3>
 <p>Neighborhoods are important for redistricting simulations, as they help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:</p>
 <ul>

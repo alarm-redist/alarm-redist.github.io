@@ -17,7 +17,7 @@ Virginia Beach became an incorporated town in 1906 from Princess Anne County, an
 
 Virginia Beach is heavily influenced by the presence of the military. Apart from the Pentagon in Arlington, Virginia, Virginia Beach has the largest concentration of military personnel with [9 military installations](https://www.yesvirginiabeach.com/business-environment/military) from every branch of the US armed forces; this includes the largest naval base in the world. Thus, it has been classified by the [American Communities Project](https://www.americancommunities.org/) as a military post: "middle-income, diverse communities, around military bases."
 
-There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group. 
+There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group.
 
 ::: {style="display: flex;"}
 ::: {style="flex-direction: column; margin-right: 5px;"}
@@ -26,12 +26,10 @@ There are 11 members in the Virginia Beach City Council. Ten members of the city
 
 ::: {style="flex-direction: column; margin-right: 5px;"}
 ![Figure 2: *Majority Minority Districts in Virginia Beach City*](citycouncilmmd.svg){width="328"}
-
 :::
 
 ::: {style="flex-direction: column;"}
 ![Figure 3: *Partisan Breakdown of Districts in Virginia Beach City*](citycouncilparty.svg){width="328"}
-
 :::
 :::
 
@@ -52,7 +50,6 @@ The ten districts are constructed from 108 voting precincts displayed in Figure 
 
 ::: {style="flex-direction: column;"}
 ![Figure 5: *Map of Census Blocks and City Council Boundaries in Virginia Beach City*](fig2ccandblocks.png){width="328"}
-
 :::
 :::
 
@@ -79,10 +76,8 @@ Figure 6 shows the population density of the overall city to a precinct level. T
 
 ::: {style="flex-direction: column;"}
 ![Figure 7: *Percent Voting Age Population by Precinct*](vappop.svg)
-
 :::
 :::
-
 
 Figures 8 and 9 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs), shown in Figure 2.
 
@@ -105,7 +100,6 @@ In Virginia Beach City, minority populations tend to vote as a block for Democra
 
 ::: {style="flex-direction: column;"}
 ![Figure 11: *Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*](fig6demperf.svg){width="328"}
-
 :::
 :::
 
@@ -139,15 +133,43 @@ We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provi
 
 ### Runs and Simulations
 
-We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html). No special techniques were needed to produce the sample.
+We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html) according to [the relevant criteria](#redistricting-requirements).
+
+### Redistricting Requirements
+
+Per [Virginia and Federal law](redistrictingguidelines.pdf) under [Va. Code Ann. § 24.2-304.04](https://casetext.com/statute/code-of-virginia/title-242-elections/chapter-3-election-districts-precincts-and-polling-places/article-2-congressional-senatorial-and-house-of-delegates-districts/section-242-30404-standards-and-criteria-for-congressional-and-state-legislative-districts) redistricting in Virginia Beach must:
+
+1.  have equal populations
+
+2.  provide opportunities for racial/ethnic representation
+
+3.  preserve communities of interest (Va. Code Ann. § 24.2-304.04(5).)
+
+4.  be contiguous (Va. Code Ann. § 24.2-304.04(6).)
+
+5.  be compact (Va. Code Ann. § 24.2-304.04(7).)
+
+In the [2021 Virginia Redistricting](redistrictingguidelines.pdf), the following requirements were considered in order of priority:
+
+1.  be contiguous, compact, and equal in population
+
+2.  preserve existing political subdivisions
+
+3.  create clearly discernible boundaries
+
+4.  be reasonably compact
+
+5.  maintain neighborhoods who share similar social, cultural, and economic interests
 
 ### Constraints
 
 Three [constraints](https://alarm-redist.org/redist/reference/constraints.html) are added to simulations to promote a majority black district in simulated plans:
-1. A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%. 
-2. A constraint is created that discourages where the proportion of the black voting age population is less than 40%. 
-3. A constraint is created that encourages districts where the black voting age population is less than 20%. 
-Combined, these three constraints promotes districts that will either have a cohesive black voting age population above 55% *or* a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.
+
+1.  A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%.
+
+2.  A constraint is created that discourages where the proportion of the black voting age population is less than 40%.
+
+3.  A constraint is created that encourages districts where the black voting age population is less than 20%. Combined, these three constraints promotes districts that will either have a cohesive black voting age population above 55% *or* a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.
 
 ### Neighborhoods
 
