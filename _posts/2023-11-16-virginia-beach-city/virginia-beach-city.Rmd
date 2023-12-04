@@ -5,7 +5,7 @@ description: |
   As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.
 author:
   - name: Brian Zhou
-date: 2023-11-16
+date: 2023-12-5
 output:
   distill::distill_article:
     self_contained: false
@@ -111,7 +111,7 @@ In 2017, Virginia Beach residents Latasha Holloway and Georgia Allen sued the Ci
 
 In 2021, Virginia passed [HB 2198](https://lis.virginia.gov/cgi-bin/legp604.exe?ses=212&typ=bil&val=HB2198), which prohibits local governments from using at-large voting for district elections. This led to the 2021 ruling in which the district court ruled that the at-large election method did violate Section 2 of the Voting Rights Act by denying large minority groups in Virginia Beach (African-Americans, Hispanics, and Asians) equal access to political participation, and that those groups were politically cohesive. Although the City of Virginia Beach appealed the decision, the court proceeded by appointing a special master to create a remedial redistricting plan, established in [this memo](https://www.wavy.com/wp-content/uploads/sites/3/2021/12/e18b14d0-d4e8-4b5c-9805-ccc031edf776.pdf). This plan was adopted in 2022 before the November election after another round of appeals in the Fourth Circuit. The Virginia Beach School Board, which historically followed the same election system as the city council, [voted in 2022](https://www.wavy.com/news/local-news/virginia-beach/vb-school-board-votes-to-mirror-new-city-council-election-system-possibly-pitting-incumbents-against-each-other/) to adopt the same election system as the city council.
 
-In 2022, the Fourth Circuit Appeals Court overturned the case in a 2-1 decision, holding that HB 2198 prevented the electoral system challenged by the plaintiffs, rendering the court case moot. The timing of the ruling meant that the redrawn maps and electoral system would be used in 2022, and could be modified if it met the requirements of the Virginia Voting Rights Act and HB 2198, both of which prevent at-large voting systems if they prevent minority groups from electing preferred candidates.
+In 2022, the Fourth Circuit Appeals Court ruled in a 2-1 decision that the case should not have been considered by the district court, holding that HB 2198 already made the electoral system challenged by the plaintiffs illegal. This meant that the at-large electoral system no longer governed Virginia Beach City already and rendered the court case moot. The timing of the ruling meant that the redrawn maps and electoral system would be used in 2022, and could be modified if it met the requirements of the Virginia Voting Rights Act and HB 2198, both of which prevent at-large voting systems if they prevent minority groups from electing preferred candidates.
 
 The makeup of the city council drastically shifted in the 2022 general election, the first local election under the 10-1 system. The council is the [most diverse](https://www.pilotonline.com/2023/01/04/virginia-beach-city-council-now-the-most-diverse-in-city-history-welcomes-new-members/) and youngest in city history, with four Black representatives and four members under 45. [In all of the city council's history](https://wydaily.com/news/local/2019/01/04/new-city-council-could-be-the-most-diverse-in-virginia-beach-history/) since 1966, only four prior city council members were Black, and at most had two seats on the city council at any point in time. Democrats gained two seats on the city council, shifting the makeup from 6 GOP and 4 DEM with a GOP mayor in 2022 to 6 DEM and 4 GOP in 2023.
 
@@ -189,7 +189,7 @@ We explore various other alternatives:
 
 However, we find that school attendance zones are an effective alternative to the missing historic neighborhoods. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the [55 elementary school attendance zones](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School attendance zones usually correlate with historic areas of a city/county, and elementary school attendance zones are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
 
-![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg)
+![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg){width=50%}
 
 ## Analysis
 
