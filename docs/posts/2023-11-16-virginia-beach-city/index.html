@@ -132,7 +132,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["ccandnbhd.png","citycouncil.svg","citycouncilmmd.svg","citycouncilparty.svg","fig1ccandprecincts.png","fig1ccandprecincts.svg","fig2ccandblocks.png","fig2ccandblocks.svg","fig3mppprecinct.svg","fig4blackpct.svg","fig5demvote.svg","fig5demvoteNB.svg","fig6demperf.svg","fig6demperfNB.png","fig6demperfNB.svg","fig7eszoningr.svg","fig7minperfplot.png","fig7schoolzoning.svg","fig8demrepsplit.png","popmap.svg","redistrictingguidelines.pdf","Rplot.svg","simmbd_20230903_2333.png","simmmd_20230903_2333.png","validation_20230903_2333.png","vappop.svg","virginia-beach-city_files/anchor-4.2.2/anchor.min.js","virginia-beach-city_files/bowser-1.9.3/bowser.min.js","virginia-beach-city_files/distill-2.2.21/template.v2.js","virginia-beach-city_files/header-attrs-2.20/header-attrs.js","virginia-beach-city_files/header-attrs-2.23/header-attrs.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.map","virginia-beach-city_files/popper-2.6.0/popper.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-bundle.umd.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css","virginia-beach-city_files/tippy-6.2.7/tippy.css","virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js","virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js","virginia-beach-city_files.zip"]}
+  {"type":"character","attributes":{},"value":["blackperfplot.png","ccandnbhd.png","citycouncil.svg","citycouncilmmd.svg","citycouncilparty.svg","competitiveness.png","demrepsplit.png","fig1ccandprecincts.png","fig1ccandprecincts.svg","fig2ccandblocks.png","fig2ccandblocks.svg","fig3mppprecinct.svg","fig4blackpct.svg","fig5demvote.svg","fig5demvoteNB.svg","fig6demperf.svg","fig6demperfNB.png","fig6demperfNB.svg","fig7eszoningr.svg","fig7minperfplot.png","fig7schoolzoning.svg","fig8demrepsplit.png","mmdoccurance.png","mmdoccurance.svg","popmap.svg","redistrictingguidelines.pdf","Rplot.svg","simmbd_20230903_2333.png","simmmd_20230903_2333.png","validation_20230903_2333.png","vappop.svg","virginia-beach-city_files/anchor-4.2.2/anchor.min.js","virginia-beach-city_files/bowser-1.9.3/bowser.min.js","virginia-beach-city_files/distill-2.2.21/template.v2.js","virginia-beach-city_files/header-attrs-2.20/header-attrs.js","virginia-beach-city_files/header-attrs-2.23/header-attrs.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.map","virginia-beach-city_files/popper-2.6.0/popper.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-bundle.umd.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css","virginia-beach-city_files/tippy-6.2.7/tippy.css","virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js","virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js","virginia-beach-city_files.zip"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -479,8 +479,8 @@ d-title {
 </style>
 
 <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../../site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="../../site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
 <script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
 <script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -2489,7 +2489,7 @@ d-appendix d-footnote-list a.footnote-backlink {
   color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.23/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.20/header-attrs.js"></script>
   <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2819,17 +2819,87 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <figcaption aria-hidden="true">Figure 7: <em>Simulated Majority Minority District Counts</em></figcaption>
 </figure>
 <p>We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for MMDs in each simulation is displayed below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode txt R"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  n_minority_perf     n</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>1               0 95824</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>2               1 88121</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>3               2 13811</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>4               3  2176</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>5               4    68</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  n_black_perf      n</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>1            0  56171</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>2            1 143829</span></code></pre></div>
+<table style="width:100%;">
+<caption>Table 3: Majority-Minority District appearance rate in 200,000 simulations</caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Count of plans</th>
+<th>1 district</th>
+<th>2 districts</th>
+<th>3 districts</th>
+<th>4 districts</th>
+<th>5 districts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exactly <em>n</em> districts</td>
+<td>95824</td>
+<td>88121</td>
+<td>13811</td>
+<td>2176</td>
+<td>68</td>
+</tr>
+<tr class="even">
+<td>At least <em>n</em> districts</td>
+<td>200000</td>
+<td>104176</td>
+<td>16055</td>
+<td>2244</td>
+<td>68</td>
+</tr>
+<tr class="odd">
+<td>% of simulations with at least <em>n</em> districts</td>
+<td></td>
+<td>52.09%</td>
+<td>8.03%</td>
+<td>1.12%</td>
+<td>0.034%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Table 4: Majority-Black District appearance rate in 200,000 simulations</caption>
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Count of plans</th>
+<th>0 districts</th>
+<th>1 districts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exactly <em>n</em> districts</td>
+<td>143829</td>
+<td>56171</td>
+</tr>
+<tr class="even">
+<td>% of simulations with at least <em>n</em> districts</td>
+<td>100%</td>
+<td>28.09%</td>
+</tr>
+</tbody>
+</table>
 <p>As simulations usually only create one MMD (~88,000 simulations) or even none at all (~96,000 simulations), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.</p>
+<center>
+<figure>
+<img src="mmdoccurance.svg" style="width:70.0%" alt="Figure 8: Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest." />
+<figcaption aria-hidden="true">Figure 8: <em>Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.</em></figcaption>
+</figure>
+</center>
 <h3 id="partisan-gerrymandering-low-competitiveness-from-plans">Partisan Gerrymandering: Low Competitiveness from Plans</h3>
 <figure>
 <img src="fig8demrepsplit.png" alt="Figure 8: Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest." />
@@ -2838,7 +2908,7 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <h2 id="summary-of-simulations">Summary of Simulations</h2>
 <p><img src="validation_20230903_2333.png" /></p>
 <p>From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
