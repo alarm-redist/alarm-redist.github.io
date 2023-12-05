@@ -173,7 +173,9 @@ Three [constraints](https://alarm-redist.org/redist/reference/constraints.html) 
 
 ### Neighborhoods
 
-Neighborhoods are important for redistricting simulations, as they help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:
+We utilize elementary school attendance zones to preserve similar communities of interest. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the [55 elementary school attendance zones](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School attendance zones usually correlate with historic areas of a city/county, and elementary school attendance zones are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
+
+These zones are necessary as neighborhoods are important for redistricting simulations; neighborhoods help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:
 
 -   [Ziemer Real Estate](https://www.ziemerrealestate.com/virginia-beach-family-neighborhoods/)'s neighborhoods are too large for use in preserving boundaries and have spots without neighborhoods
 
@@ -187,7 +189,7 @@ We explore various other alternatives:
 
 -   [Census block maps](https://www.census.gov/geographies/reference-maps/2020/geo/2020-census-block-maps.html) were also considered, but are intentionally arbitrary to maintain similarly sized blocks across the United States and split neighborhoods
 
-However, we find that school attendance zones are an effective alternative to the missing historic neighborhoods. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the [55 elementary school attendance zones](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School attendance zones usually correlate with historic areas of a city/county, and elementary school attendance zones are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
+Ultimately, elementary school zoning serves as the most detailed indicator compared to sparse neighborhood data.
 
 ![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg){width=50%}
 
