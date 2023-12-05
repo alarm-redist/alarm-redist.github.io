@@ -29,7 +29,7 @@ There are 11 members in the Virginia Beach City Council. Ten members of the city
 :::
 
 ::: {style="flex-direction: column;"}
-![Figure 3: *Partisan Breakdown of Districts in Virginia Beach City*](citycouncilparty.svg){width="328"}
+![Figure 3: *Current Partisan Breakdown of City Council Members*](citycouncilparty.svg){width="328"}
 :::
 :::
 
