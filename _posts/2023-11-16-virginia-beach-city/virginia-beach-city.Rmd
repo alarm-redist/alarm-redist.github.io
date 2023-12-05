@@ -234,9 +234,12 @@ As simulations usually only create one MMD (\~88,000 simulations) or even none a
 
 </center>
 
-### Partisan Gerrymandering: Low Competitiveness from Plans
+### Do the New Maps Have Partisan Gerrymandering?
 
 ![Figure 8: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
+
+### Are the New Maps Competitive?
+![Figure 8: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](competitiveness.png)
 
 ## Summary of Simulations {#summary-of-simulations}
 
