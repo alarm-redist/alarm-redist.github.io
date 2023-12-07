@@ -20,20 +20,16 @@ Virginia Beach is heavily influenced by the presence of the military. Apart from
 There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 5px;"}
-![Figure 1: *Virginia Beach City Council Districts*](citycouncil.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 1: *Current Partisan Breakdown of City Council Members*](FINALccdemrep.svg)
 :::
 
-::: {style="flex-direction: column; margin-right: 5px;"}
-![Figure 2: *Majority Minority Districts in Virginia Beach City*](citycouncilmmd.svg){width="328"}
-:::
-
-::: {style="flex-direction: column;"}
-![Figure 3: *Current Partisan Breakdown of City Council Members*](citycouncilparty.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 2: *Majority Minority Districts in Virginia Beach City*](FINALccmmd.svg)
 :::
 :::
 
-The eleventh member is elected at-large to serve as the mayor of the city. While the council is legally nonpartisan, candidates with political affiliations emerged just seven years after the formation of the city council in 1963. Historical elections have been competitive between both Democrats and Republicans with a few declared independents, but the overall majority of the city council historically leaned Republican, especially prior to the 2022 court-ordered redistricting. The current 2023 City Council is comprised of six Democrats and five Republicans (Figure 3), with Republican Bobby Dyer serving as mayor. No candidates were up for reelection in the November 7, 2023 Virginia general election.
+The eleventh member is elected at-large to serve as the mayor of the city. While the council is legally nonpartisan, candidates with political affiliations emerged just seven years after the formation of the city council in 1963. Historical elections have been competitive between both Democrats and Republicans with a few declared independents, but the overall majority of the city council historically leaned Republican, especially prior to the 2022 court-ordered redistricting. The current 2023 City Council is comprised of six Democrats and five Republicans (Figure 1), with Republican Bobby Dyer serving as mayor. No candidates were up for reelection in the November 7, 2023 Virginia general election.
 
 | [Mayor]{.smallcaps} | [1]{.smallcaps}   | [2]{.smallcaps}       | [3]{.smallcaps}       | [*4*]{.smallcaps}         | [5]{.smallcaps}     | [6]{.smallcaps}  | [*7*]{.smallcaps}    | [8]{.smallcaps}  | 9                  | *10*                 |
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
@@ -41,15 +37,15 @@ The eleventh member is elected at-large to serve as the mayor of the city. While
 
 : Table 1: Current Virginia Beach City Council makeup. Majority-Minority Districts are italicized.
 
-The ten districts are constructed from 108 voting precincts displayed in Figure 4 below. Census blocks, which are areas bounded by visible features such as roads or streams and invisible features such as property lines or other city/school districts, are visualized in Figure 5. These blocks help visualize where the city is located, as census blocks often follow city blocks in urban environments.
+The ten districts are constructed from 108 voting precincts displayed in Figure 3 below. Census blocks, which are areas bounded by visible features such as roads or streams and invisible features such as property lines or other city/school districts, are visualized in Figure 4. These blocks help visualize where the city is located, as census blocks often follow city blocks in urban environments.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 1px;"}
-![Figure 4: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](fig1ccandprecincts.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 3: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](FINALccprecinct.svg)
 :::
 
-::: {style="flex-direction: column;"}
-![Figure 5: *Map of Census Blocks and City Council Boundaries in Virginia Beach City*](fig2ccandblocks.svg){width="338"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 4: *Map of Census Blocks and City Council Boundaries in Virginia Beach City*](FINALccblocks.svg)
 :::
 :::
 
@@ -67,39 +63,39 @@ Virginia Beach City has a population of 457,672 recorded in the 2020 US census, 
 
 : Table 2: Demographic Breakdown of Virginia Beach, VA. in 2020
 
-Figure 6 shows the population density of the overall city to a precinct level. This is important for drawing city council boundaries, as per the Virginia Voting Rights Act, a district can only deviate from the average population in every district by 5%. However, how do we know who is actually eligible to vote? Figure 7 shows the percentage of the population in any given precinct that is of voting age, which is more indicative of current voter demographics.
+Figure 5 shows the population density of the overall city to a precinct level. This is important for drawing city council boundaries, as per the Virginia Voting Rights Act, a district can only deviate from the average population in every district by 5%. However, how do we know who is actually eligible to vote? Figure 6 shows the percentage of the population in any given precinct that is of voting age, which is more indicative of current voter demographics.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 10px;"}
-![Figure 6: *Population Density by Precinct*](popmap.svg)
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 5: *Population Density by Precinct*](FINALpopulation.svg)
 :::
 
-::: {style="flex-direction: column;"}
-![Figure 7: *Percent Voting Age Population by Precinct*](vappop.svg)
-:::
-:::
-
-Figures 8 and 9 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs), shown in Figure 2.
-
-::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 8: *Minority Population Percentage by Precinct*](fig3mppprecinct.svg){width="328"}
-:::
-
-::: {style="flex-direction: column;"}
-![Figure 9: *Black Population Percentage by Precinct*](fig4blackpct.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 6: *Percent Voting Age Population by Precinct*](FINALvap.svg)
 :::
 :::
 
-In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 10 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 11 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
+Figures 7 and 8 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs), shown in Figure 2.
 
 ::: {style="display: flex;"}
-::: {style="flex-direction: column; margin-right: 20px;"}
-![Figure 10: *Minority Population Percentage by Precinct*](fig5demvoteNB.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 7: *Minority Population Percentage by Precinct*](FINALminoritypop.svg)
 :::
 
-::: {style="flex-direction: column;"}
-![Figure 11: *Percent of Democratic Votes Compared to Minority Population Percentages in Majority Minority Precincts*](fig6demperfNB.svg){width="328"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 8: *Black Population Percentage by Precinct*](FINALblackpop.svg)
+:::
+:::
+
+In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 9 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 10 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.
+
+::: {style="display: flex;"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 9: *Percent of Democratic Votes by Precinct.* Color and percent indicate a precinct's partisan tilt.](FINALdem.svg)
+:::
+
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 10: *Percent of Democratic Votes Compared to Minority Percentages in Majority-Minority Precincts*](FINALdemmmp.svg)
 :::
 :::
 
@@ -116,6 +112,52 @@ In 2022, the Fourth Circuit Appeals Court ruled in a 2-1 decision that the case 
 The makeup of the city council drastically shifted in the 2022 general election, the first local election under the 10-1 system. The council is the [most diverse](https://www.pilotonline.com/2023/01/04/virginia-beach-city-council-now-the-most-diverse-in-city-history-welcomes-new-members/) and youngest in city history, with four Black representatives and four members under 45. [In all of the city council's history](https://wydaily.com/news/local/2019/01/04/new-city-council-could-be-the-most-diverse-in-virginia-beach-history/) since 1966, only four prior city council members were Black, and at most had two seats on the city council at any point in time. Democrats gained two seats on the city council, shifting the makeup from 6 GOP and 4 DEM with a GOP mayor in 2022 to 6 DEM and 4 GOP in 2023.
 
 After a [round of public hearings](https://www.13newsnow.com/article/news/local/vote/virginia-beach-last-public-hearing-on-switch-10-1-voting-system-ahead-of-city-council-vote/291-e23afe35-c0f9-4555-812b-8980bf89dfa0) over the new election system and a survey that showed [81% of residents supported the new system](https://www.pilotonline.com/2023/07/02/virginia-beach-residents-want-to-keep-district-election-system-according-to-study/), the city council voted to [adopt the 10-1 election system](https://campaignlegal.org/update/victory-virginia-beach-adopts-fair-districts-after-clc-successfully-sued-city) with the court-sanctioned district map on August 15th, 2023. Per Virginia state law, any new electoral system, such as 7 districts and 4 at-large, would require approval from the Virginia General Assembly to revise the charter, which at earliest could happen when the General Assembly reconvenes in January 2024.
+
+
+## Analysis
+
+### Do the New Maps Gerrymander Minority Populations?
+
+As the new maps include 3 majority-minority districts compared to a minority CVAP of 32.8%, we find that the new implemented maps do not gerrymander minority populations and are compliant with both the Virginia Voting Rights Act and the Federal Voting Rights Act.
+
+The Virginia Voting Rights Act mandates that at-large local elections are banned if they dilute the voting power of minority populations. Instead, based on the percentage of the on the percentage of minorities in the citizen Voting Age Population and how cohesive minority voters are, minority opportunity districts would be created to protect minority voting power. Virginia Beach City has a cohesive democratic-leaning minority population that accounts for 32.8% of the citizen Voting Age Population. As there are 10 city council seats, three seats must be in MMDs.
+
+The minority voting age population plot is displayed below. The graph orders each district from smaller to larger share of minority voting age population in each district. Each point represents one instance of a simulation, with the color of the point indicating if the district is projected to lean Democratic or Republican. The grey bars show the current ratified plan, showing that the current plan exceeds in creating three VAP districts. Notably, the enacted plan intentionally creates three solid majority-minority districts, demonstrated by the gap between the 7th and 8th districts.
+
+![Figure 11: *Simulated Majority Minority District Counts*](fig7minperfplot.png)
+
+We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for MMDs in each simulation is displayed below:
+
+| Count of plans                                | 1 district | 2 districts | 3 districts | 4 districts | 5 districts |
+|-----------------|---------|---------|---------|---------|---------|
+| Exactly *n* districts                         | 95824      | 88121       | 13811       | 2176        | 68          |
+| At least *n* districts                        | 200000     | 104176      | 16055       | 2244        | 68          |
+| \% of simulations with at least *n* districts |            | 52.09%      | 8.03%       | 1.12%       | 0.034%      |
+
+: Table 3: Majority-Minority District appearance rate in 200,000 simulations
+
+| Count of plans                                | 0 districts | 1 districts |
+|-----------------------------------------------|-------------|-------------|
+| Exactly *n* districts                         | 143829      | 56171       |
+| \% of simulations with at least *n* districts | 100%        | 28.09%      |
+
+: Table 4: Majority-Black District appearance rate in 200,000 simulations
+
+As simulations usually only create one MMD (\~88,000 simulations) or even none at all (\~96,000 simulations), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.
+
+<center>
+
+![Figure 12: *Percent of All Simulations Where the Precinct is in a Simualted MMD.* ](FINALpercentmmd.svg){width="60%"}
+
+</center>
+
+### Do the New Maps Have Partisan Gerrymandering?
+
+![Figure 13: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
+
+### Are the New Maps Competitive?
+![Figure 14: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](competitiveness.png)
+
 
 ## Methods and Materials
 
@@ -175,11 +217,16 @@ Three [constraints](https://alarm-redist.org/redist/reference/constraints.html) 
 
 We utilize elementary school attendance zones to preserve similar communities of interest. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the [55 elementary school attendance zones](https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about) to serve as a de-facto neighborhood map. School attendance zones usually correlate with historic areas of a city/county, and elementary school attendance zones are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.
 
-<center>
+::: {style="display: flex;"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 15: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](FINALespre.svg)
+:::
 
-![Figure 7: *Elementary School Zoning Boundaries Overlaid on City Council Districts. Elementary school boundaries are in blue, while City Council districs are in red.*](fig7eszoningr.svg){width="50%"}
+::: {style="flex-basis: 50%; flex-direction: column;"}
+![Figure 16: *Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City*](FINALes.svg)
+:::
+:::
 
-</center>
 
 These zones are necessary as neighborhoods are important for redistricting simulations; neighborhoods help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:
 
@@ -196,50 +243,6 @@ We explore various other alternatives:
 -   [Census block maps](https://www.census.gov/geographies/reference-maps/2020/geo/2020-census-block-maps.html) were also considered, but are intentionally arbitrary to maintain similarly sized blocks across the United States and split neighborhoods
 
 Ultimately, elementary school zoning serves as the most detailed indicator compared to sparse neighborhood data.
-
-## Analysis
-
-### Do the New Maps Gerrymander Minority Populations?
-
-As the new maps include 3 majority-minority districts compared to a minority CVAP of 32.8%, we find that the new implemented maps do not gerrymander minority populations and are compliant with both the Virginia Voting Rights Act and the Federal Voting Rights Act.
-
-The Virginia Voting Rights Act mandates that at-large local elections are banned if they dilute the voting power of minority populations. Instead, based on the percentage of the on the percentage of minorities in the citizen Voting Age Population and how cohesive minority voters are, minority opportunity districts would be created to protect minority voting power. Virginia Beach City has a cohesive democratic-leaning minority population that accounts for 32.8% of the citizen Voting Age Population. As there are 10 city council seats, three seats must be in MMDs.
-
-The minority voting age population plot is displayed below. The graph orders each district from smaller to larger share of minority voting age population in each district. Each point represents one instance of a simulation, with the color of the point indicating if the district is projected to lean Democratic or Republican. The grey bars show the current ratified plan, showing that the current plan exceeds in creating three VAP districts. Notably, the enacted plan intentionally creates three solid majority-minority districts, demonstrated by the gap between the 7th and 8th districts.
-
-![Figure 7: *Simulated Majority Minority District Counts*](fig7minperfplot.png)
-
-We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for MMDs in each simulation is displayed below:
-
-| Count of plans                                | 1 district | 2 districts | 3 districts | 4 districts | 5 districts |
-|-----------------|---------|---------|---------|---------|---------|
-| Exactly *n* districts                         | 95824      | 88121       | 13811       | 2176        | 68          |
-| At least *n* districts                        | 200000     | 104176      | 16055       | 2244        | 68          |
-| \% of simulations with at least *n* districts |            | 52.09%      | 8.03%       | 1.12%       | 0.034%      |
-
-: Table 3: Majority-Minority District appearance rate in 200,000 simulations
-
-| Count of plans                                | 0 districts | 1 districts |
-|-----------------------------------------------|-------------|-------------|
-| Exactly *n* districts                         | 143829      | 56171       |
-| \% of simulations with at least *n* districts | 100%        | 28.09%      |
-
-: Table 4: Majority-Black District appearance rate in 200,000 simulations
-
-As simulations usually only create one MMD (\~88,000 simulations) or even none at all (\~96,000 simulations), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.
-
-<center>
-
-![Figure 8: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](mmdoccurance.svg){width="70%"}
-
-</center>
-
-### Do the New Maps Have Partisan Gerrymandering?
-
-![Figure 9: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
-
-### Are the New Maps Competitive?
-![Figure 10: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](competitiveness.png)
 
 ## Summary of Simulations {#summary-of-simulations}
 
