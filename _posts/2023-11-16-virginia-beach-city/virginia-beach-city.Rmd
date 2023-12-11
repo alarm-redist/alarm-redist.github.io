@@ -5,7 +5,7 @@ description: |
   As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.
 author:
   - name: Brian Zhou
-date: 2023-12-5
+date: 2023-12-13
 output:
   distill::distill_article:
     self_contained: false
@@ -113,7 +113,6 @@ The makeup of the city council drastically shifted in the 2022 general election,
 
 After a [round of public hearings](https://www.13newsnow.com/article/news/local/vote/virginia-beach-last-public-hearing-on-switch-10-1-voting-system-ahead-of-city-council-vote/291-e23afe35-c0f9-4555-812b-8980bf89dfa0) over the new election system and a survey that showed [81% of residents supported the new system](https://www.pilotonline.com/2023/07/02/virginia-beach-residents-want-to-keep-district-election-system-according-to-study/), the city council voted to [adopt the 10-1 election system](https://campaignlegal.org/update/victory-virginia-beach-adopts-fair-districts-after-clc-successfully-sued-city) with the court-sanctioned district map on August 15th, 2023. Per Virginia state law, any new electoral system, such as 7 districts and 4 at-large, would require approval from the Virginia General Assembly to revise the charter, which at earliest could happen when the General Assembly reconvenes in January 2024.
 
-
 ## Analysis
 
 ### Do the New Maps Gerrymander Minority Populations?
@@ -124,22 +123,22 @@ The Virginia Voting Rights Act mandates that at-large local elections are banned
 
 The minority voting age population plot is displayed below. The graph orders each district from smaller to larger share of minority voting age population in each district. Each point represents one instance of a simulation, with the color of the point indicating if the district is projected to lean Democratic or Republican. The grey bars show the current ratified plan, showing that the current plan exceeds in creating three VAP districts. Notably, the enacted plan intentionally creates three solid majority-minority districts, demonstrated by the gap between the 7th and 8th districts.
 
-![Figure 11: *Simulated Majority Minority District Counts*](fig7minperfplot.png)
+![Figure 11: *Simulated Majority Minority District Counts*](FINALminperfplot.png)
 
-We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for MMDs in each simulation is displayed below:
+We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for performing MMDs in each simulation is displayed below, where a performing district has a minority VAP above 50% and an expected democratic vote share above 50%. This second criteria is less important, as every simulated district with an above 50% minority VAP is democratic.
 
-| Count of plans                                | 1 district | 2 districts | 3 districts | 4 districts | 5 districts |
-|-----------------|---------|---------|---------|---------|---------|
-| Exactly *n* districts                         | 95824      | 88121       | 13811       | 2176        | 68          |
-| At least *n* districts                        | 200000     | 104176      | 16055       | 2244        | 68          |
-| \% of simulations with at least *n* districts |            | 52.09%      | 8.03%       | 1.12%       | 0.034%      |
+| Count of plans                       | 0 districts | 1 district | 2 districts | 3 districts | 4 districts |
+|----------------------|---------|---------|---------|---------|---------|
+| Plans with *n* districts exactly     | 3879        | 54257      | 116584      | 24880       | 400         |
+| Plans with at least *n* districts    | 200000      | 196121     | 141864      | 25280       | 400         |
+| \% plans with at least *n* districts | 100%        | 98.06%     | 70.93%      | 12.64%      | 2%          |
 
 : Table 3: Majority-Minority District appearance rate in 200,000 simulations
 
 | Count of plans                                | 0 districts | 1 districts |
 |-----------------------------------------------|-------------|-------------|
-| Exactly *n* districts                         | 143829      | 56171       |
-| \% of simulations with at least *n* districts | 100%        | 28.09%      |
+| Exactly *n* districts                         | 55007       | 144993      |
+| \% of simulations with at least *n* districts | 100%        | 72.50%      |
 
 : Table 4: Majority-Black District appearance rate in 200,000 simulations
 
@@ -147,17 +146,21 @@ As simulations usually only create one MMD (\~88,000 simulations) or even none a
 
 <center>
 
-![Figure 12: *Percent of All Simulations Where the Precinct is in a Simualted MMD.* ](FINALpercentmmd.svg){width="60%"}
+![Figure 12: *Percent of All Simulations Where the Precinct is in a Simualted MMD.*](FINALpercentmmd.svg){width="45%"}
 
 </center>
 
 ### Do the New Maps Have Partisan Gerrymandering?
 
+Although it is likely that two Democratic districts are being packed, Virginia Beach voters often vote split-ticket on the local level, having elected two Democratic councilmembers in safe Republican seats.
+
+![Figure 13: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALexpecteddem.png)
+
 ![Figure 13: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
 
 ### Are the New Maps Competitive?
-![Figure 14: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALcompetitiveness.png)
 
+![Figure 14: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALcompetitiveness.png)
 
 ## Methods and Materials
 
@@ -226,7 +229,6 @@ We utilize elementary school attendance zones to preserve similar communities of
 ![Figure 16: *Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City*](FINALes.svg)
 :::
 :::
-
 
 These zones are necessary as neighborhoods are important for redistricting simulations; neighborhoods help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:
 
