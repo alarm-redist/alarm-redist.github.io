@@ -17,7 +17,7 @@ Virginia Beach became an incorporated town in 1906 from Princess Anne County, an
 
 Virginia Beach is heavily influenced by the presence of the military. Apart from the Pentagon in Arlington, Virginia, Virginia Beach has the largest concentration of military personnel with [9 military installations](https://www.yesvirginiabeach.com/business-environment/military) from every branch of the US armed forces; this includes the largest naval base in the world. Thus, it has been classified by the [American Communities Project](https://www.americancommunities.org/) as a military post: "middle-income, diverse communities, around military bases."
 
-There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group.
+There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1, including the current partisan affiliation of the council member. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group.
 
 ::: {style="display: flex;"}
 ::: {style="flex-basis: 50%; flex-direction: column;"}
@@ -91,13 +91,17 @@ In Virginia Beach City, minority populations tend to vote as a block for Democra
 
 ::: {style="display: flex;"}
 ::: {style="flex-basis: 50%; flex-direction: column;"}
-![Figure 9: *Percent of Democratic Votes by Precinct.* Color and percent indicate a precinct's partisan tilt.](FINALdem.svg)
+![Figure 9: *Percent of Democratic Votes by Precinct.* Color and percent indicate partisan tilt.](FINALpartisan.svg)
 :::
 
 ::: {style="flex-basis: 50%; flex-direction: column;"}
-![Figure 10: *Percent of Democratic Votes Compared to Minority Percentages in Majority-Minority Precincts*](FINALdemmmp.svg)
+![Figure 10: *Percent of Democratic Votes Compared to Minority Percentages in MMPs*](FINALDemmmps.svg){width="720"}
 :::
 :::
+
+Notably, voters have different voting preferences compared to trends in federal elections. Although Figure 1 and Table 1 both show that there are 6 current Democratic council members, based on general voting trends, elections tend to tilt the following ways shown in Figure 11:
+
+<center>![Figure 11: *Percent of Democratic Votes by District*](FINALpartisandistrict.svg){width="60%"}</center>
 
 ## Redistricting in Virginia Beach
 
@@ -117,18 +121,18 @@ After a [round of public hearings](https://www.13newsnow.com/article/news/local/
 
 ### Do the New Maps Gerrymander Minority Populations?
 
-As the new maps include 3 majority-minority districts compared to a minority CVAP of 32.8%, we find that the new implemented maps do not gerrymander minority populations and are compliant with both the Virginia Voting Rights Act and the Federal Voting Rights Act.
+As the new maps include 3 majority-minority districts compared to a minority CVAP of 32.8%, we find that the new implemented maps do not gerrymander minority populations and are compliant with both the Virginia Voting Rights Act and the Federal Voting Rights Act. Based on demographic shifts in younger voters (who have a higher minority population), a future map may necessitate the creation of a fourth majority-minority district.
 
 The Virginia Voting Rights Act mandates that at-large local elections are banned if they dilute the voting power of minority populations. Instead, based on the percentage of the on the percentage of minorities in the citizen Voting Age Population and how cohesive minority voters are, minority opportunity districts would be created to protect minority voting power. Virginia Beach City has a cohesive democratic-leaning minority population that accounts for 32.8% of the citizen Voting Age Population. As there are 10 city council seats, three seats must be in MMDs.
 
 The minority voting age population plot is displayed below. The graph orders each district from smaller to larger share of minority voting age population in each district. Each point represents one instance of a simulation, with the color of the point indicating if the district is projected to lean Democratic or Republican. The grey bars show the current ratified plan, showing that the current plan exceeds in creating three VAP districts. Notably, the enacted plan intentionally creates three solid majority-minority districts, demonstrated by the gap between the 7th and 8th districts.
 
-![Figure 11: *Simulated Majority Minority District Counts*](FINALminperfplot.png)
+![Figure 12: *Simulated Majority Minority District Counts*](FINALminperfplot.png)
 
 We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for performing MMDs in each simulation is displayed below, where a performing district has a minority VAP above 50% and an expected democratic vote share above 50%. This second criteria is less important, as every simulated district with an above 50% minority VAP is democratic.
 
 | Count of plans                       | 0 districts | 1 district | 2 districts | 3 districts | 4 districts |
-|----------------------|---------|---------|---------|---------|---------|
+|-----------------|-----------|-----------|-----------|-----------|-----------|
 | Plans with *n* districts exactly     | 3879        | 54257      | 116584      | 24880       | 400         |
 | Plans with at least *n* districts    | 200000      | 196121     | 141864      | 25280       | 400         |
 | \% plans with at least *n* districts | 100%        | 98.06%     | 70.93%      | 12.64%      | 2%          |
@@ -142,25 +146,38 @@ We study the number of districts that are MMDs in any of the 200,000 plans. Tota
 
 : Table 4: Majority-Black District appearance rate in 200,000 simulations
 
-As simulations usually only create one MMD (\~88,000 simulations) or even none at all (\~96,000 simulations), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.
+As simulations usually only create two MMDs (\~116k simulations) or more (\~71% occurence), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.
 
 <center>
 
-![Figure 12: *Percent of All Simulations Where the Precinct is in a Simualted MMD.*](FINALpercentmmd.svg){width="45%"}
+![Figure 13: *Percent of All Simulations Where the Precinct is in a Simualted MMD.*](FINALpercentmmd.svg){width="45%"}
 
 </center>
 
 ### Do the New Maps Have Partisan Gerrymandering?
 
-Although it is likely that two Democratic districts are being packed, Virginia Beach voters often vote split-ticket on the local level, having elected two Democratic councilmembers in safe Republican seats.
+Although there is evidence that two Democratic districts are being packed, Virginia Beach voters often vote split-ticket on the local level, having elected two Democratic council members in Republican-leaning seats.
 
-![Figure 13: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALexpecteddem.png)
+Shown in Figure 14, many of the real districts appear to be packed compared to what the simulated districts would indicate.
 
-![Figure 13: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
+![Figure 14: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](demrepsplit.png)
+
+We can get a better understanding with a box plot. The real Districts 9 and 10 appear to pack democratic voters compared to the simulated distribution of districts, while Districts 5 and 6 appear to be intentionally drawn to make the districts, whose median would be a toss-up and Democratic-leaning respectively, Republican.
+
+![Figure 15: *Boxplot of democratic vote share by district in simulated runs.*](FINALexpecteddem.png)
+
+One effective method of determining partisan gerrymandering is by measuring the efficiency gap of any given map, which is a value from -100% to 100% where negative implies pro-Democratic bias and positive implies pro-Republican bias. The current plan has an efficiency gap of 18.3% in favor of Republicans. Generally, an efficiency gap above 7% in favor of either party is regarded as partisan gerrymandering. This gives us evidence of partisan gerrymandering that favors Republicans in Virginia Beach City. We calculate the efficiency gap as the difference between votes from the party that loses a district and excess votes above 50% that weren't necessary to win a district, divided by total votes.
 
 ### Are the New Maps Competitive?
+While five of the districts are competitive, the other five are extremely noncompetitive. In Figure 16, we look at the difference between the vote percentages of the winning and losing party in any given district. Defining a 10% difference as competitive, we can see that while four of the actual districts are competitive, the simulated plans could support all the way to eight competitive districts. At a minimum, two additional districts could easily be made competitive.
 
-![Figure 14: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALcompetitiveness.png)
+![Figure 16: *Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.*](FINALcompetitiveness.png)
+
+Instead of defining an arbitrary 10% difference, we can look at how competitive the actual districts are compared to the ensemble of simulated districts. Figure 17 shows that there are five competitive districts, and five extremely uncompetitive districts, four of which are outliers that indicate the plan was intentionally drawn to be uncompetitive. Any district that has good competitiveness would be any real district below the 25th percentile (a very small difference in vote count), indicating that it is more competitive than most simulated districts, and vice versa. Districts above the 75th percentile would have poor competitiveness. 
+
+![Figure 17: *Boxplot of the absolute difference in vote counts.*](FINALcompboxplot.svg)
+
+While this shows that the city council districts of Virginia Beach City could be made more competitive, it is likely that three of the five districts that are less competitive merely stem from creating three MMDs which lean Democratic in every simulation.
 
 ## Methods and Materials
 
@@ -222,11 +239,11 @@ We utilize elementary school attendance zones to preserve similar communities of
 
 ::: {style="display: flex;"}
 ::: {style="flex-basis: 50%; flex-direction: column;"}
-![Figure 15: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](FINALespre.svg)
+![Figure 18: *Map of Voting Precincts and City Council Boundaries in Virginia Beach City*](FINALespre.svg)
 :::
 
 ::: {style="flex-basis: 50%; flex-direction: column;"}
-![Figure 16: *Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City*](FINALes.svg)
+![Figure 19: *Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City*](FINALes.svg)
 :::
 :::
 
