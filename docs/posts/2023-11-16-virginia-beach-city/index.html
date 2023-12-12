@@ -2565,6 +2565,9 @@ gtag('config', 'G-8ZZ8YY5N8M');
 </div>
 
 <div class="d-article">
+<center>
+Jump to <a href="#analysis">analysis</a> and <a href="#takeaways">key takeaways</a>
+</center>
 <h2 id="the-virginia-beach-city-council">The Virginia Beach City Council</h2>
 <p>Virginia Beach became an incorporated town in 1906 from Princess Anne County, and became an independent city in 1952. A legal battle with the City of Norfolk prompted a consolidation of the City of Virginia Beach with Princess Anne County again in 1962, forming the independent city of Virginia Beach.</p>
 <p>Virginia Beach is heavily influenced by the presence of the military. Apart from the Pentagon in Arlington, Virginia, Virginia Beach has the largest concentration of military personnel with <a href="https://www.yesvirginiabeach.com/business-environment/military">9 military installations</a> from every branch of the US armed forces; this includes the largest naval base in the world. Thus, it has been classified by the <a href="https://www.americancommunities.org/">American Communities Project</a> as a military post: “middle-income, diverse communities, around military bases.”</p>
@@ -2881,7 +2884,7 @@ gtag('config', 'G-8ZZ8YY5N8M');
 </ul>
 <p>We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provisional, and Post-Election) to create overall vote splits by precinct. 249 write-in ballots, which constituted 0.15% of the total vote in Virginia Beach, are discarded.</p>
 <h3 id="runs-and-simulations">Runs and Simulations</h3>
-<p>We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the <a href="https://alarm-redist.org/redist/reference/redist_smc.html">Sequential Monte Carlo algorithm</a> according to <a href="#redistricting-requirements">the relevant criteria</a>. A <a href="#summary-of-simulations">summary of simulations</a> can be found below.</p>
+<p>We sample 20,000 districting plans for Virginia Beach City across ten independent runs of the <a href="https://alarm-redist.org/redist/reference/redist_smc.html">Sequential Monte Carlo algorithm</a> according to <a href="#redistricting-requirements">the relevant criteria</a>. A <a href="#summary-of-simulations">summary of simulations</a> can be found below.</p>
 <h3 id="redistricting-requirements">Redistricting Requirements</h3>
 <p>Per <a href="redistrictingguidelines.pdf">Virginia and Federal law</a> under <a href="https://casetext.com/statute/code-of-virginia/title-242-elections/chapter-3-election-districts-precincts-and-polling-places/article-2-congressional-senatorial-and-house-of-delegates-districts/section-242-30404-standards-and-criteria-for-congressional-and-state-legislative-districts">Va. Code Ann. § 24.2-304.04</a> redistricting in Virginia Beach must:</p>
 <ol type="1">
@@ -2937,6 +2940,12 @@ gtag('config', 'G-8ZZ8YY5N8M');
 <h2 id="summary-of-simulations">Summary of Simulations</h2>
 <p><img src="FINALvalidation.png" /></p>
 <p>From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.</p>
+<h2 id="takeaways">Takeaways</h2>
+<p>Virginia Beach City’s new implemented plan fulfills the required 3 MMDs set by the Virginia Voting Rights Act and the Federal Voting Rights Act based on it’s current Citizen Voting Age Population of 32.8%. Immediately the results are evident: the city council elected in the wake of the new map four black representatives, equivalent to the total number of black representatives since the council was formed in 1966 prior to the 2022 election.</p>
+<p>Voters also demonstrated willingness to look past party lines at the local level, voting in two Democratic city council members in districts that safely voted for the Republican representative in the same year.</p>
+<p>Although there is concern for partisan gerrymandering with a efficiency gap of 18.3% in favor of Republicans, it is possible that this is a side effect of creating all three MMDs; not a single MMD ever voted Republican in any of the 200,000 simulated plans, resulting in wasted Democratic votes that contributed to the high efficiency gap. Notably, voters often voted across party lines to deliver a 6-4 Democratic majority as opposed to the projected 6-4 Republican majority.</p>
+<p>Initial simulations also indicate that five districts are less competitive than comparable simulations. Currently, four of the districts have a gap of less than 10% in vote difference, but simulations reveal that future plans could create upwards of 8 competitive districts.</p>
+<p>As more data using the new electoral system comes in the future, revisiting Virginia Beach City can help shed insights on how city voters adapted after its prior at-large voting system was struck down. Future work exploring further alternatives to elementary school zoning boundaries, particularly other neighborhood alternatives which may have more splits, would be helpful to more accurately simulate community interests.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

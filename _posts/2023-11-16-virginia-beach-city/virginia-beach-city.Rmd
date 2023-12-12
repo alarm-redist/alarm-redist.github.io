@@ -11,6 +11,8 @@ output:
     self_contained: false
 ---
 
+<center>Jump to [analysis](#analysis) and [key takeaways](#takeaways)</center>
+
 ## The Virginia Beach City Council
 
 Virginia Beach became an incorporated town in 1906 from Princess Anne County, and became an independent city in 1952. A legal battle with the City of Norfolk prompted a consolidation of the City of Virginia Beach with Princess Anne County again in 1962, forming the independent city of Virginia Beach.
@@ -195,7 +197,7 @@ We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provi
 
 ### Runs and Simulations
 
-We sample 20,000 districting plans for Virginia Beach City across fifteen independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html) according to [the relevant criteria](#redistricting-requirements). A [summary of simulations](#summary-of-simulations) can be found below.
+We sample 20,000 districting plans for Virginia Beach City across ten independent runs of the [Sequential Monte Carlo algorithm](https://alarm-redist.org/redist/reference/redist_smc.html) according to [the relevant criteria](#redistricting-requirements). A [summary of simulations](#summary-of-simulations) can be found below.
 
 ### Redistricting Requirements {#redistricting-requirements}
 
@@ -268,3 +270,14 @@ Ultimately, elementary school zoning serves as the most detailed indicator compa
 ![](FINALvalidation.png)
 
 From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.
+
+## Takeaways
+Virginia Beach City's new implemented plan fulfills the required 3 MMDs set by the Virginia Voting Rights Act and the Federal Voting Rights Act based on it's current Citizen Voting Age Population of 32.8%. Immediately the results are evident: the city council elected in the wake of the new map four black representatives, equivalent to the total number of black representatives since the council was formed in 1966 prior to the 2022 election. 
+
+Voters also demonstrated willingness to look past party lines at the local level, voting in two Democratic city council members in districts that safely voted for the Republican representative in the same year.
+
+Although there is concern for partisan gerrymandering with a efficiency gap of 18.3% in favor of Republicans, it is possible that this is a side effect of creating all three MMDs; not a single MMD ever voted Republican in any of the 200,000 simulated plans, resulting in wasted Democratic votes that contributed to the high efficiency gap. Notably, voters often voted across party lines to deliver a 6-4 Democratic majority as opposed to the projected 6-4 Republican majority.
+
+Initial simulations also indicate that five districts are less competitive than comparable simulations. Currently, four of the districts have a gap of less than 10% in vote difference, but simulations reveal that future plans could create upwards of 8 competitive districts. 
+
+As more data using the new electoral system comes in the future, revisiting Virginia Beach City can help shed insights on how city voters adapted after its prior at-large voting system was struck down. Future work exploring further alternatives to elementary school zoning boundaries, particularly other neighborhood alternatives which may have more splits, would be helpful to more accurately simulate community interests.
