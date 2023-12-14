@@ -55,11 +55,11 @@ Now we can consider the expected partisan breakdown in order to recognize the wa
 
 *Figure 6: The above boxplot shows the democratic vote share of simulation plans. The red line indicates the currently enacted plan*.
 
-By looking at this box plot, it becomes clear that six of these districts should be Democratic according to the simulations, but there are only five Democratic districts in the currently enacted plan. One of the districts that is currently Republican should be Democratic according to the simulations we ran.
+By looking at this box plot, it is clear that six of these districts should be Democratic according to the simulations, but there are only five Democratic districts in the currently enacted plan. One of the districts that is currently Republican should be Democratic according to the simulations we ran.
 
 We can recognize that the second ordered district is the one we are concerned about, as it is right on the edge between Democratic and Republican. More importantly, the plot shows us that in at least 75% of the simulations, the district is Democratic, which indicates that the enacted map is an anomaly.
 
-These maps and box plots come together to explain the difference between the partisan shift in the mayor election and in the city council election in Charlotte.
+These plots explain the difference between the partisan shift in the mayor election and in the city council election in Charlotte.
 
 ## Methods and Materials
 
