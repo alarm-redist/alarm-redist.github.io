@@ -3,7 +3,7 @@ title: "GUEST POST: Louisville/Jefferson County metro government (balance), Kent
 description: |
   An analysis of the electoral competitiveness of Louisville Metro Council Elections.
 author: Itsuki Umeyama
-date: 2023-12-09
+date: 2023-12-13
 output:
   distill::distill_article:
     self_contained: false

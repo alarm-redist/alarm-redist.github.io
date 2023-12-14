@@ -3,7 +3,7 @@ title: "GUEST POST: Competitiveness in Charlotte, North Carolina"
 description: |
   Analyzing competitiveness in Charlotte, North Carolina city council elections, as well as its influence on partisanship of each district.
 author: Angeline Zhao
-date: 2023-12-05
+date: 2023-12-13
 output:
   distill::distill_article:
     self_contained: false
