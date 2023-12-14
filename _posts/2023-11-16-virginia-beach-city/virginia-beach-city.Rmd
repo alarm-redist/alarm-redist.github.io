@@ -1,6 +1,5 @@
 ---
-title: "
-Virginia Beach City"
+title: "GUEST POST: Virginia Beach City"
 description: |
   As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.
 author:
@@ -10,6 +9,17 @@ output:
   distill::distill_article:
     self_contained: false
 ---
+
+
+:::: {.blackbox}
+::: {.center}
+DISCLAIMER
+:::
+
+This post is part of our ALARM Summer Research program, where social scientists in training study redistricting analysis to learn skills in computational social science. The results do not necessarily reflect findings of the broader ALARM team, and are not intended to be used as evidence or recommendations.
+::::
+
+
 
 <center>Jump to [analysis](#analysis) and [key takeaways](#takeaways)</center>
 

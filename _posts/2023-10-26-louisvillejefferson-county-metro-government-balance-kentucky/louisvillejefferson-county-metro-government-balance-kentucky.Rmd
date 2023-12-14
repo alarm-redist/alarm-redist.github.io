@@ -1,5 +1,5 @@
 ---
-title: "Louisville/Jefferson County metro government (balance), Kentucky"
+title: "GUEST POST: Louisville/Jefferson County metro government (balance), Kentucky"
 description: |
   An analysis of the electoral competitiveness of Louisville Metro Council Elections.
 author: Itsuki Umeyama
@@ -8,6 +8,14 @@ output:
   distill::distill_article:
     self_contained: false
 ---
+
+:::: {.blackbox}
+::: {.center}
+DISCLAIMER
+:::
+
+This post is part of our ALARM Summer Research program, where social scientists in training study redistricting analysis to learn skills in computational social science. The results do not necessarily reflect findings of the broader ALARM team, and are not intended to be used as evidence or recommendations.
+::::
 
 ## Competitiveness in Louisville Metro Council Elections
 

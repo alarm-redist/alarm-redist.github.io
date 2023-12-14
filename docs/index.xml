@@ -13,13 +13,29 @@
     <generator>Distill</generator>
     <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate>
     <item>
-      <title> Virginia Beach City</title>
+      <title>GUEST POST: Virginia Beach City</title>
       <dc:creator>Brian Zhou</dc:creator>
       <link>https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city</link>
       <description>As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.</description>
       <guid>https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city</guid>
       <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city/FINALDemmmps.svg" medium="image" type="image/svg+xml"/>
+    </item>
+    <item>
+      <title>GUEST POST: Louisville/Jefferson County metro government (balance), Kentucky</title>
+      <dc:creator>Itsuki Umeyama</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-10-26-louisvillejefferson-county-metro-government-balance-kentucky</link>
+      <description>An analysis of the electoral competitiveness of Louisville Metro Council Elections.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-10-26-louisvillejefferson-county-metro-government-balance-kentucky</guid>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GUEST POST: Competitiveness in Charlotte, North Carolina</title>
+      <dc:creator>Angeline Zhao</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-11-02-election-competitiveness-in-charlotte-north-carolina</link>
+      <description>Analyzing competitiveness in Charlotte, North Carolina city council elections, as well as its influence on partisanship of each district.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-11-02-election-competitiveness-in-charlotte-north-carolina</guid>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Using big data to make elections fairer</title>

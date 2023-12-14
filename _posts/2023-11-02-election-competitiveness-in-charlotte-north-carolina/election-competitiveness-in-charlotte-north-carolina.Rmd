@@ -1,5 +1,5 @@
 ---
-title: "Competitiveness in Charlotte, North Carolina"
+title: "GUEST POST: Competitiveness in Charlotte, North Carolina"
 description: |
   Analyzing competitiveness in Charlotte, North Carolina city council elections, as well as its influence on partisanship of each district.
 author: Angeline Zhao
@@ -12,6 +12,15 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+
+:::: {.blackbox}
+::: {.center}
+DISCLAIMER
+:::
+
+This post is part of our ALARM Summer Research program, where social scientists in training study redistricting analysis to learn skills in computational social science. The results do not necessarily reflect findings of the broader ALARM team, and are not intended to be used as evidence or recommendations.
+::::
 
 ## Competitiveness in Charlotte City Council Elections
 
