@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { color: #00769e; background-color: #f1f3f5; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #00769e; } /* Normal */
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #657422; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #00769e; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #00769e; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #00769e; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title> Virginia Beach City</title>
+
+  <meta property="description" itemprop="description" content="As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2023-12-13"/>
+  <meta property="article:created" itemprop="dateCreated" content="2023-12-13"/>
+  <meta name="article:author" content="Brian Zhou"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content=" Virginia Beach City"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content=" Virginia Beach City"/>
+  <meta property="twitter:description" content="As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":[" Virginia Beach City"]},{"type":"character","attributes":{},"value":["As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Brian Zhou"]}]}]},{"type":"character","attributes":{},"value":["2023-12-13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["FINALblackpop.svg","FINALcc.svg","FINALccblocks.svg","FINALccdemrep.svg","FINALccmmd.svg","FINALccprecinct.svg","FINALcompboxplot.svg","FINALcompetitiveness.pdf","FINALcompetitiveness.png","FINALcompetitiveness.svg","FINALdem.svg","FINALDemMMDs.svg","FINALdemmmp.svg","finalDemMMPs.svg","FINALes.svg","FINALespre.svg","FINALexpecteddem.png","FINALminoritypop.svg","FINALminperfplot.png","FINALpartisan.svg","FINALpartisandistrict.svg","FINALpercentmmd.svg","FINALpop.svg","FINALpopulation.svg","FINALvalidation.png","FINALvap.svg","redistrictingguidelines.pdf","vabeachspecialmaster.pdf","virginia-beach-city_files/anchor-4.2.2/anchor.min.js","virginia-beach-city_files/bowser-1.9.3/bowser.min.js","virginia-beach-city_files/distill-2.2.21/template.v2.js","virginia-beach-city_files/header-attrs-2.23/header-attrs.js","virginia-beach-city_files/header-attrs-2.25/header-attrs.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js","virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.map","virginia-beach-city_files/popper-2.6.0/popper.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-bundle.umd.min.js","virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css","virginia-beach-city_files/tippy-6.2.7/tippy.css","virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js","virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+    font-size: 100%;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  hr.section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0px;
+  }
+
+
+  d-byline {
+    border-top: none;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+    border-top: none;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  /* tweak for Pandoc numbered line within distill */
+  d-article pre.numberSource code > span {
+      left: -2em;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // separator
+    var separator = '<hr class="section-separator" style="clear: both"/>';
+    // prepend separator above appendix
+    $('.d-byline').before(separator);
+    $('.d-article').before(separator);
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme, except when numbering line
+    // in code chunk
+    $('pre:not(.numberLines) code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        var author_name = front_matter.authors[i].author
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', author_name ? 'ORCID ID for ' + author_name : 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="virginia-beach-city_files/header-attrs-2.23/header-attrs.js"></script>
+  <script src="virginia-beach-city_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="virginia-beach-city_files/popper-2.6.0/popper.min.js"></script>
+  <link href="virginia-beach-city_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="virginia-beach-city_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="virginia-beach-city_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="virginia-beach-city_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="virginia-beach-city_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="virginia-beach-city_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="virginia-beach-city_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":" Virginia Beach City","description":"As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.","authors":[{"author":"Brian Zhou","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2023-12-13T00:00:00.000-05:00","citationText":"Zhou, 2023"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Virginia Beach City</h1>
+
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.</p></p>
+</div>
+
+<div class="d-byline">
+  Brian Zhou  
+  
+<br/>2023-12-13
+</div>
+
+<div class="d-article">
+<center>
+Jump to <a href="#analysis">analysis</a> and <a href="#takeaways">key takeaways</a>
+</center>
+<h2 id="the-virginia-beach-city-council">The Virginia Beach City Council</h2>
+<p>Virginia Beach became an incorporated town in 1906 from Princess Anne County, and became an independent city in 1952. A legal battle with the City of Norfolk prompted a consolidation of the City of Virginia Beach with Princess Anne County again in 1962, forming the independent city of Virginia Beach.</p>
+<p>Virginia Beach is heavily influenced by the presence of the military. Apart from the Pentagon in Arlington, Virginia, Virginia Beach has the largest concentration of military personnel with <a href="https://www.yesvirginiabeach.com/business-environment/military">9 military installations</a> from every branch of the US armed forces; this includes the largest naval base in the world. Thus, it has been classified by the <a href="https://www.americancommunities.org/">American Communities Project</a> as a military post: “middle-income, diverse communities, around military bases.”</p>
+<p>There are 11 members in the Virginia Beach City Council. Ten members of the city council are elected in one of ten districts as shown in Figure 1, including the current partisan affiliation of the council member. Displayed in Figure 2, three districts are currently Majority Minority Districts (MMDs), where the majority voting-eligible people in the district belong to a cohesive minority group.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALccdemrep.svg" alt="Figure 1: Current Partisan Breakdown of City Council Members" />
+<figcaption aria-hidden="true">Figure 1: <em>Current Partisan Breakdown of City Council Members</em></figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALccmmd.svg" alt="Figure 2: Majority Minority Districts in Virginia Beach City" />
+<figcaption aria-hidden="true">Figure 2: <em>Majority Minority Districts in Virginia Beach City</em></figcaption>
+</figure>
+</div>
+</div>
+<p>The eleventh member is elected at-large to serve as the mayor of the city. While the council is legally nonpartisan, candidates with political affiliations emerged just seven years after the formation of the city council in 1963. Historical elections have been competitive between both Democrats and Republicans with a few declared independents, but the overall majority of the city council historically leaned Republican, especially prior to the 2022 court-ordered redistricting. The current 2023 City Council is comprised of six Democrats and five Republicans (Figure 1), with Republican Bobby Dyer serving as mayor. No candidates were up for reelection in the November 7, 2023 Virginia general election.</p>
+<table>
+<caption>Table 1: Current Virginia Beach City Council makeup. Majority-Minority Districts are italicized.</caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="smallcaps">Mayor</span></th>
+<th><span class="smallcaps">1</span></th>
+<th><span class="smallcaps">2</span></th>
+<th><span class="smallcaps">3</span></th>
+<th><span class="smallcaps"><em>4</em></span></th>
+<th><span class="smallcaps">5</span></th>
+<th><span class="smallcaps">6</span></th>
+<th><span class="smallcaps"><em>7</em></span></th>
+<th><span class="smallcaps">8</span></th>
+<th>9</th>
+<th><em>10</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bobby Dyer (R)</td>
+<td>Rocky Holcomb (R)</td>
+<td>Barbara M. Henley (D)</td>
+<td>Michael Berlucchi (R)</td>
+<td><em>Amelia Ross-Hammond (D)</em></td>
+<td>Rosemary Wilson (R)</td>
+<td>Worth Remick (D)</td>
+<td><em>Sabrina Wooten (D)</em></td>
+<td>Chris Taylor (R)</td>
+<td>Joash Schulman (D)</td>
+<td><em>Jennifer Rouse (D)</em></td>
+</tr>
+</tbody>
+</table>
+<p>The ten districts are constructed from 108 voting precincts displayed in Figure 3 below. Census blocks, which are areas bounded by visible features such as roads or streams and invisible features such as property lines or other city/school districts, are visualized in Figure 4. These blocks help visualize where the city is located, as census blocks often follow city blocks in urban environments.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALccprecinct.svg" alt="Figure 3: Map of Voting Precincts and City Council Boundaries in Virginia Beach City" />
+<figcaption aria-hidden="true">Figure 3: <em>Map of Voting Precincts and City Council Boundaries in Virginia Beach City</em></figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALccblocks.svg" alt="Figure 4: Map of Census Blocks and City Council Boundaries in Virginia Beach City" />
+<figcaption aria-hidden="true">Figure 4: <em>Map of Census Blocks and City Council Boundaries in Virginia Beach City</em></figcaption>
+</figure>
+</div>
+</div>
+<h3 id="demographics-partisan-breakdown">Demographics &amp; Partisan Breakdown</h3>
+<p>Virginia Beach City has a population of 457,672 recorded in the 2020 US census, making it the largest independent city in Virginia and the 42nd largest in the United States. It is ranked by the Census Bureau as the 36th largest urban area; its metropolitan statistical area (MSA), the Hampton Roads MSA, is the 37th largest metropolitan area in the US. The overall demographic breakdown of the city is in the table below; population data is sourced from the 2020 Census and VAP/CVAP data is sourced from a count by the Virginia Department of Elections in the 2019 Virginia elections.</p>
+<table>
+<caption>Table 2: Demographic Breakdown of Virginia Beach, VA. in 2020</caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Demographic</th>
+<th>Population</th>
+<th>Voting Age Pop.</th>
+<th>Citizen Voting Age Pop.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>White, non-Hispanic</td>
+<td>58.7%</td>
+<td>61.5%</td>
+<td>65.8%</td>
+</tr>
+<tr class="even">
+<td>Black, non-Hispanic</td>
+<td>20.1%</td>
+<td>20.1%</td>
+<td>19.7%</td>
+</tr>
+<tr class="odd">
+<td>Asian, non-Hispanic</td>
+<td>10%</td>
+<td>9.4%</td>
+<td>6.8%</td>
+</tr>
+<tr class="even">
+<td>Hispanic</td>
+<td>8.8%</td>
+<td>7.6%</td>
+<td>6.4%</td>
+</tr>
+<tr class="odd">
+<td>Black + Hispanic + Asian</td>
+<td>40.5%</td>
+<td>37.2%</td>
+<td>32.8%</td>
+</tr>
+</tbody>
+</table>
+<p>Figure 5 shows the population density of the overall city to a precinct level. This is important for drawing city council boundaries, as per the Virginia Voting Rights Act, a district can only deviate from the average population in every district by 5%. However, how do we know who is actually eligible to vote? Figure 6 shows the percentage of the population in any given precinct that is of voting age, which is more indicative of current voter demographics.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALpopulation.svg" alt="Figure 5: Population Density by Precinct" />
+<figcaption aria-hidden="true">Figure 5: <em>Population Density by Precinct</em></figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALvap.svg" alt="Figure 6: Percent Voting Age Population by Precinct" />
+<figcaption aria-hidden="true">Figure 6: <em>Percent Voting Age Population by Precinct</em></figcaption>
+</figure>
+</div>
+</div>
+<p>Figures 7 and 8 show the percentage of minority and black populations by precinct. Districts 4, 7, and 10 are majority-minority districts (MMDs), shown in Figure 2.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALminoritypop.svg" alt="Figure 7: Minority Population Percentage by Precinct" />
+<figcaption aria-hidden="true">Figure 7: <em>Minority Population Percentage by Precinct</em></figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALblackpop.svg" alt="Figure 8: Black Population Percentage by Precinct" />
+<figcaption aria-hidden="true">Figure 8: <em>Black Population Percentage by Precinct</em></figcaption>
+</figure>
+</div>
+</div>
+<p>In Virginia Beach City, minority populations tend to vote as a block for Democratic candidates. Figure 9 displays the vote percentage of Democrats and Republicans in each precinct; Democrats perform best in black/minority precincts. To quantify how cohesive a group of voters are, Figure 10 examines only precincts where the majority of residents in the precinct is a minority. The percentage of democratic votes in any given precinct trends similarly to the overall percentage of minority residents in the precinct, ranging from a .78 to 1.05 ratio.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALpartisan.svg" alt="Figure 9: Percent of Democratic Votes by Precinct. Color and percent indicate partisan tilt." />
+<figcaption aria-hidden="true">Figure 9: <em>Percent of Democratic Votes by Precinct.</em> Color and percent indicate partisan tilt.</figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALDemmmps.svg" width="720" alt="Figure 10: Percent of Democratic Votes Compared to Minority Percentages in MMPs" />
+<figcaption aria-hidden="true">Figure 10: <em>Percent of Democratic Votes Compared to Minority Percentages in MMPs</em></figcaption>
+</figure>
+</div>
+</div>
+<p>Notably, voters have different voting preferences compared to trends in federal elections. Although Figure 1 and Table 1 both show that there are 6 current Democratic council members, based on general voting trends, elections tend to tilt the following ways shown in Figure 11:</p>
+<center>
+<figure>
+<img src="FINALpartisandistrict.svg" style="width:60.0%" alt="Figure 11: Percent of Democratic Votes by District" />
+<figcaption aria-hidden="true">Figure 11: <em>Percent of Democratic Votes by District</em></figcaption>
+</figure>
+</center>
+<h2 id="redistricting-in-virginia-beach">Redistricting in Virginia Beach</h2>
+<h3 id="holloway-v.-city-of-virginia-beach-va.">Holloway v. City of Virginia Beach, Va.</h3>
+<p>In 2017, Virginia Beach residents Latasha Holloway and Georgia Allen sued the City of Virginia Beach claiming that Virginia Beach’s current at-large method to elect council members violated Section 2 of the Voting Rights Act by diluting the strength of minority votes in the legal case <a href="https://thearp.org/litigation/holloway-v-city-virginia-beach-va/">Holloway v. City of Virginia Beach, Va.</a> Since 1998, Virginia Beach City Council members were elected in seven districts including three at-large council members; although candidates for one of the seven district seats had to reside in the district they were running for, all voting was conducted at-large. Residents of any district could vote in all seven district elections and the three at-large candidates.</p>
+<p>In 2021, Virginia passed <a href="https://lis.virginia.gov/cgi-bin/legp604.exe?ses=212&amp;typ=bil&amp;val=HB2198">HB 2198</a>, which prohibits local governments from using at-large voting for district elections. This led to the 2021 ruling in which the district court ruled that the at-large election method did violate Section 2 of the Voting Rights Act by denying large minority groups in Virginia Beach (African-Americans, Hispanics, and Asians) equal access to political participation, and that those groups were politically cohesive. Although the City of Virginia Beach appealed the decision, the court proceeded by appointing a special master to create a remedial redistricting plan, established in <a href="vabeachspecialmaster.pdf">this memo</a>. This plan was adopted in 2022 before the November election after another round of appeals in the Fourth Circuit. The Virginia Beach School Board, which historically followed the same election system as the city council, <a href="https://www.wavy.com/news/local-news/virginia-beach/vb-school-board-votes-to-mirror-new-city-council-election-system-possibly-pitting-incumbents-against-each-other/">voted in 2022</a> to adopt the same election system as the city council.</p>
+<p>In 2022, the Fourth Circuit Appeals Court ruled in a 2-1 decision that the case should not have been considered by the district court, holding that HB 2198 already made the electoral system challenged by the plaintiffs illegal. This meant that the at-large electoral system no longer governed Virginia Beach City already and rendered the court case moot. The timing of the ruling meant that the redrawn maps and electoral system would be used in 2022, and could be modified if it met the requirements of the Virginia Voting Rights Act and HB 2198, both of which prevent at-large voting systems if they prevent minority groups from electing preferred candidates.</p>
+<p>The makeup of the city council drastically shifted in the 2022 general election, the first local election under the 10-1 system. The council is the <a href="https://www.pilotonline.com/2023/01/04/virginia-beach-city-council-now-the-most-diverse-in-city-history-welcomes-new-members/">most diverse</a> and youngest in city history, with four Black representatives and four members under 45. <a href="https://wydaily.com/news/local/2019/01/04/new-city-council-could-be-the-most-diverse-in-virginia-beach-history/">In all of the city council’s history</a> since 1966, only four prior city council members were Black, and at most had two seats on the city council at any point in time. Democrats gained two seats on the city council, shifting the makeup from 6 GOP and 4 DEM with a GOP mayor in 2022 to 6 DEM and 4 GOP in 2023.</p>
+<p>After a <a href="https://www.13newsnow.com/article/news/local/vote/virginia-beach-last-public-hearing-on-switch-10-1-voting-system-ahead-of-city-council-vote/291-e23afe35-c0f9-4555-812b-8980bf89dfa0">round of public hearings</a> over the new election system and a survey that showed <a href="https://www.pilotonline.com/2023/07/02/virginia-beach-residents-want-to-keep-district-election-system-according-to-study/">81% of residents supported the new system</a>, the city council voted to <a href="https://campaignlegal.org/update/victory-virginia-beach-adopts-fair-districts-after-clc-successfully-sued-city">adopt the 10-1 election system</a> with the court-sanctioned district map on August 15th, 2023. Per Virginia state law, any new electoral system, such as 7 districts and 4 at-large, would require approval from the Virginia General Assembly to revise the charter, which at earliest could happen when the General Assembly reconvenes in January 2024.</p>
+<h2 id="analysis">Analysis</h2>
+<h3 id="do-the-new-maps-gerrymander-minority-populations">Do the New Maps Gerrymander Minority Populations?</h3>
+<p>As the new maps include 3 majority-minority districts compared to a minority CVAP of 32.8%, we find that the new implemented maps do not gerrymander minority populations and are compliant with both the Virginia Voting Rights Act and the Federal Voting Rights Act. Based on demographic shifts in younger voters (who have a higher minority population), a future map may necessitate the creation of a fourth majority-minority district.</p>
+<p>The Virginia Voting Rights Act mandates that at-large local elections are banned if they dilute the voting power of minority populations. Instead, based on the percentage of the on the percentage of minorities in the citizen Voting Age Population and how cohesive minority voters are, minority opportunity districts would be created to protect minority voting power. Virginia Beach City has a cohesive democratic-leaning minority population that accounts for 32.8% of the citizen Voting Age Population. As there are 10 city council seats, three seats must be in MMDs.</p>
+<p>The minority voting age population plot is displayed below. The graph orders each district from smaller to larger share of minority voting age population in each district. Each point represents one instance of a simulation, with the color of the point indicating if the district is projected to lean Democratic or Republican. The grey bars show the current ratified plan, showing that the current plan exceeds in creating three VAP districts. Notably, the enacted plan intentionally creates three solid majority-minority districts, demonstrated by the gap between the 7th and 8th districts.</p>
+<figure>
+<img src="FINALminperfplot.png" alt="Figure 12: Simulated Majority Minority District Counts" />
+<figcaption aria-hidden="true">Figure 12: <em>Simulated Majority Minority District Counts</em></figcaption>
+</figure>
+<p>We study the number of districts that are MMDs in any of the 200,000 plans. Total counts for performing MMDs in each simulation is displayed below, where a performing district has a minority VAP above 50% and an expected democratic vote share above 50%. This second criteria is less important, as every simulated district with an above 50% minority VAP is democratic.</p>
+<table>
+<caption>Table 3: Majority-Minority District appearance rate in 200,000 simulations</caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Count of plans</th>
+<th>0 districts</th>
+<th>1 district</th>
+<th>2 districts</th>
+<th>3 districts</th>
+<th>4 districts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plans with <em>n</em> districts exactly</td>
+<td>3879</td>
+<td>54257</td>
+<td>116584</td>
+<td>24880</td>
+<td>400</td>
+</tr>
+<tr class="even">
+<td>Plans with at least <em>n</em> districts</td>
+<td>200000</td>
+<td>196121</td>
+<td>141864</td>
+<td>25280</td>
+<td>400</td>
+</tr>
+<tr class="odd">
+<td>% plans with at least <em>n</em> districts</td>
+<td>100%</td>
+<td>98.06%</td>
+<td>70.93%</td>
+<td>12.64%</td>
+<td>2%</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Table 4: Majority-Black District appearance rate in 200,000 simulations</caption>
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Count of plans</th>
+<th>0 districts</th>
+<th>1 districts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Exactly <em>n</em> districts</td>
+<td>55007</td>
+<td>144993</td>
+</tr>
+<tr class="even">
+<td>% of simulations with at least <em>n</em> districts</td>
+<td>100%</td>
+<td>72.50%</td>
+</tr>
+</tbody>
+</table>
+<p>As simulations usually only create two MMDs (~116k simulations) or more (~71% occurence), it is clear that the enacted plan intentionally upholds the need for three MMDs based on the Virginia Voting Rights Act.</p>
+<center>
+<figure>
+<img src="FINALpercentmmd.svg" style="width:45.0%" alt="Figure 13: Percent of All Simulations Where the Precinct is in a Simualted MMD." />
+<figcaption aria-hidden="true">Figure 13: <em>Percent of All Simulations Where the Precinct is in a Simualted MMD.</em></figcaption>
+</figure>
+</center>
+<h3 id="do-the-new-maps-have-partisan-gerrymandering">Do the New Maps Have Partisan Gerrymandering?</h3>
+<p>Although there is evidence that two Democratic districts are being packed, Virginia Beach voters often vote split-ticket on the local level, having elected two Democratic council members in Republican-leaning seats.</p>
+<p>Shown in Figure 14, many of the real districts appear to be packed compared to what the simulated districts would indicate.</p>
+<figure>
+<img src="demrepsplit.png" alt="Figure 14: Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest." />
+<figcaption aria-hidden="true">Figure 14: <em>Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.</em></figcaption>
+</figure>
+<p>We can get a better understanding with a box plot. The real Districts 9 and 10 appear to pack democratic voters compared to the simulated distribution of districts, while Districts 5 and 6 appear to be intentionally drawn to make the districts, whose median would be a toss-up and Democratic-leaning respectively, Republican.</p>
+<figure>
+<img src="FINALexpecteddem.png" alt="Figure 15: Boxplot of democratic vote share by district in simulated runs." />
+<figcaption aria-hidden="true">Figure 15: <em>Boxplot of democratic vote share by district in simulated runs.</em></figcaption>
+</figure>
+<p>One effective method of determining partisan gerrymandering is by measuring the efficiency gap of any given map, which is a value from -100% to 100% where negative implies pro-Democratic bias and positive implies pro-Republican bias. The current plan has an efficiency gap of 18.3% in favor of Republicans. Generally, an efficiency gap above 7% in favor of either party is regarded as partisan gerrymandering. This gives us evidence of partisan gerrymandering that favors Republicans in Virginia Beach City. We calculate the efficiency gap as the difference between votes from the party that loses a district and excess votes above 50% that weren’t necessary to win a district, divided by total votes.</p>
+<h3 id="are-the-new-maps-competitive">Are the New Maps Competitive?</h3>
+<p>While five of the districts are competitive, the other five are extremely noncompetitive. In Figure 16, we look at the difference between the vote percentages of the winning and losing party in any given district. Defining a 10% difference as competitive, we can see that while four of the actual districts are competitive, the simulated plans could support all the way to eight competitive districts. At a minimum, two additional districts could easily be made competitive.</p>
+<figure>
+<img src="FINALcompetitiveness.png" alt="Figure 16: Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest." />
+<figcaption aria-hidden="true">Figure 16: <em>Democratic vote share by district in simulated runs. Black squares indicate the actual democratic vote share in the enacted plan, ordered by lowest to highest.</em></figcaption>
+</figure>
+<p>Instead of defining an arbitrary 10% difference, we can look at how competitive the actual districts are compared to the ensemble of simulated districts. Figure 17 shows that there are five competitive districts, and five extremely uncompetitive districts, four of which are outliers that indicate the plan was intentionally drawn to be uncompetitive. Any district that has good competitiveness would be any real district below the 25th percentile (a very small difference in vote count), indicating that it is more competitive than most simulated districts, and vice versa. Districts above the 75th percentile would have poor competitiveness.</p>
+<figure>
+<img src="FINALcompboxplot.svg" alt="Figure 17: Boxplot of the absolute difference in vote counts." />
+<figcaption aria-hidden="true">Figure 17: <em>Boxplot of the absolute difference in vote counts.</em></figcaption>
+</figure>
+<p>While this shows that the city council districts of Virginia Beach City could be made more competitive, it is likely that three of the five districts that are less competitive merely stem from creating three MMDs which lean Democratic in every simulation.</p>
+<h2 id="methods-and-materials">Methods and Materials</h2>
+<h3 id="data">Data</h3>
+<p>We gathered election data from the 2022 U.S. House election that took place in Virginia Beach City. Although the house district encompasses other parts of the Hampton Roads metropolitan area, the Virginia election results website includes breakdowns for all the precincts in Virginia Beach City. The U.S. House was selected, as only the 1st, 2nd, 4th, 6th, 8th, 9th, and 10th city council districts elected a member under the new system in 2022. This makes a full analysis of the city council election unfeasible, as prior elections for city council still operated under the at-large voting system.</p>
+<p>Because the Virginia Department of Elections differentiates between early vote (by mail and in-person) and election day vote results for each precinct, data was sourced from two places in the Virginia election results website:</p>
+<ul>
+<li><p><a href="https://results.elections.virginia.gov/vaelections/2022%20November%20General/Site/Locality/VIRGINIA_BEACH_CITY/Member_House_of_Representatives_(02).html">2022 November General Election Virginia Beach City House of Representatives Votes by Precinct</a></p></li>
+<li><p><a href="https://results.elections.virginia.gov/vaelections/2022%20November%20General/Site/Absentee/VIRGINIA_BEACH_CITY/Index.html">2022 November General Election Virginia Beach City House of Representatives Absentee Voting by Precinct</a></p></li>
+</ul>
+<p>We compile the specific data (Election Day, Early Voting, Mailed Absentee, Provisional, and Post-Election) to create overall vote splits by precinct. 249 write-in ballots, which constituted 0.15% of the total vote in Virginia Beach, are discarded.</p>
+<h3 id="runs-and-simulations">Runs and Simulations</h3>
+<p>We sample 20,000 districting plans for Virginia Beach City across ten independent runs of the <a href="https://alarm-redist.org/redist/reference/redist_smc.html">Sequential Monte Carlo algorithm</a> according to <a href="#redistricting-requirements">the relevant criteria</a>. A <a href="#summary-of-simulations">summary of simulations</a> can be found below.</p>
+<h3 id="redistricting-requirements">Redistricting Requirements</h3>
+<p>Per <a href="redistrictingguidelines.pdf">Virginia and Federal law</a> under <a href="https://casetext.com/statute/code-of-virginia/title-242-elections/chapter-3-election-districts-precincts-and-polling-places/article-2-congressional-senatorial-and-house-of-delegates-districts/section-242-30404-standards-and-criteria-for-congressional-and-state-legislative-districts">Va. Code Ann. § 24.2-304.04</a> redistricting in Virginia Beach must:</p>
+<ol type="1">
+<li><p>have equal populations</p></li>
+<li><p>provide opportunities for racial/ethnic representation</p></li>
+<li><p>preserve communities of interest (Va. Code Ann. § 24.2-304.04(5).)</p></li>
+<li><p>be contiguous (Va. Code Ann. § 24.2-304.04(6).)</p></li>
+<li><p>be compact (Va. Code Ann. § 24.2-304.04(7).)</p></li>
+</ol>
+<p>In the <a href="redistrictingguidelines.pdf">2021 Virginia Redistricting</a>, the following requirements were considered in order of priority:</p>
+<ol type="1">
+<li><p>be contiguous, compact, and equal in population</p></li>
+<li><p>preserve existing political subdivisions</p></li>
+<li><p>create clearly discernible boundaries</p></li>
+<li><p>be reasonably compact</p></li>
+<li><p>maintain neighborhoods who share similar social, cultural, and economic interests</p></li>
+</ol>
+<h3 id="constraints">Constraints</h3>
+<p>Three <a href="https://alarm-redist.org/redist/reference/constraints.html">constraints</a> are added to simulations to promote districts that will either have a cohesive black voting age population above 55% <em>or</em> a small black voting age population. This keeps historically black communities together by discouraging districts that have a percentage of black voting-age population between 20-40%.</p>
+<ol type="1">
+<li><p>A constraint is created that strongly promotes a plan where one district has a black voting age population of at least 55%.</p></li>
+<li><p>A constraint is created that discourages where the proportion of the black voting age population is less than 40%.</p></li>
+<li><p>A constraint is created that encourages districts where the black voting age population is less than 20%.</p></li>
+</ol>
+<h3 id="neighborhoods">Neighborhoods</h3>
+<p>We utilize elementary school attendance zones to preserve similar communities of interest. School zoning is effective as neighborhoods are often shaped by the school district; school districts often create cohesion in other neighborhood-adjacent indicators such as community and economics, as it affects home prices and who chooses to reside in any given neighborhood. We utilize the <a href="https://data.virginiabeach.gov/datasets/e185bc16ab9a4bbbaf2c2cfcf9156e78_25/about">55 elementary school attendance zones</a> to serve as a de-facto neighborhood map. School attendance zones usually correlate with historic areas of a city/county, and elementary school attendance zones are small enough to be beneficial for redistricting simulations while encompassing 2-3 neighborhoods.</p>
+<div style="display: flex;">
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALespre.svg" alt="Figure 18: Map of Voting Precincts and City Council Boundaries in Virginia Beach City" />
+<figcaption aria-hidden="true">Figure 18: <em>Map of Voting Precincts and City Council Boundaries in Virginia Beach City</em></figcaption>
+</figure>
+</div>
+<div style="flex-basis: 50%; flex-direction: column;">
+<figure>
+<img src="FINALes.svg" alt="Figure 19: Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City" />
+<figcaption aria-hidden="true">Figure 19: <em>Map of Voting Precincts and Elementary School Boundaries in Virginia Beach City</em></figcaption>
+</figure>
+</div>
+</div>
+<p>These zones are necessary as neighborhoods are important for redistricting simulations; neighborhoods help make contiguous districts that account for community boundaries to avoid splitting a community between different districts. However, neighborhoods are difficult to find in Virginia Beach City, partially because the city fully incorporates Princess Anne County. Unlike other cities such as Phoenix, AZ, the city does not maintain any officially designated neighborhood or borough subdivision of the city. Various real estate agents maintain neighborhood designations, but they all have certain downsides:</p>
+<ul>
+<li><p><a href="https://www.ziemerrealestate.com/virginia-beach-family-neighborhoods/">Ziemer Real Estate</a>’s neighborhoods are too large for use in preserving boundaries and have spots without neighborhoods</p></li>
+<li><p><a href="https://www.williamlayton.com/best-neighborhoods-in-virginia-beach/">Layton Realty Group</a>’s neighborhoods are small and based on historic boundaries, but only cover the original area of Virginia Beach City</p></li>
+<li><p><a href="https://www.city-data.com/nbmaps/neigh-Virginia-Beach-Virginia.html">City-Data</a> only has four tiny recorded neighborhoods for Virginia Beach City</p></li>
+</ul>
+<p>We explore various other alternatives:</p>
+<ul>
+<li><p><a href="https://www.unitedstateszipcodes.org/">Zip codes</a> were considered, but as there are only 20 zip codes in Virginia Beach City with odd shapes, using zip codes worsened the diversity (number of different simulated plans) in simulation outcomes</p></li>
+<li><p><a href="https://www.census.gov/geographies/reference-maps/2020/geo/2020-census-block-maps.html">Census block maps</a> were also considered, but are intentionally arbitrary to maintain similarly sized blocks across the United States and split neighborhoods</p></li>
+</ul>
+<p>Ultimately, elementary school zoning serves as the most detailed indicator compared to sparse neighborhood data.</p>
+<h2 id="summary-of-simulations">Summary of Simulations</h2>
+<p><img src="FINALvalidation.png" /></p>
+<p>From the validation plot of our simulations, we see that our simulation ranges around the same level of compactness as the enacted plan. Simulated plans are diverse, but push against the generally acceptable boundary of a maximum 5% population deviation between districts and vary greatly in neighborhood splits. One observation is that the enacted plan packs minority voters into three districts, which was motivated by a substantially lower citizen minority voter population across Virginia Beach City. In effect, minorities in the three districts lie around a 51-53% citizen VAP majority.</p>
+<h2 id="takeaways">Takeaways</h2>
+<p>Virginia Beach City’s new implemented plan fulfills the required 3 MMDs set by the Virginia Voting Rights Act and the Federal Voting Rights Act based on it’s current Citizen Voting Age Population of 32.8%. Immediately the results are evident: the city council elected in the wake of the new map four black representatives, equivalent to the total number of black representatives since the council was formed in 1966 prior to the 2022 election.</p>
+<p>Voters also demonstrated willingness to look past party lines at the local level, voting in two Democratic city council members in districts that safely voted for the Republican representative in the same year.</p>
+<p>Although there is concern for partisan gerrymandering with a efficiency gap of 18.3% in favor of Republicans, it is possible that this is a side effect of creating all three MMDs; not a single MMD ever voted Republican in any of the 200,000 simulated plans, resulting in wasted Democratic votes that contributed to the high efficiency gap. Notably, voters often voted across party lines to deliver a 6-4 Democratic majority as opposed to the projected 6-4 Republican majority.</p>
+<p>Initial simulations also indicate that five districts are less competitive than comparable simulations. Currently, four of the districts have a gap of less than 10% in vote difference, but simulations reveal that future plans could create upwards of 8 competitive districts.</p>
+<p>As more data using the new electoral system comes in the future, revisiting Virginia Beach City can help shed insights on how city voters adapted after its prior at-large voting system was struck down. Future work exploring further alternatives to elementary school zoning boundaries, particularly other neighborhood alternatives which may have more splits, would be helpful to more accurately simulate community interests.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
