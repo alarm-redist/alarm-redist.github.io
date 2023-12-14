@@ -11,14 +11,39 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>2023-10-15</lastBuildDate>
+    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>GUEST POST: Virginia Beach City</title>
+      <dc:creator>Brian Zhou</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city</link>
+      <description>As one of many lawsuits against at-large voting systems for districts in local elections, Virginia Beach City recently adopted a new City Council district map that eliminates at-large seats. We explore the new implemented plan.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city</guid>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2023-11-16-virginia-beach-city/FINALDemmmps.svg" medium="image" type="image/svg+xml"/>
+    </item>
+    <item>
+      <title>GUEST POST: Louisville/Jefferson County metro government (balance), Kentucky</title>
+      <dc:creator>Itsuki Umeyama</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-10-26-louisvillejefferson-county-metro-government-balance-kentucky</link>
+      <description>An analysis of the electoral competitiveness of Louisville Metro Council Elections.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-10-26-louisvillejefferson-county-metro-government-balance-kentucky</guid>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GUEST POST: Competitiveness in Charlotte, North Carolina</title>
+      <dc:creator>Angeline Zhao</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2023-11-02-election-competitiveness-in-charlotte-north-carolina</link>
+      <description>Analyzing competitiveness in Charlotte, North Carolina city council elections, as well as its influence on partisanship of each district.</description>
+      <guid>https://alarm-redist.github.io/posts/2023-11-02-election-competitiveness-in-charlotte-north-carolina</guid>
+      <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Using big data to make elections fairer</title>
       <dc:creator>Kosuke Imai</dc:creator>
       <link>https://alarm-redist.github.io/posts/2023-10-15-commonwealth-opinion</link>
       <description>An opinion piece in CommonWealth Magazine with Ruth Greenwood.</description>
       <guid>https://alarm-redist.github.io/posts/2023-10-15-commonwealth-opinion</guid>
-      <pubDate>2023-10-15</pubDate>
+      <pubDate>Sun, 15 Oct 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Working Paper: Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods</title>
@@ -30,7 +55,7 @@
       <link>https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp</link>
       <description>Our new working paper uses the new Noisy Measurement File release to understand bias and noise caused by swapping (1990-2010) and the TopDown algorithm (2020).</description>
       <guid>https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp</guid>
-      <pubDate>2023-06-14</pubDate>
+      <pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2023-06-14-census-bias-and-noise-wp/bias_rmse_by_race.png" medium="image" type="image/png" width="1950" height="2700"/>
     </item>
     <item>
@@ -43,7 +68,7 @@
       <link>https://alarm-redist.github.io/posts/2023-06-13-widespread-gerrymandering-pnas</link>
       <description>Our paper which details gerrymandering and partisan fairness in the 2022 redistricting maps is now published in PNAS.</description>
       <guid>https://alarm-redist.github.io/posts/2023-06-13-widespread-gerrymandering-pnas</guid>
-      <pubDate>2023-06-13</pubDate>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Letter: Researchers need better access to US Census data published in Science</title>
@@ -53,7 +78,7 @@
       <link>https://alarm-redist.github.io/posts/2023-06-03-census-letter</link>
       <description>Our letter providing recommendations to the Census Bureau about the Noisy Measurements File (NMF) now published in Science.</description>
       <guid>https://alarm-redist.github.io/posts/2023-06-03-census-letter</guid>
-      <pubDate>2023-06-03</pubDate>
+      <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Forthcoming in PNAS</title>
@@ -65,7 +90,7 @@
       <link>https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas</link>
       <description>Our paper describing partisan gerrymandering and competition in the 2022 US congressional districts is now forthcoming in PNAS.</description>
       <guid>https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas</guid>
-      <pubDate>2023-04-14</pubDate>
+      <pubDate>Fri, 14 Apr 2023 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2023-04-14-widespread-gerrymandering-in-pnas/manipulation.png" medium="image" type="image/png" width="6000" height="4350"/>
     </item>
     <item>
@@ -76,7 +101,7 @@
       <description>A medium-sized release with more flexible plotting, better diagnostics, and
 speed improvements.</description>
       <guid>https://alarm-redist.github.io/posts/2023-03-18-redist-41</guid>
-      <pubDate>2023-03-19</pubDate>
+      <pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2023-03-18-redist-41/redist-41_files/figure-html5/unnamed-chunk-13-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
@@ -90,7 +115,7 @@ speed improvements.</description>
       <link>https://alarm-redist.github.io/posts/2023-01-31-comment-the-essenital-role-of-policy-evaluation</link>
       <description>Our response to boyd and Sarathy (2022) is now published in the HDSR!</description>
       <guid>https://alarm-redist.github.io/posts/2023-01-31-comment-the-essenital-role-of-policy-evaluation</guid>
-      <pubDate>2023-01-31</pubDate>
+      <pubDate>Tue, 31 Jan 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>redist Recieved POLMETH's 2022 Statistical Software Award</title>
@@ -101,7 +126,7 @@ speed improvements.</description>
       <link>https://alarm-redist.github.io/posts/2022-12-15-statistical-software-award</link>
       <description>Our software won the Society for Political Methodology's Statistical Software Award.</description>
       <guid>https://alarm-redist.github.io/posts/2022-12-15-statistical-software-award</guid>
-      <pubDate>2022-12-15</pubDate>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
       <media:content url="https://raw.githubusercontent.com/alarm-redist/redist/main/man/figures/logo.png" medium="image" type="image/png"/>
     </item>
     <item>
@@ -117,7 +142,7 @@ speed improvements.</description>
       <link>https://alarm-redist.github.io/posts/2022-11-01-50statessimulations</link>
       <description>Now published at Nature Scientific Data.</description>
       <guid>https://alarm-redist.github.io/posts/2022-11-01-50statessimulations</guid>
-      <pubDate>2022-11-14</pubDate>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</title>
@@ -130,7 +155,7 @@ speed improvements.</description>
       <link>https://alarm-redist.github.io/posts/2022-10-13-policy-evaluation-commentary</link>
       <description>We're excited to announce our forthcoming article discussing boyd and Sarathy (2022).</description>
       <guid>https://alarm-redist.github.io/posts/2022-10-13-policy-evaluation-commentary</guid>
-      <pubDate>2022-10-18</pubDate>
+      <pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>'One vote disparity' can be improved with state-of-the-art algorithms</title>
@@ -141,7 +166,7 @@ speed improvements.</description>
       <link>https://alarm-redist.github.io/posts/2022-09-30-nikkei</link>
       <description>Our article in Nikkei Business on reducing Japanese malapportionment was released!</description>
       <guid>https://alarm-redist.github.io/posts/2022-09-30-nikkei</guid>
-      <pubDate>2022-09-30</pubDate>
+      <pubDate>Fri, 30 Sep 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition</title>
@@ -156,7 +181,7 @@ competitive, but net seat gains are small nationally. The partisan bias of the
 enacted national map is about as biased as non-partisan simulations, due to
 geography and legal requirements.</description>
       <guid>https://alarm-redist.github.io/posts/2022-08-14-gerrymandering-mostly-cancels-nationally</guid>
-      <pubDate>2022-08-16</pubDate>
+      <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2022-08-14-gerrymandering-mostly-cancels-nationally/state_sum_1.png" medium="image" type="image/png" width="2400" height="3300"/>
     </item>
     <item>
@@ -173,7 +198,7 @@ geography and legal requirements.</description>
       <description>A detailed description of the 50-State Redistricting Simulations 
 and new software to help you use them.</description>
       <guid>https://alarm-redist.github.io/posts/2022-06-23-fifty-states-data-descriptor</guid>
-      <pubDate>2022-07-28</pubDate>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>47-Prefectures at the Japanese Society of Quantitative Political Science</title>
@@ -184,7 +209,7 @@ and new software to help you use them.</description>
       <link>https://alarm-redist.github.io/posts/2022-07-06-japanese-society-of-quantitative-political-science</link>
       <description>We are presenting Friday on malapportionment. 私たちは、アルゴリズムを用いた一票の格差の是正について、金曜日に発表します。</description>
       <guid>https://alarm-redist.github.io/posts/2022-07-06-japanese-society-of-quantitative-political-science</guid>
-      <pubDate>2022-07-07</pubDate>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>redist 4.0</title>
@@ -193,7 +218,7 @@ and new software to help you use them.</description>
       <link>https://alarm-redist.github.io/posts/2022-06-20-redist-40</link>
       <description>A major release with big changes to constraints and diagnostics.</description>
       <guid>https://alarm-redist.github.io/posts/2022-06-20-redist-40</guid>
-      <pubDate>2022-06-20</pubDate>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2022-06-20-redist-40/redist-40_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
     <item>
@@ -205,7 +230,7 @@ and new software to help you use them.</description>
       <link>https://alarm-redist.github.io/posts/2022-04-23-47-prefecture-project</link>
       <description>Using redistricting simulation methods to better understand redistricting in Japan.</description>
       <guid>https://alarm-redist.github.io/posts/2022-04-23-47-prefecture-project</guid>
-      <pubDate>2022-04-23</pubDate>
+      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Revised and published: The use of differential privacy for census data and its impact on redistricting</title>
@@ -218,7 +243,7 @@ and new software to help you use them.</description>
       <link>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</link>
       <description>A new postscript analyzes the final version of the U.S. Census Bureau's Disclosure Avoidance System.</description>
       <guid>https://alarm-redist.github.io/posts/2021-10-06-2021-10-06-das-published</guid>
-      <pubDate>2021-10-07</pubDate>
+      <pubDate>Thu, 07 Oct 2021 00:00:00 +0000</pubDate>
       <media:content url="https://pbs.twimg.com/media/FA8fplwXsAMVffB?format=jpg&amp;name=large" medium="image" type="text/plain"/>
     </item>
     <item>
@@ -229,7 +254,7 @@ and new software to help you use them.</description>
       <description>Census and election data joined together for use in redistricting
 and voting rights analysis.</description>
       <guid>https://alarm-redist.github.io/posts/2021-08-10-census-2020</guid>
-      <pubDate>2021-08-10</pubDate>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2021-08-10-census-2020/graphic.png" medium="image" type="image/png"/>
     </item>
     <item>
@@ -244,7 +269,7 @@ and voting rights analysis.</description>
       <description>We are releasing an updated version of our analysis of the U.S. Census'
 privacy protection system and its impacts on the redistricting process.</description>
       <guid>https://alarm-redist.github.io/posts/2021-07-05-revised-das-impact</guid>
-      <pubDate>2021-07-05</pubDate>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Reaction to the Census Bureau's Updated Parameters</title>
@@ -258,7 +283,7 @@ privacy protection system and its impacts on the redistricting process.</descrip
       <description>The Data Stewardship Executive Policy Committee announces a higher privacy 
 loss budget and other changes to the Disclosure Avoidance System.</description>
       <guid>https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response</guid>
-      <pubDate>2021-06-09</pubDate>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2021-06-09-dsep-decision-response/census_slide.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -273,7 +298,7 @@ loss budget and other changes to the Disclosure Avoidance System.</description>
       <description>Answers to common questions about our recently-released report 
 evaluating the Census' Disclosure Avoidance System.</description>
       <guid>https://alarm-redist.github.io/posts/2021-06-02-das-evaluation-faq</guid>
-      <pubDate>2021-06-02</pubDate>
+      <pubDate>Wed, 02 Jun 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Impact of the Census Disclosure Avoidance System on Redistricting</title>
@@ -287,7 +312,7 @@ evaluating the Census' Disclosure Avoidance System.</description>
       <description>In attempting to protect the privacy of 2020 Census respondents, the Census 
 Bureau has made its data unsuitable for redistricting purposes.</description>
       <guid>https://alarm-redist.github.io/posts/2021-05-28-census-das</guid>
-      <pubDate>2021-05-28</pubDate>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2021-05-28-census-das/ex_plot.png" medium="image" type="image/png" width="1500" height="1200"/>
     </item>
     <item>
@@ -298,7 +323,7 @@ Bureau has made its data unsuitable for redistricting purposes.</description>
       <description>A major release brings new algorithms, new workflows, and significant 
 usability improvements.</description>
       <guid>https://alarm-redist.github.io/posts/2021-04-02-redist-300</guid>
-      <pubDate>2021-04-07</pubDate>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://alarm-redist.github.io/posts/2021-04-02-redist-300/redist-300_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
     </item>
   </channel>
