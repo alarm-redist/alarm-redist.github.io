@@ -13,7 +13,7 @@ The ALARM Project is a research team at Harvard University led by
 redistricting sampling algorithms, best practices and workflows for
 redistricting analysis, and tools to visualize, explore, and understand
 redistricting plans.
-ALARM Project researchers develop [**redist**](https://alarm-redist.github.io/redist/), 
+ALARM Project researchers develop [**redist**](https://alarm-redist.org/redist/), 
 an open-source R package for redistricting simulation and analysis which
 implements state-of-the-art MCMC and SMC redistricting sampling algorithms.  The
 package allows for the implementation of various constraints in the
@@ -26,25 +26,32 @@ create useful plots.
 # Current Membership
 * **Aneetej Arora**, Ohio State University
 * **Emma Ebowe**, Department of Government, Harvard University
+* **Lucy Ding**, Harvard College
 * [**Ben Fifield**](https://www.benfifield.com/), Meta
-* **Jennifer Gao**, Harvard College
+* **Yasmeen Hanon**, University of Missouri Kansas City
 * [**Kosuke Imai**](https://imai.fas.harvard.edu/), Departments of Government and Statistics, Harvard University
+* **Ethan Jasny**, Harvard College
 * [**Christopher T. Kenny**](https://christophertkenny.com/), Department of Government, Harvard University
 * [**Shiro Kuriwaki**](https://www.shirokuriwaki.com/), Department of Political Science, Yale University
-* **Sho Miyazaki**, Keio University
-* [**Cory McCartan**](https://corymccartan.com/), Department of Statistics, Harvard University
+* **Yusuf Mian**, Harvard College
+* **Sho Miyazaki**, Stanford University
+* [**Cory McCartan**](https://corymccartan.com/), Center for Data Science, New York University
 * **Philip O'Sullivan**, Department of Statistics, Harvard University
-* **Evan Rosenman**, Harvard Data Science Initiative
-* [**Taran Samarth**](https://taransamarth.com/), Pennsylvania State University
 * [**Tyler Simko**](https://tylersimko.com/), Department of Government, Harvard University
-* [**Kevin Wang**](https://scholar.harvard.edu/kevinwang/home), Harvard College
+* **Itsuki Umeyama**, University of Tokyo
 * **Melissa Wu**, Harvard College
 * **Kento Yamada**, Harvard College
+* **Angeline Zhao**
 * **Michael Zhao**, Harvard College
+* **Brian Zhou**
 
 # Project Alumni
+* **Jennifer Gao**, Harvard College
 * **George Garcia III**, Department of Economics, MIT
+* [**Evan Rosenman**](https://www.evanrosenman.com/), Mathematical Scienced Department, Claremont McKenna College
+* [**Taran Samarth**](https://taransamarth.com/), Department of Political Science, Yale University
 * **Sam Thau**, Department of Economics, Stanford University
+* [**Kevin Wang**](https://scholar.harvard.edu/kevinwang/home), Oxford University
 * **Rei Yatsuhashi**, Harvard College
 * **Anna Yorozuya**, Department of Political Science, Yale University
 
@@ -52,18 +59,26 @@ create useful plots.
 
 - [Automated Redistricting Simulation Using Markov Chain Monte Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics* (2020) Vol. 29, No. 4, pp. 715-728.
 - [The Essential Role of Empirical Validation in Legislative Redistricting Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy* (2020) Vol. 7, No. 1, pp. 52-68.
-- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans](https://arxiv.org/pdf/2008.06131.pdf)
+- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans](http://dx.doi.org/10.1214/23-AOAS1763) *Annals of Applied Statistics* (2023) Vol. 17, No. 4.
 - [The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census](https://doi.org/10.1126/sciadv.abk3283) *Science Advances* (2021) Vol. 7, No. 41.
 - [Simulated redistricting plans for the analysis and evaluation of redistricting in the United States](https://www.nature.com/articles/s41597-022-01808-2) *Scientific Data* (2022) Vol. 9, No. 1.
 - [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1) *Harvard Data Science Review* (2023) Special Issue 2.
+- [Researchers Need Better Access to U.S. Census Data](https://www.science.org/doi/10.1126/science.adi7004) *Science* (2023) Vol. 380, No. 6648.
+- [Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition](https://www.pnas.org/doi/10.1073/pnas.2217322120) *Proceedings of the National Academy of Sciences* (2023) Vol 120, No. 25.
+- [Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods](https://arxiv.org/abs/2306.07521)
+
 
 # Related R Packages
-- [blockpop](https://corymccartan.github.io/blockpop/): Estimate Census Block Populations for 2020. McCartan (2021).
-- [geomander](https://christopherkenny.github.io/geomander/): Geographic Tools for Studying Gerrymandering. Kenny (2021).
-- [ggredist](https://alarm-redist.github.io/ggredist/): Scales, Palettes, and Extensions of 'ggplot2' for Redistricting . Kenny and McCartan (2022).
-- [PL94171](https://corymccartan.github.io/PL94171/index.html): Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).
-- [ppmf](https://github.com/christopherkenny/ppmf): Read Census Privacy Protected Microdata Files. Kenny (2021).
-- [redist](https://alarm-redist.github.io/redist/): Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).
-- [redistmetrics](https://alarm-redist.github.io/redistmetrics/): Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).
+- [alarmdata](https://alarm-redist.org/alarmdata/): Download, Merge, and Process Redistricting Data. McCartan, Kenny, Simok, Zhao, and Imai (2024).
+- [birdie](https://corymccartan.com/birdie/): Estimating disparities when race is not observed. McCartan, Goldin, Ho, and Imai (2023).
+- [blockpop](https://corymccartan.com/blockpop/): Estimate Census Block Populations for 2020. McCartan (2021).
+- [censable](https://christophertkenny.com/censable/): Making Census Data More Usable. Kenny (2021).
+- [easycensus](https://corymccartan.com/): Quickly Find, Extract, and Marginalize U.S. Census Tables. McCartan (2022).
+- [geomander](https://christophertkenny.com/geomander/): Geographic Tools for Studying Gerrymandering. Kenny (2021).
+- [ggredist](https://alarm-redist.org/ggredist/): Scales, Palettes, and Extensions of 'ggplot2' for Redistricting . Kenny and McCartan (2022).
+- [PL94171](https://corymccartan.com/PL94171/index.html): Tabulate P.L. 94-171 Redistricting Data Summary Files. McCartan and Kenny (2021).
+- [ppmf](https://christophertkenny.com/ppmf): Read Census Privacy Protected Microdata Files. Kenny (2021).
+- [redist](https://alarm-redist.org/redist/): Simulation Methods for Legislative Redistricting. Kenny, McCartan, Fifield, and Imai (2021).
+- [redistmetrics](https://alarm-redist.org/redistmetrics/): Redistricting Metrics. Kenny, McCartan, Fifield, and Imai (2022).
+- [tinytiger](https://alarm-redist.org/tinytiger/): Lightweight Interface to TIGER/Line Shapefiles. Kenny and McCartan (2023).
 - [wru](https://github.com/kosukeimai/wru): Who Are You? Bayesian Prediction of Racial Category Using Surname and Geolocation. Khanna and Imai (2021).
-
