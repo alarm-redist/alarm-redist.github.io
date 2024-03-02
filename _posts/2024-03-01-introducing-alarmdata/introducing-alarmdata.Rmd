@@ -1,0 +1,43 @@
+---
+title: "Introducing `alarmdata`"
+description: |
+  The first stable version of our package `alarmdata` is now on CRAN, introducing
+  a data-focused package for using the outputs of ALARM Project research.
+author:
+    - name: Cory McCartan
+      affiliation: Center for Data Science, New York University
+      location: Cambridge, MA
+      email: corymccartan@nyu.edu
+      url: https://www.corymccartan.com
+    - name: Christopher T. Kenny
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: christopherkenny@fas.harvard.edu
+      url: https://www.christophertkenny.com/
+    - name: Tyler Simko
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: tsimko@g.harvard.edu
+      url: https://tylersimko.com/
+    - name: Michael Zhao
+      affiliation: Harvard College
+      location: Cambridge, MA
+      email: michaelzhao@college.harvard.edu
+    - name: Kosuke Imai
+      affiliation: Departments of Government and Statistics, Harvard University
+      location: Cambridge, MA
+      email: imai@harvard.edu
+      url: https://imai.fas.harvard.edu/
+date: 2024-03-01
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
