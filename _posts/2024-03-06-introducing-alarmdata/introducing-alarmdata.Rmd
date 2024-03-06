@@ -109,7 +109,7 @@ plans_ny <- plans_ny |>
 
 This gives a full `redist_plans` object with the new plans added in.
 We can do anything we want with this.
-For example, stealing a bit of code from [](), we can look at the Democratic vote shares across districts:
+For example, stealing a bit of code from [our 50-states website](https://github.com/alarm-redist/alarm-redist.github.io/blob/main/_fifty-states/fifty-states.R), we can look at the Democratic vote shares across districts:
 
 First, we can define some helper functions for the plot:
 
