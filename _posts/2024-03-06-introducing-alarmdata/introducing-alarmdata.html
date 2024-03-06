@@ -1569,33 +1569,112 @@ The map object contains Census and election for each state precinct.
 The plans object contains alternative simulated plans.</p>
 <p>To download and use these data, you can use the following code:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/alarm-redist/alarmdata/'>alarmdata</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://alarm-redist.org/redist/'>redist</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>map_wa</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_map</a></span><span class='op'>(</span><span class='st'>'WA'</span><span class='op'>)</span></span>
+<span><span class='va'>plans_wa</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_plans</a></span><span class='op'>(</span><span class='st'>'WA'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <h1 id="using-redist_plans-with-your-own-data">Using <code>redist_plans</code> with your own data</h1>
 <p>Once you’ve downloaded some plans, we’ve made it easy for you to add your own data to the <code>redist</code> framework.
 To demo this, we can look at the NY plans passed last week (February 2024).</p>
 <p>First, we can load in the map and plans for New York:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>map_ny</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_map</a></span><span class='op'>(</span><span class='st'>'NY'</span><span class='op'>)</span></span>
+<span><span class='va'>plans_ny</span> <span class='op'>&lt;-</span> <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_50state.html'>alarm_50state_plans</a></span><span class='op'>(</span><span class='st'>'NY'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>Next, we can read in the block assignment data for the commission plan and the legislature plan.
 For convenience of the example, we can grab this data from a <a href="https://github.com/christopherkenny/ny-baf">GitHub repo</a>.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'># commission link</span></span>
+<span><span class='va'>comm_link</span> <span class='op'>&lt;-</span> <span class='st'>'https://raw.githubusercontent.com/christopherkenny/ny-baf/main/data/A09310.csv'</span></span>
+<span></span>
+<span><span class='co'># download the legislature xlsx file</span></span>
+<span><span class='va'>leg_link</span> <span class='op'>&lt;-</span> <span class='st'>'https://github.com/christopherkenny/ny-baf/raw/main/data-raw/congressional_plan_equivalency.xlsx'</span></span>
+<span><span class='va'>temp_leg</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span><span class='op'>(</span>fileext <span class='op'>=</span> <span class='st'>'.xlsx'</span><span class='op'>)</span></span>
+<span><span class='fu'>curl</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/curl/man/curl_download.html'>curl_download</a></span><span class='op'>(</span><span class='va'>leg_link</span>, <span class='va'>temp_leg</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># read in the data</span></span>
+<span><span class='va'>baf_commission</span> <span class='op'>&lt;-</span> <span class='fu'>readr</span><span class='fu'>::</span><span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span><span class='va'>comm_link</span>, col_types <span class='op'>=</span> <span class='st'>'ci'</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>A09310 <span class='op'>=</span> <span class='va'>district</span><span class='op'>)</span></span>
+<span><span class='va'>baf_legislature</span> <span class='op'>&lt;-</span> <span class='fu'>readxl</span><span class='fu'>::</span><span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='va'>temp_leg</span>, col_types <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'text'</span>, <span class='st'>'text'</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span></span>
+<span>    GEOID <span class='op'>=</span> <span class='va'>Block</span>,</span>
+<span>    commission2024 <span class='op'>=</span> <span class='va'>`DistrictID:1`</span></span>
+<span>  <span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>commission2024 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>commission2024</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>Finally, <code>alarmdata</code> provides a function <code>alarmdata::alarm_add_plan()</code> to add the new reference plans to the underlying <code>redist_plans</code> object.</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>plans_ny</span> <span class='op'>&lt;-</span> <span class='va'>plans_ny</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_add_plan.html'>alarm_add_plan</a></span><span class='op'>(</span>ref_plan <span class='op'>=</span> <span class='va'>baf_commission</span>, map <span class='op'>=</span> <span class='va'>map_ny</span>, name <span class='op'>=</span> <span class='st'>'A09310'</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='http://alarm-redist.org/alarmdata/reference/alarm_add_plan.html'>alarm_add_plan</a></span><span class='op'>(</span>ref_plan <span class='op'>=</span> <span class='va'>baf_legislature</span>, map <span class='op'>=</span> <span class='va'>map_ny</span>, name <span class='op'>=</span> <span class='st'>'commission2024'</span><span class='op'>)</span></span></code></pre>
+</div>
 </div>
 <p>This gives a full <code>redist_plans</code> object with the new plans added in.
 We can do anything we want with this.
 For example, stealing a bit of code from <a href="https://github.com/alarm-redist/alarm-redist.github.io/blob/main/_fifty-states/fifty-states.R">our 50-states website</a>, we can look at the Democratic vote shares across districts:</p>
 <p>First, we can define some helper functions for the plot:</p>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>lbl_party</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>==</span> <span class='fl'>0.5</span>, <span class='st'>"Even"</span>,</span>
+<span>    <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>&lt;</span> <span class='fl'>0.5</span>, <span class='st'>"R+"</span>, <span class='st'>"D+"</span><span class='op'>)</span>, <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/number.html'>number</a></span><span class='op'>(</span><span class='fl'>200</span> <span class='op'>*</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span><span class='op'>(</span><span class='va'>x</span> <span class='op'>-</span> <span class='fl'>0.5</span><span class='op'>)</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>  <span class='op'>)</span></span>
+<span><span class='op'>}</span></span>
+<span></span>
+<span><span class='va'>r_geom</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span>  <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span></span>
+<span>    <span class='fu'>ggplot2</span><span class='fu'>::</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>.data</span><span class='op'>$</span><span class='va'>.distr_no</span><span class='op'>)</span>,</span>
+<span>                 y <span class='op'>=</span> <span class='va'>e_dvs</span>,</span>
+<span>                 color <span class='op'>=</span> <span class='va'>.data</span><span class='op'>$</span><span class='va'>draw</span>, </span>
+<span>                 shape <span class='op'>=</span> <span class='va'>.data</span><span class='op'>$</span><span class='va'>draw</span><span class='op'>)</span>,</span>
+<span>    <span class='va'>...</span></span>
+<span>  <span class='op'>)</span></span>
+<span><span class='op'>}</span></span></code></pre>
+</div>
 </div>
 <p>Then, we can make a simple plot of Democratic vote share by district:</p>
 <div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/alarm-redist/ggredist'>ggredist</a></span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://alarm-redist.org/redist/reference/redist.plot.distr_qtys.html'>redist.plot.distr_qtys</a></span><span class='op'>(</span><span class='va'>plans_ny</span>, <span class='va'>e_dvs</span>,</span>
+<span>                       color_thresh <span class='op'>=</span> <span class='fl'>0.5</span>,</span>
+<span>                       size <span class='op'>=</span> <span class='fl'>0.04</span> <span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>8</span><span class='op'>)</span> <span class='op'>/</span> <span class='fl'>250</span>, alpha <span class='op'>=</span> <span class='fl'>0.4</span>,</span>
+<span>                       ref_geom <span class='op'>=</span> <span class='va'>r_geom</span></span>
+<span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, color <span class='op'>=</span> <span class='st'>'#00000055'</span>, size <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span><span class='op'>(</span><span class='st'>'Two-party vote margin'</span>, labels <span class='op'>=</span> <span class='va'>lbl_party</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>'Simulated districts, ordered by Democratic vote margin'</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/annotate.html'>annotate</a></span><span class='op'>(</span><span class='st'>'text'</span>,</span>
+<span>             x <span class='op'>=</span> <span class='fl'>3.5</span>, y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>plans_ny</span><span class='op'>$</span><span class='va'>e_dvs</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>26</span><span class='op'>]</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>,</span>
+<span>             label <span class='op'>=</span> <span class='st'>'Commission 2024'</span>, hjust <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.05</span>, size <span class='op'>=</span> <span class='fl'>3.5</span>,</span>
+<span>             color <span class='op'>=</span> <span class='st'>'#52796F'</span></span>
+<span>    <span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/annotate.html'>annotate</a></span><span class='op'>(</span><span class='st'>'text'</span>,</span>
+<span>             x <span class='op'>=</span> <span class='fl'>1.5</span>, y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>plans_ny</span><span class='op'>$</span><span class='va'>e_dvs</span><span class='op'>[</span><span class='fl'>27</span><span class='op'>:</span><span class='fl'>52</span><span class='op'>]</span><span class='op'>)</span>,</span>
+<span>             label <span class='op'>=</span> <span class='st'>'A09310'</span>, hjust <span class='op'>=</span> <span class='fl'>0.05</span>, size <span class='op'>=</span> <span class='fl'>3.5</span>,</span>
+<span>             color <span class='op'>=</span> <span class='st'>'#A09310'</span></span>
+<span>    <span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/annotate.html'>annotate</a></span><span class='op'>(</span><span class='st'>'text'</span>,</span>
+<span>             x <span class='op'>=</span> <span class='fl'>3.5</span>, y <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>plans_ny</span><span class='op'>$</span><span class='va'>e_dvs</span><span class='op'>[</span><span class='fl'>53</span><span class='op'>:</span><span class='fl'>78</span><span class='op'>]</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>,</span>
+<span>             label <span class='op'>=</span> <span class='st'>'Cervas'</span>, hjust <span class='op'>=</span> <span class='op'>-</span><span class='fl'>0.05</span>, size <span class='op'>=</span> <span class='fl'>3.5</span>,</span>
+<span>             color <span class='op'>=</span> <span class='st'>'black'</span></span>
+<span>    <span class='op'>)</span> <span class='op'>+</span> </span>
+<span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'#52796F'</span>, <span class='st'>'#A09310'</span>, <span class='st'>'black'</span>, <span class='va'>ggredist</span><span class='op'>$</span><span class='va'>partisan</span><span class='op'>[</span><span class='fl'>2</span><span class='op'>]</span>, <span class='va'>ggredist</span><span class='op'>$</span><span class='va'>partisan</span><span class='op'>[</span><span class='fl'>14</span><span class='op'>]</span><span class='op'>)</span>,</span>
+<span>                       labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'pt'</span>, <span class='st'>'Rep.'</span>, <span class='st'>'Dem.'</span><span class='op'>)</span>, guide <span class='op'>=</span> <span class='st'>'none'</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_shape_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>16</span>, <span class='fl'>17</span>, <span class='fl'>18</span><span class='op'>)</span>, guide <span class='op'>=</span> <span class='st'>'none'</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
 <p><img src="introducing-alarmdata_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <h1 id="cache-data-across-projects">Cache data across projects</h1>

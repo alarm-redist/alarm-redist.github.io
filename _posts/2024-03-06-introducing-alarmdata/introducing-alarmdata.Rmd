@@ -36,7 +36,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 `alarmdata` is the newest component of the [`redistverse`](https://alarm-redist.org/redistverse), a family of packages which provide tools for redistricting analyses in R. 
