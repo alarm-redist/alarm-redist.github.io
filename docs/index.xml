@@ -11,7 +11,21 @@
       <link>https://alarm-redist.github.io/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 13 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Introducing `alarmdata`</title>
+      <dc:creator>Cory McCartan</dc:creator>
+      <dc:creator>Christopher T. Kenny</dc:creator>
+      <dc:creator>Tyler Simko</dc:creator>
+      <dc:creator>Michael Zhao</dc:creator>
+      <dc:creator>Kosuke Imai</dc:creator>
+      <link>https://alarm-redist.github.io/posts/2024-03-01-introducing-alarmdata</link>
+      <description>The first stable version of our package `alarmdata` is now on CRAN, introducing
+a data-focused package for using the outputs of ALARM Project research.</description>
+      <guid>https://alarm-redist.github.io/posts/2024-03-01-introducing-alarmdata</guid>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      <media:content url="https://alarm-redist.github.io/posts/2024-03-01-introducing-alarmdata/introducing-alarmdata_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>GUEST POST: Louisville/Jefferson County metro government (balance), Kentucky</title>
       <dc:creator>Itsuki Umeyama</dc:creator>

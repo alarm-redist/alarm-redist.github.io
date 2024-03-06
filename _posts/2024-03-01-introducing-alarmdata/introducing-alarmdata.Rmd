@@ -91,11 +91,12 @@ curl::curl_download(leg_link, temp_leg)
 # read in the data
 baf_commission <- readr::read_csv(comm_link, col_types = 'ci') |> 
   dplyr::rename(A09310 = district)
-baf_legislature <- readxl::read_excel(temp_leg, col_types = c('text', 'numeric')) |> 
+baf_legislature <- readxl::read_excel(temp_leg, col_types = c('text', 'text')) |> 
   dplyr::rename(
     GEOID = Block,
     commission2024 = `DistrictID:1`
-  )
+  ) |> 
+  dplyr::mutate(commission2024 = as.integer(commission2024))
 ```
 
 Finally, `alarmdata` provides a function `alarmdata::alarm_add_plan()` to add the new reference plans to the underlying `redist_plans` object.
@@ -110,12 +111,12 @@ This gives a full `redist_plans` object with the new plans added in.
 We can do anything we want with this.
 For example, stealing a bit of code from [](), we can look at the Democratic vote shares across districts:
 
-The helper functions for pretty plotting:
+First, we can define some helper functions for the plot:
 
 ```{r}
 lbl_party <- function(x) {
-  if_else(x == 0.5, "Even",
-    paste0(if_else(x < 0.5, "R+", "D+"), scales::number(200 * abs(x - 0.5), 1))
+  dplyr::if_else(x == 0.5, "Even",
+    paste0(dplyr::if_else(x < 0.5, "R+", "D+"), scales::number(200 * abs(x - 0.5), 1))
   )
 }
 
@@ -130,10 +131,11 @@ r_geom <- function(...) {
 }
 ```
 
-A basic plot of Democratic voteshare by district:
+Then, we can make a simple plot of Democratic vote share by district:
 
 ```{r}
 library(ggplot2)
+library(ggredist)
 redist.plot.distr_qtys(plans_ny, e_dvs,
                        color_thresh = 0.5,
                        size = 0.04 - sqrt(8) / 250, alpha = 0.4,
@@ -142,6 +144,11 @@ redist.plot.distr_qtys(plans_ny, e_dvs,
     geom_hline(yintercept = 0.5, color = '#00000055', size = 0.5) +
     scale_y_continuous('Two-party vote margin', labels = lbl_party) +
     labs(x = 'Simulated districts, ordered by Democratic vote margin') +
+    annotate('text',
+             x = 3.5, y = sort(plans_ny$e_dvs[1:26])[3],
+             label = 'Commission 2024', hjust = -0.05, size = 3.5,
+             color = '#52796F'
+    ) +
     annotate('text',
              x = 1.5, y = min(plans_ny$e_dvs[27:52]),
              label = 'A09310', hjust = 0.05, size = 3.5,
@@ -152,11 +159,7 @@ redist.plot.distr_qtys(plans_ny, e_dvs,
              label = 'Cervas', hjust = -0.05, size = 3.5,
              color = 'black'
     ) + 
-    annotate('text',
-             x = 3.5, y = sort(plans_ny$e_dvs[1:26])[3],
-             label = 'Commission 2024', hjust = -0.05, size = 3.5,
-             color = '#52796F'
-    ) +
+
     scale_color_manual(values = c('#52796F', '#A09310', 'black', ggredist$partisan[2], ggredist$partisan[14]),
                        labels = c('pt', 'Rep.', 'Dem.'), guide = 'none') +
     scale_shape_manual(values = c(16, 17, 18), guide = 'none') +
