@@ -52,6 +52,8 @@ install.packages('alarmdata')
 
 `alarmdata` provides several functions for loading in data from ALARM Project projects. 
 Most useful are `alarm_50state_map()` and `alarm_50state_plans()` which respectively load in the maps and plans from our [50-states project](https://alarm-redist.org/fifty-states/).
+The map object contains Census and election for each state precinct.
+The plans object contains alternative simulated plans.
 
 To download and use these data, you can use the following code:
 
