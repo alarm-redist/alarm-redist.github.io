@@ -1,11 +1,10 @@
 ---
-title: Posts
-site: distill::distill_website
 listing:
-  contents:
-    - "_posts/*/*.html"
-  sort: "date desc"
-  type: default
+  - id: posts
+    contents:
+      - posts
+    sort: "date desc"
+    type: default
 ---
 
 ::: {.column-screen}
@@ -64,8 +63,8 @@ Go to package home page &raquo;
 <h2>2020 Redistricting Data Files</h2>
 </a>
 <p>
-Precinct-level demographic and election data from the 
-<a href="https://www.census.gov/2020census" target="_blank">2020 decennial census</a> 
+Precinct-level demographic and election data from the
+<a href="https://www.census.gov/2020census" target="_blank">2020 decennial census</a>
 and the
 <a href="https://dataverse.harvard.edu/dataverse/electionscience">Voting and Election Science Team</a>
 which have been tidied and joined together using 2020 precinct boundaries.
@@ -76,3 +75,6 @@ Access the data &raquo;
 </a>
 </p>
 </div>
+
+::: {#posts}
+:::

@@ -1,0 +1,232 @@
+---
+title: "redist 4.1"
+description: |
+  A medium-sized release with more flexible plotting, better diagnostics, and
+  speed improvements.
+author:
+  - name: Christopher T. Kenny
+    affiliation: Department of Government, Harvard University 
+    url: https://www.christophertkenny.com/
+  - name: Cory McCartan
+    affiliation: Department of Statistics, Harvard University
+    url: https://www.corymccartan.com
+date: 2023-03-19
+---
+
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+It's been a while since [`redist` 4.0](https://alarm-redist.org/posts/2022-06-20-redist-40/) was released and things have been fairly stable. Most of the changes in this release are behind-the-scenes improvements that shouldn't break your workflow, but should improve your experience using the package.
+
+To install version 4.1, get the new version from CRAN:
+
+```{r}
+#| eval: false
+install.packages('redist')
+```
+
+# New Features
+
+- Extends the ordered `box`/`jitter` plots to custom ordered geometries in `redist.plot.distr_qtys()`
+
+- Better diagnostic outputs for `summary.redist_plans()`
+
+- Improved confidence intervals with `redist_ci()`
+
+- C++ improvements for sampling more quickly
+    - Better sampling efficiency in SMC's final stage
+    - Quicker random walks for SMC and merge-split.
+    - Faster random number generation. (It's small, but it adds up!)
+
+# Plotting Flexibility with `redist.plot.distr_qtys()`
+
+Box-and-whiskers plots are great and useful in many situations. In redistricting, we've often used ordered boxplots. These order the x-axis by the quantity on the x-axis. Sometimes, a boxplot throws away information that you might care about, though. 
+>Is the distribution multi-modal? Where are the 2.5th and 97.5th percentiles for a confidence interval? 
+
+Now, you can take those questions into your own hands with adjustments to arguments in `redist.plot.distr_qtys()`!
+
+Let's build this out a bit. First, we'll use some data from the [50-State Redistricting Simulations](https://alarm-redist.org/posts/2022-11-01-50statessimulations/) via the [`alarmdata`](https://alarm-redist.org/alarmdata/) package.
+
+We can get the `redist_map` and corresponding 5,000 sampled plus the enacted plans in a `redist_plans` object for Michigan.  
+
+```{r}
+#| message: false
+#| warning: false
+library(dplyr)
+library(redist)
+library(alarmdata)
+map <- alarm_50state_map('MI')
+plans <- alarm_50state_plans('MI')
+```
+
+`plans` here has a column `e_dvs` that gives the expected Democratic vote share for each district in each plan.
+
+```{r}
+redist.plot.distr_qtys(plans, qty = e_dvs)
+```
+
+We've always been able to clean or augment this plot up using regular `ggplot2` things:
+
+```{r}
+library(ggplot2)
+
+redist.plot.distr_qtys(plans, qty = e_dvs) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+You can draw clear conclusions here, like that districts 2, 3, and 4 are abnormally packed with Republicans compared to what we might normally see when drawing districts that follow the state's redistricting rules. We might not be able to get all of the information out of this plot that we want, beyond which districts are _clear_ outliers.
+
+Now, if we made it a box plot instead of a jitter plot, as the points can be overwhelming, we can still draw the same major conclusions, and we now have a more formal idea of outliers that don't just sit above or below the data. Things like district 6 can be still be a bit unclear. Is district 6 in the outlier range or are the points just big on this small plot? 
+
+```{r}
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = 'boxplot') + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+
+A first thing we might consider doing is to use a violin plot instead of a boxplot, as that doesn't summarize distributional information in the same way as a box plot. This is now really easy, just pass `ggplot2::geom_violin` as an argument to geom.
+
+```{r}
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = ggplot2::geom_violin) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+The defaults here don't always play the best though, so we might want to also change the reference geometry.
+
+```{r}
+r_geom <- function(...) 
+    ggplot2::geom_segment(
+        ggplot2::aes(x = as.integer(.distr_no) - 0.5,
+                     xend = as.integer(.distr_no) + 0.5,
+                     yend = e_dvs,
+                     color = .data$draw),
+        ...
+    )
+```
+
+This immediately gets a bit more complicated. For this to work, we need to know a few things:
+
+1. The function has to take `...` as an argument. 
+2. Internally, the variable we are plotting on the x is going to be called `.distr_no`.
+3. The reference geometry will inherit `x = .distr_no` by default and `y = qty`, for whatever your input to `qty` is.
+
+The above then says, on the x-axis, we want a line from the district - 0.5 to the district + 0.5, while we set `yend = e_dvs` to match the implicitly set `y = e_dvs`, since we passed `qty = e_dvs` before.
+
+```{r}
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = ggplot2::geom_violin, ref_geom = r_geom) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+
+The good thing here is that we can adjust the `ref_geom` however we see fit at this point. So if that red line is _too_ dark, but also too skinny, we can do something like changing the `alpha`:
+
+```{r}
+r_geom <- function(...) 
+    ggplot2::geom_segment(
+        ggplot2::aes(x = as.integer(.distr_no) - 0.5,
+                     xend = as.integer(.distr_no) + 0.5,
+                     yend = e_dvs,
+                     color = .data$draw),
+        linewidth = 1, alpha = 0.7,
+        ...
+    )
+```
+
+Then this fixes those particular issues.
+
+```{r}
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = ggplot2::geom_violin, ref_geom = r_geom) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+
+
+Now, there are tons of other things we can do here. If we want to revisit the 95% confidence interval issue, we can turn to `ggdist`.
+
+```{r}
+library(ggdist)
+
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = stat_pointinterval, ref_geom = r_geom) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.25, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+
+Now, we have really clear idea of how wide the 95% confidence interval goes (via the length of the skinny lines).
+
+
+And really, the sky is the limit with packages like `ggdist`. For example, if we want a `raincloud`, we can do that.
+
+```{r}
+raincloud <- function(...) {
+    list(
+        ggdist::stat_slab(aes(thickness = ggplot2::after_stat(pdf*n)), scale = 1),
+        ggdist::stat_dotsinterval(side = "bottom", scale = 1,
+                                  slab_size = NA, quantiles = 100)
+    )
+}
+```
+
+This gives us a fun plot to work with, though this might be best suited for much larger plot areas.
+
+```{r}
+#| preview: true
+redist.plot.distr_qtys(plans, qty = e_dvs, geom = raincloud, ref_geom = r_geom) + 
+    geom_hline(yintercept = 0.5, linetype = 'dotted') + 
+    scale_y_continuous(name = 'Expected Dem. Vote Share', labels = scales::label_percent(), 
+                       limits = c(0.35, 0.95), breaks = seq(0.2, 0.9, by = 0.1)) +
+    theme_bw()
+```
+
+# Better Diagnostics for `summary.redist_plans()`
+
+Like above, let's get some simulated plans from the [50-State Redistricting Simulations](https://alarm-redist.org/posts/2022-11-01-50statessimulations/). We can get a state like Nevada, which has fewer districts and shorter summary.
+
+```{r}
+library(alarmdata)
+plans <- alarm_50state_plans('NV')
+```
+
+To get diagnostics, we can call `summary(plans)` which computes R-hats, sample diversity, and some split-by-split SMC diagnostics.
+
+```{r}
+summary(plans)
+```
+The first big change here is that the digits are now rounded to three digits. 
+You no longer need to search through 8 decimal digits at 3am for the ones that matter.
+
+Typically, we want R-hat values between 1 and 1.05, so this looks pretty good.
+What if they weren't? We can introduce this behavior by adding some new variable with very different values by independent run of SMC (denoted by the `chain` column).
+
+```{r}
+plans <- plans %>% 
+    mutate(bad_rhat = rnorm(n = n(), mean = dplyr::coalesce(chain, 0)))
+```
+
+Now this gets angry:
+
+```{r}
+summary(plans)
+```
+It warns about convergence, as it has since 4.0. But it now also adds a big red "x" next to `bad_rhat`'s R-hat.
+
+
+----
+
+Any questions? [Open an issue on GitHub](https://github.com/alarm-redist/redist/issues) or [find us on Twitter](https://twitter.com/alarm_redist).
