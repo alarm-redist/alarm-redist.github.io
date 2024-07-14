@@ -64,7 +64,7 @@ We can pull in [some data from the ALARM Project](https://alarm-redist.github.io
 
 ```{r}
 #| message: false
-#| results: hide
+#| output: false
 nm <- geomander::get_alarm('NM')
 ```
 <!--- https://redistricting.lls.edu/wp-content/uploads/nm_2020_congress_2021-12-17_2031-06-30.json--->

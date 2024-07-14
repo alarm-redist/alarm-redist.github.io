@@ -137,7 +137,7 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
@@ -154,6 +154,8 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
     <a class="nav-link" href="https://alarm-redist.github.io/redist/"> 
 <span class="menu-text">redist</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/alarm-redist"> <i class="bi bi-github" role="img">
 </i> 
@@ -336,8 +338,7 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 </div>
 <p>The <code>plans</code> variable is a <code>redist_plans</code> object—a special container designed to make handling sets of redistricting plans painless. As the output above shows, <code>plans</code> contains the 1,000 samppled plans, plus the 2017 congressional districts. We can plot a few of these plans.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.plans</span>(plans, <span class="at">draws=</span><span class="fu">c</span>(<span class="st">"cd_17"</span>, <span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>), <span class="at">geom=</span>nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.plans</span>(plans, <span class="at">draws=</span><span class="fu">c</span>(<span class="st">"cd_17"</span>, <span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>), <span class="at">geom=</span>nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in redist.plot.plans(plans, draws = c("cd_17", "1", "2", "3"), geom = nc): 'geom' is deprecated.
 Use 'shp' instead.
@@ -346,7 +347,7 @@ See help("Deprecated")</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="redist-300_files/figure-html/nc-plans-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="redist-300_files/figure-html/nc-plans-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>

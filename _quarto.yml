@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: "docs"
+  render:
+    - "*.qmd"
+    - "!fifty-states/template.qmd"
 
 website:
   title: ALARM Project
@@ -10,7 +13,7 @@ website:
   favicon: "assets/alarm_256_tr.png"
   navbar:
     logo: "assets/alarm_256_tr.png"
-    right:
+    left:
       - text: Home
         href: index.html
       - text: About
@@ -19,6 +22,7 @@ website:
         href: applications.html
       - text: redist
         href: https://alarm-redist.github.io/redist/
+    right:
       - icon: github
         href: https://github.com/alarm-redist
       - icon: twitter

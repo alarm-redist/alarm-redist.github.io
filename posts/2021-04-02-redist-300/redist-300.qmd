@@ -11,6 +11,7 @@ author:
     affiliation: Department of Government, Harvard University
     url: https://www.christophertkenny.com/
 date: April 7, 2021
+preview: https://alarm-redist.github.io/posts/2021-08-10-census-2020/graphic.png
 ---
 
 ```{r}
@@ -108,7 +109,6 @@ districts.  We can plot a few of these plans.
 
 ```{r}
 #| label: nc-plans
-
 #| fig-width: 8
 redist.plot.plans(plans, draws=c("cd_17", "1", "2", "3"), geom=nc)
 ```
