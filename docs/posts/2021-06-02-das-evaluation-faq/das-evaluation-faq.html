@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.54">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Christopher T. Kenny">
+<meta name="author" content="Shiro Kuriwaki">
+<meta name="author" content="Cory McCartan">
+<meta name="author" content="Evan Rosenman">
+<meta name="author" content="Tyler Simko">
+<meta name="author" content="Kosuke Imai">
+<meta name="dcterms.date" content="2021-06-02">
+<meta name="description" content="Answers to common questions about our recently-released report evaluating the Census’ Disclosure Avoidance System.">
+
+<title>FAQ: Impact of the Census Disclosure Avoidance System – ALARM Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/alarm_256_tr.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8ZZ8YY5N8M"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
+</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/alarm_256_tr.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ALARM Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../applications.html"> 
+<span class="menu-text">Applications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://alarm-redist.github.io/redist/"> 
+<span class="menu-text">redist</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/alarm-redist"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/alarm_redist"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">FAQ: Impact of the Census Disclosure Avoidance System</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Answers to common questions about our recently-released report evaluating the Census’ Disclosure Avoidance System.</p>
+  </div>
+</div>
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Christopher T. Kenny <a href="mailto:christopherkenny@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Government, Harvard University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Shiro Kuriwaki <a href="mailto:kuriwaki@g.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Government, Harvard University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Cory McCartan <a href="mailto:cmccartan@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Statistics, Harvard University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Evan Rosenman <a href="mailto:erosenm@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Harvard Data Science Initiative
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Tyler Simko <a href="mailto:tsimko@g.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Government, Harvard University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Kosuke Imai <a href="mailto:imai@harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departments of Government and Statistics, Harvard University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 2, 2021</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We have received a large number of questions and suggestions since releasing the first version of <a href="../..\posts/2021-05-28-census-das/">our report</a> on Friday, May 28th. After meeting the Census Bureau’s one month deadline to produce comments on DAS-protected data, we are continuing to undertake additional analyses of the impacts of DAS on the redistricting process and analyses. We are working towards releasing the revised report soon. In the meantime, we provide our current answers to the questions frequently asked by others below.</p>
+<section id="are-you-advocating-for-the-use-of-swapping-methods-over-differential-privacy-as-a-method-of-privacy-protection" class="level3">
+<h3 class="anchored" data-anchor-id="are-you-advocating-for-the-use-of-swapping-methods-over-differential-privacy-as-a-method-of-privacy-protection">Are you advocating for the use of swapping methods over differential privacy as a method of privacy protection?</h3>
+<p>No.&nbsp;We have not studied the impact of swapping on redistricting. It is well known that differential privacy (DP) is theoretically superior to swapping in terms of privacy protection. The key policy question is how much privacy protection we would want at the expense of accurate census measurements. We argue that when changing an important public policy, such as whether additional noise should be added to the census, one needs to carefully determine the impacts of such policy change. We do not argue against DP and believe additional privacy protections to be a worthy consideration for some of the Census variables and products. However, we find that the current implementation of DAS can lead to substantively important changes in redistricting outcomes while also not meaningfully protecting privacy (as demonstrated by the fact that the prediction of individual race remains accurate even with the DAS data). We believe that more studies are needed to determine whether to inject noise and if so how exactly noise should be added. We hope that our study, along with many others, is the first step in answering this important question, by showing the potential consequences of the current DAS on certain redistricting outcomes.</p>
+</section>
+<section id="does-the-das-noise-cancel-out-at-larger-geographic-scales" class="level3">
+<h3 class="anchored" data-anchor-id="does-the-das-noise-cancel-out-at-larger-geographic-scales">Does the DAS noise “cancel out” at larger geographic scales?</h3>
+<p>Theoretically yes, but with a caveat. The DAS is designed to have less noise at larger geographic scales, especially for levels of geography in the Census hierarchy, known as “on-spine” geographies (blocks, block groups, tracts, and counties). But geographies like Census places and voting precincts (VTDs) are “off-spine”. The design of the DAS may induce noise that does not cancel out in off-spine geographies.</p>
+<p>Our analysis finds that not only is there more noise for VTDs, but also that there remains a particular form of previously undiscussed bias — perhaps an unintentional side-effect of the DAS post-processing procedure needing to satisfy accuracy constraints in on-spine geographies. We find that the DAS data systematically undercounts racially and politically diverse VTDs in comparison to more homogeneous VTDs. How these discrepancies add up into legislative districts clearly depends on the spatial adjacency of diverse and homogenous VTDs. But in some cases the bias does not cancel out. In Pennsylvania, the average Congressional district changes by only 400 or so people. But the majority-Black 3rd Congressional District gains around 2,000 people under the DAS-protected data, while the more diverse 2nd Congressional District, a Black-Hispanic coalition district, loses around 2,000 people.</p>
+</section>
+<section id="will-the-noisy-data-make-it-harder-to-create-partisan-gerrymanders" class="level3">
+<h3 class="anchored" data-anchor-id="will-the-noisy-data-make-it-harder-to-create-partisan-gerrymanders">Will the noisy data make it harder to create partisan gerrymanders?</h3>
+<p>In general, no. Partisan gerrymanders can be made with election data and voter files, both of which are not part of the Census and so will not contain any DAS-based error. Other residential and political data sources (both public and private) exist as well, which could be used to draw skewed districts. However, for analysts who must use noisy Census data to identify and analyze a potential gerrymander, the noise and the partisan biases discussed above may make it more difficult to do so.</p>
+</section>
+<section id="why-is-using-a-simulation-based-method-useful-to-assess-das-what-are-the-downsides" class="level3">
+<h3 class="anchored" data-anchor-id="why-is-using-a-simulation-based-method-useful-to-assess-das-what-are-the-downsides">Why is using a <em>simulation</em>-based method useful to assess DAS? What are the downsides?</h3>
+<p>Without the use of simulation, we are restricted to verifying changes in enacted redistricting plans. Analyzing enacted plans under a particular DAS dataset may not allow us to understand how DAS affects other similar plans. By using simulation methods, we are able to draw new maps with the DAS data under realistic constraints while taking into account the geography and spatial distributions of populations.&nbsp; A downside of simulation is that the results will depend on the types of redistricting maps the algorithms are designed to generate.&nbsp; More studies are needed to better understand how DAS affects different types of redistricting maps.</p>
+</section>
+<section id="why-do-you-use-strict-thresholds-to-define-equal-district-population-parity-thereby-labelling-more-plans-invalid" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-you-use-strict-thresholds-to-define-equal-district-population-parity-thereby-labelling-more-plans-invalid">Why do you use strict thresholds to define equal district population parity, thereby labelling more plans invalid?</h3>
+<p>The use of strict thresholds is informed by a long series of Supreme Court decisions which establish and define the “one person, one vote” principle.&nbsp; Current practice for redistricting congressional districts is to minimize the population difference across as much as possible.&nbsp; As <a href="https://www.ncsl.org/research/redistricting/2010-ncsl-redistricting-deviation-table.aspx">summarized</a> by the National Conference of State Legislatures, in many states, this means getting district populations to be within a single person of one another, based on the Census counts.&nbsp; If only noisy data is available, drawing districts to minimize the population difference becomes at best ambiguous.&nbsp; Our analysis demonstrates the current statutory and judicial standards may not be applicable to the DAS-protected data.&nbsp; On this point, our findings about the magnitude of population changes agree with many other analyses of the DAS and the April 28 Demonstration Data.&nbsp; If the DAS data will be used for redistricting, the key question will be if and how to change the interpretation of “one person, one vote” principle and how such a change will affect redistricting in practice.</p>
+</section>
+<section id="why-do-you-use-a-strict-threshold-of-50-to-define-the-majority-minority-districts-mmds" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-you-use-a-strict-threshold-of-50-to-define-the-majority-minority-districts-mmds">Why do you use a strict threshold of 50% to define the majority-minority districts (MMDs)?</h3>
+<p>We use a 50% threshold for majority minority districts to remain in line with the jurisprudence following Thornburg v. Gingles (1986). Specifically, Bartlett v. Strickland (2009) held that a minority must “constitute a numerical majority of the voting-age population in an area before §2 requires the creation of a legislative district to prevent dilution of that group’s votes.” When simulating districts, the number of districts which satisfy this specific numerical constraint is thus important. There are other ways to think about minority voting in elections, such as “opportunity districts”, “coalitional districts”, “crossover districts”, and “influence districts.” These have less concrete definitions and rely on electoral data, rather than just Census data.&nbsp; Certainly, strict majorities are not the only relevant measure of minority voting power, and its coarseness makes it sensitive to change introduced by the DAS.&nbsp; We find that the practice of using strict thresholds for majority minority districts may lead to biased results especially for small districts such as state legislative districts and school boards.</p>
+</section>
+<section id="why-does-your-analysis-not-adjust-for-the-differential-privacy-dp-mechanism-to-properly-measure-uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="why-does-your-analysis-not-adjust-for-the-differential-privacy-dp-mechanism-to-properly-measure-uncertainty">Why does your analysis not adjust for the differential privacy (DP) mechanism, to properly measure uncertainty?</h3>
+<p>Our analysis examines the consequences of a map drawer taking DAS-protected data as-is. Ideally, analysts can also adjust for the DP mechanism into that data.&nbsp; However, the Bureau’s deterministic and asymmetric post-processing procedure cannot be easily incorporated into standard redistricting analyses, preventing analysts from quantifying the added uncertainty exactly.&nbsp; We recommend that the Bureau release the DP data without post-processing, allowing analysts to adjust redistricting plans with this added uncertainty.&nbsp;</p>
+</section>
+<section id="do-your-findings-about-the-prediction-of-individual-race-contradict-the-property-of-differential-privacy" class="level3">
+<h3 class="anchored" data-anchor-id="do-your-findings-about-the-prediction-of-individual-race-contradict-the-property-of-differential-privacy">Do your findings about the prediction of individual race contradict the property of differential privacy?</h3>
+<p>Technically, no. Differential privacy guarantees that the inference based on a database does not depend on whether or not a particular individual is included in the data.&nbsp; However, one might argue that for the PL94-171 data, the only sensitive information to be protected is race.&nbsp; Our prediction methodology combines the census block level racial composition with the publicly available addresses and names of registered voters.&nbsp; We found that our overall prediction performance does not degrade even if we use the noise-added census block data. And, yet, in our reanalysis of a recent court case where this prediction methodology was prominently used, the prediction appears to be substantively different.&nbsp; We are in the process of studying when and how these differences arise.&nbsp; In general, when deciding what privacy to protect at the cost of inaccurate measurements, it is important to consider the consequences of privacy disclosure.&nbsp; Our finding suggests that the addition of noise to the census data does not necessarily improve the privacy protection in terms of individuals’ race.</p>
+</section>
+<section id="what-are-the-differences-between-your-analysis-and-mgggs-analysis-both-of-which-are-based-on-simulation-methods" class="level3">
+<h3 class="anchored" data-anchor-id="what-are-the-differences-between-your-analysis-and-mgggs-analysis-both-of-which-are-based-on-simulation-methods">What are the differences between your analysis and <a href="https://mggg.org/uploads/DP.pdf">MGGG’s analysis</a>, both of which are based on simulation methods?</h3>
+<p>The MGGG Redistricting Lab has also released a study on using DAS data for redistricting purposes, which we believe is well done. In many ways, our results agree with those of the MGGG team. Like the MGGG study, we also find district-level population errors on the scale of hundreds or thousands of people depending on the size of the district (including Section 5 in our analysis and Figure 4 in the MGGG analysis). The core differences in these results come from interpretation. We find similarly sized errors and consider them to be major differences given that districts in many scenarios are drawn to be as exact as possible, down to <a href="https://www.ncsl.org/research/redistricting/2010-ncsl-redistricting-deviation-table.aspx">individual people in many states</a>. For example, Karcher v. Daggett (1983) found that even minute differences in population parity across congressional districts must be justified, even when smaller than the expected error in the decennial census. The MGGG team interprets their results in light of existing noise in current Census data, and say that “the practice of one-person population deviation across districts was never reasonably justified by the accuracy of Census data nor required by law.”&nbsp; This implies that if DAS data are to be adopted, courts must decide how to change the interpretation of “one person, one vote” principle.</p>
+<p>Our analysis differs from the MGGG paper in several ways as well, and more studies are needed in order to better understand the impact of DAS on redistricting analysis and evaluation. First, our analysis relies on different data. We use the April 28th Demonstration Data, which the Census says will “closely approximate” the final data product, and span several states. The MGGG team uses the publicly available implementation of the 2018 TopDown algorithm with a reconstruction experiment to study Texas, mostly Dallas County, so our studies do not overlap in geographic areas.<br>
+<br>
+Second, our analysis is focused on voting precincts (VTDs), which are the building blocks used in constructing redistricting plans in the vast majority of states.&nbsp; Election results are also reported at this level or the state equivalent. In contrast, the MGGG analysis built districts out of Census blocks, block groups, and tracts.&nbsp; These geographies are called “on-spine” by the Census bureau, since they nest within each other. Crucially, the DAS is designed to minimize error for these on-spine geographies, but not for off-spine geographies like VTDs. This may explain why our analysis finds more noise in the VTD population and racial counts than the MGGG’s analysis.</p>
+</section>
+<section id="why-do-you-rely-on-census-data-as-the-ground-truth-doesnt-the-census-itself-already-have-enumeration-error" class="level3">
+<h3 class="anchored" data-anchor-id="why-do-you-rely-on-census-data-as-the-ground-truth-doesnt-the-census-itself-already-have-enumeration-error">Why do you rely on Census data as the ‘ground-truth’? Doesn’t the Census itself already have enumeration error?</h3>
+<p>Census data, as <a href="https://www.census.gov/newsroom/releases/archives/2010_census/cb12-95.html">acknowledged</a> by the Bureau, has errors as well, including undercounts of some minority groups. Despite these inaccuracies, we rely on Census data for our simulations because governments and courts generally consider Census data as “ground-truth” for the purposes of drawing districts (e.g., <em>Karcher v. Daggett</em> 1983). The purpose of our analysis is to investigate how relying on DAS data, rather than on Census data as has generally been done in the past, may lead to different results in some cases. In an ideal world, districts drawn using DAS data would be substantively identical to those drawn with Census data. However, we find cases where districts differ by hundreds or thousands of people depending on whether one relies on the Census or DAS data. Additionally, we believe that more research is necessary to determine whether or not existing enumeration errors will cancel out the error induced by DAS, particularly for “off-spine” but substantively important geographies like VTDs.</p>
+<p>As noted by other researchers, enumeration error is also substantively different from the random error injected as part of the DAS.&nbsp; At small scales like Census blocks, DAS-injected noise is likely on a larger scale than enumeration error—some Census places have seen their population doubled or halved under the DAS, while such a result is unlikely with enumeration methods. As others have pointed out, this has the effect of adding a large random element on top of the more systematic enumeration errors, <a href="https://www.census.gov/newsroom/pdf/20120512_ccm_newsconf_slides.pdf">which tend to overcount or undercount larger areas or entire minority groups</a>.&nbsp; DAS does not remove or address these systematic errors; it only adds more error on top of them.</p>
+<p><br>
+</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/alarm-redist\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Copyright 2021 the <a href="about.html">ALARM Project</a>. <br>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

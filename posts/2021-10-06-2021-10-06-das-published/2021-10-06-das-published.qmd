@@ -1,0 +1,45 @@
+---
+title: "Revised and published: The use of differential privacy for census data and its impact on redistricting"
+description: |
+    A new postscript analyzes the final version of the U.S. Census Bureau's Disclosure Avoidance System.
+author:
+    - name: Christopher T. Kenny
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: christopherkenny@fas.harvard.edu
+    - name: Shiro Kuriwaki
+      affiliation: Department of Political Science, Stanford University
+      location: Stanford, CA
+      email: kuriwaki@g.harvard.edu
+    - name: Cory McCartan
+      affiliation: Department of Statistics, Harvard University
+      location: Cambridge, MA
+      email: cmccartan@fas.harvard.edu
+    - name: Evan Rosenman
+      affiliation: Harvard Data Science Initiative
+      location: Cambridge, MA
+      email: erosenm@fas.harvard.edu
+    - name: Tyler Simko
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: tsimko@g.harvard.edu
+    - name: Kosuke Imai
+      affiliation: Departments of Government and Statistics, Harvard University
+      location: Cambridge, MA
+      email: imai@harvard.edu
+date: October 7, 2021
+citation: false
+preview: https://pbs.twimg.com/media/FA8fplwXsAMVffB?format=jpg&name=large
+---
+
+At the end of May, the ALARM Project [released a report](/posts/2021-05-28-census-das/)
+examining "The Impact U.S. Census Disclosure Avoidance System on Redistricting
+and Voting Rights Analysis."  The Census Bureau has since updated the system parameters
+and released 2020 Census Data protected under this Disclosure Avoidance System.
+
+Our original report has been revised to include an analysis of the new system
+parameters, and appears today in the journal *Science Advances*.
+
+**Read the paper: [*The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census*](https://www.science.org/doi/10.1126/sciadv.abk3283)**
+
+![](Kenny_abk3283_Infographic.jpeg)

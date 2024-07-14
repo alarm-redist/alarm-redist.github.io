@@ -1,0 +1,338 @@
+---
+title: "redist 3.0"
+description: |
+  A major release brings new algorithms, new workflows, and significant
+  usability improvements.
+author:
+  - name: Cory McCartan
+    affiliation: Department of Statistics, Harvard University
+    url: https://corymccartan.github.io/
+  - name: Christopher Kenny
+    affiliation: Department of Government, Harvard University
+    url: https://www.christophertkenny.com/
+date: April 7, 2021
+preview: https://alarm-redist.github.io/posts/2021-08-10-census-2020/graphic.png
+---
+
+```{r}
+#| label: setup
+#| include: false
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The ALARM Project is excited to announce the release of
+[**redist** 3.0](https://alarm-redist.github.io/redist/) on CRAN. This release
+brings with it new algorithms and major new workflow improvements, making
+redistricting analysis broadly accessible to data scientists everywhere.
+
+![](/redist/reference/figures/map_photo.jpg)
+
+Install the new version with `install.packages("redist")`.
+
+
+# New Features
+This release includes far too many changes to list comprehensively.  Key
+improvements and new features include:
+
+- New tidy interface, including new
+[`redist_map`](/redist/reference/redist_map.html) and
+[`redist_plans`](/redist/reference/redist_plans.html) objects
+- Merge-split MCMC now available in [`redist_mergesplit()`](/redist/reference/redist_mergesplit.html)
+- Short burst MCMC optimization now available in
+[`redist_shortburst()`](/redist/reference/redist_shortburst.html)
+along with [scoring functions](/redist/reference/scorers.html)
+- Improved [Flip MCMC interface](/redist/reference/redist_flip.html)
+  and performance improvements
+- New support for larger simulation size limits
+- Functions to [freeze parts of a map](/redist/reference/redist.freeze.html)
+  and extract [district cores](/redist/reference/redist.identify.cores.html)
+- New [VRA constraint](/redist/reference/redist_smc.html#details)
+- Many new [plotting functions](/redist/reference/index.html#section-plotting-tools)
+- Consistent function and argument [names](/redist/articles/glossary.html)
+- New [partisanship](/redist/reference/redist.metrics.html)
+  and [compactnes](/redist/reference/redist.compactness.html) metrics
+- Performance improvements to compactness calculations
+- Plan comparison and classification in
+  [`compare_plans()`](/redist/reference/compare_plans.html) and
+  [`classify_plans()`](/redist/reference/classify_plans.html)
+- New [`iowa`](/redist/reference/iowa.html) dataset and cleaned-up package data
+
+To begin exploring the new features, check out the new
+[Get Started](/redist/articles/redist.html) vignette.
+
+# Workflow Example: North Carolina
+
+To demonstrate the new `redist` workflow, we'll run through a basic analysis
+of the 2017 congressional districts of the state of North Carolina, which
+were [struck down as an unconstitutional partisan gerrymander](https://www.nbcnews.com/politics/politics-news/north-carolina-judges-toss-maps-slam-gerrymandering-stinging-ruling-n1049411)
+in 2019.
+
+## New workflow
+```{r}
+#| message: false
+library(tidyverse)
+library(redist)
+
+download.file("https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds",
+              data_path <- tempfile())
+nc_shp <- readRDS(data_path) %>%
+    select(vtd:vap, el14g_uss_r:geometry)
+```
+
+Under the new workflow, a redistricting analysis begins with a `redist_map`
+object, which defines the basic parameters of the redistricting problem.
+The `redist_map()` constructor builds the precinct adjacency graph which is
+required for redistricting simulation, and stores relevant metadata, such as
+the desired population parity tolerance and a reference to the existing
+districts. It also comes with helpful plotting functions.
+
+```{r}
+#| message: false
+nc = redist_map(nc_shp, existing_plan=cd_17, pop_tol=0.01)
+print(nc)
+plot(nc, el14g_uss_d/(el14g_uss_d+el14g_uss_r)) +
+    scale_fill_gradient2(midpoint=0.5)
+```
+
+Once we've created a `redist_map` object, we can simulate redistricting plans.
+
+```{r}
+#| cache: true
+plans = redist_smc(nc, 1000, counties=county, silent=TRUE) # 1000 plans
+print(plans)
+```
+
+The `plans` variable is a `redist_plans` object---a special container designed
+to make handling sets of redistricting plans painless. As the output above
+shows, `plans` contains the 1,000 samppled plans, plus the 2017 congressional
+districts.  We can plot a few of these plans.
+
+```{r}
+#| label: nc-plans
+#| fig-width: 8
+redist.plot.plans(plans, draws=c("cd_17", "1", "2", "3"), geom=nc)
+```
+
+A `redist_plans` object makes it easy to compute plan and district summary
+statistics.
+
+```{r}
+plans = plans %>%
+    mutate(comp = distr_compactness(nc),
+           dem_share = group_frac(nc, el14g_uss_d, el14g_uss_d + el14g_uss_r))
+print(plans)
+```
+
+From there, we can quickly generate informative plots. First we check the
+compactness of the generated plans, and see that they are significantly more
+compact than the adopted 2017 plan.
+
+```{r}
+#| label: nc-comp
+hist(plans, comp) +
+    labs(x="Compactness score (higher is more compact)")
+```
+
+Next, we look at the partisan implications of the 2017 plan. We plot the
+two-party Democratic vote share in each district, with districts sorted by
+this quantity. Each dot on the plot below is a district from one simulated plan,
+and the red lines show the values for the 2017 plan.
+
+```{r}
+#| label: nc-dem
+
+#| fig-width: 8
+redist.plot.distr_qtys(plans, dem_share, size=0.1)
+```
+
+We see immediately that the 2017 plan packs Democratic voters into the three
+most Democratic districts, and cracks them in the remaining 10 districts,
+leading to a durable 10--3 Republican-Democratic seat split (in an election
+which Democrats captured
+`r scales::percent(sum(nc$el14g_uss_d)/sum(nc$el14g_uss_d+nc$el14g_uss_r))`
+of the statewide two-party vote). A clear partisan gerrymander.
+
+### Studying districts 1, 2, and 4
+If we want to study a specific set of districts, we can quickly `filter()` to
+the relevant map area and re-run the analysis. The `redist_map()` object will
+handle all appropriate adjustments to the adjacency graph, number of districts,
+and population tolerance (as is visible below).
+
+```{r}
+nc_sub = filter(nc, cd_17 %in% c(1, 2, 4))
+print(nc_sub)
+plot(nc_sub)
+```
+
+On this subset, too, the adopted 2017 plan is a significant outlier.
+
+```{r}
+#| label: nc-sub
+plans_sub = redist_smc(nc_sub, 1000, counties=county, silent=T) %>%
+    mutate(dem_share = group_frac(nc_sub, el14g_uss_d, el14g_uss_d + el14g_uss_r))
+redist.plot.distr_qtys(plans_sub, dem_share, size=0.3)
+```
+
+## Old workflow
+
+In comparison, the old workflow required significantly more steps and manual
+processing.
+
+```{r}
+#| eval: false
+library(tidyverse)
+library(redist)
+
+download.file("https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds",
+              data_path <- tempfile())
+nc_shp <- readRDS(data_path) %>%
+    select(vtd:vap, el14g_uss_r:geometry)
+```
+
+Once we've downloaded the data, we can start by building the adjacency graph.
+
+```{r}
+adj <- redist.adjacency(nc_shp)
+```
+
+Time to first simulation was never really the issue, however each simulation
+required many inputs. `redist_map` objects keep track of the `adj`, `total_pop`,
+`ndists`, and `pop_tol` arguments, but in the older version, you had to specify
+each of these for every simulation. One of the quirky aspects of the older
+version was that `counties` needed to be a vector with values `1:n_counties`,
+meaning that you had to manually transform it to use it and that only worked if
+the counties were contiguous.
+
+```{r}
+#| include: false
+sims = list(plans = get_plans_matrix(plans))
+```
+```{r}
+#| eval: false
+sims <- redist.smc(adj = adj, total_pop = nc_shp$pop, ndists = 13,
+                   pop_tol = 0.01,
+                   counties = match(nc_shp$county, unique(nc_shp$county)),
+                   nsims = 1000, silent = TRUE)
+```
+
+Once you finished simulating, setting up plots was always a hassle, as you
+needed to plot both the distribution of simulations and then compute the same
+metric separately for the reference plan, in this case that's the 2017
+congressional districts.
+
+```{r}
+metrics <- redist.metrics(plans = sims$plans, measure = 'DVS',
+                          rvote = nc_shp$el14g_uss_r, nc_shp$el14g_uss_d)
+
+sorted <- metrics %>%
+  group_by(draw) %>%
+  arrange(DVS,.by_group = TRUE) %>%
+  mutate(district = 1:13) %>%
+  ungroup()
+
+reference_metrics <- redist.metrics(plans = nc_shp$cd_17,
+                                    measure = 'DVS',
+                                    rvote = nc_shp$el14g_uss_r,
+                                    dvote = nc_shp$el14g_uss_d)
+
+sorted_reference <- reference_metrics %>%
+    arrange(DVS) %>%
+    mutate(district = 1:13)
+```
+
+And then to plot the standard stacked boxplots, you would need to add the
+reference plan manually to the rest.
+
+```{r}
+sorted %>% ggplot(aes(x = district, y = DVS, group = district)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(x = 'District, sorted by DVS') +
+  geom_segment(data = sorted_reference, size = 1,
+               aes(x = district - 0.35, xend = district + 0.35,
+                   yend = DVS, color = 'red')) +
+  scale_color_manual(name = '', values = c('red' = 'red'),
+  labels = c('ref'), guide = 'legend')
+```
+
+
+### Studying districts 1, 2, and 4
+The steps between loading in data to your first simulation wasn't terrible in
+the old version when you were working with the full map. However, when trying to
+work with subsets, it became messy.
+
+First you needed to subset the shape and then rebuild a new adjacency graph that
+only had the remaining precincts.
+
+```{r}
+sub <- nc_shp %>% filter(cd_17 %in% c(1, 2, 4))
+sub_adj <- redist.adjacency(sub)
+```
+
+Then, if your target on the full map was 1\%, you had to compute the equivalent
+on the subset map, as a 1\% population deviation on a subset is often larger
+once recombined with the full map.
+
+```{r}
+pop_tol <- 0.01
+subparpop <- sum(sub$pop)/3
+parpop <- sum(nc_shp$pop)/13
+
+sub_pop_tol <-  min(abs(subparpop - parpop * (1 - pop_tol)),
+                abs(subparpop - parpop * (1 + pop_tol))) / subparpop
+sub_pop_tol
+```
+
+
+Now we can simulate again, but on the smaller map.
+
+```{r}
+#| include: false
+sims_sub = list(plans = get_plans_matrix(plans_sub))
+```
+
+```{r}
+#| eval: false
+sims_sub <- redist.smc(adj = sub_adj, total_pop = sub$pop,
+                      nsims = 1000,  ndists = 3,
+                      counties = match(sub$county, unique(sub$county)),
+                      pop_tol = sub_pop_tol, silent = TRUE)
+```
+
+
+As before, we have to compute metrics for both the reference plan and the simulated plans.
+
+```{r}
+sub_metrics <- redist.metrics(plans = sims_sub$plans, measure = 'DVS',
+                              rvote = sub$el14g_uss_r, sub$el14g_uss_d)
+
+sub_sorted <- sub_metrics %>%
+  group_by(draw) %>%
+  arrange(DVS,.by_group = TRUE) %>%
+  mutate(district = 1:3) %>%
+  ungroup()
+
+sub_reference_metrics <- redist.metrics(plans = match(sub$cd_17,
+                                                      unique(sub$cd_17)),
+                                        measure = 'DVS',
+                                        rvote = sub$el14g_uss_r,
+                                        dvote = sub$el14g_uss_d)
+
+sub_sorted_reference <- sub_reference_metrics %>%
+    arrange(DVS) %>%
+    mutate(district = 1:3)
+```
+
+And finally, we can plot the metrics and manually add the reference points.
+
+```{r}
+sub_sorted %>% ggplot(aes(x = district, y = DVS, group = district)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(x = 'District, sorted by DVS') +
+  geom_segment(data = sub_sorted_reference, size = 1,
+               aes(x = district - 0.35, xend = district + 0.35,
+                   yend = DVS, color = 'red')) +
+  scale_color_manual(name = '', values = c('red' = 'red'),
+  labels = c('ref'), guide = 'legend')
+```

@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: "docs"
+  render:
+    - "*.qmd"
+    - "!fifty-states/template.qmd"
+
+website:
+  title: ALARM Project
+  description: The Algorithm-Assisted Redistricting Methodology Project
+  site-url: https://alarm-redist.github.io/
+  google-analytics: "G-8ZZ8YY5N8M"
+  favicon: "assets/alarm_256_tr.png"
+  navbar:
+    logo: "assets/alarm_256_tr.png"
+    left:
+      - text: Home
+        href: index.html
+      - text: About
+        href: about.html
+      - text: Applications
+        href: applications.html
+    right:
+      - text: redist
+        href: https://alarm-redist.github.io/redist/
+      - icon: github
+        href: https://github.com/alarm-redist
+      - icon: twitter
+        href: https://twitter.com/alarm_redist
+  page-footer:
+    center: |
+      © Copyright 2021 the [ALARM Project](about.html). <br>Software licensed under the [GNU Public License, v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+
+format:
+  html:
+    theme: alarm.scss

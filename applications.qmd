@@ -1,0 +1,33 @@
+---
+title: "Applications"
+description: |
+  Applications of redistricting simulation involving members of the ALARM Project.
+---
+
+# Papers with ALARM Project Members
+
+- [Automated Redistricting Simulation Using Markov Chain Monte Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics* (2020) Vol. 29, No. 4, pp. 715-728.
+- [The Essential Role of Empirical Validation in Legislative Redistricting Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy* (2020) Vol. 7, No. 1, pp. 52-68.
+- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans](https://arxiv.org/pdf/2008.06131.pdf)
+- [The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census](https://doi.org/10.1126/sciadv.abk3283) *Science Advances* (2021) Vol. 7, No. 41.
+- [Simulated redistricting plans for the analysis and evaluation of redistricting in the United States](https://www.nature.com/articles/s41597-022-01808-2) *Scientific Data* (2022) Vol. 9, No. 1.
+- [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1) *Harvard Data Science Review* (2023) Special Issue 2.
+
+# Reports with ALARM Project Members
+
+- [Maryland Congressional District Memo, Christopher T. Kenny and Jonathan Rodden](https://redistricting.maryland.gov/Documents/Library/mcrc-drafts-2021-0913/2021-0913-memo-algorithms-produced-by-Professor-Rodden.pdf)
+- *League of Women Voters of Ohio et al. v. Frank LaRose et al. The Supreme Court of Ohio, Case No. 2022–0303*
+- *Milligan et al. v. Merrill et al. United States District Court for the Northern District of Alabama, Case No. 2:2021cv01530*
+- *Meryl Neiman, et al. v. Secretary of State Frank LaRose, et al. The Supreme Court of Ohio, Case No. 2022–0298*
+- *Benninghoff v. 2021 Legislative Reapportionment Commission. The Supreme Court of Pennsylvania, Case No. 11 MM 2022*
+- *The South Carolina State Conference of the NAACP, et al. v. Alexander et al. United States District Court for the District of South Carolina Columbia Division, Case No.3-21-cv-03302-JMC-TJH-RMG*
+- *Jacksonville Branch of the NAACP, et al. v. City of Jacksonville et al. United States District Court for the Middle District of Florida Jacksonville Division, Case No. 3:22-cv493-MMH-LLL*
+- *The Pennsylvania Legislative Reapportionment Commission* and *Benninghoff v. 2021 Legislative Reapportionment Commission*
+- *Petition of the Central Bucks School District for Approval of Plan For Redistricting Electoral Regions. Court of Common Pleas Bucks County, Pennsylvania, Case No. 2022-06425.*
+- *The South Carolina State Conference of the NAACP, et al. v. McMaster, et al. United States District Court for the District of South Carolina Columbia Division, Case No.3-21-cv-03302-JMC-TJH-RMG*
+- *Petition to Redistrict the Central Bucks School District into Three Electoral Regions for the Election of School Directors, Case No. 2023-00469*
+- *Graham et al. v. Adams et al. Commonwealth of Kentucky Franklin Circuit Court Division, Case No. 22-CI-00047*
+- *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1193*
+- *League of Women Voters of Ohio et al. v. Ohio Redistricting Commission et al. The Supreme Court of Ohio, Case No. 2021–1449*
+- *Grace, Inc. et al. v. City of Miami.*
+
