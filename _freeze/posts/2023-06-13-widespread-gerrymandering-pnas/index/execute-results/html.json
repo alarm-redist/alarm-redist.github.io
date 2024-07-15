@@ -1,0 +1,15 @@
+{
+  "hash": "6d6ddd7d0e9763c65e3172cb53a7a790",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition Published in PNAS\"\ndescription: |\n  Our paper which details gerrymandering and partisan fairness in the 2022 redistricting maps is now published in PNAS.\nauthor:\n  - name: Christopher T. Kenny\n    url: https://www.christophertkenny.com/\n  - name: Cory McCartan\n    url: https://www.corymccartan.com\n  - name: Tyler Simko\n    url: https://tylersimko.com/\n  - name: Shiro Kuriwaki\n    url: https://www.shirokuriwaki.com/\n  - name: Kosuke Imai\n    url: https://imai.fas.harvard.edu/\ndate: 2023-06-13\n---\n\n\n\n\n\n\nToday, our paper [*Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition* was published in PNAS](https://www.pnas.org/doi/10.1073/pnas.2217322120). \n\nWe evaluate partisan gerrymandering nationwide for new 2020 districts using simulated maps that account for geography and state-specific rules. We find evidence that gerrymandering is widespread across states, resulting in disadvantages for the Democratic party and less competitive districts. Read the abstract below:\n\n> Redistricting plans in legislatures determine how voters' preferences are translated into representative's seats. Political parties may manipulate the redistricting process to gain additional seats and insulate incumbents from electoral competition, a process known as *gerrymandering*. But detecting gerrymandering is difficult without a representative set of alternative plans that comply with the same geographic and legal constraints. Harnessing recent algorithmic advances in sampling, we study such a collection of alternative redistricting plans that can serve as a non-partisan baseline. This methodological approach can distinguish electoral bias due to partisan effects from electoral bias due to other factors. We find that Democrats are structurally and geographically disadvantaged in House elections by 8 seats, while partisan gerrymandering disadvantages them by 2 seats.\n\nIf you're interested in further details on this research project, take a look at the [Supplementary Information](https://www.pnas.org/doi/10.1073/pnas.2217322120#supplementary-materials) or our [replication data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JI1U8X).\n\nThis research would not be possible without the [50-State Redistricting Simulations](https://alarm-redist.org/fifty-states/). A special thank you to George Garcia, Kevin Wang, and Melissa Wu.\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

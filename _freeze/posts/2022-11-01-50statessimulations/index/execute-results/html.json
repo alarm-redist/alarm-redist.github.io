@@ -1,0 +1,15 @@
+{
+  "hash": "8d13b1e62e16f728f517d4c8bb78b098",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"50statesSimulations in Nature Scientific Data\"\ndescription: |\n  Now published at Nature Scientific Data.\nauthor:\n    - name: Cory McCartan\n      affiliation: Department of Statistics, Harvard University\n      location: Cambridge, MA\n      email: cmccartan@fas.harvard.edu\n      url: https://www.corymccartan.com\n    - name: Christopher T. Kenny\n      affiliation: Department of Government, Harvard University\n      location: Cambridge, MA\n      email: christopherkenny@fas.harvard.edu\n      url: https://www.christophertkenny.com/\n    - name: Tyler Simko\n      affiliation: Department of Government, Harvard University\n      location: Cambridge, MA\n      email: tsimko@g.harvard.edu\n      url: https://tylersimko.com/\n    - name: George Garcia III\n      affiliation: Department of Economics, Massachusetts Institute of Technology\n      location: Cambridge, MA\n      email: grg3@mit.edu\n    - name: Kevin Wang\n      affiliation: Harvard College\n      location: Cambridge, MA\n      email: kpwang@college.harvard.edu\n      url: https://scholar.harvard.edu/kevinwang\n    - name: Melissa Wu\n      affiliation: Harvard College\n      location: Cambridge, MA\n      email: mzwu@college.harvard.edu\n    - name: Shiro Kuriwaki\n      affiliation: Department of Political Science, Yale University\n      location: New Haven, CT\n      email: shiro.kuriwaki@yale.edu\n      url: https://www.shirokuriwaki.com/\n    - name: Kosuke Imai\n      affiliation: Departments of Government and Statistics, Harvard University\n      location: Cambridge, MA\n      email: imai@harvard.edu\n      url: https://imai.fas.harvard.edu/\ndate: 2022-11-14\n---\n\n\n\n\n\n\nWe're excited to share that our article, *Simulated redistricting plans for the analysis and evaluation of redistricting in the United States*, is now available through [Nature Scientific Data](https://www.nature.com/articles/s41597-022-01808-2). This is a great step in making alternative redistricting plans more available for the public and researchers.\n\nCheck out the [`alarmdata` R package](https://alarm-redist.org/alarmdata/) for some helpers for working with this data!\n\nWant more information? Take a look at [the blog post that accompanied the release of the original working paper](https://alarm-redist.org/posts/2022-06-23-fifty-states-data-descriptor/) or [an early use of this data](https://alarm-redist.org/posts/2022-08-14-gerrymandering-mostly-cancels-nationally/).\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

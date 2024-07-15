@@ -1,0 +1,15 @@
+{
+  "hash": "a8e970bff65649b6f86da5b50692e8c0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"47-Prefecture Project\"\ndescription: |\n    Using redistricting simulation methods to better understand redistricting in Japan.\nauthor:\n  - name: Sho Miyazaki\n  - name: Kento Yamada\n  - name: Rei Yatsuhashi\n  - name: Kosuke Imai\ndate: 2022-04-23\n---\n\n\n\n\n\n\nThe ALARM Project is pleased to announce the 47-Prefecture Project, whose goal\nis to generate and analyze redistricting plans for the single-member districts\nof the House of Representatives of Japan using redistricting simulation\nalgorithms.\n\n<center>\n\n[***Learn more about the project and see the results***](/japan/) **»**\n\n</center>\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
