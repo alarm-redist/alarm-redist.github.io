@@ -1,0 +1,15 @@
+---
+title: "Using big data to make elections fairer"
+description: |
+  An opinion piece in CommonWealth Magazine with Ruth Greenwood.
+author:
+  - name: Kosuke Imai
+    url: https://imai.fas.harvard.edu/
+date: 2023-10-15
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In a [new opinion piece in CommonWealth Magazine this weekend](https://commonwealthmagazine.org/opinion/using-big-data-to-make-elections-fairer/), we discuss the work of [ALARM](https://alarm-redist.org/) and the [Election Law Clinic](https://www.hlselectionlaw.org/). Our piece talks about the quantitative redistricting analysis projects, developed by the two groups, including the [50-State Redistricting Simulations](https://alarm-redist.org/fifty-states/), [PlanScore](https://planscore.org/), and [RPV Near Me](https://www.rpvnearme.org/).

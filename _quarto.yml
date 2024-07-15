@@ -4,6 +4,8 @@ project:
   render:
     - "*.qmd"
     - "!fifty-states/template.qmd"
+  resources:
+    - "redist101.html"
 
 website:
   title: ALARM Project
