@@ -36,3 +36,5 @@ website:
 format:
   html:
     theme: alarm.scss
+    execute:
+      warning: false

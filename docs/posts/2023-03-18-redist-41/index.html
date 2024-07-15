@@ -436,20 +436,9 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 <p>To get diagnostics, we can call <code>summary(plans)</code> which computes R-hats, sample diversity, and some split-by-split SMC diagnostics.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>SMC: 5,000 sampled plans of 4 districts on 2,102 units</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`adapt_k_thresh`=0.985 • `seq_alpha`=0.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`pop_temper`=0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Plan diversity 80% range: 0.55 to 0.74</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
+
 R-hat values for summary statistics:
    pop_overlap      total_vap       plan_dev      comp_edge    comp_polsby 
          1.003          1.003          1.001          1.000          1.000 
@@ -472,58 +461,33 @@ atg_18_rep_dun sos_18_dem_ara sos_18_rep_ceg pre_20_dem_bid pre_20_rep_tru
        ndshare          e_dvs         pr_dem          e_dem          pbias 
          1.003          1.003          1.001          1.002          1.000 
           egap 
-         1.001 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 1 of 2 (2,500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+         1.001 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
 Split 1     2,215 (88.6%)     19.7%        0.93 1,583 (100%)     10 
 Split 2     2,287 (91.5%)     12.8%        0.51 1,565 ( 99%)      6 
 Split 3     2,242 (89.7%)      5.9%        0.56 1,441 ( 91%)      4 
-Resample    1,352 (54.1%)       NA%        0.57 1,409 ( 89%)     NA </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 2 of 2 (2,500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+Resample    1,352 (54.1%)       NA%        0.57 1,409 ( 89%)     NA 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
 Split 1     2,228 (89.1%)     15.1%        0.91 1,584 (100%)     13 
 Split 2     2,285 (91.4%)      9.7%        0.52 1,574 (100%)      8 
 Split 3     2,236 (89.4%)      5.0%        0.58 1,444 ( 91%)      5 
 Resample    1,471 (58.8%)       NA%        0.59 1,399 ( 89%)     NA </code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Watch out for low effective samples, very low acceptance rates (less than
-1%), large std. devs. of the log weights (more than 3 or so), and low numbers
-of unique plans. R-hat values for summary statistics should be between 1 and
-1.05.</code></pre>
-</div>
 </div>
 <p>The first big change here is that the digits are now rounded to three digits. You no longer need to search through 8 decimal digits at 3am for the ones that matter.</p>
 <p>Typically, we want R-hat values between 1 and 1.05, so this looks pretty good. What if they weren’t? We can introduce this behavior by adding some new variable with very different values by independent run of SMC (denoted by the <code>chain</code> column).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> plans <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">bad_rhat =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean =</span> dplyr<span class="sc">::</span><span class="fu">coalesce</span>(chain, <span class="dv">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> plans <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">bad_rhat =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="fu">n</span>(), <span class="at">mean =</span> dplyr<span class="sc">::</span><span class="fu">coalesce</span>(chain, <span class="dv">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now this gets angry:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>SMC: 5,000 sampled plans of 4 districts on 2,102 units</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`adapt_k_thresh`=0.985 • `seq_alpha`=0.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`pop_temper`=0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Plan diversity 80% range: 0.55 to 0.75</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
+
 R-hat values for summary statistics:
    pop_overlap      total_vap       plan_dev      comp_edge    comp_polsby 
          1.003          1.003          1.001          1.000          1.000 
@@ -546,40 +510,19 @@ atg_18_rep_dun sos_18_dem_ara sos_18_rep_ceg pre_20_dem_bid pre_20_rep_tru
        ndshare          e_dvs         pr_dem          e_dem          pbias 
          1.003          1.003          1.001          1.002          1.000 
           egap       bad_rhat 
-         1.001        ❌1.233 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ WARNING: SMC runs have not converged.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 1 of 2 (2,500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+         1.001        ❌1.217 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
 Split 1     2,215 (88.6%)     19.7%        0.93 1,583 (100%)     10 
 Split 2     2,287 (91.5%)     12.8%        0.51 1,565 ( 99%)      6 
 Split 3     2,242 (89.7%)      5.9%        0.56 1,441 ( 91%)      4 
-Resample    1,352 (54.1%)       NA%        0.57 1,409 ( 89%)     NA </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 2 of 2 (2,500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+Resample    1,352 (54.1%)       NA%        0.57 1,409 ( 89%)     NA 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
 Split 1     2,228 (89.1%)     15.1%        0.91 1,584 (100%)     13 
 Split 2     2,285 (91.4%)      9.7%        0.52 1,574 (100%)      8 
 Split 3     2,236 (89.4%)      5.0%        0.58 1,444 ( 91%)      5 
 Resample    1,471 (58.8%)       NA%        0.59 1,399 ( 89%)     NA </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Watch out for low effective samples, very low acceptance rates (less than
-1%), large std. devs. of the log weights (more than 3 or so), and low numbers
-of unique plans. R-hat values for summary statistics should be between 1 and
-1.05.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• SMC convergence: Increase the number of samples. If you are experiencing low
-plan diversity or bottlenecks as well, address those issues first.</code></pre>
 </div>
 </div>
 <p>It warns about convergence, as it has since 4.0. But it now also adds a big red “x” next to <code>bad_rhat</code>’s R-hat.</p>

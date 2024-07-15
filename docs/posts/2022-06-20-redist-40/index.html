@@ -286,33 +286,26 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 <p>Now, the <code>plans</code> object has a few new columns:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>A &lt;redist_plans&gt; containing 1,000 sampled plans</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Plans have 3 districts from a 1,977-unit map, and were drawn using Sequential
-Monte Carlo.</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>With plans resampled from weights
-Plans matrix: int [1:1977, 1:1000] 3 3 3 3 3 3 3 3 3 3 ...
+Plans matrix: int [1:1977, 1:1000] 1 1 1 1 1 1 1 1 1 1 ...
 # A tibble: 6 × 7
   draw  chain district total_pop frac_kept dvs_gov_18 county_spl
   &lt;fct&gt; &lt;int&gt;    &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;      &lt;int&gt;
-1 1         1        1    709139     0.990      0.458          2
-2 1         1        2    705640     0.990      0.619          2
-3 1         1        3    702743     0.990      0.617          2
-4 2         1        1    704527     0.988      0.483          1
-5 2         1        2    704945     0.988      0.614          1
-6 2         1        3    708050     0.988      0.601          1</code></pre>
+1 1         1        1    705803     0.986      0.618          2
+2 1         1        2    704329     0.986      0.597          2
+3 1         1        3    707390     0.986      0.479          2
+4 2         1        1    706706     0.984      0.444          2
+5 2         1        2    708427     0.984      0.630          2
+6 2         1        3    702389     0.984      0.606          2</code></pre>
 </div>
 </div>
 <p>Draw, chain, and district identify each plan, where <code>chain</code> is new to 4.0 for SMC. It signifies the SMC run, similar to how <code>redist_mergesplit_parallel</code> indicates the chain from merge-split. Despite this, we can use the normal plotting functions on the <code>redist_plans</code> object. If we load <code>patchwork</code> here to get a nice row of <code>ggplot</code>s, we see the following:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(plans, frac_kept) <span class="sc">+</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(plans, dvs_gov_18) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(plans, county_spl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(plans, frac_kept) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(plans, dvs_gov_18) <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(plans, county_spl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -323,145 +316,76 @@ Plans matrix: int [1:1977, 1:1000] 3 3 3 3 3 3 3 3 3 3 ...
 </div>
 <p>These plots are fairly standard. The exciting thing is that we can now call <code>summary()</code> to get diagnostic information about the runs of SMC. We can call this on any <code>redist_plans</code> object and it will adjust the output information depending on what algorithm generated the plans.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>SMC: 1,000 sampled plans of 3 districts on 1,977 units</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`adapt_k_thresh`=0.99 • `seq_alpha`=0.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`pop_temper`=0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Plan diversity 80% range: 0.18 to 0.66</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ WARNING: Low plan diversity</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 1 of 2 (500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 2 of 2 (500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Watch out for low effective samples, very low acceptance rates (less than
-1%), large std. devs. of the log weights (more than 3 or so), and low numbers
-of unique plans. R-hat values for summary statistics should be between 1 and
-1.05.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Low diversity: Check for potential bottlenecks. Increase the number of
-samples. Examine the diversity plot with `hist(plans_diversity(plans),
-breaks=24)`. Consider weakening or removing constraints, or increasing the
-population tolerance. If the acceptance rate drops quickly in the final splits,
-try increasing `pop_temper` by 0.01.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
 R-hat values for summary statistics:
  frac_kept dvs_gov_18 county_spl 
-     1.000      1.004      1.000 
+     1.002      1.004      1.011 
 
          Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
-Split 1       484 (96.9%)     11.8%        0.38   319 (101%)      8 
-Split 2       470 (94.0%)      7.0%        0.49   304 ( 96%)      5 
-Resample      388 (77.5%)       NA%        0.49   406 (128%)     NA 
+Split 1       481 (96.3%)     13.5%        0.42   322 (102%)      8 
+Split 2       469 (93.8%)      7.0%        0.50   302 ( 96%)      5 
+Resample      379 (75.8%)       NA%        0.50   409 (129%)     NA 
 
          Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
-Split 1       483 (96.6%)      8.3%        0.40   308 ( 97%)     12 
-Split 2       467 (93.4%)      5.4%        0.52   302 ( 96%)      7 
-Resample      374 (74.7%)       NA%        0.52   395 (125%)     NA </code></pre>
+Split 1       485 (97.0%)      8.0%        0.38   309 ( 98%)     12 
+Split 2       467 (93.4%)      5.2%        0.50   300 ( 95%)      7 
+Resample      351 (70.1%)       NA%        0.50   404 (128%)     NA </code></pre>
 </div>
 </div>
 <p>Each R-hat value is below 1.05, so we do not get any warnings. At a high level, this means that both runs of SMC are sampling from regions comparable by these three summary statistics. That isn’t always the case though. If you do get a warning, you should increase the number of simulations or decrease the constraint strengths.</p>
 <p>We next introduce the new constraint interface. To initialize a constraint, we call <code>redist_constr</code>, which takes a <code>redist_map</code> input.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> <span class="fu">redist_constr</span>(<span class="at">map =</span> map_nm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> <span class="fu">redist_constr</span>(<span class="at">map =</span> map_nm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can add any of the many constraints available with <code>?constraints</code>. There are many new constraints to people who have only used <code>redist_smc/redist_mergesplit</code> or <code>redist_flip</code> before. Now all constraints are available to all algorithms. Additionally, we can write pretty much any constraint that we can map to the positive reals, using the new custom constraint.</p>
 <p>For our custom constraint, we just care that the 100th row of <code>map_nm</code> won’t be assigned to district 3. We can do the following</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> constr <span class="sc">%&gt;%</span> </span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_constr_custom</span>(</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">strength =</span> <span class="dv">10</span>,</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fn =</span> <span class="cf">function</span>(plan, distr) {</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">as.numeric</span>(plan[<span class="dv">100</span>] <span class="sc">!=</span> <span class="dv">3</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>constr <span class="ot">&lt;-</span> constr <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_constr_custom</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">strength =</span> <span class="dv">10</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">fn =</span> <span class="cf">function</span>(plan, distr) {</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            <span class="fu">as.numeric</span>(plan[<span class="dv">100</span>] <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This takes an R function <code>fn</code> and a strength value (how much to multiply the output of <code>fn</code> by). The <code>fn</code> input should always take the form <code>function(plan, distr) { ... }</code>, where <code>plan</code> will be an integer matrix of precinct-district assignments and <code>distr</code> will be the current district.</p>
 <p>We can then pass <code>constr</code> to the <code>constraints</code> argument in <code>redist_smc()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2022</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> <span class="fu">redist_smc</span>(<span class="at">map =</span> map_nm, <span class="at">nsims =</span> <span class="dv">500</span>, <span class="at">runs =</span> <span class="dv">2</span>, <span class="at">counties =</span> county, </span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">constraints =</span> constr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2022</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> <span class="fu">redist_smc</span>(<span class="at">map =</span> map_nm, <span class="at">nsims =</span> <span class="dv">500</span>, <span class="at">runs =</span> <span class="dv">2</span>, <span class="at">counties =</span> county, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">constraints =</span> constr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Again, we add some summary statistics.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> plans <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">frac_kept =</span> <span class="fu">comp_frac_kept</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">dvs_gov_18 =</span> <span class="fu">part_dvs</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm, <span class="at">dvote =</span> gov_18_dem_luj, <span class="at">rvote =</span> gov_18_rep_pea),</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">county_spl =</span> <span class="fu">splits_admin</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm, <span class="at">admin =</span> county)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">&lt;-</span> plans <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">frac_kept =</span> <span class="fu">comp_frac_kept</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">dvs_gov_18 =</span> <span class="fu">part_dvs</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm, <span class="at">dvote =</span> gov_18_dem_luj, <span class="at">rvote =</span> gov_18_rep_pea),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">county_spl =</span> <span class="fu">splits_admin</span>(<span class="at">plans =</span> ., <span class="at">shp =</span> map_nm, <span class="at">admin =</span> county)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then run the diagnostics:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>SMC: 1,000 sampled plans of 3 districts on 1,977 units</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`adapt_k_thresh`=0.99 • `seq_alpha`=0.5</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`pop_temper`=0</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Plan diversity 80% range: 0.23 to 0.68</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>✖ WARNING: Low plan diversity</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
+
 R-hat values for summary statistics:
  frac_kept dvs_gov_18 county_spl 
-     1.019      1.013      1.001 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 1 of 2 (500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
-Split 1       484 (96.7%)     11.7%        0.40   312 ( 99%)      8 
-Split 2       473 (94.5%)      3.3%        0.49   286 ( 90%)     11 
-Resample      403 (80.7%)       NA%        0.49   411 (130%)     NA </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Sampling diagnostics for SMC run 2 of 2 (500 samples)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
-Split 1       483 (96.6%)      8.9%        0.40   331 (105%)     12 
-Split 2       467 (93.4%)      5.7%        0.51   303 ( 96%)      7 
-Resample      367 (73.4%)       NA%        0.51   399 (126%)     NA </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Watch out for low effective samples, very low acceptance rates (less than
-1%), large std. devs. of the log weights (more than 3 or so), and low numbers
-of unique plans. R-hat values for summary statistics should be between 1 and
-1.05.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>• Low diversity: Check for potential bottlenecks. Increase the number of
-samples. Examine the diversity plot with `hist(plans_diversity(plans),
-breaks=24)`. Consider weakening or removing constraints, or increasing the
-population tolerance. If the acceptance rate drops quickly in the final splits,
-try increasing `pop_temper` by 0.01.</code></pre>
+     1.005      1.001      1.000 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+Split 1       483 (96.6%)     12.0%        0.40   314 ( 99%)      8 
+Split 2       471 (94.1%)      7.8%        0.52   299 ( 95%)      5 
+Resample      404 (80.7%)       NA%        0.52   407 (129%)     NA 
+
+         Eff. samples (%) Acc. rate Log wgt. sd  Max. unique Est. k 
+Split 1       483 (96.7%)      8.1%        0.40   309 ( 98%)     12 
+Split 2       476 (95.3%)      5.2%        0.46   283 ( 90%)      7 
+Resample      418 (83.6%)       NA%        0.46   421 (133%)     NA </code></pre>
 </div>
 </div>
 <p>And everything looks good. Despite adding a constraint, the sample still looks fine under these summary statistics.</p>
