@@ -32,6 +32,12 @@ website:
   page-footer:
     center: |
       © Copyright 2021 the [ALARM Project](about.html). <br>Software licensed under the [GNU Public License, v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+  announcement:
+    icon: exclamation-circle
+    dismissable: true
+    content: "**New working paper!** - [*Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors* is now on arXiv!](https://arxiv.org/abs/2407.11336)"
+    type: primary
+    position: below-navbar
 
 format:
   html:
