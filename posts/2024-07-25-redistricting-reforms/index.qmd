@@ -1,6 +1,6 @@
 ---
 title: "Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors"
-draft: true
+draft: false
 description: |
   Our newest working paper combines formal theory and a continuous 
   differences-in-differences-in-differences strategy to estimate the effect of
