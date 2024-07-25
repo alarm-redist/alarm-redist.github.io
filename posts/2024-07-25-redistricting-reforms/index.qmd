@@ -1,0 +1,50 @@
+---
+title: "Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors"
+draft: true
+description: |
+  Our newest working paper combines formal theory and a continuous 
+  differences-in-differences-in-differences strategy to estimate the effect of
+  redistricting reforms on gerrymandering. We find that reforms reduce the
+  partisan bias of districting plans by constraining the behavior of partisan
+  actors.
+author:
+    - name: Cory McCartan
+      affiliation: Department of Statistics, Pennsylvania State University
+      location: State College, PA
+      email: mccartan@psu.edu
+      url: https://www.corymccartan.com
+    - name: Christopher T. Kenny
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: christopherkenny@fas.harvard.edu
+      url: https://www.christophertkenny.com/
+    - name: Tyler Simko
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: tsimko@g.harvard.edu
+      url: https://tylersimko.com/
+    - name: Emma Ebowe
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: eebowe@fas.harvard.edu
+      url: https://emmaebowe.com/      
+    - name: Michael Y. Zhao
+      affiliation: Harvard College
+      location: Cambridge, MA
+      email: michaelzhao@college.harvard.edu
+    - name: Kosuke Imai
+      affiliation: Departments of Government and Statistics, Harvard University
+      location: Cambridge, MA
+      email: imai@harvard.edu
+      url: https://imai.fas.harvard.edu/
+date: 2024-07-26
+citation: false
+---
+
+![A generalized schematic of redistricting processes](didid-game.png)
+
+
+
+If you're interested in reading the paper, check it out [on arXiv](https://arxiv.org/pdf/2407.11336). The full abstract is below.
+
+> Political actors frequently manipulate redistricting plans to gain electoral advantages, a process commonly known as gerrymandering. To address this problem, several states have implemented institutional reforms including the establishment of map-drawing commissions. It is difficult to assess the impact of such reforms because each state structures bundles of complex rules in different ways. We propose to model redistricting processes as a sequential game. The equilibrium solution to the game summarizes multi-step institutional interactions as a single dimensional score. This score measures the leeway political actors have over the partisan lean of the final plan. Using a differences-in-differences design, we demonstrate that reforms reduce partisan bias and increase competitiveness when they constrain partisan actors. We perform a counterfactual policy analysis to estimate the partisan effects of enacting recent institutional reforms nationwide. We find that instituting redistricting commissions generally reduces the current Republican advantage, but Michigan-style reforms would yield a much greater pro-Democratic effect than types of redistricting commissions adopted in Ohio and New York.
