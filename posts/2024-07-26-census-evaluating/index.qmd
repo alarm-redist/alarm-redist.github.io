@@ -1,0 +1,44 @@
+---
+title: "*Evaluating bias and noise induced by the U.S. Census Bureau’s privacy protection methods* published in *Science Advances*"
+draft: true
+description: |
+  In May, our recent work on the effects of the Census Bureau's new privacy procedures was published in *Science Advances*.
+author:
+    - name: Christopher T. Kenny
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: christopherkenny@fas.harvard.edu
+      url: https://www.christophertkenny.com/
+    - name: Cory McCartan
+      affiliation: Department of Statistics, New York University
+      location: New York, NY
+      email: mccartan@psu.edu
+      url: https://www.corymccartan.com
+    - name: Shiro Kuriwaki
+      location: New Haven, CT
+      email: shiro.kuriwaki@yale.edu
+      url: https://www.shirokuriwaki.com/
+    - name: Tyler Simko
+      affiliation: Department of Government, Harvard University
+      location: Cambridge, MA
+      email: tsimko@g.harvard.edu
+      url: https://tylersimko.com/
+    - name: Kosuke Imai
+      affiliation: Departments of Government and Statistics, Harvard University
+      location: Cambridge, MA
+      email: imai@harvard.edu
+      url: https://imai.fas.harvard.edu/
+date: 2024-07-26
+citation: false
+---
+
+Read the paper on [Science Advances](https://www.science.org/doi/10.1126/sciadv.adl2524), available open access. The full abstract is below.
+
+> The U.S. Census Bureau faces a difficult trade-off between the accuracy of Census statistics and the protection of individual information. We conduct an independent evaluation of bias and noise induced by the Bureau’s two main disclosure avoidance systems: the TopDown algorithm used for the 2020 Census and the swapping algorithm implemented for the three previous Censuses. Our evaluation leverages the Noisy Measurement File (NMF) as well as two independent runs of the TopDown algorithm applied to the 2010 decennial Census. We find that the NMF contains too much noise to be directly useful without measurement error modeling, especially for Hispanic and multiracial populations. TopDown’s postprocessing reduces the NMF noise and produces data whose accuracy is similar to that of swapping. While the estimated errors for both TopDown and swapping algorithms are generally no greater than other sources of Census error, they can be relatively substantial for geographies with small total populations.
+
+Our team is continuing our work to support researchers in understanding the implications of the Census Bureau's privacy protection methods. This includes advocating for the improvement of data releases and engagement with the broader research community. To read more about this work, see these letters:
+
+- [Rejoinder: We Can Improve the Usability of the Census Noisy Measurements File](https://hdsr.mitpress.mit.edu/pub/ags1yyxb/release/1) by McCartan, Simko, and Imai in the *Harvard Data Science Review*.
+- [Census officials must constructively engage with independent evaluations](https://www.pnas.org/doi/10.1073/pnas.2321196121) by Kenny, McCartan, Simko, and Imai in *Proceedings of the National Academy of Sciences*.
+- [Making Differential Privacy Work for Census Data Users](https://hdsr.mitpress.mit.edu/pub/y6oilhhe/release/4) by McCartan, Simko, and Imai in the *Harvard Data Science Review*.
+- [Researchers need better access to US Census data](https://www.science.org/doi/10.1126/science.adi7004) by McCartan, Simko, and Imai in *Science*.
