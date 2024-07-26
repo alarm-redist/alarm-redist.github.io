@@ -2,7 +2,7 @@
 title: "*Evaluating bias and noise induced by the U.S. Census Bureau’s privacy protection methods* published in *Science Advances*"
 draft: true
 description: |
-  In May, our recent work on the effects of the Census Bureau's new privacy procedures was published in *Science Advances*.
+  In May, our recent work on the effects of the Census Bureau's new privacy procedures was published in *Science Advances*. This adds to our ongoing work to understand and improve the Census Bureau's privacy protection methods.
 author:
     - name: Christopher T. Kenny
       affiliation: Department of Government, Harvard University
