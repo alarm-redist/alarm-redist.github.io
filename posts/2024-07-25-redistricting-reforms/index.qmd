@@ -41,9 +41,14 @@ date: 2024-07-26
 citation: false
 ---
 
+We have a new working paper out which studies the effects of redistricting reforms on gerrymandering and responsiveness.
+To summarize differing redistricting processes, we cast the redistricting process as a sequential game.
+
 ![A generalized schematic of redistricting processes](didid-game.png)
 
-
+We then solve for the equilibrium of this game, which provides a single-dimensional score that summarizes the leeway political actors have over the partisan lean of the final plan.
+We those scores as doses in a continuous differences-in-differences-in-differences strategy to estimate the effect of redistricting reforms on partisan bias and competitiveness.
+Put shortly, we find that restrictive reforms reduce gerrymandering and increase competitiveness.
 
 If you're interested in reading the paper, check it out [on arXiv](https://arxiv.org/pdf/2407.11336). The full abstract is below.
 
