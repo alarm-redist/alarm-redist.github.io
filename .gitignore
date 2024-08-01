@@ -14,6 +14,6 @@ docs/**/*.rds
 docs/fifty-states/**/*_files/*
 docs/fifty-states/**/*.html
 !docs/fifty-states/**/index.html
-!docs/fifty-states/**/*_files/figure-html5
+!docs/fifty-states/**/*_files/figure-html
 
 /.quarto/
