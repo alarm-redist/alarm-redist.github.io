@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.55">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Frequently asked questions about the project and our methodology.">
+
+<title>50-State Simulations FAQ – ALARM Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/alarm_256_tr.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8ZZ8YY5N8M"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
+</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/alarm_256_tr.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ALARM Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../applications.html"> 
+<span class="menu-text">Applications</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://alarm-redist.github.io/redist/"> 
+<span class="menu-text">redist</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/alarm-redist"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/alarm_redist"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <div id="quarto-announcement" data-announcement-id="437b030577a4ab45cabebeb43b30c491" class="alert alert-primary hidden"><i class="bi bi-exclamation-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>New working paper!</strong> - <a href="https://arxiv.org/abs/2407.11336"><em>Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors</em> is now on arXiv!</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">50-State Simulations FAQ</h1>
+</div>
+
+<div>
+  <div class="description">
+    <p>Frequently asked questions about the project and our methodology.</p>
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+    <div>
+    <div class="quarto-title-meta-heading">Doi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="doi">
+        <a href="https://doi.org/10.7910/DVN/SLCD3E">10.7910/DVN/SLCD3E</a>
+      </p>
+    </div>
+  </div>
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">What is the 50-State Simulation Project about?</h2>
+<p><img src="../../assets/fifty_states.svg" height="180" style="float: left; width: auto; margin: -12px 0.75em 0 0;"> Every decade following the Census, states and municipalities must redraw districts for Congress, state houses, city councils, and more. The goal of the 50-State Simulation project is to enable researchers, practitioners, and the general public to use cutting-edge redistricting simulation analysis to evaluate enacted Congressional districts.</p>
+<p>Over the past few years, academic researchers, including those on the <a href="https://alarm-redist.github.io/">ALARM Project</a>, have developed redistricting simulation algorithms. These algorithms can be used to obtain a representative sample of alternative plans one could draw under each state’s rules for drawing districts. The comparison of an enacted plan with these sampled alternative plans can reveal the extent to which the enacted plan is likely to yield extreme partisan, racial, or other outcomes.</p>
+<p>Our mission is to bring these modern redistricting simulation algorithms to researchers, policy makers, data journalists, and citizen data scientists. The ALARM project has developed an open-source software package <a href="https://alarm-redist.github.io/redist/">redist</a> to simulate and analyze alternative plans under any redistricting criteria tailored to the user’s analysis goals. We have also developed a set of new tools that facilitate the efficient workflow including data ingestion, preprocessing, diagnostics, visualizations, and post-simulation analyses. The 50-State Simulation Project demonstrates how to use all of these tools in a unified workflow in the context of each state, and provides a set of 5,000 alternative plans for each congressional (and later, state legislative) redistricting plan.</p>
+<p>Our simulation analyses should serve as a realistic template for those who are interested in conducting their own analyses. Our code can be modified and extended, and the resulting samples can be used to explore various properties of potential plans under the specific redistricting criteria of our analysis. Our simulations presented here, however, do <em>not</em> represent our evaluation of the <em>legality</em> of the enacted and other plans. Any such evaluation of the enacted plan would require the interpretation of relevant laws. Although some requirements are relatively straightforward to interpret and operationalize (e.g., minimizing splits of administrative boundaries), others such as compliance with the Voting Rights Act require legal justifications. For this reason, we do not claim that the analyses presented here are necessarily applicable when evaluating the legality of redistricting plans.</p>
+</section>
+<section id="why-sims" class="level2">
+<h2 class="anchored" data-anchor-id="why-sims">Why are simulations useful?</h2>
+<p>Evaluating a redistricting plan requires analysts to take into account each state’s redistricting rules and particular political geography. Comparing the partisan bias of a plan for Texas with the bias of a plan for New York, for example, is likely misleading. Comparing a state’s current plan to a past plan is also problematic because of demographic and political changes over time. Simulations generate an ensemble of alternative redistricting plans within a given state which are tailored to its redistricting rules. Unlike traditional evaluation methods, therefore, simulations are able to directly account for the state’s political geography and redistricting criteria.</p>
+</section>
+<section id="code-data" class="level2">
+<h2 class="anchored" data-anchor-id="code-data">Where can I find the code, data, and simulated plans?</h2>
+<p>For each state, we release 5,000 alternative plans, according to our best approximation of each state’s redistricting rules. The code used to generate the simulated plans is also available so that others can use it as a template to generate their own simulated plans under different specifications. The major outputs are posted on the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">ALARM Project Dataverse</a>, and the code is available on <a href="https://github.com/alarm-redist/fifty-states/">GitHub</a>. We have also developed a package, <a href="../..\alarmdata/"><code>alarmdata</code></a>, which makes it easy to download and work with the simulation outputs in R. An overview of the entire project and the methodology can be found in our <a href="https://arxiv.org/abs/2206.10763">data paper</a>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 91%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Output File</th>
+<th>What is it?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>*_map.rds</code></td>
+<td>A <code>redist_map</code> R object. A geographic (typically VTD-level) dataset with election data, demographics, a shapefile, and an adjacency graph.</td>
+</tr>
+<tr class="even">
+<td><code>*_plans.rds</code></td>
+<td>A <code>redist_plans</code> R object. A district-level dataset containing the 5,000 simulated plans as a matrix of district assignments corresponding to the rows in <code>*_map.rds</code>.</td>
+</tr>
+<tr class="odd">
+<td><code>*_stats.csv</code></td>
+<td>A district-level dataset with standard redistricting measures reported for the enacted plan and all 5,000 simulations.</td>
+</tr>
+<tr class="even">
+<td><code>*_doc.html</code></td>
+<td>A documentation file containing data sources, our interpretations of legal requirements, and other simulation decisions.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>To …</th>
+<th>Look at …</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>See key metrics for the enacted map and simulated plans</td>
+<td>Summary file (e.g.&nbsp;<code>MA_cd_2020_stats.csv</code>)</td>
+</tr>
+<tr class="even">
+<td>Work with the simulated and enacted plans</td>
+<td>Plans object (e.g.&nbsp;<code>MA_cd_2020_plans.rds</code>)</td>
+</tr>
+<tr class="odd">
+<td>See the constraints used to make the simulations</td>
+<td>Documentation HTML (e.g.&nbsp;<code>MA_cd_2020_doc.html</code>)</td>
+</tr>
+<tr class="even">
+<td>Visualize the Enacted map and precinct-level data</td>
+<td>redist_map R object (e.g.&nbsp;<code>MA_cd_2020_map.rds</code>)</td>
+</tr>
+<tr class="odd">
+<td>Create custom metrics to evaluate the enacted map</td>
+<td>redist_map combined with the plan object</td>
+</tr>
+</tbody>
+</table>
+<p>Those wishing to add additional metrics to these districts may find the documentation for <a href="https://alarm-redist.github.io/redist/reference/index.html">redist</a> and <a href="https://alarm-redist.github.io/redistmetrics/reference/index.html">redistmetrics</a> useful.</p>
+</section>
+<section id="plots" class="level2">
+<h2 class="anchored" data-anchor-id="plots">How should I interpret the simulation graphs?</h2>
+<p>The graphs we provide with each simulation compare the enacted plan with the range of alternative plans in terms of expected number of seats, election results by districts, partisan bias, and some traditional districting criteria. We explain how to interpret graphs with examples below.</p>
+<section id="plots-exp-seats" class="level3">
+<h3 class="anchored" data-anchor-id="plots-exp-seats">Expected number of seats</h3>
+<p>In each state, we average across several statewide elections from 2016-2020, and represent the range of the expected number of districts won by a party with a histogram. In Oregon, for example, Democrats are expected to win about 3.5 out of the 6 congressional districts under simulated plans. This is close to proportional representation of their statewide vote of 3.3 Democratic seats. In contrast, under the enacted plan, the Democratic party is expected to win as many as 4.2 seats. Less than 1% of simulated plans would yield the same or higher expected number of Democratic seats as the enacted plan. The histogram ranges from 3.5 to 4.5, which tells us that the Democrats would likely not be able to consistently win 5 seats under Oregon’s geography, legal constraints, and recent performance in statewide elections, regardless of the plan. A takeaway from this histogram is that although the majority party usually wins more seats than proportional representation, the enacted map is a statistical outlier in the degree of that Democratic advantage.</p>
+<p><img src="../OR_cd_2020/index_files/figure-html/seats-1.svg" title="OR expected number of seats" class="img-fluid"></p>
+</section>
+<section id="plots-districts" class="level3">
+<h3 class="anchored" data-anchor-id="plots-districts">Election results by districts</h3>
+<p>In addition to the statewide, we can also compare the enacted plan with the simulated plans at the district level. We first order the districts of the enacted plan by the variable of interest. For example, to evaluate district level Democratic vote in Oregon with 6 districts, we sort the districts from the least Democratic (ordered district 1) to the most Democratic district (ordered district 6). We repeat this for each of the simulated plans. Once the districts are sorted for both the enacted and simulated plans, we use a dot to represent the Democratic vote percent for each ordered district of a simulated plan. For the enacted plan, we use a black horizontal line. This allows visual comparison between the enacted and simulated plans. In the example below, the enacted plan appears to pack Republicans in the most Republican district (1), while making the second most Republican district (2) barely Democratic. Again, the number on the x-axis does not correspond to the actual district number under the enacted plan. Instead, it represents the order of districts sorted by the variable of interest for each plan. The variable of interest is then made into the y-axis.</p>
+<p><img src="../OR_cd_2020/index_files/figure-html/distr-dem-1.png" class="img-fluid"></p>
+</section>
+<section id="plots-pbias-egap" class="level3">
+<h3 class="anchored" data-anchor-id="plots-pbias-egap">Partisan bias metrics</h3>
+<p>We measure the partisan bias of a plan in two ways: the efficiency gap and the deviation from partisan symmetry. The efficiency gap of a plan is the difference in the two party’s wasted votes as a fraction of the statewide turnout. It is a measure of packing and cracking. If a Democrat won a district with 60% of the vote, then each vote above 50% + 1 of the total votes are wasted because the district could have won by 50% + 1 votes. Similarly, if a Democrat loses a district with 45%, then each of those votes are wasted because those votes did not lead to a seat. The efficiency gap for Democrats shown in the histogram is the Democratic wasted votes minus the Republican wasted votes. Thus, positive values indicate a pro-Republican bias whereas a negative value indicates a pro-Democratic bias. In the Oregon plan, the gap is -0.10, meaning that Democratic votes are wasted at a much smaller rate than Republican votes.</p>
+<p><img src="../OR_cd_2020/index_files/figure-html/pbias-egap-1.svg" class="img-fluid"></p>
+<p>Another measure we use is deviation from partisan symmetry in the seats-votes curve. Suppose a plan leads to 60% Democratic seats when their statewide vote share is 55%. If the map satisfies partisan symmetry, the Republican seat share should also be 60% if they win 55% of the votes in another election. We represent the <em>deviation</em> from partisan symmetry by computing the excess Republican seat share above 50% when their vote share is 50%. This measure is typically called the “partisan bias” of a plan in the academic literature on redistricting. In the Oregon example below, the 0.1 deviation from partisan symmetry means that in a 50-50 election, the plan allocates 60% of seats to the Republicans, rather than the symmetric outcome of 50% of seats. While the enacted plan is more favorable towards the Republican party than a plan that exhibits partisan symmetry (a value of 0), it still favors the Democratic plan more than the modal simulated plan (around 0.18 on the histogram).</p>
+</section>
+<section id="plots-trad" class="level3">
+<h3 class="anchored" data-anchor-id="plots-trad">Traditional Redistricting Criteria</h3>
+<p>The histograms for compactness and counties split compare the enacted and expected maps in the same way as partisan metrics. We measure geographic compactness with the Polsby-Popper compactness score of each district, and take its average across districts. Polsby Popper scores range from 0 to 1 with 1 indicating a circle. The “counties split” measure is the number of counties which are not wholly contained within a single district. In the Oregon example, the enacted plan is near the central tendency of the alternatives in terms of compactness. However, it splits 11 counties whereas the alternative plans only split up to 6 counties.</p>
+<p><img src="../OR_cd_2020/index_files/figure-html/trad-criteria-1.svg" class="img-fluid"></p>
+</section>
+</section>
+<section id="what-are-the-redistricting-rules-used-to-generate-simulated-plans" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-the-redistricting-rules-used-to-generate-simulated-plans">What are the redistricting rules used to generate simulated plans?</h2>
+<p>We have documented the rules we used to simulate our alternative plans. All simulated plans will be contiguous, respect population equality, and are at least somewhat compact. Many states have their own specific rules, which we attempt to follow. The set of constraints used depends on the state’s redistricting rules.</p>
+<ul>
+<li>Hard <strong>county splitting</strong> constraint: Unless otherwise noted, a simulated plan will split fewer counties than the number of districts.</li>
+<li>Hard <strong>population</strong> constraint: Congressional districts must be roughly equal in population, so all state simulations contain a user-specified cap on the maximum deviation of any one district from the target population, which is the total statewide population divided by the number of districts. This deviation is 0.5% of the target population or less, except when a state explicitly specifies a maximum.</li>
+<li><strong>Compactness</strong> constraint: Unless otherwise noted, the algorithm nudges towards compact districts by an adjacency-graph-based measure of compactness, the fraction of edges kept.</li>
+<li><strong>Municipality</strong> splitting constraint: In some states, the simulations avoid splitting municipalities within large counties many times to preserve political subdivisions.</li>
+<li><strong>VRA constraint</strong>: In some states, the simulations are encouraged to accept plans that have a concentrated minority share of the voting age population or citizen voting age population, in accordance with the Voting Rights Act of 1965.</li>
+</ul>
+</section>
+<section id="disclaimers" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimers">Disclaimers</h2>
+<ul>
+<li><p>For consistency, reference plans, such as the 2010 or 2020 enacted plans, are best matched to the VTD or tract level. Reference plans often split a few of these at the block level. This may have a very small impact on estimated metrics. For example, NE’s 2010 plan has a very small county split which does not appear at the VTD level.</p></li>
+<li><p>VRA compliance requires substantial information, including a racially polarized voting analysis and knowledge of local history. For the purposes of this project, we target the number of minority-opportunity districts as in the enacted plan. We check approximate performance of these districts. Simulation results can change if different VRA constraints are imposed.</p></li>
+<li><p>Constraints are based on our interpretation of the law, but we are not lawyers. We do our best to follow the requirements and choices made by states.</p></li>
+<li><p>Any suggestions for improving the analysis, including legal interpretation of statutory requirements are welcome and should be submitted <a href="https://github.com/alarm-redist/fifty-states/issues/new">as a GitHub issue</a>.</p></li>
+</ul>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="data-sources-and-availability" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Data Sources and Availability</h2><div class="quarto-appendix-contents">
+
+<p>Unless otherwise noted, data for each state comes from the ALARM Project’s <a href="https://alarm-redist.github.io/posts/2021-08-10-census-2020/">2020 Redistricting Data Files</a>, which use U.S. Census demographic data (in the public domain) and election data from the <a href="https://dataverse.harvard.edu/dataverse/electionscience">Voting and Election Science Team</a>, which is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license. In these cases, shapefiles are also taken from the U.S. Census Bureau. The U.S. map here, scaled to reflect Congressional representations, is courtesy of <a href="https://dkel.ec/map" class="uri">https://dkel.ec/map</a>.</p>
+<p>All data is available on <a href="https://doi.org/10.7910/DVN/SLCD3E">our Dataverse</a> and has been released to the public domain. Code is available on <a href="https://github.com/alarm-redist/fifty-states/">GitHub</a> under an MIT license.</p>
+
+
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{untitled,
+  author = {},
+  title = {50-State {Simulations} {FAQ}},
+  url = {https://alarm-redist.github.io/fifty-states/about/},
+  doi = {10.7910/DVN/SLCD3E},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-untitled" class="csl-entry quarto-appendix-citeas" role="listitem">
+<span>“50-State Simulations FAQ.”</span> n.d. <a href="https://doi.org/10.7910/DVN/SLCD3E">https://doi.org/10.7910/DVN/SLCD3E</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/alarm-redist\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© Copyright 2021 the <a href="about.html">ALARM Project</a>. <br>Software licensed under the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GNU Public License, v2.0</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
