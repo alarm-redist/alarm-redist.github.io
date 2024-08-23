@@ -8,11 +8,10 @@ description: |
 
 <img src="assets/alarm_1200_tr.png" alt="ALARM logo" 
   style="width: 256px; float: right; margin: 8px;" />
-The ALARM Project is a research team at Harvard University led by 
-[Kosuke Imai](https://imai.fas.harvard.edu/).  It conducts research into
-redistricting sampling algorithms, best practices and workflows for
-redistricting analysis, and tools to visualize, explore, and understand
-redistricting plans.
+The Algorithm-Assisted Redistricting Methodology (ALARM) Project is a research group directed by Co-PIs [Kosuke Imai](https://imai.fas.harvard.edu/), [Christopher T. Kenny](https://christophertkenny.com/), [Cory McCartan](https://corymccartan.com/), and [Tyler Simko](https://tylersimko.com/).
+
+ALARM conducts research on political geography and spatial inequality. We actively work in areas like legislative redistricting, segregation, Census data, and school rezoning. We also develop open-source software to enable this research, like the R package [redist](https://alarm-redist.org/redist/).
+
 ALARM Project researchers develop [**redist**](https://alarm-redist.org/redist/), 
 an open-source R package for redistricting simulation and analysis which
 implements state-of-the-art MCMC and SMC redistricting sampling algorithms.  The
