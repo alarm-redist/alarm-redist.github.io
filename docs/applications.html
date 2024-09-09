@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/alarm_256_tr.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-papers .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-category','listing-papers',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-category","listing-papers"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-papers'] = new List('listing-papers', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8ZZ8YY5N8M"></script>
 
 <script type="text/javascript">
@@ -78,6 +109,35 @@ gtag('js', new Date());
 gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -173,14 +233,268 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 
 <section id="papers-with-alarm-project-members" class="level1">
 <h1>Papers with ALARM Project Members</h1>
-<ul>
-<li><a href="https://doi.org/10.1080/10618600.2020.1739532">Automated Redistricting Simulation Using Markov Chain Monte Carlo</a> <em>Journal of Computational and Graphical Statistics</em> (2020) Vol. 29, No.&nbsp;4, pp.&nbsp;715-728.</li>
-<li><a href="https://doi.org/10.1080/2330443X.2020.1791773">The Essential Role of Empirical Validation in Legislative Redistricting Simulation</a> <em>Statistics and Public Policy</em> (2020) Vol. 7, No.&nbsp;1, pp.&nbsp;52-68.</li>
-<li><a href="https://arxiv.org/pdf/2008.06131.pdf">Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans</a></li>
-<li><a href="https://doi.org/10.1126/sciadv.abk3283">The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census</a> <em>Science Advances</em> (2021) Vol. 7, No.&nbsp;41.</li>
-<li><a href="https://www.nature.com/articles/s41597-022-01808-2">Simulated redistricting plans for the analysis and evaluation of redistricting in the United States</a> <em>Scientific Data</em> (2022) Vol. 9, No.&nbsp;1.</li>
-<li><a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1">Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System</a> <em>Harvard Data Science Review</em> (2023) Special Issue 2.</li>
-</ul>
+<div id="listing-papers" class="quarto-listing quarto-listing-container-custom">
+
+<h2 class="anchored" data-anchor-id="papers-with-alarm-project-members">Working Papers</h2>
+    <ul class="listing-list list">
+    
+      <li data-index="0">
+        <a href="https://arxiv.org/abs/2407.11336">Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors.</a>
+        <span class="author">
+        Cory McCartan,
+        Christopher T. Kenny,
+        Tyler Simko,
+        Emma Ebowe,
+        Michael Y. Zhao, and
+        Kosuke Imai.
+        
+        </span>
+        
+        
+        
+        
+      </li>
+    
+    </ul>
+
+<h2 class="anchored">Published Work</h2>
+    <ul class="listing-list list">
+    
+      <li data-index="1">
+        <a href="https://doi.org/10.1073/pnas.2321196121">Census Officials Must Constructively Engage with Independent Evaluations.</a>
+        <span class="author">
+        Christopher T. Kenny,
+        Cory McCartan,
+        Tyler Simko, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Proceedings of the National Academy of Sciences.</i></span>
+        
+        
+        <span class="year">2024.</span>
+        
+        <span class="volume">121:</span><span class="issue">11.</span>
+        
+        <span class="pages">e2321196121.</span>
+        
+      </li>
+    
+      <li data-index="2">
+        <a href="https://doi.org/10.1126/sciadv.adl2524">Evaluating Bias and Noise Induced by the U.S. Census Bureau’s Privacy Protection Methods.</a>
+        <span class="author">
+        Christopher T. Kenny,
+        Cory McCartan,
+        Tyler Simko,
+        Shiro Kuriwaki, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Science Advances.</i></span>
+        
+        
+        <span class="year">2024.</span>
+        
+        <span class="volume">10:</span><span class="issue">18.</span>
+        
+        <span class="pages">eadl2524.</span>
+        
+      </li>
+    
+      <li data-index="3">
+        <a href="http://dx.doi.org/10.1214/23-AOAS1763">Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans.</a>
+        <span class="author">
+        Cory McCartan and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Annals of Applied Statistics.</i></span>
+        
+        
+        <span class="year">2023.</span>
+        
+        <span class="volume">17:</span><span class="issue">4.</span>
+        
+        <span class="pages">3300-3323.</span>
+        
+      </li>
+    
+      <li data-index="4">
+        <a href="https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1">Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System.</a>
+        <span class="author">
+        Christopher T. Kenny,
+        Shiro Kuriwaki,
+        Cory McCartan,
+        Tyler Simko,
+        Evan T. R. Rosenman, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Harvard Data Science Review.</i></span>
+        
+        
+        <span class="year">2023.</span>
+        
+        <span class="issue">2.</span>
+        
+      </li>
+    
+      <li data-index="5">
+        <a href="https://doi.org/10.1073/pnas.2217322120">Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition.</a>
+        <span class="author">
+        Christopher T. Kenny,
+        Cory McCartan,
+        Tyler Simko,
+        Shiro Kuriwaki, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Proceedings of the National Academy of Sciences.</i></span>
+        
+        
+        <span class="year">2023.</span>
+        
+        <span class="volume">120:</span><span class="issue">25.</span>
+        
+        <span class="pages">e2217322120.</span>
+        
+      </li>
+    
+      <li data-index="6">
+        <a href="https://doi.org/10.1126/science.adi7004">Researchers Need Better Access to U.S. Census Data.</a>
+        <span class="author">
+        Cory McCartan,
+        Tyler Simko, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Science.</i></span>
+        
+        
+        <span class="year">2023.</span>
+        
+        <span class="volume">380:</span><span class="issue">6648.</span>
+        
+        <span class="pages">902-903.</span>
+        
+      </li>
+    
+      <li data-index="7">
+        <a href="https://hdsr.mitpress.mit.edu/pub/y6oilhhe/release/4">Making Differential Privacy Work for Census Data Users.</a>
+        <span class="author">
+        Cory McCartan,
+        Tyler Simko, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Harvard Data Science Review.</i></span>
+        
+        
+        <span class="year">2023.</span>
+        
+        <span class="volume">5:</span><span class="issue">4.</span>
+        
+      </li>
+    
+      <li data-index="8">
+        <a href="">Simulated redistricting plans for the analysis and evaluation of redistricting in the United States.</a>
+        <span class="author">
+        Cory McCartan,
+        Christopher T. Kenny,
+        Tyler Simko,
+        George Garcia III,
+        Kevin Wang,
+        Melissa Wu,
+        Shiro Kuriwaki, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Scientific Data.</i></span>
+        
+        
+        <span class="year">2022.</span>
+        
+        <span class="volume">9:</span><span class="issue">1.</span>
+        
+      </li>
+    
+      <li data-index="9">
+        <a href="https://www.science.org/doi/10.1126/sciadv.abk3283">The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census.</a>
+        <span class="author">
+        Christopher T. Kenny,
+        Shiro Kuriwaki,
+        Cory McCartan,
+        Evan T. R. Rosenman,
+        Tyler Simko, and
+        Kosuke Imai.
+        
+        </span>
+        
+        <span class="journal"><i>Science Advances.</i></span>
+        
+        
+        <span class="year">2021.</span>
+        
+        <span class="volume">7:</span><span class="issue">41.</span>
+        
+      </li>
+    
+      <li data-index="10">
+        <a href="https://doi.org/10.1080/2330443X.2020.1791773">The Essential Role of Empirical Validation in Legislative Redistricting Simulation.</a>
+        <span class="author">
+        Benjamin Fifield,
+        Kosuke Imai,
+        Jun Kawahara, and
+        Christopher T. Kenny.
+        
+        </span>
+        
+        <span class="journal"><i>Statistics and Public Policy.</i></span>
+        
+        
+        <span class="year">2020.</span>
+        
+        <span class="volume">7:</span><span class="issue">1.</span>
+        
+        <span class="pages">52-68.</span>
+        
+      </li>
+    
+      <li data-index="11">
+        <a href="https://doi.org/10.1080/10618600.2020.1739532">Automated Redistricting Simulation Using Markov Chain Monte Carlo.</a>
+        <span class="author">
+        Benjamin Fifield,
+        Michael Higgins,
+        Kosuke Imai, and
+        Alexander Tarr.
+        
+        </span>
+        
+        <span class="journal"><i>Journal of Computational and Graphical Statistics.</i></span>
+        
+        
+        <span class="year">2020.</span>
+        
+        <span class="volume">29:</span><span class="issue">4.</span>
+        
+        <span class="pages">715-728.</span>
+        
+      </li>
+    
+    </ul>
+
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="reports-with-alarm-project-members" class="level1">
 <h1>Reports with ALARM Project Members</h1>
@@ -201,6 +515,7 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 <li><em>League of Women Voters of Ohio et al.&nbsp;v. Ohio Redistricting Commission et al.&nbsp;The Supreme Court of Ohio, Case No.&nbsp;2021–1449</em></li>
 <li><em>Grace, Inc.&nbsp;et al.&nbsp;v. City of Miami.</em></li>
 </ul>
+
 
 
 </section>

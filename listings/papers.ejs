@@ -1,0 +1,29 @@
+
+```{=html}
+<% for (const item of items) { %>
+
+<h2><%- item.category %></h2>
+    <ul class="listing-list list">
+    <% for (const paper of item.papers) { %>
+      <li <%= metadataAttrs(paper) %>>
+        <a href="<%- paper.href %>"><%- paper.title %>.</a>
+        <span class="author">
+        <% for (const author of paper.authors) { %><%= author %><% if (author !== paper.authors[paper.authors.length - 1] && paper.authors.length > 2) { %>,<% } %><% if (author === paper.authors[paper.authors.length - 2]) { %> and<% } %><% if (author === paper.authors[paper.authors.length - 1]) { %>.<% } %>
+        <% } %>
+        </span>
+        <% if(paper.journal){ %>
+        <span class="journal"><i><%- paper.journal %>.</i></span>
+        <% } %>
+        <% if(paper.year){ %>
+        <span class="year"><%- paper.year %>.</span>
+        <% } %>
+        <% if(paper.volume){ %><span class="volume"><%- paper.volume %>:</span><% } %><% if(paper.issue){ %><span class="issue"><%- paper.issue %>.</span><% } %>
+        <% if(paper.pages){ %>
+        <span class="pages"><%- paper.pages %>.</span>
+        <% } %>
+      </li>
+    <% } %>
+    </ul>
+
+<% } %>
+```

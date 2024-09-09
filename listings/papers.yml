@@ -1,0 +1,145 @@
+- category: Working Papers
+  papers:
+  - title: "Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors"
+    href: https://arxiv.org/abs/2407.11336
+    authors:
+    - Cory McCartan
+    - Christopher T. Kenny
+    - Tyler Simko
+    - Emma Ebowe
+    - Michael Y. Zhao
+    - Kosuke Imai
+- category: Published Work
+  papers:
+  - title: "Census Officials Must Constructively Engage with Independent Evaluations"
+    journal: "Proceedings of the National Academy of Sciences"
+    year: 2024
+    volume: 121
+    issue: 11
+    pages: "e2321196121"
+    href: https://doi.org/10.1073/pnas.2321196121
+    authors:
+      - Christopher T. Kenny
+      - Cory McCartan
+      - Tyler Simko
+      - Kosuke Imai
+  - title: "Evaluating Bias and Noise Induced by the U.S. Census Bureau’s Privacy Protection Methods"
+    journal: "Science Advances"
+    year: 2024
+    volume: 10
+    issue: 18
+    pages: "eadl2524"
+    href: https://doi.org/10.1126/sciadv.adl2524
+    authors:
+      - Christopher T. Kenny
+      - Cory McCartan
+      - Tyler Simko
+      - Shiro Kuriwaki
+      - Kosuke Imai
+  - title: "Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans"
+    journal: "Annals of Applied Statistics"
+    year: 2023
+    volume: 17
+    issue: 4
+    pages: "3300-3323"
+    href: http://dx.doi.org/10.1214/23-AOAS1763
+    authors:
+    - Cory McCartan
+    - Kosuke Imai
+  - title: "Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System"
+    journal: "Harvard Data Science Review"
+    year: 2023
+    issue: 2
+    href: https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1
+    authors:
+      - Christopher T. Kenny
+      - Shiro Kuriwaki
+      - Cory McCartan
+      - Tyler Simko
+      - Evan T. R. Rosenman
+      - Kosuke Imai
+  - title: "Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition"
+    journal: "Proceedings of the National Academy of Sciences"
+    year: 2023
+    volume: 120
+    issue: 25
+    pages: "e2217322120"
+    href: https://doi.org/10.1073/pnas.2217322120
+    authors:
+      - Christopher T. Kenny
+      - Cory McCartan
+      - Tyler Simko
+      - Shiro Kuriwaki
+      - Kosuke Imai
+  - title: "Researchers Need Better Access to U.S. Census Data"
+    journal: "Science"
+    year: 2023
+    volume: 380
+    issue: 6648
+    pages: "902-903"
+    href: https://doi.org/10.1126/science.adi7004
+    authors:
+      - Cory McCartan
+      - Tyler Simko
+      - Kosuke Imai
+  - title: "Making Differential Privacy Work for Census Data Users"
+    journal: "Harvard Data Science Review"
+    year: 2023
+    volume: 5
+    issue: 4
+    href: https://hdsr.mitpress.mit.edu/pub/y6oilhhe/release/4
+    authors:
+      - Cory McCartan
+      - Tyler Simko
+      - Kosuke Imai
+  - title: "Simulated redistricting plans for the analysis and evaluation of redistricting in the United States"
+    journal: "Scientific Data"
+    year: 2022
+    volume: 9
+    issue: 1
+    authors:
+      - Cory McCartan
+      - Christopher T. Kenny
+      - Tyler Simko
+      - George Garcia III
+      - Kevin Wang
+      - Melissa Wu
+      - Shiro Kuriwaki
+      - Kosuke Imai
+  - title: "The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census"
+    journal: "Science Advances"
+    year: 2021
+    volume: 7
+    issue: 41
+    href: https://www.science.org/doi/10.1126/sciadv.abk3283
+    authors:
+    - Christopher T. Kenny
+    - Shiro Kuriwaki
+    - Cory McCartan
+    - Evan T. R. Rosenman
+    - Tyler Simko
+    - Kosuke Imai
+  - title: "The Essential Role of Empirical Validation in Legislative Redistricting Simulation"
+    journal: "Statistics and Public Policy"
+    year: 2020
+    volume: 7
+    issue: 1
+    pages: "52-68"
+    href: https://doi.org/10.1080/2330443X.2020.1791773
+    authors:
+    - Benjamin Fifield
+    - Kosuke Imai
+    - Jun Kawahara
+    - Christopher T. Kenny
+  - title: "Automated Redistricting Simulation Using Markov Chain Monte Carlo"
+    journal: "Journal of Computational and Graphical Statistics"
+    year: 2020
+    volume: 29
+    issue: 4
+    pages: "715-728"
+    href: https://doi.org/10.1080/10618600.2020.1739532
+    authors:
+    - Benjamin Fifield
+    - Michael Higgins
+    - Kosuke Imai
+    - Alexander Tarr
