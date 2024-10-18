@@ -1,0 +1,38 @@
+---
+title: "Estimating the Partisan Bias of Japanese Legislative Redistricting Plans Using a Simulation Algorithm"
+draft: false
+description: |
+  Our newest working paper shows that the 2022 Japanese redistricting, conducted by non-partisan commission, yields little partisan bias both at the prefecture and district levels.
+author:
+    - name: Sho Miyazaki
+      affiliation: Graduate School of Business, Stanford University
+      location: Stanford, CA
+      email: shomiya@stanford.edu
+      url: https://shomiyazaki.github.io/
+    - name: Kento Yamada
+      affiliation: Independent Scholar
+      # location: 
+      email: kentoyamada@college.harvard.edu
+      # url: 
+    - name: Kosuke Imai
+      affiliation: Departments of Government and Statistics, Harvard University
+      location: Cambridge, MA
+      email: imai@harvard.edu
+      url: https://imai.fas.harvard.edu/
+date: 2024-10-18
+citation: false
+---
+
+We’re excited to release [a new working paper](https://doi.org/10.31235/osf.io/adxwt) studying partisan bias in the 2022 Japanese Lower House redistricting. We employ redistricting simulations from the [47 Prefecture redistricting simulations](https://doi.org/10.7910/DVN/Z9UKSH). The abstract below highlights more of our findings.
+
+> While partisan gerrymandering has been found to be widespread for Congressional redistricting in the United States, there exists little empirical research on legislative redistricting in other countries. We investigate the partisan bias of Japanese redistricting. Some scholars have argued that the prominent role played by the non-partisan commission leaves little room for partisan gerrymandering. Others have pointed out, however, that the Japanese redistricting process may be subject to political influence. The members of the redistricting commission must be appointed by the Prime Minister and be approved by the Diet. In addition, the commission invites the governors of all prefectures to provide their opinions regarding districting. We conduct a systematic empirical analysis to estimate the partisan bias of the 2022 Japanese Lower House redistricting plans. We apply a state-of-the-art redistricting simulation algorithm to generate a large number of alternative non-partisan redistricting plans. The sampled plans are representative of the population of plans and are consistent with the redistricting rules with which the commission must comply. By comparing the enacted plan with this non-partisan baseline, we quantify the extent to which the enacted plan favors a particular party. Unlike the traditional methods, our simulation approach accounts for political geography and redistricting rules specific to each prefecture. Our analysis shows that the Japanese redistricting process yields little partisan bias both at the prefecture and district levels.
+
+Overall, we find that the enacted plan exhibits little partisan bias both at the prefecture and district levels. At the prefecture level, out of the 25 prefectures subject to redistricting, we observe a partisan bias of magnitude greater than one seat in Chiba Prefecture in favor of the ruling parties. 
+
+![Prefecture-level partisan bias of the enacted plan](aggregate_plot_seat_vs_all.png){width=75%}
+
+At the district level, we find only two districts out of 220 districts across the 25 prefectures where the distribution of the estimated normal vote under the enacted plan significantly deviates from that under the simulated plans after correcting for multiple-testing. Both of these cases (Miyagi District 3 and Fukuoka District 11) indicate a pro-ruling coalition bias.
+
+![Estimated district-level partisan bias](aggregate_plot_zscore.png){width=75%}
+
+If you’re interested in more information on our findings or methods, including a case study of Miyagi Prefecture, take a look at our [full working paper](https://doi.org/10.31235/osf.io/adxwt).
