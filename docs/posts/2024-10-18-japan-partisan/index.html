@@ -6,9 +6,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-10-24">
+<meta name="author" content="Sho Miyazaki">
+<meta name="author" content="Kento Yamada">
+<meta name="author" content="Kosuke Imai">
+<meta name="dcterms.date" content="2024-10-18">
+<meta name="description" content="Our newest working paper shows that the 2022 Japanese redistricting, conducted by non-partisan commission, yields little partisan bias both at the prefecture and district levels.">
 
-<title>Arizona Congressional Districts – ALARM Project</title>
+<title>Estimating the Partisan Bias of Japanese Legislative Redistricting Plans Using a Simulation Algorithm – ALARM Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,41 +149,60 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Arizona Congressional Districts</h1>
-<p class="subtitle lead"><a href="../../fifty-states/">« Back</a></p>
+<h1 class="title">Estimating the Partisan Bias of Japanese Legislative Redistricting Plans Using a Simulation Algorithm</h1>
 </div>
 
+<div>
+  <div class="description">
+    <p>Our newest working paper shows that the 2022 Japanese redistricting, conducted by non-partisan commission, yields little partisan bias both at the prefecture and district levels.</p>
+  </div>
+</div>
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliations</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://shomiyazaki.github.io/">Sho Miyazaki</a> <a href="mailto:shomiya@stanford.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Graduate School of Business, Stanford University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Kento Yamada <a href="mailto:kentoyamada@college.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Independent Scholar
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://imai.fas.harvard.edu/">Kosuke Imai</a> <a href="mailto:imai@harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Departments of Government and Statistics, Harvard University
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
+      
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-             <p>50-State Simulation Project Team </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Last updated</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2024</p>
+      <p class="date">October 18, 2024</p>
     </div>
   </div>
   
     
-    <div>
-    <div class="quarto-title-meta-heading">Doi</div>
-    <div class="quarto-title-meta-contents">
-      <p class="doi">
-        <a href="https://doi.org/10.7910/DVN/SLCD3E">10.7910/DVN/SLCD3E</a>
-      </p>
-    </div>
-  </div>
   </div>
   
 
@@ -187,142 +210,27 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 </header>
 
 
-<p style="grid-column: kicker; position: sticky; top: 1em; display: block;">
-<a href="../../fifty-states/" style="font-weight: bold;">« Back</a>
-</p>
-<p>Arizona has 9 congressional districts. We’ve generated 5,000 sets of randomly simulated districts according to <a href="#redistricting-requirements">the relevant criteria</a>. Three of these plans are shown here, along with the actual enacted map.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<p>We’re excited to release <a href="https://doi.org/10.31235/osf.io/adxwt">a new working paper</a> studying partisan bias in the 2022 Japanese Lower House redistricting. We employ redistricting simulations from the <a href="https://doi.org/10.7910/DVN/Z9UKSH">47 Prefecture redistricting simulations</a>. The abstract below highlights more of our findings.</p>
+<blockquote class="blockquote">
+<p>While partisan gerrymandering has been found to be widespread for Congressional redistricting in the United States, there exists little empirical research on legislative redistricting in other countries. We investigate the partisan bias of Japanese redistricting. Some scholars have argued that the prominent role played by the non-partisan commission leaves little room for partisan gerrymandering. Others have pointed out, however, that the Japanese redistricting process may be subject to political influence. The members of the redistricting commission must be appointed by the Prime Minister and be approved by the Diet. In addition, the commission invites the governors of all prefectures to provide their opinions regarding districting. We conduct a systematic empirical analysis to estimate the partisan bias of the 2022 Japanese Lower House redistricting plans. We apply a state-of-the-art redistricting simulation algorithm to generate a large number of alternative non-partisan redistricting plans. The sampled plans are representative of the population of plans and are consistent with the redistricting rules with which the commission must comply. By comparing the enacted plan with this non-partisan baseline, we quantify the extent to which the enacted plan favors a particular party. Unlike the traditional methods, our simulation approach accounts for political geography and redistricting rules specific to each prefecture. Our analysis shows that the Japanese redistricting process yields little partisan bias both at the prefecture and district levels.</p>
+</blockquote>
+<p>Overall, we find that the enacted plan exhibits little partisan bias both at the prefecture and district levels. At the prefecture level, out of the 25 prefectures subject to redistricting, we observe a partisan bias of magnitude greater than one seat in Chiba Prefecture in favor of the ruling parties.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/enacted-samples-1.svg" class="img-fluid figure-img" width="864"></p>
+<p><img src="aggregate_plot_seat_vs_all.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Prefecture-level partisan bias of the enacted plan</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<section id="partisan-features" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="partisan-features">Partisan Features</h2>
-<p>In Arizona, Democrats win about 48% of the vote in a typical statewide election. Proportionally, that would translate to 4.4 Democratic seats out of 9 total.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
+<p>At the district level, we find only two districts out of 220 districts across the 25 prefectures where the distribution of the estimated normal vote under the enacted plan significantly deviates from that under the simulated plans after correcting for multiple-testing. Both of these cases (Miyagi District 3 and Fukuoka District 11) indicate a pro-ruling coalition bias.</p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/seats-1.svg" class="img-fluid figure-img" width="672"></p>
+<p><img src="aggregate_plot_zscore.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Estimated district-level partisan bias</figcaption>
 </figure>
 </div>
-</div>
-</div>
-<aside>
-<a href="../about/#plots-exp-seats">Learn more about this graph</a>
-</aside>
-<p>But proportionality isn’t guaranteed, even in a fair redistricting process. In our simulated plans, Democrats won anywhere from 2.8 to 4.5 seats on average, with 3.5 being the most typical. In contrast, <strong>we expect the enacted plan to yield 3.2 Democratic seats on average, which is less than 78% of all simulated plans.</strong></p>
-<p>The graph below breaks this down in detail, showing how each district of the enacted plan compares to the set of simulated districts.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/distr-dem-1.svg" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside>
-<a href="../about/#plots-districts">Learn more about this graph</a>
-</aside>
-</section>
-<section id="gerrymandering-metrics" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="gerrymandering-metrics">Gerrymandering metrics</h2>
-<p>There are other ways of measuring the partisan skew of redistricting plan. The graph below shows two these metrics. The deviation from partisan symmetry measures the expected difference in each party’s share of seats if they each won 50% of the statewide vote. The efficiency gap is calculated as the difference in the number of wasted votes for each party.</p>
-<p><a href="../about/#plots-pbias-egap">Learn more about these metrics here</a>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/pbias-egap-1.svg" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside>
-<a href="../about/#plots-pbias-egap">Learn more about this graph</a>
-</aside>
-</section>
-<section id="traditional-redistricting-criteria" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="traditional-redistricting-criteria">Traditional redistricting criteria</h2>
-<p>Factors other than partisanship are important for redistricting, too. The graph below shows the geographic compactness and the number of counties which are split into multiple districts. As far as compactness, Arizona’s enacted plan scores a 0.26, in line with the simulated plans (a higher score means more compact). It splits 7 counties, compared to an average of 6 counties for our simulated plans.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/trad-criteria-1.svg" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside>
-<a href="../about/#plots-trad">Learn more about this graph</a>
-</aside>
-</section>
-<section id="political-geography" class="level2">
-<h2 class="anchored" data-anchor-id="political-geography">Political Geography</h2>
-<p>These two maps show the partisan lean across Arizona in a typical statewide election, and the share of minority voters around the state.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/geography-1.svg" class="img-fluid figure-img" width="1152"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="more-information" class="level2">
-<h2 class="anchored" data-anchor-id="more-information">More information</h2>
-<p><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SLCD3E">Download the data for Arizona</a>.</p>
-<p><a href="../../fifty-states/about/">Learn more about our methodology</a>.</p>
-<p>Elections included in analysis:</p>
-<ul>
-<li>President 2016</li>
-<li>US Senate 2016</li>
-<li>US Senate 2018</li>
-<li>Governor 2018</li>
-<li>Attorney General 2018</li>
-<li>Secretary of State 2018</li>
-<li>President 2020</li>
-<li>US Senate 2020</li>
-</ul>
-<section id="redistricting-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="redistricting-requirements">Redistricting requirements</h3>
-<p>Our algorithmic constraints used in simulations are in part are based on some of these requirements and discretionary criteria. See full documentation and code for the complete implementation details.</p>
-<p>
-In Arizona, districts must, <a href="https://www.azleg.gov/viewDocument/?docName=http://www.azleg.gov/const/4/1.p2.htm">under the state constitution</a>:
-</p>
-<ol type="1">
-<li>
-be contiguous
-</li>
-<li>
-have equal populations
-</li>
-<li>
-be geographically compact
-</li>
-<li>
-preserve county and municipality boundaries as much as possible
-</li>
-<li>
-favor competitive districts to the extent practicable
-</li>
-</ol>
-<style>
-d-article {
-    overflow: visible !important;
-}
-</style>
+<p>If you’re interested in more information on our findings or methods, including a case study of Miyagi Prefecture, take a look at our <a href="https://doi.org/10.31235/osf.io/adxwt">full working paper</a>.</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
