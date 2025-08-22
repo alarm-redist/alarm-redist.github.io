@@ -1,1 +1,0 @@
-Sitemap: https://alarm-redist.github.io/sitemap.xml
