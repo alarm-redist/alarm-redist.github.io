@@ -6,7 +6,6 @@ project:
     - "!fifty-states/template.qmd"
   resources:
     - "redist101.html"
-    - "papers/"
 
 website:
   title: ALARM Project
@@ -36,7 +35,7 @@ website:
   announcement:
     icon: exclamation-circle
     dismissable: true
-    content: "**New working paper!** - [Gerrymandering and geographic polarization have reduced electoral competition](https://alarm-redist.org/files/papers/ggprec.pdf)"
+    content: "**New working paper!** - [*Redistricting Reforms Reduce Gerrymandering by Constraining Partisan Actors* is now on arXiv!](https://arxiv.org/abs/2407.11336)"
     type: primary
     position: below-navbar
 
