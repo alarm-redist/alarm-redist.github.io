@@ -1,17 +1,13 @@
 [
   {
-    "listing": "/applications.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/2024-10-18-japan-partisan/index.html",
       "/posts/2024-07-25-redistricting-reforms/index.html",
       "/posts/2024-03-10-introducing-alarmdata/index.html",
       "/posts/2023-10-26-louisvillejefferson-county-metro-government-balance-kentucky/index.html",
-      "/posts/2023-11-16-virginia-beach-city/index.html",
       "/posts/2023-11-02-election-competitiveness-in-charlotte-north-carolina/index.html",
+      "/posts/2023-11-16-virginia-beach-city/index.html",
       "/posts/2023-10-15-commonwealth-opinion/index.html",
       "/posts/2023-06-14-census-bias-and-noise-wp/index.html",
       "/posts/2023-06-13-widespread-gerrymandering-pnas/index.html",
@@ -36,5 +32,9 @@
       "/posts/2021-05-28-census-das/index.html",
       "/posts/2021-04-02-redist-300/index.html"
     ]
+  },
+  {
+    "listing": "/applications.html",
+    "items": []
   }
 ]
