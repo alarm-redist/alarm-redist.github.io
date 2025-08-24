@@ -1,7 +1,7 @@
 ---
 title: "Gerrymandering and geographic polarization have reduced electoral competition"
 format: html
-draft: true
+draft: false
 description: |
   Our newest working paper studies the changes in geography and gerrymandering across the 2010 and 2020 cycles. We find that competition has greatly decreased across time and that this is largely driven by changes in geography, but that gerrymandering augments this decrease. Changes in seats are relatively smaller, with a 4 seat decrease in the Republican bias attributable to geography and a 2 seat decrease attributable to gerrymandering.
 author:
@@ -48,7 +48,7 @@ citation: false
 
 Our new working paper studies the changes in political geography and gerrymandering since 2010.
 We introduce a new set of redistricting simulations for the 2010 cycle, which supplement the existing [2020](https://www.nature.com/articles/s41597-022-01808-2) [simulations](https://alarm-redist.org/fifty-states/) for all 50 states.
-Using the two of these, we can isolate the changes in political geography by comparing the two sets of simulations.
+Comparing these two sets of simulations, we can isolate the changes in political geography.
 We can also isolate the effects of gerrymandering by comparing the enacted plans to the simulations in each year.
 
 ![](gerrymandering_500.png)
@@ -59,7 +59,7 @@ While the total amount of gerrymandering at the state-level increased, the net e
 However, the right panel shows the real loser in all of this: competitive districts.
 Changes in geography alone would have reduced the number of competitive districts by about 17 districts.
 Gerrymandering adds to this decrease, reducing the number of competitive districts by another 16 districts.
-Interestingly, this is a slight *decrease* in the number of competitive districts lost due to gerrymandering, as compared to the 2010 cycle.
+Interestingly, this is only a *slight decrease* in the number of competitive districts lost due to gerrymandering, as compared to the 2010 cycle.
 
 If you're interested in reading the paper, check it out [here](https://alarm-redist.org/papers/ggprec.pdf). The full abstract is below.
 

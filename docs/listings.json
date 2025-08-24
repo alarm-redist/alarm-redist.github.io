@@ -1,7 +1,12 @@
 [
   {
+    "listing": "/applications.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
+      "/posts/2025-08-22-geography-gerrymander/index.html",
       "/posts/2024-10-18-japan-partisan/index.html",
       "/posts/2024-07-25-redistricting-reforms/index.html",
       "/posts/2024-03-10-introducing-alarmdata/index.html",
@@ -32,9 +37,5 @@
       "/posts/2021-05-28-census-das/index.html",
       "/posts/2021-04-02-redist-300/index.html"
     ]
-  },
-  {
-    "listing": "/applications.html",
-    "items": []
   }
 ]
