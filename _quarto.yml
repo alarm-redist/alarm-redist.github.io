@@ -36,7 +36,7 @@ website:
   announcement:
     icon: exclamation-circle
     dismissable: true
-    content: "**New working paper!** - [Gerrymandering and geographic polarization have reduced electoral competition](https://alarm-redist.org/papers/ggprec.pdf)"
+    content: "**New working paper!** - [Gerrymandering and geographic polarization have reduced electoral competition](https://arxiv.org/pdf/2508.15885)"
     type: primary
     position: below-navbar
 
