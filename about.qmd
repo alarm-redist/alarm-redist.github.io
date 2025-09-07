@@ -20,9 +20,12 @@ redistricting process such as geographic compactness and population parity
 requirements, and includes tools to compute various summary statistics and 
 create useful plots.
 
+For a list of working papers, publications, and public expert testimony, please see the [Reports and Publications page](https://alarm-redist.org/applications.html).
+
 # People
 
-# Current Membership
+## Current Membership
+
 * **Aneetej Arora**, Ohio State University
 * **Emma Ebowe**, Department of Government, Harvard University
 * **Lucy Ding**, Harvard College
@@ -36,7 +39,8 @@ create useful plots.
 * **Sho Miyazaki**, Stanford University
 * [**Cory McCartan**](https://corymccartan.com/), Center for Data Science, New York University
 * **Philip O'Sullivan**, Department of Statistics, Harvard University
-* [**Tyler Simko**](https://tylersimko.com/), Department of Government, Harvard University
+* [**Taran Samarth**](https://taransamarth.com/), Department of Political Science, Yale University
+* [**Tyler Simko**](https://tylersimko.com/), Department of Political Science, University of Michigan
 * **Itsuki Umeyama**, University of Tokyo
 * **Melissa Wu**, Harvard College
 * **Kento Yamada**, Harvard College
@@ -44,30 +48,18 @@ create useful plots.
 * **Michael Zhao**, Harvard College
 * **Brian Zhou**
 
-# Project Alumni
+## Project Alumni
+
 * **Jennifer Gao**, Harvard College
 * **George Garcia III**, Department of Economics, MIT
 * [**Evan Rosenman**](https://www.evanrosenman.com/), Mathematical Scienced Department, Claremont McKenna College
-* [**Taran Samarth**](https://taransamarth.com/), Department of Political Science, Yale University
 * **Sam Thau**, Department of Economics, Stanford University
 * [**Kevin Wang**](https://scholar.harvard.edu/kevinwang/home), Oxford University
 * **Rei Yatsuhashi**, Harvard College
 * **Anna Yorozuya**, Department of Political Science, Yale University
 
-# Publications
-
-- [Automated Redistricting Simulation Using Markov Chain Monte Carlo](https://doi.org/10.1080/10618600.2020.1739532) *Journal of Computational and Graphical Statistics* (2020) Vol. 29, No. 4, pp. 715-728.
-- [The Essential Role of Empirical Validation in Legislative Redistricting Simulation](https://doi.org/10.1080/2330443X.2020.1791773) *Statistics and Public Policy* (2020) Vol. 7, No. 1, pp. 52-68.
-- [Sequential Monte Carlo for Sampling Balanced and Compact Redistricting Plans](http://dx.doi.org/10.1214/23-AOAS1763) *Annals of Applied Statistics* (2023) Vol. 17, No. 4.
-- [The use of differential privacy for census data and its impact on redistricting: The case of the 2020 U.S. Census](https://doi.org/10.1126/sciadv.abk3283) *Science Advances* (2021) Vol. 7, No. 41.
-- [Simulated redistricting plans for the analysis and evaluation of redistricting in the United States](https://www.nature.com/articles/s41597-022-01808-2) *Scientific Data* (2022) Vol. 9, No. 1.
-- [Comment: The Essential Role of Policy Evaluation for the 2020 Census Disclosure Avoidance System](https://hdsr.mitpress.mit.edu/pub/6ffzuq19/release/1) *Harvard Data Science Review* (2023) Special Issue 2.
-- [Researchers Need Better Access to U.S. Census Data](https://www.science.org/doi/10.1126/science.adi7004) *Science* (2023) Vol. 380, No. 6648.
-- [Widespread Partisan Gerrymandering Mostly Cancels Nationally, but Reduces Electoral Competition](https://www.pnas.org/doi/10.1073/pnas.2217322120) *Proceedings of the National Academy of Sciences* (2023) Vol 120, No. 25.
-- [Evaluating Bias and Noise Induced by the U.S. Census Bureau's Privacy Protection Methods](https://arxiv.org/abs/2306.07521)
-
-
 # Related R Packages
+
 - [alarmdata](https://alarm-redist.org/alarmdata/): Download, Merge, and Process Redistricting Data. McCartan, Kenny, Simok, Zhao, and Imai (2024).
 - [birdie](https://corymccartan.com/birdie/): Estimating disparities when race is not observed. McCartan, Goldin, Ho, and Imai (2023).
 - [blockpop](https://corymccartan.com/blockpop/): Estimate Census Block Populations for 2020. McCartan (2021).

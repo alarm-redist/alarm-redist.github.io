@@ -1,5 +1,5 @@
 ---
-title: "Applications"
+title: "Reports and Publications"
 description: |
   Applications of redistricting simulation involving members of the ALARM Project.
 listing:
@@ -12,6 +12,10 @@ listing:
 
 ::: {#papers}
 :::
+
+# Tutorial on using redist
+
+[redist101](https://alarm-redist.org/redist101.html): A tutorial on using the `redist` package for redistricting simulation and analysis for the [50-State Redistricting Simulations](https://alarm-redist.org/fifty-states/). Written by Sho Miyazaki, Kevin Wang, Melissa Wu, and Kento Yamada.
 
 # Reports with ALARM Project Members
 

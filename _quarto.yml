@@ -5,7 +5,6 @@ project:
     - "*.qmd"
     - "!fifty-states/template.qmd"
   resources:
-    - "redist101.html"
     - "papers/"
 
 website:
@@ -21,7 +20,7 @@ website:
         href: index.html
       - text: About
         href: about.html
-      - text: Applications
+      - text: Reports and Publications
         href: applications.html
     right:
       - text: redist

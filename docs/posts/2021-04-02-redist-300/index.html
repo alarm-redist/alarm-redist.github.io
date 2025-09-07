@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.19">
+<meta name="generator" content="quarto-1.8.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,16 +72,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../assets/alarm_256_tr.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-2f888a9df4d438511fe441eb1046b373.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a90412ab12e10e4c76bfe8821856a4ea.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-dark-4e62375daf2a4f24cf24824737fc32f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-4e62375daf2a4f24cf24824737fc32f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-64517d29a6ba58f883cb4fedc2dde26a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -130,7 +129,8 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../assets/alarm_256_tr.png" alt="" class="navbar-logo">
+    <img src="../../assets/alarm_256_tr.png" alt="" class="navbar-logo light-content">
+    <img src="../../assets/alarm_256_tr.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ALARM Project</span>
@@ -152,7 +152,7 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../applications.html"> 
-<span class="menu-text">Applications</span></a>
+<span class="menu-text">Reports and Publications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -268,18 +268,18 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 <section id="new-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="new-workflow">New workflow</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redist)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds"</span>,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              data_path <span class="ot">&lt;-</span> <span class="fu">tempfile</span>())</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>nc_shp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_path) <span class="sc">%&gt;%</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(vtd<span class="sc">:</span>vap, el14g_uss_r<span class="sc">:</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(vtd<span class="sc">:</span>vap, el14g_uss_r<span class="sc">:</span>geometry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Under the new workflow, a redistricting analysis begins with a <code>redist_map</code> object, which defines the basic parameters of the redistricting problem. The <code>redist_map()</code> constructor builds the precinct adjacency graph which is required for redistricting simulation, and stores relevant metadata, such as the desired population parity tolerance and a reference to the existing districts. It also comes with helpful plotting functions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">=</span> <span class="fu">redist_map</span>(nc_shp, <span class="at">existing_plan=</span>cd_17, <span class="at">pop_tol=</span><span class="fl">0.01</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nc <span class="ot">=</span> <span class="fu">redist_map</span>(nc_shp, <span class="at">existing_plan=</span>cd_17, <span class="at">pop_tol=</span><span class="fl">0.01</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To be partitioned into 13 districts with population between 733,498.7 - 1.0% and 733,498.7 + 1.0%
 With geometry:
@@ -303,8 +303,8 @@ With geometry:
 #   aland10 &lt;dbl&gt;, awater10 &lt;dbl&gt;, geometry &lt;MULTIPOLYGON [US_survey_foot]&gt;,
 #   adj &lt;list&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nc, el14g_uss_d<span class="sc">/</span>(el14g_uss_d<span class="sc">+</span>el14g_uss_r)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient2</span>(<span class="at">midpoint=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nc, el14g_uss_d<span class="sc">/</span>(el14g_uss_d<span class="sc">+</span>el14g_uss_r)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient2</span>(<span class="at">midpoint=</span><span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -315,8 +315,8 @@ With geometry:
 </div>
 <p>Once we’ve created a <code>redist_map</code> object, we can simulate redistricting plans.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">=</span> <span class="fu">redist_smc</span>(nc, <span class="dv">1000</span>, <span class="at">counties=</span>county, <span class="at">silent=</span><span class="cn">TRUE</span>) <span class="co"># 1000 plans</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">=</span> <span class="fu">redist_smc</span>(nc, <span class="dv">1000</span>, <span class="at">counties=</span>county, <span class="at">silent=</span><span class="cn">TRUE</span>) <span class="co"># 1000 plans</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plans)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>With plans resampled from weights
 Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
@@ -338,7 +338,7 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 </div>
 <p>The <code>plans</code> variable is a <code>redist_plans</code> object—a special container designed to make handling sets of redistricting plans painless. As the output above shows, <code>plans</code> contains the 1,000 samppled plans, plus the 2017 congressional districts. We can plot a few of these plans.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.plans</span>(plans, <span class="at">draws=</span><span class="fu">c</span>(<span class="st">"cd_17"</span>, <span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>), <span class="at">geom=</span>nc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.plans</span>(plans, <span class="at">draws=</span><span class="fu">c</span>(<span class="st">"cd_17"</span>, <span class="st">"1"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>), <span class="at">geom=</span>nc)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -349,10 +349,10 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 </div>
 <p>A <code>redist_plans</code> object makes it easy to compute plan and district summary statistics.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">=</span> plans <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plans <span class="ot">=</span> plans <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">comp =</span> <span class="fu">distr_compactness</span>(nc),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">dem_share =</span> <span class="fu">group_frac</span>(nc, el14g_uss_d, el14g_uss_d <span class="sc">+</span> el14g_uss_r))</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plans)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>With plans resampled from weights
 Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
@@ -374,8 +374,8 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 </div>
 <p>From there, we can quickly generate informative plots. First we check the compactness of the generated plans, and see that they are significantly more compact than the adopted 2017 plan.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(plans, comp) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Compactness score (higher is more compact)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(plans, comp) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Compactness score (higher is more compact)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -386,8 +386,8 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 </div>
 <p>Next, we look at the partisan implications of the 2017 plan. We plot the two-party Democratic vote share in each district, with districts sorted by this quantity. Each dot on the plot below is a district from one simulated plan, and the red lines show the values for the 2017 plan.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.distr_qtys</span>(plans, dem_share, <span class="at">size=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.distr_qtys</span>(plans, dem_share, <span class="at">size=</span><span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -401,8 +401,8 @@ Plans matrix: int [1:2692, 1:1001] 1 1 1 1 1 1 1 1 1 1 ...
 <h3 class="anchored" data-anchor-id="studying-districts-1-2-and-4">Studying districts 1, 2, and 4</h3>
 <p>If we want to study a specific set of districts, we can quickly <code>filter()</code> to the relevant map area and re-run the analysis. The <code>redist_map()</code> object will handle all appropriate adjustments to the adjacency graph, number of districts, and population tolerance (as is visible below).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nc_sub <span class="ot">=</span> <span class="fu">filter</span>(nc, cd_17 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nc_sub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nc_sub <span class="ot">=</span> <span class="fu">filter</span>(nc, cd_17 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(nc_sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To be partitioned into 3 districts with population between 733,498.7 - 1.0% and 733,498.7 + 1.0%
 With geometry:
@@ -426,7 +426,7 @@ With geometry:
 #   aland10 &lt;dbl&gt;, awater10 &lt;dbl&gt;, geometry &lt;MULTIPOLYGON [US_survey_foot]&gt;,
 #   adj &lt;list&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nc_sub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nc_sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -437,9 +437,9 @@ With geometry:
 </div>
 <p>On this subset, too, the adopted 2017 plan is a significant outlier.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plans_sub <span class="ot">=</span> <span class="fu">redist_smc</span>(nc_sub, <span class="dv">1000</span>, <span class="at">counties=</span>county, <span class="at">silent=</span>T) <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>plans_sub <span class="ot">=</span> <span class="fu">redist_smc</span>(nc_sub, <span class="dv">1000</span>, <span class="at">counties=</span>county, <span class="at">silent=</span>T) <span class="sc">%&gt;%</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">dem_share =</span> <span class="fu">group_frac</span>(nc_sub, el14g_uss_d, el14g_uss_d <span class="sc">+</span> el14g_uss_r))</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.distr_qtys</span>(plans_sub, dem_share, <span class="at">size=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">redist.plot.distr_qtys</span>(plans_sub, dem_share, <span class="at">size=</span><span class="fl">0.3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -454,28 +454,28 @@ With geometry:
 <h2 class="anchored" data-anchor-id="old-workflow">Old workflow</h2>
 <p>In comparison, the old workflow required significantly more steps and manual processing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(redist)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/alarm-redist/redist-data/raw/main/data/nc.rds"</span>,</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>              data_path <span class="ot">&lt;-</span> <span class="fu">tempfile</span>())</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>nc_shp <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(data_path) <span class="sc">%&gt;%</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(vtd<span class="sc">:</span>vap, el14g_uss_r<span class="sc">:</span>geometry)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(vtd<span class="sc">:</span>vap, el14g_uss_r<span class="sc">:</span>geometry)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once we’ve downloaded the data, we can start by building the adjacency graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>adj <span class="ot">&lt;-</span> <span class="fu">redist.adjacency</span>(nc_shp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>adj <span class="ot">&lt;-</span> <span class="fu">redist.adjacency</span>(nc_shp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Time to first simulation was never really the issue, however each simulation required many inputs. <code>redist_map</code> objects keep track of the <code>adj</code>, <code>total_pop</code>, <code>ndists</code>, and <code>pop_tol</code> arguments, but in the older version, you had to specify each of these for every simulation. One of the quirky aspects of the older version was that <code>counties</code> needed to be a vector with values <code>1:n_counties</code>, meaning that you had to manually transform it to use it and that only worked if the counties were contiguous.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">redist.smc</span>(<span class="at">adj =</span> adj, <span class="at">total_pop =</span> nc_shp<span class="sc">$</span>pop, <span class="at">ndists =</span> <span class="dv">13</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sims <span class="ot">&lt;-</span> <span class="fu">redist.smc</span>(<span class="at">adj =</span> adj, <span class="at">total_pop =</span> nc_shp<span class="sc">$</span>pop, <span class="at">ndists =</span> <span class="dv">13</span>,</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">pop_tol =</span> <span class="fl">0.01</span>,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">counties =</span> <span class="fu">match</span>(nc_shp<span class="sc">$</span>county, <span class="fu">unique</span>(nc_shp<span class="sc">$</span>county)),</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsims =</span> <span class="dv">1000</span>, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">nsims =</span> <span class="dv">1000</span>, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Once you finished simulating, setting up plots was always a hassle, as you needed to plot both the distribution of simulations and then compute the same metric separately for the reference plan, in this case that’s the 2017 congressional districts.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>metrics <span class="ot">&lt;-</span> <span class="fu">redist.metrics</span>(<span class="at">plans =</span> sims<span class="sc">$</span>plans, <span class="at">measure =</span> <span class="st">'DVS'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>metrics <span class="ot">&lt;-</span> <span class="fu">redist.metrics</span>(<span class="at">plans =</span> sims<span class="sc">$</span>plans, <span class="at">measure =</span> <span class="st">'DVS'</span>,</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">rvote =</span> nc_shp<span class="sc">$</span>el14g_uss_r, nc_shp<span class="sc">$</span>el14g_uss_d)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>sorted <span class="ot">&lt;-</span> metrics <span class="sc">%&gt;%</span></span>
@@ -491,11 +491,11 @@ With geometry:
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>sorted_reference <span class="ot">&lt;-</span> reference_metrics <span class="sc">%&gt;%</span></span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(DVS) <span class="sc">%&gt;%</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">district =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">district =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And then to plot the standard stacked boxplots, you would need to add the reference plan manually to the rest.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sorted <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> district, <span class="at">y =</span> DVS, <span class="at">group =</span> district)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sorted <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> district, <span class="at">y =</span> DVS, <span class="at">group =</span> district)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'District, sorted by DVS'</span>) <span class="sc">+</span></span>
@@ -503,7 +503,7 @@ With geometry:
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> district <span class="sc">-</span> <span class="fl">0.35</span>, <span class="at">xend =</span> district <span class="sc">+</span> <span class="fl">0.35</span>,</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">yend =</span> DVS, <span class="at">color =</span> <span class="st">'red'</span>)) <span class="sc">+</span></span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">''</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">'red'</span> <span class="ot">=</span> <span class="st">'red'</span>),</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'ref'</span>), <span class="at">guide =</span> <span class="st">'legend'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'ref'</span>), <span class="at">guide =</span> <span class="st">'legend'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -517,32 +517,32 @@ With geometry:
 <p>The steps between loading in data to your first simulation wasn’t terrible in the old version when you were working with the full map. However, when trying to work with subsets, it became messy.</p>
 <p>First you needed to subset the shape and then rebuild a new adjacency graph that only had the remaining precincts.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub <span class="ot">&lt;-</span> nc_shp <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cd_17 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sub_adj <span class="ot">&lt;-</span> <span class="fu">redist.adjacency</span>(sub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub <span class="ot">&lt;-</span> nc_shp <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cd_17 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sub_adj <span class="ot">&lt;-</span> <span class="fu">redist.adjacency</span>(sub)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Then, if your target on the full map was 1%, you had to compute the equivalent on the subset map, as a 1% population deviation on a subset is often larger once recombined with the full map.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pop_tol <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pop_tol <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>subparpop <span class="ot">&lt;-</span> <span class="fu">sum</span>(sub<span class="sc">$</span>pop)<span class="sc">/</span><span class="dv">3</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>parpop <span class="ot">&lt;-</span> <span class="fu">sum</span>(nc_shp<span class="sc">$</span>pop)<span class="sc">/</span><span class="dv">13</span></span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>sub_pop_tol <span class="ot">&lt;-</span>  <span class="fu">min</span>(<span class="fu">abs</span>(subparpop <span class="sc">-</span> parpop <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> pop_tol)),</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                <span class="fu">abs</span>(subparpop <span class="sc">-</span> parpop <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">+</span> pop_tol))) <span class="sc">/</span> subparpop</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>sub_pop_tol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>sub_pop_tol</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.009639859</code></pre>
 </div>
 </div>
 <p>Now we can simulate again, but on the smaller map.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sims_sub <span class="ot">&lt;-</span> <span class="fu">redist.smc</span>(<span class="at">adj =</span> sub_adj, <span class="at">total_pop =</span> sub<span class="sc">$</span>pop,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sims_sub <span class="ot">&lt;-</span> <span class="fu">redist.smc</span>(<span class="at">adj =</span> sub_adj, <span class="at">total_pop =</span> sub<span class="sc">$</span>pop,</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">nsims =</span> <span class="dv">1000</span>,  <span class="at">ndists =</span> <span class="dv">3</span>,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">counties =</span> <span class="fu">match</span>(sub<span class="sc">$</span>county, <span class="fu">unique</span>(sub<span class="sc">$</span>county)),</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">pop_tol =</span> sub_pop_tol, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">pop_tol =</span> sub_pop_tol, <span class="at">silent =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>As before, we have to compute metrics for both the reference plan and the simulated plans.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sub_metrics <span class="ot">&lt;-</span> <span class="fu">redist.metrics</span>(<span class="at">plans =</span> sims_sub<span class="sc">$</span>plans, <span class="at">measure =</span> <span class="st">'DVS'</span>,</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sub_metrics <span class="ot">&lt;-</span> <span class="fu">redist.metrics</span>(<span class="at">plans =</span> sims_sub<span class="sc">$</span>plans, <span class="at">measure =</span> <span class="st">'DVS'</span>,</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">rvote =</span> sub<span class="sc">$</span>el14g_uss_r, sub<span class="sc">$</span>el14g_uss_d)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>sub_sorted <span class="ot">&lt;-</span> sub_metrics <span class="sc">%&gt;%</span></span>
@@ -559,11 +559,11 @@ With geometry:
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>sub_sorted_reference <span class="ot">&lt;-</span> sub_reference_metrics <span class="sc">%&gt;%</span></span>
 <span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(DVS) <span class="sc">%&gt;%</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">district =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">district =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And finally, we can plot the metrics and manually add the reference points.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sub_sorted <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> district, <span class="at">y =</span> DVS, <span class="at">group =</span> district)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sub_sorted <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> district, <span class="at">y =</span> DVS, <span class="at">group =</span> district)) <span class="sc">+</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">'District, sorted by DVS'</span>) <span class="sc">+</span></span>
@@ -571,7 +571,7 @@ With geometry:
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> district <span class="sc">-</span> <span class="fl">0.35</span>, <span class="at">xend =</span> district <span class="sc">+</span> <span class="fl">0.35</span>,</span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">yend =</span> DVS, <span class="at">color =</span> <span class="st">'red'</span>)) <span class="sc">+</span></span>
 <span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">''</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">'red'</span> <span class="ot">=</span> <span class="st">'red'</span>),</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'ref'</span>), <span class="at">guide =</span> <span class="st">'legend'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">'ref'</span>), <span class="at">guide =</span> <span class="st">'legend'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
