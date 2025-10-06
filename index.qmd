@@ -1,5 +1,5 @@
 ---
-title: "&nbsp;"
+title: "Home"
 listing:
   - id: posts
     contents:
@@ -7,6 +7,12 @@ listing:
     sort: "date desc"
     type: default
 ---
+
+```{=css}
+#title-block-header {
+    display: none;
+}
+```
 
 :::: {.column-screen}
 
