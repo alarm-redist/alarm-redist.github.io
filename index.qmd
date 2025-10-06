@@ -1,4 +1,5 @@
 ---
+title: "&nbsp;"
 listing:
   - id: posts
     contents:
@@ -7,15 +8,19 @@ listing:
     type: default
 ---
 
-<br>
+:::: {.column-screen}
 
-::: {.column-screen}
-<div class="home-cover l-screen">
+::: {.home-cover .l-screen}
+
+```{=html}
 <div class="fg">
 <h1>Developing methodology and tools to analyze legislative redistricting.</h1>
 </div>
-</div>
+```
+
 :::
+
+::::
 
 <div class="package-box" style="background: #9ACABA">
 <a href="/fifty-states/">
