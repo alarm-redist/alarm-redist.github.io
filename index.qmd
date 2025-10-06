@@ -8,10 +8,12 @@ listing:
     type: default
 ---
 
-```{=css}
+```{=html}
+<style>
 #title-block-header {
     display: none;
 }
+</style>
 ```
 
 :::: {.column-screen}
