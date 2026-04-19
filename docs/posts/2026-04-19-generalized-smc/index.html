@@ -6,16 +6,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christopher T. Kenny">
-<meta name="author" content="Shiro Kuriwaki">
+<meta name="author" content="Philip O’Sullivan">
 <meta name="author" content="Cory McCartan">
-<meta name="author" content="Evan Rosenman">
-<meta name="author" content="Tyler Simko">
 <meta name="author" content="Kosuke Imai">
-<meta name="dcterms.date" content="2021-06-09">
-<meta name="description" content="The Data Stewardship Executive Policy Committee announces a higher privacy loss budget and other changes to the Disclosure Avoidance System.">
+<meta name="dcterms.date" content="2026-04-19">
+<meta name="description" content="Our newest working paper introduces a new approach to redistricting simulation that can handle electoral systems with multi-member districts, while also scaling to very large districting problems.">
 
-<title>Reaction to the Census Bureau’s Updated Parameters – ALARM Project</title>
+<title>Generalized Sequential Monte Carlo Sampling for Redistricting Simulation – ALARM Project</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -158,12 +155,12 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reaction to the Census Bureau’s Updated Parameters</h1>
+<h1 class="title">Generalized Sequential Monte Carlo Sampling for Redistricting Simulation</h1>
 </div>
 
 <div>
   <div class="description">
-    <p>The Data Stewardship Executive Policy Committee announces a higher privacy loss budget and other changes to the Disclosure Avoidance System.</p>
+    <p>Our newest working paper introduces a new approach to redistricting simulation that can handle electoral systems with multi-member districts, while also scaling to very large districting problems.</p>
   </div>
 </div>
 
@@ -172,23 +169,7 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Christopher T. Kenny <a href="mailto:christopherkenny@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Department of Government, Harvard University
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Shiro Kuriwaki <a href="mailto:kuriwaki@g.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Department of Government, Harvard University
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Cory McCartan <a href="mailto:cmccartan@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    <p class="author">Philip O’Sullivan <a href="mailto:posullivan@g.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -196,23 +177,15 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
           </p>
       </div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Evan Rosenman <a href="mailto:erosenm@fas.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    <p class="author"><a href="https://corymccartan.com/">Cory McCartan</a> <a href="mailto:mccartan@psu.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Harvard Data Science Initiative
+            Department of Statistics, Pennsylvania State University
           </p>
       </div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Tyler Simko <a href="mailto:tsimko@g.harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Department of Government, Harvard University
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Kosuke Imai <a href="mailto:imai@harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    <p class="author"><a href="https://imai.fas.harvard.edu/">Kosuke Imai</a> <a href="mailto:imai@harvard.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -227,7 +200,7 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 9, 2021</p>
+      <p class="date">April 19, 2026</p>
     </div>
   </div>
   
@@ -239,20 +212,18 @@ gtag('config', 'G-8ZZ8YY5N8M', { 'anonymize_ip': true});
 </header>
 
 
-<p>On June 9, The Census Bureau released <a href="https://www.census.gov/newsroom/press-releases/2021/2020-census-key-parameters.html">information on their final parameters</a> for the 2020 Census data release. We are grateful that they have incorporated some of the recommendations <a href="https://arxiv.org/abs/2105.14197">from our report</a> to help build a better data product for redistricting.</p>
-<p>The Bureau has made several welcome changes. They state that they have updated the post-processing component of the Disclosure Avoidance System (DAS) to address the undercounting bias in racially and ethnically diverse areas, which we reported in our analysis. As we recommended, the Bureau has also increased the privacy-loss budget, allocating the increase towards more accurate population and racial counts on geographies at the block group level and higher. We are hopeful that this targeted increase will help attenuate the DAS- induced population change at the voting district and precinct level.</p>
-<p>Some unresolved issues remain, however. The Bureau indicates that a new demonstration data product will not be released until September. Yet they plan to first release 2020 census redistricting data, which we expect states and localities to begin using immediately, by <a href="https://www.census.gov/newsroom/press-releases/2021/2020-census-apportionment-results.html">August 16, 2021</a>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Given the timing, it is unclear how the evaluation of the new demonstration data will affect the upcoming redistricting process and related litigation.&nbsp; The Bureau also states that there will be no direct increases in accuracy for block-level data, in order to protect privacy.&nbsp; As this is a key aspect of ensuring the equality of vote and protecting the principle of One Person, One Vote, map drawers and analysts may have to adjust their interpretation of this long-standing principle.</p>
-<p>The Bureau also announced that they plan to release the final version of the DAS code base.&nbsp; This is an important step for transparency. However, the code alone does not allow analysts to evaluate the impacts of DAS on redistricting and properly account for the additional uncertainty due to the injected noise. We recommend the Bureau also release differentially private noisy population counts that have not been subject to the post-processing steps, as well as parameter values used for noise generation. Although scholarly communities have not fully resolved the issue of incorporating additional noise into redistricting simulation analysis, the availability of such information should facilitate future methodological development. In particular, it is of interest to examine whether or not the additional noise makes it more difficult to detect partisan and racial gerrymandering.</p>
+<p>We have a new working paper out on redistricting simulation methods. The paper presents a new Sequential Monte Carlo based algorithm (gSMC), one of the main computational tools used to generate and study redistricting plans. gSMC extends the Sequential Monte Carlo approach of McCartan and Imai to a broader class of redistricting problems. The goal is to make simulation-based redistricting analysis more flexible and more scalable across a wider range of institutional settings.</p>
+<p>The new framework broadens where these analyses can be used. It makes it possible to study systems with multi-member districts, allows researchers to work across different sampling setups, and supports large-scale applications that would otherwise be difficult to analyze. More broadly, the paper expands the set of redistricting institutions and electoral systems that can be studied using simulation.</p>
+<p>We illustrate the approach with two applications: elections to the Irish Parliament, which uses multi-member districts, and the Pennsylvania House of Representatives, which has more than 200 single-member districts. Together, these examples show how the method can be used in very different redistricting settings.</p>
+<p><img src="ireland_ex.png" class="img-fluid" alt="A map of Ireland with simulated districts and an inset for Dublin."></p>
+<p>If you’re interested in reading the paper, <a href="https://arxiv.org/abs/2603.22188">check it out on arXiv</a>. The full abstract is below:</p>
+<blockquote class="blockquote">
+<p>Simulation methods have become important tools for quantifying partisan and racial bias in redistricting plans. We generalize the Sequential Monte Carlo (SMC) algorithm of McCartan and Imai (2023), one of the commonly used approaches. First, our generalized SMC (gSMC) algorithm can split off regions of arbitrary size, rather than a single district as in the original SMC framework, enabling the sampling of multi-member districts. Second, the gSMC algorithm can operate over various sampling spaces, providing additional computational flexibility. Third, we derive optimal-variance incremental weights and show how to compute them efficiently for each sampling space. Finally, we incorporate Markov chain Monte Carlo (MCMC) steps, creating a hybrid gSMC-MCMC algorithm that can be used for large-scale redistricting applications. We demonstrate the effectiveness of the proposed methodology through analyses of the Irish Parliament, which uses multi-member districts, and the Pennsylvania House of Representatives, which has more than 200 single-member districts.</p>
+</blockquote>
 
 
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Caliper, who makes the software Maptitude for Redistricting, <a href="https://www.caliper.com/learning-redistricting/index.php/articles/when-will-i-receive-my-2020-redistricting-data/">has announced they will process the legacy format data</a>, and two ALARM Project members have created <a href="https://corymccartan.github.io/PL94171/">an R package to process legacy data</a> as well. These types of resources should allow people to immediately begin drawing maps.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
