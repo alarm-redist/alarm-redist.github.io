@@ -1,5 +1,5 @@
 ---
-title: "Explainers"
+title: "Redistricting Algorithm Explainers"
 listing:
   - id: explainers
     template: listings/explainers.ejs
