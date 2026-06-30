@@ -1,0 +1,14 @@
+```{=html}
+<div class="list grid">
+<% for (const item of items) { %>
+  <div class="card g-col-12 g-col-md-6 bg-light">
+    <a href="<%- item.href %>">
+      <img src="<%- item.image %>" class="card-img-top img-fluid rounded-start" alt="<%- item.title %> preview">
+    </a>
+    <div class="card-body">
+      <h2 class="card-title h5"><a href="<%- item.href %>"><%- item.title %></a></h2>
+    </div>
+  </div>
+<% } %>
+</div>
+```
