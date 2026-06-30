@@ -22,6 +22,8 @@ website:
         href: about.html
       - text: Reports and Publications
         href: applications.html
+      - text: Explainers
+        href: explainers.html
     right:
       - text: redist
         href: https://alarm-redist.github.io/redist/

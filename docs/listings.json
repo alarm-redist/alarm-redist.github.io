@@ -1,5 +1,9 @@
 [
   {
+    "listing": "/explainers.html",
+    "items": []
+  },
+  {
     "listing": "/applications.html",
     "items": []
   },
@@ -38,9 +42,5 @@
       "/posts/2021-05-28-census-das/index.html",
       "/posts/2021-04-02-redist-300/index.html"
     ]
-  },
-  {
-    "listing": "/explainers.html",
-    "items": []
   }
 ]
