@@ -6,18 +6,18 @@ description: |
 
 # The Project
 
-<img src="assets/alarm_1200_tr.png" alt="ALARM logo" 
+<img src="assets/alarm_1200_tr.png" alt="ALARM logo"
   style="width: 256px; float: right; margin: 8px;" />
 The Algorithm-Assisted Redistricting Methodology (ALARM) Project is a research group directed by Co-PIs [Kosuke Imai](https://imai.fas.harvard.edu/), [Christopher T. Kenny](https://christophertkenny.com/), [Cory McCartan](https://corymccartan.com/), and [Tyler Simko](https://tylersimko.com/).
 
 ALARM conducts research on political geography and spatial inequality. We actively work in areas like legislative redistricting, segregation, Census data, and school rezoning. We also develop open-source software to enable this research, like the R package [redist](https://alarm-redist.org/redist/).
 
-ALARM Project researchers develop [**redist**](https://alarm-redist.org/redist/), 
+ALARM Project researchers develop [**redist**](https://alarm-redist.org/redist/),
 an open-source R package for redistricting simulation and analysis which
 implements state-of-the-art MCMC and SMC redistricting sampling algorithms.  The
 package allows for the implementation of various constraints in the
 redistricting process such as geographic compactness and population parity
-requirements, and includes tools to compute various summary statistics and 
+requirements, and includes tools to compute various summary statistics and
 create useful plots.
 
 For a list of working papers, publications, and public expert testimony, please see the [Reports and Publications page](https://alarm-redist.org/applications.html).
@@ -26,37 +26,46 @@ For a list of working papers, publications, and public expert testimony, please 
 
 ## Current Membership
 
-* **Aneetej Arora**, Ohio State University
-* **Emma Ebowe**, Department of Government, Harvard University
-* **Lucy Ding**, Harvard College
+* **Jerry Dai**
 * [**Ben Fifield**](https://www.benfifield.com/), Meta
-* **Yasmeen Hanon**, University of Missouri Kansas City
+* **Jack Holland**, Harvard College
 * [**Kosuke Imai**](https://imai.fas.harvard.edu/), Departments of Government and Statistics, Harvard University
-* **Ethan Jasny**, Harvard College
-* [**Christopher T. Kenny**](https://christophertkenny.com/), Department of Government, Harvard University
-* [**Shiro Kuriwaki**](https://www.shirokuriwaki.com/), Department of Political Science, Yale University
-* **Yusuf Mian**, Harvard College
+* **Ethan Jasny**, Department of Political Science, MIT
+* [**Christopher T. Kenny**](https://christophertkenny.com/), Data-Driven Social Science, Princeton University
 * **Sho Miyazaki**, Stanford University
-* [**Cory McCartan**](https://corymccartan.com/), Center for Data Science, New York University
+* [**Cory McCartan**](https://corymccartan.com/), Department of Statistics, Penn State University
+* **Jieun Oh**, Department of Political Science, University of Michigan
 * **Philip O'Sullivan**, Department of Statistics, Harvard University
+* **Bella Postel**, Princeton University
+* **Mateo Quintera**, Harvard College
 * [**Taran Samarth**](https://taransamarth.com/), Department of Political Science, Yale University
+* **Devanshi Shah**, University of Michigan
 * [**Tyler Simko**](https://tylersimko.com/), Department of Political Science, University of Michigan
-* **Itsuki Umeyama**, University of Tokyo
-* **Melissa Wu**, Harvard College
-* **Kento Yamada**, Harvard College
-* **Angeline Zhao**
-* **Michael Zhao**, Harvard College
-* **Brian Zhou**
+* [**Dominic Skinnion**](https://dskinnion.github.io/), Department of Political Science, MIT
+* **Kento Tamaki**
+* **Mengchu Yue**, Harvard College
+* [**Brian Zhou**](https://www.brianzhou.org/), Harvard College
 
 ## Project Alumni
 
+* **Aneetej Arora**, Ohio State University
+* **Emma Ebowe**, Department of Government, Harvard University
+* **Lucy Ding**, Harvard College
 * **Jennifer Gao**, Harvard College
 * **George Garcia III**, Department of Economics, MIT
+* **Yasmeen Hanon**, University of Missouri Kansas City
+* [**Shiro Kuriwaki**](https://www.shirokuriwaki.com/), Department of Political Science, Yale University
+* **Yusuf Mian**, Harvard College
 * [**Evan Rosenman**](https://www.evanrosenman.com/), Mathematical Scienced Department, Claremont McKenna College
 * **Sam Thau**, Department of Economics, Stanford University
+* **Itsuki Umeyama**, University of Tokyo
 * [**Kevin Wang**](https://scholar.harvard.edu/kevinwang/home), Oxford University
+* **Melissa Wu**, Harvard College
+* **Kento Yamada**, Harvard College
 * **Rei Yatsuhashi**, Harvard College
 * **Anna Yorozuya**, Department of Political Science, Yale University
+* **Angeline Zhao**
+* **Michael Zhao**, Harvard College
 
 # Related R Packages
 
