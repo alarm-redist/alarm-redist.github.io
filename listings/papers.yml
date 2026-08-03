@@ -7,6 +7,16 @@
         - Brian Zhou
         - Tyler Simko
         - Kosuke Imai
+    - title: "Generalized Sequential Monte Carlo Sampling for Redistricting Simulation"
+      href: https://arxiv.org/abs/2603.22188
+      authors:
+        - Philip O'Sullivan
+        - Cory McCartan
+        - Kosuke Imai
+    - title: "A Multi-District Markov Chain Monte Carlo Sampler for Redistricting"
+      href: https://osf.io/preprints/socarxiv/un8sk_v1
+      authors:
+        - Christopher T. Kenny
     - title: "Gerrymandering and geographic polarization have reduced electoral competition"
       href: https://www.arxiv.org/abs/2508.15885
       authors:
